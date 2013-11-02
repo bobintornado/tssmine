@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  ProfileViewController.h
 //  tssmine
 //
 //  Created by Bob Cao on 2/11/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface ProfileViewController : UIViewController
 
 @end

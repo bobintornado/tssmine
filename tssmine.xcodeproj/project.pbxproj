@@ -14,14 +14,17 @@
 		D98BF165182550EC00DEE19B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF164182550EC00DEE19B /* main.m */; };
 		D98BF169182550EC00DEE19B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF168182550EC00DEE19B /* AppDelegate.m */; };
 		D98BF16C182550EC00DEE19B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98BF16A182550EC00DEE19B /* Main.storyboard */; };
-		D98BF16F182550EC00DEE19B /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF16E182550EC00DEE19B /* FirstViewController.m */; };
-		D98BF172182550EC00DEE19B /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF171182550EC00DEE19B /* SecondViewController.m */; };
 		D98BF174182550EC00DEE19B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D98BF173182550EC00DEE19B /* Images.xcassets */; };
 		D98BF17B182550EC00DEE19B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98BF17A182550EC00DEE19B /* XCTest.framework */; };
 		D98BF17C182550EC00DEE19B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98BF158182550EC00DEE19B /* Foundation.framework */; };
 		D98BF17D182550EC00DEE19B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98BF15C182550EC00DEE19B /* UIKit.framework */; };
 		D98BF185182550EC00DEE19B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D98BF183182550EC00DEE19B /* InfoPlist.strings */; };
 		D98BF187182550EC00DEE19B /* tssmineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF186182550EC00DEE19B /* tssmineTests.m */; };
+		D98BF1921825514800DEE19B /* HomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF1911825514800DEE19B /* HomeTableViewController.m */; };
+		D98BF1951825523900DEE19B /* ShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF1941825523900DEE19B /* ShowViewController.m */; };
+		D98BF198182552FF00DEE19B /* SnapTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF197182552FF00DEE19B /* SnapTableViewController.m */; };
+		D98BF19B1825539A00DEE19B /* DesignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF19A1825539A00DEE19B /* DesignViewController.m */; };
+		D98BF19E182553AD00DEE19B /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF19D182553AD00DEE19B /* ProfileViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,16 +49,22 @@
 		D98BF167182550EC00DEE19B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D98BF168182550EC00DEE19B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D98BF16B182550EC00DEE19B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D98BF16D182550EC00DEE19B /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		D98BF16E182550EC00DEE19B /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		D98BF170182550EC00DEE19B /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		D98BF171182550EC00DEE19B /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		D98BF173182550EC00DEE19B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D98BF179182550EC00DEE19B /* tssmineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tssmineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98BF17A182550EC00DEE19B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		D98BF182182550EC00DEE19B /* tssmineTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "tssmineTests-Info.plist"; sourceTree = "<group>"; };
 		D98BF184182550EC00DEE19B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D98BF186182550EC00DEE19B /* tssmineTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tssmineTests.m; sourceTree = "<group>"; };
+		D98BF1901825514800DEE19B /* HomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewController.h; sourceTree = "<group>"; };
+		D98BF1911825514800DEE19B /* HomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewController.m; sourceTree = "<group>"; };
+		D98BF1931825523900DEE19B /* ShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowViewController.h; sourceTree = "<group>"; };
+		D98BF1941825523900DEE19B /* ShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowViewController.m; sourceTree = "<group>"; };
+		D98BF196182552FF00DEE19B /* SnapTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapTableViewController.h; sourceTree = "<group>"; };
+		D98BF197182552FF00DEE19B /* SnapTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnapTableViewController.m; sourceTree = "<group>"; };
+		D98BF1991825539A00DEE19B /* DesignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesignViewController.h; sourceTree = "<group>"; };
+		D98BF19A1825539A00DEE19B /* DesignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesignViewController.m; sourceTree = "<group>"; };
+		D98BF19C182553AD00DEE19B /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		D98BF19D182553AD00DEE19B /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,12 +127,18 @@
 				D98BF167182550EC00DEE19B /* AppDelegate.h */,
 				D98BF168182550EC00DEE19B /* AppDelegate.m */,
 				D98BF16A182550EC00DEE19B /* Main.storyboard */,
-				D98BF16D182550EC00DEE19B /* FirstViewController.h */,
-				D98BF16E182550EC00DEE19B /* FirstViewController.m */,
-				D98BF170182550EC00DEE19B /* SecondViewController.h */,
-				D98BF171182550EC00DEE19B /* SecondViewController.m */,
 				D98BF173182550EC00DEE19B /* Images.xcassets */,
 				D98BF15F182550EC00DEE19B /* Supporting Files */,
+				D98BF1901825514800DEE19B /* HomeTableViewController.h */,
+				D98BF1911825514800DEE19B /* HomeTableViewController.m */,
+				D98BF1931825523900DEE19B /* ShowViewController.h */,
+				D98BF1941825523900DEE19B /* ShowViewController.m */,
+				D98BF196182552FF00DEE19B /* SnapTableViewController.h */,
+				D98BF197182552FF00DEE19B /* SnapTableViewController.m */,
+				D98BF1991825539A00DEE19B /* DesignViewController.h */,
+				D98BF19A1825539A00DEE19B /* DesignViewController.m */,
+				D98BF19C182553AD00DEE19B /* ProfileViewController.h */,
+				D98BF19D182553AD00DEE19B /* ProfileViewController.m */,
 			);
 			path = tssmine;
 			sourceTree = "<group>";
@@ -254,10 +269,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D98BF172182550EC00DEE19B /* SecondViewController.m in Sources */,
+				D98BF198182552FF00DEE19B /* SnapTableViewController.m in Sources */,
 				D98BF169182550EC00DEE19B /* AppDelegate.m in Sources */,
-				D98BF16F182550EC00DEE19B /* FirstViewController.m in Sources */,
+				D98BF1921825514800DEE19B /* HomeTableViewController.m in Sources */,
 				D98BF165182550EC00DEE19B /* main.m in Sources */,
+				D98BF19E182553AD00DEE19B /* ProfileViewController.m in Sources */,
+				D98BF19B1825539A00DEE19B /* DesignViewController.m in Sources */,
+				D98BF1951825523900DEE19B /* ShowViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

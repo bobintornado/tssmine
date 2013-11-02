@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  ShowViewController.h
 //  tssmine
 //
 //  Created by Bob Cao on 2/11/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
+@interface ShowViewController : UIViewController
 
 @end
