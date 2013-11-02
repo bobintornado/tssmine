@@ -29,7 +29,7 @@
         <!--Home Table View Controller - Home-->
         <scene sceneID="PtW-Sj-7Ce">
             <objects>
-                <tableViewController id="dVf-bh-hCo" customClass="HomeTableViewController" sceneMemberID="viewController">
+                <tableViewController title="Home" id="dVf-bh-hCo" customClass="HomeTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="xEH-cN-APQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,16 +49,16 @@
                             <outlet property="delegate" destination="dVf-bh-hCo" id="Oni-dt-1Hs"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Home" id="Kmb-7v-LzI"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="Home" id="Kmb-7v-LzI"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ywu-FG-2Cn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="100" y="-1359"/>
+            <point key="canvasLocation" x="132" y="-1479"/>
         </scene>
         <!--Show View Controller - Shop-->
         <scene sceneID="ApN-Ae-WGN">
             <objects>
-                <viewController id="vTO-ci-raN" customClass="ShowViewController" sceneMemberID="viewController">
+                <viewController title="Shop" id="vTO-ci-raN" customClass="ShowViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7ys-jC-uY1"/>
                         <viewControllerLayoutGuide type="bottom" id="34S-4U-v8G"/>
@@ -68,28 +68,66 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Shop" id="auZ-j7-8Tf"/>
+                    <tabBarItem key="tabBarItem" title="Shop" image="Shop" id="auZ-j7-8Tf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="90f-RI-SCg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="100" y="-648"/>
+            <point key="canvasLocation" x="116" y="-656"/>
         </scene>
         <!--Snap Table View Controller - Snap-->
         <scene sceneID="amX-Hw-SsV">
             <objects>
                 <tableViewController id="koT-8m-gw8" customClass="SnapTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hZz-aK-dU5">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="362" sectionHeaderHeight="22" sectionFooterHeight="22" id="hZz-aK-dU5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="PSl-7k-XPb">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="SnapIdentifier" rowHeight="362" id="PSl-7k-XPb" customClass="TssPhotoCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="362"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PSl-7k-XPb" id="wfv-Lh-WQ0">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="361"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DeH-bo-FCZ">
+                                            <rect key="frame" x="-8" y="55" width="328" height="272"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RT5-1g-AFF">
+                                            <rect key="frame" x="93" y="26" width="227" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZ1-UM-gpB">
+                                            <rect key="frame" x="20" y="331" width="30" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Like">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Rr-d0-6yo">
+                                            <rect key="frame" x="126" y="331" width="68" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Comment">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vvr-A4-cmv">
+                                            <rect key="frame" x="265" y="331" width="40" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Share">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="tssPhoto" destination="DeH-bo-FCZ" id="Jgj-xJ-HPG"/>
+                                    <outlet property="tssPhotoLable" destination="RT5-1g-AFF" id="hZi-gR-vc4"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -97,11 +135,11 @@
                             <outlet property="delegate" destination="koT-8m-gw8" id="puv-TP-l3O"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Snap" id="QXN-E3-d4S"/>
+                    <tabBarItem key="tabBarItem" title="Snap" image="Picasa" id="QXN-E3-d4S"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LXM-th-viW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="121" y="142"/>
+            <point key="canvasLocation" x="139" y="170"/>
         </scene>
         <!--Profile View Controller - Profile-->
         <scene sceneID="rvs-Ig-m1c">
@@ -116,7 +154,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="9l3-Iz-PEr"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="Contact" id="9l3-Iz-PEr"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dwS-um-eIO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -135,13 +173,20 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Design" id="xuK-Hg-q1Z"/>
+                    <tabBarItem key="tabBarItem" title="Design" image="Favorites" id="xuK-Hg-q1Z"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uIe-6z-b23" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="148" y="978"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Contact" width="25" height="25"/>
+        <image name="Favorites" width="27" height="26"/>
+        <image name="Home" width="30" height="30"/>
+        <image name="Picasa" width="25" height="25"/>
+        <image name="Shop" width="30" height="30"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

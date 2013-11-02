@@ -25,6 +25,10 @@
 		D98BF198182552FF00DEE19B /* SnapTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF197182552FF00DEE19B /* SnapTableViewController.m */; };
 		D98BF19B1825539A00DEE19B /* DesignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF19A1825539A00DEE19B /* DesignViewController.m */; };
 		D98BF19E182553AD00DEE19B /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF19D182553AD00DEE19B /* ProfileViewController.m */; };
+		D98BF1A118255F5500DEE19B /* TssPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF1A018255F5500DEE19B /* TssPhoto.m */; };
+		D98BF1A41825614500DEE19B /* TssUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF1A31825614500DEE19B /* TssUser.m */; };
+		D98BF1A7182570D400DEE19B /* TssPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF1A6182570D400DEE19B /* TssPhotoCell.m */; };
+		E615AE07483A48CF9CBF7FAF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B5E9579A6C24A9E8800CED8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0ABE0E866C4C473DABC4F5A4 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		1B5E9579A6C24A9E8800CED8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98BF155182550EC00DEE19B /* tssmine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tssmine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98BF158182550EC00DEE19B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D98BF15A182550EC00DEE19B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -65,6 +71,12 @@
 		D98BF19A1825539A00DEE19B /* DesignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesignViewController.m; sourceTree = "<group>"; };
 		D98BF19C182553AD00DEE19B /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		D98BF19D182553AD00DEE19B /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		D98BF19F18255F5500DEE19B /* TssPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TssPhoto.h; sourceTree = "<group>"; };
+		D98BF1A018255F5500DEE19B /* TssPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TssPhoto.m; sourceTree = "<group>"; };
+		D98BF1A21825614500DEE19B /* TssUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TssUser.h; sourceTree = "<group>"; };
+		D98BF1A31825614500DEE19B /* TssUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TssUser.m; sourceTree = "<group>"; };
+		D98BF1A5182570D400DEE19B /* TssPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TssPhotoCell.h; sourceTree = "<group>"; };
+		D98BF1A6182570D400DEE19B /* TssPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TssPhotoCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +87,7 @@
 				D98BF15B182550EC00DEE19B /* CoreGraphics.framework in Frameworks */,
 				D98BF15D182550EC00DEE19B /* UIKit.framework in Frameworks */,
 				D98BF159182550EC00DEE19B /* Foundation.framework in Frameworks */,
+				E615AE07483A48CF9CBF7FAF /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +111,7 @@
 				D98BF180182550EC00DEE19B /* tssmineTests */,
 				D98BF157182550EC00DEE19B /* Frameworks */,
 				D98BF156182550EC00DEE19B /* Products */,
+				0ABE0E866C4C473DABC4F5A4 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +131,7 @@
 				D98BF15A182550EC00DEE19B /* CoreGraphics.framework */,
 				D98BF15C182550EC00DEE19B /* UIKit.framework */,
 				D98BF17A182550EC00DEE19B /* XCTest.framework */,
+				1B5E9579A6C24A9E8800CED8 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -139,6 +154,12 @@
 				D98BF19A1825539A00DEE19B /* DesignViewController.m */,
 				D98BF19C182553AD00DEE19B /* ProfileViewController.h */,
 				D98BF19D182553AD00DEE19B /* ProfileViewController.m */,
+				D98BF19F18255F5500DEE19B /* TssPhoto.h */,
+				D98BF1A018255F5500DEE19B /* TssPhoto.m */,
+				D98BF1A21825614500DEE19B /* TssUser.h */,
+				D98BF1A31825614500DEE19B /* TssUser.m */,
+				D98BF1A5182570D400DEE19B /* TssPhotoCell.h */,
+				D98BF1A6182570D400DEE19B /* TssPhotoCell.m */,
 			);
 			path = tssmine;
 			sourceTree = "<group>";
@@ -179,9 +200,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D98BF18A182550EC00DEE19B /* Build configuration list for PBXNativeTarget "tssmine" */;
 			buildPhases = (
+				825C4D7487644A2180811674 /* Check Pods Manifest.lock */,
 				D98BF151182550EC00DEE19B /* Sources */,
 				D98BF152182550EC00DEE19B /* Frameworks */,
 				D98BF153182550EC00DEE19B /* Resources */,
+				417A65D053C442B69498003E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -264,16 +287,52 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		417A65D053C442B69498003E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		825C4D7487644A2180811674 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D98BF151182550EC00DEE19B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D98BF198182552FF00DEE19B /* SnapTableViewController.m in Sources */,
+				D98BF1A118255F5500DEE19B /* TssPhoto.m in Sources */,
 				D98BF169182550EC00DEE19B /* AppDelegate.m in Sources */,
 				D98BF1921825514800DEE19B /* HomeTableViewController.m in Sources */,
 				D98BF165182550EC00DEE19B /* main.m in Sources */,
 				D98BF19E182553AD00DEE19B /* ProfileViewController.m in Sources */,
+				D98BF1A41825614500DEE19B /* TssUser.m in Sources */,
+				D98BF1A7182570D400DEE19B /* TssPhotoCell.m in Sources */,
 				D98BF19B1825539A00DEE19B /* DesignViewController.m in Sources */,
 				D98BF1951825523900DEE19B /* ShowViewController.m in Sources */,
 			);
@@ -399,12 +458,14 @@
 		};
 		D98BF18B182550EC00DEE19B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0ABE0E866C4C473DABC4F5A4 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "tssmine/tssmine-Prefix.pch";
 				INFOPLIST_FILE = "tssmine/tssmine-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -412,12 +473,14 @@
 		};
 		D98BF18C182550EC00DEE19B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0ABE0E866C4C473DABC4F5A4 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "tssmine/tssmine-Prefix.pch";
 				INFOPLIST_FILE = "tssmine/tssmine-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -484,6 +547,7 @@
 				D98BF18C182550EC00DEE19B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D98BF18D182550EC00DEE19B /* Build configuration list for PBXNativeTarget "tssmineTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +556,7 @@
 				D98BF18F182550EC00DEE19B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

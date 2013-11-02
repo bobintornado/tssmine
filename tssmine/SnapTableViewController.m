@@ -7,6 +7,8 @@
 //
 
 #import "SnapTableViewController.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "TssPhotoCell.h"
 
 @interface SnapTableViewController ()
 
@@ -32,6 +34,7 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,24 +47,38 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *SnapIdentifier = @"SnapIdentifier";
+    TssPhotoCell *cell = [tableView dequeueReusableCellWithIdentifier:SnapIdentifier];
     
-    // Configure the cell...
+    if (cell == nil) {
+        NSArray* topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"ImageCell" owner:self options:nil];
+        for (id currentObject in topLevelObjects) {
+            if ([currentObject isKindOfClass:[UITableViewCell class]]) {
+                cell = (TssPhotoCell *)currentObject;
+                break;
+            }
+        }
+    }
+    NSMutableArray *items = [[NSMutableArray alloc] init];
+    
+    [items addObject:@"http://tssphotos.s3.amazonaws.com/photos/photos/000/000/001/original/2013-10-31_19.54.00.jpg?1383409321"];
+    [items addObject:@"http://tssphotos.s3.amazonaws.com/photos/photos/000/000/002/original/2013-09-03_17.13.23.jpg?1383416252"];
+
+    [items addObject:@"http://tssphotos.s3.amazonaws.com/photos/photos/000/000/003/original/2013-01-29_09.00.10.jpg?1383416342"];
+
+    [cell.imageView setImageWithURL:[NSURL URLWithString:[items objectAtIndex:indexPath.row]]  placeholderImage:[UIImage imageNamed:@"Hisoka.jpg"]];
     
     return cell;
 }
