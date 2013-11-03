@@ -27,6 +27,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    NSURL *url = [NSURL URLWithString:@"http://shop.smu.edu.sg"];
+    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+    [_shopWebView loadRequest:requestObj];
 }
 
 - (void)didReceiveMemoryWarning

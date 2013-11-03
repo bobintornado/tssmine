@@ -35,4 +35,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)loginClicked:(id)sender {
+}
+
+- (IBAction)backgroundClicked:(id)sender {
+    [_emailText resignFirstResponder];
+    [_passwordText resignFirstResponder];
+}
 @end

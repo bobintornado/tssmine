@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ShowViewController : UIViewController
-
+@property (strong, nonatomic) IBOutlet UIWebView *shopWebView;
 @end

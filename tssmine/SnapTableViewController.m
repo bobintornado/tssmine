@@ -71,6 +71,7 @@
             }
         }
     }
+    
     NSMutableArray *items = [[NSMutableArray alloc] init];
     
     [items addObject:@"http://tssphotos.s3.amazonaws.com/photos/photos/000/000/001/original/2013-10-31_19.54.00.jpg?1383409321"];
@@ -78,7 +79,9 @@
 
     [items addObject:@"http://tssphotos.s3.amazonaws.com/photos/photos/000/000/003/original/2013-01-29_09.00.10.jpg?1383416342"];
 
-    [cell.imageView setImageWithURL:[NSURL URLWithString:[items objectAtIndex:indexPath.row]]  placeholderImage:[UIImage imageNamed:@"Hisoka.jpg"]];
+    [cell.tssPhoto setImageWithURL:[NSURL URLWithString:[items objectAtIndex:indexPath.row]]  placeholderImage:[UIImage imageNamed:@"Hisoka.jpg"]];
+    
+    cell.tssPhotoLable.text = @"Post by bob at 05:00am";
     
     return cell;
 }
