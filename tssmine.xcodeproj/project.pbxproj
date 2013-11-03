@@ -139,27 +139,14 @@
 		D98BF15E182550EC00DEE19B /* tssmine */ = {
 			isa = PBXGroup;
 			children = (
+				D99E50041826ABB0005F4D32 /* View */,
+				D99E50031826AB91005F4D32 /* Controller */,
+				D99E50021826AB74005F4D32 /* Model */,
 				D98BF167182550EC00DEE19B /* AppDelegate.h */,
 				D98BF168182550EC00DEE19B /* AppDelegate.m */,
 				D98BF16A182550EC00DEE19B /* Main.storyboard */,
 				D98BF173182550EC00DEE19B /* Images.xcassets */,
 				D98BF15F182550EC00DEE19B /* Supporting Files */,
-				D98BF1901825514800DEE19B /* HomeTableViewController.h */,
-				D98BF1911825514800DEE19B /* HomeTableViewController.m */,
-				D98BF1931825523900DEE19B /* ShowViewController.h */,
-				D98BF1941825523900DEE19B /* ShowViewController.m */,
-				D98BF196182552FF00DEE19B /* SnapTableViewController.h */,
-				D98BF197182552FF00DEE19B /* SnapTableViewController.m */,
-				D98BF1991825539A00DEE19B /* DesignViewController.h */,
-				D98BF19A1825539A00DEE19B /* DesignViewController.m */,
-				D98BF19C182553AD00DEE19B /* ProfileViewController.h */,
-				D98BF19D182553AD00DEE19B /* ProfileViewController.m */,
-				D98BF19F18255F5500DEE19B /* TssPhoto.h */,
-				D98BF1A018255F5500DEE19B /* TssPhoto.m */,
-				D98BF1A21825614500DEE19B /* TssUser.h */,
-				D98BF1A31825614500DEE19B /* TssUser.m */,
-				D98BF1A5182570D400DEE19B /* TssPhotoCell.h */,
-				D98BF1A6182570D400DEE19B /* TssPhotoCell.m */,
 			);
 			path = tssmine;
 			sourceTree = "<group>";
@@ -191,6 +178,43 @@
 				D98BF183182550EC00DEE19B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D99E50021826AB74005F4D32 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D98BF19F18255F5500DEE19B /* TssPhoto.h */,
+				D98BF1A018255F5500DEE19B /* TssPhoto.m */,
+				D98BF1A21825614500DEE19B /* TssUser.h */,
+				D98BF1A31825614500DEE19B /* TssUser.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		D99E50031826AB91005F4D32 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D98BF1901825514800DEE19B /* HomeTableViewController.h */,
+				D98BF1911825514800DEE19B /* HomeTableViewController.m */,
+				D98BF1931825523900DEE19B /* ShowViewController.h */,
+				D98BF1941825523900DEE19B /* ShowViewController.m */,
+				D98BF196182552FF00DEE19B /* SnapTableViewController.h */,
+				D98BF197182552FF00DEE19B /* SnapTableViewController.m */,
+				D98BF1991825539A00DEE19B /* DesignViewController.h */,
+				D98BF19A1825539A00DEE19B /* DesignViewController.m */,
+				D98BF19C182553AD00DEE19B /* ProfileViewController.h */,
+				D98BF19D182553AD00DEE19B /* ProfileViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		D99E50041826ABB0005F4D32 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D98BF1A5182570D400DEE19B /* TssPhotoCell.h */,
+				D98BF1A6182570D400DEE19B /* TssPhotoCell.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
