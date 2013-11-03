@@ -12,9 +12,9 @@
 
 @implementation TssPhotosManager
 
-- (void)receivedTssPhotosJSON{
+- (void)fetchTssPhotos{
     
-    [self.communicator retrieveAll];
+    [self.communicator tryFetchingAll];
 }
 
 #pragma mark - TssPhotoCommunicatorDelegate

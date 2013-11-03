@@ -11,7 +11,7 @@
 
 @implementation TssPhotoCommunicator
 
-- (void)retrieveAll{
+- (void)tryFetchingAll{
     NSURL *url = [[NSURL alloc] initWithString:@"http://tss-back-end.herokuapp.com/photos.json"];
     [NSURLConnection sendAsynchronousRequest:[[NSURLRequest alloc] initWithURL:url] queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
         

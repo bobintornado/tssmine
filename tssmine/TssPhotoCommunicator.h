@@ -12,8 +12,8 @@
 
 @interface TssPhotoCommunicator : NSObject
 
-@property (weak,nonatomic) id <TssPhotoCommunicatorDelegate> delegate;
+@property (weak,nonatomic) id<TssPhotoCommunicatorDelegate> delegate;
 
--(void)retrieveAll;
+-(void)tryFetchingAll;
 
 @end

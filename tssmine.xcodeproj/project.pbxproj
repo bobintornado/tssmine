@@ -201,7 +201,6 @@
 				D99E50051826C58E005F4D32 /* TssPhotoCommunicatorDelegate.h */,
 				D99E50061826C69C005F4D32 /* TssPhotoCommunicator.h */,
 				D99E50071826C69C005F4D32 /* TssPhotoCommunicator.m */,
-				D99E50091826C93F005F4D32 /* TssPhotoBuilder.h */,
 				D99E500A1826C93F005F4D32 /* TssPhotoBuilder.m */,
 				D99E500C1826CEB4005F4D32 /* TssPhotoManagerDelegate.h */,
 				D99E500D1826CF23005F4D32 /* TssPhotosManager.h */,
@@ -215,6 +214,7 @@
 			children = (
 				D98BF1901825514800DEE19B /* HomeTableViewController.h */,
 				D98BF1911825514800DEE19B /* HomeTableViewController.m */,
+				D99E50091826C93F005F4D32 /* TssPhotoBuilder.h */,
 				D98BF1931825523900DEE19B /* ShowViewController.h */,
 				D98BF1941825523900DEE19B /* ShowViewController.m */,
 				D98BF196182552FF00DEE19B /* SnapTableViewController.h */,

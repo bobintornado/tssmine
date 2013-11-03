@@ -15,7 +15,7 @@
 @property (strong,nonatomic) NSString *photo;
 @property (strong,nonatomic) NSString *created_at;
 
-- (id)initWithDescription:(NSString *)description Owner:(NSString *)owner Image:(NSString *)image
+- (id)initWithDescription:(NSString *)description Owner:(NSNumber *)owner Image:(NSString *)image
                Created_at:(NSString *)created_at;
 
 @end

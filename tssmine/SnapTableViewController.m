@@ -43,15 +43,17 @@
     
     _manager = [[TssPhotosManager alloc] init];
     _manager.communicator = [[TssPhotoCommunicator alloc] init];
+    
     _manager.communicator.delegate = _manager;
     _manager.delegate = self;
-    [_manager receivedTssPhotosJSON];
+    
+    [_manager fetchTssPhotos];
 }
 
 - (void)didReceiveTssPhotos:(NSArray *)tssPhotos
 {
     _tssPhotos = tssPhotos;
-    [self.tableView reloadData];
+    [self.feedsTableView reloadData];
 }
 
 - (void) fetchingTssPhotosFailedWithError:(NSError *)error {

@@ -28,12 +28,7 @@
     } else {
         for(NSDictionary *tssPhotoDic in tssPhotoArray) {
             TssPhoto *aTssPhoto = [[TssPhoto alloc] init];
-            for (NSString *key in tssPhotoDic) {
-                //this part of code needed to further understood -- mark by Bob
-                if ([TssPhoto respondsToSelector:NSSelectorFromString(key)]) {
-                    [TssPhoto setValue:[tssPhotoDic valueForKey:key] forKey:key];
-                }
-            }
+            aTssPhoto = [aTssPhoto initWithDescription:tssPhotoDic[@"description"] Owner:tssPhotoDic[@"user_id"] Image:tssPhotoDic[@"photo"] Created_at: @"2013-11-4"];
             [tssPhotos addObject:aTssPhoto];
         }
     }

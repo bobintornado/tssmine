@@ -18,6 +18,6 @@
 @property (strong,nonatomic) TssPhotoCommunicator *communicator;
 @property (weak, nonatomic) id <TssPhotoManagerDelegate> delegate;
 
-- (void)receivedTssPhotosJSON;
+- (void)fetchTssPhotos;
 
 @end

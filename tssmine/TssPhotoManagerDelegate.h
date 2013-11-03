@@ -10,7 +10,7 @@
 
 @protocol TssPhotoManagerDelegate <NSObject>
 
-- (void)didReceiveTssPhotos:(NSArray *)groups;
+- (void)didReceiveTssPhotos:(NSArray *)tssPhotos;
 - (void)fetchingTssPhotosFailedWithError:(NSError *)error;
 
 @end

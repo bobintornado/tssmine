@@ -146,6 +146,9 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Snap" image="Picasa" id="QXN-E3-d4S"/>
+                    <connections>
+                        <outlet property="feedsTableView" destination="hZz-aK-dU5" id="nCG-bn-TOy"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LXM-th-viW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
