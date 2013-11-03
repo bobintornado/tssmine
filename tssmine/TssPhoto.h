@@ -11,11 +11,11 @@
 @interface TssPhoto : NSObject
 
 @property (strong,nonatomic) NSString *description;
-@property (strong,nonatomic) NSNumber *owner;
-@property (strong,nonatomic) NSData *image;
+@property (strong,nonatomic) NSNumber *user_id;
+@property (strong,nonatomic) NSString *photo;
 @property (strong,nonatomic) NSString *created_at;
 
-- (id)initWithDescription:(NSString *)description Owner:(NSString *)owner Image:(NSData *)image
+- (id)initWithDescription:(NSString *)description Owner:(NSString *)owner Image:(NSString *)image
                Created_at:(NSString *)created_at;
 
 @end

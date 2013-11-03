@@ -10,13 +10,13 @@
 
 @implementation TssPhoto
 
-- (id)initWithDescription:(NSString *)description Owner:(NSNumber *)owner Image:(NSData *)image
+- (id)initWithDescription:(NSString *)description Owner:(NSNumber *)owner Image:(NSString *)image
                Created_at:(NSString *)created_at{
     self = [super init];
     if (self) {
         _description = description;
-        _owner = owner;
-        _image = image;
+        _user_id = owner;
+        _photo = image;
         _created_at = created_at;
     }
     return self;

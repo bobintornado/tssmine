@@ -28,6 +28,9 @@
 		D98BF1A118255F5500DEE19B /* TssPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF1A018255F5500DEE19B /* TssPhoto.m */; };
 		D98BF1A41825614500DEE19B /* TssUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF1A31825614500DEE19B /* TssUser.m */; };
 		D98BF1A7182570D400DEE19B /* TssPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF1A6182570D400DEE19B /* TssPhotoCell.m */; };
+		D99E50081826C69C005F4D32 /* TssPhotoCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = D99E50071826C69C005F4D32 /* TssPhotoCommunicator.m */; };
+		D99E500B1826C93F005F4D32 /* TssPhotoBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = D99E500A1826C93F005F4D32 /* TssPhotoBuilder.m */; };
+		D99E500F1826CF23005F4D32 /* TssPhotosManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D99E500E1826CF23005F4D32 /* TssPhotosManager.m */; };
 		E615AE07483A48CF9CBF7FAF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B5E9579A6C24A9E8800CED8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +80,14 @@
 		D98BF1A31825614500DEE19B /* TssUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TssUser.m; sourceTree = "<group>"; };
 		D98BF1A5182570D400DEE19B /* TssPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TssPhotoCell.h; sourceTree = "<group>"; };
 		D98BF1A6182570D400DEE19B /* TssPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TssPhotoCell.m; sourceTree = "<group>"; };
+		D99E50051826C58E005F4D32 /* TssPhotoCommunicatorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TssPhotoCommunicatorDelegate.h; sourceTree = "<group>"; };
+		D99E50061826C69C005F4D32 /* TssPhotoCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TssPhotoCommunicator.h; sourceTree = "<group>"; };
+		D99E50071826C69C005F4D32 /* TssPhotoCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TssPhotoCommunicator.m; sourceTree = "<group>"; };
+		D99E50091826C93F005F4D32 /* TssPhotoBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TssPhotoBuilder.h; sourceTree = "<group>"; };
+		D99E500A1826C93F005F4D32 /* TssPhotoBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TssPhotoBuilder.m; sourceTree = "<group>"; };
+		D99E500C1826CEB4005F4D32 /* TssPhotoManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TssPhotoManagerDelegate.h; sourceTree = "<group>"; };
+		D99E500D1826CF23005F4D32 /* TssPhotosManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TssPhotosManager.h; sourceTree = "<group>"; };
+		D99E500E1826CF23005F4D32 /* TssPhotosManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TssPhotosManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +198,14 @@
 				D98BF1A018255F5500DEE19B /* TssPhoto.m */,
 				D98BF1A21825614500DEE19B /* TssUser.h */,
 				D98BF1A31825614500DEE19B /* TssUser.m */,
+				D99E50051826C58E005F4D32 /* TssPhotoCommunicatorDelegate.h */,
+				D99E50061826C69C005F4D32 /* TssPhotoCommunicator.h */,
+				D99E50071826C69C005F4D32 /* TssPhotoCommunicator.m */,
+				D99E50091826C93F005F4D32 /* TssPhotoBuilder.h */,
+				D99E500A1826C93F005F4D32 /* TssPhotoBuilder.m */,
+				D99E500C1826CEB4005F4D32 /* TssPhotoManagerDelegate.h */,
+				D99E500D1826CF23005F4D32 /* TssPhotosManager.h */,
+				D99E500E1826CF23005F4D32 /* TssPhotosManager.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -354,7 +373,10 @@
 				D98BF169182550EC00DEE19B /* AppDelegate.m in Sources */,
 				D98BF1921825514800DEE19B /* HomeTableViewController.m in Sources */,
 				D98BF165182550EC00DEE19B /* main.m in Sources */,
+				D99E500F1826CF23005F4D32 /* TssPhotosManager.m in Sources */,
 				D98BF19E182553AD00DEE19B /* ProfileViewController.m in Sources */,
+				D99E50081826C69C005F4D32 /* TssPhotoCommunicator.m in Sources */,
+				D99E500B1826C93F005F4D32 /* TssPhotoBuilder.m in Sources */,
 				D98BF1A41825614500DEE19B /* TssUser.m in Sources */,
 				D98BF1A7182570D400DEE19B /* TssPhotoCell.m in Sources */,
 				D98BF19B1825539A00DEE19B /* DesignViewController.m in Sources */,

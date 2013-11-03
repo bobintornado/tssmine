@@ -9,8 +9,14 @@
 #import "SnapTableViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "TssPhotoCell.h"
+#import "TssPhoto.h"
+#import "TssPhotosManager.h"
+#import "TssPhotoCommunicator.h"
 
-@interface SnapTableViewController ()
+@interface SnapTableViewController () <TssPhotoManagerDelegate> {
+    NSArray *_tssPhotos;
+    TssPhotosManager *_manager;
+}
 
 @end
 
@@ -34,7 +40,22 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    _manager = [[TssPhotosManager alloc] init];
+    _manager.communicator = [[TssPhotoCommunicator alloc] init];
+    _manager.communicator.delegate = _manager;
+    _manager.delegate = self;
+    [_manager receivedTssPhotosJSON];
+}
 
+- (void)didReceiveTssPhotos:(NSArray *)tssPhotos
+{
+    _tssPhotos = tssPhotos;
+    [self.tableView reloadData];
+}
+
+- (void) fetchingTssPhotosFailedWithError:(NSError *)error {
+    NSLog(@"Error %@; %@", error, [error localizedDescription]);
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,34 +75,20 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 3;
+    return _tssPhotos.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *SnapIdentifier = @"SnapIdentifier";
-    TssPhotoCell *cell = [tableView dequeueReusableCellWithIdentifier:SnapIdentifier];
+    TssPhotoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SnapIdentifier" forIndexPath:indexPath];
     
-    if (cell == nil) {
-        NSArray* topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"ImageCell" owner:self options:nil];
-        for (id currentObject in topLevelObjects) {
-            if ([currentObject isKindOfClass:[UITableViewCell class]]) {
-                cell = (TssPhotoCell *)currentObject;
-                break;
-            }
-        }
-    }
+    TssPhoto *photo = _tssPhotos[indexPath.row];
     
-    NSMutableArray *items = [[NSMutableArray alloc] init];
-    
-    [items addObject:@"http://tssphotos.s3.amazonaws.com/photos/photos/000/000/001/original/2013-10-31_19.54.00.jpg?1383409321"];
-    [items addObject:@"http://tssphotos.s3.amazonaws.com/photos/photos/000/000/002/original/2013-09-03_17.13.23.jpg?1383416252"];
+    NSString *imageURL = [photo photo];
 
-    [items addObject:@"http://tssphotos.s3.amazonaws.com/photos/photos/000/000/003/original/2013-01-29_09.00.10.jpg?1383416342"];
-
-    [cell.tssPhoto setImageWithURL:[NSURL URLWithString:[items objectAtIndex:indexPath.row]]  placeholderImage:[UIImage imageNamed:@"Hisoka.jpg"]];
+    [cell.tssPhoto setImageWithURL:[NSURL URLWithString:imageURL]];
     
-    cell.tssPhotoLable.text = @"Post by bob at 05:00am";
+    [cell.tssPhotoLable setText:[NSString stringWithFormat:@"Posted by %@ at %@", [photo user_id], [photo created_at]]];
     
     return cell;
 }
