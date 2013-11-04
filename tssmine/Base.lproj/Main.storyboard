@@ -105,7 +105,7 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RT5-1g-AFF">
-                                            <rect key="frame" x="93" y="26" width="227" height="21"/>
+                                            <rect key="frame" x="20" y="26" width="285" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -207,7 +207,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="loginClicked:" destination="MXZ-r5-Uxw" eventType="touchUpInside" id="2N9-22-fXO"/>
+                                    <action selector="loginClicked:" destination="MXZ-r5-Uxw" eventType="touchUpInside" id="86b-ZP-fe9"/>
                                 </connections>
                             </button>
                         </subviews>

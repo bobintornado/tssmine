@@ -27,9 +27,17 @@
         NSLog(@"Error parsing JSON: %@", localError);
     } else {
         for(NSDictionary *tssPhotoDic in tssPhotoArray) {
-            TssPhoto *aTssPhoto = [[TssPhoto alloc] init];
-            aTssPhoto = [aTssPhoto initWithDescription:tssPhotoDic[@"description"] Owner:tssPhotoDic[@"user_id"] Image:tssPhotoDic[@"photo"] Created_at: @"2013-11-4"];
-            [tssPhotos addObject:aTssPhoto];
+            
+            NSString *urlOfAnActualTssPhoto = tssPhotoDic[@"url"];
+            NSURL *url = [[NSURL alloc] initWithString:urlOfAnActualTssPhoto];
+            [NSURLConnection sendAsynchronousRequest:[[NSURLRequest alloc] initWithURL:url] queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+                
+                NSDictionary *aTssPhotoJson = [NSJSONSerialization JSONObjectWithData: data options: NSJSONReadingMutableContainers error: &error];
+                
+                TssPhoto *aTssPhoto = [[TssPhoto alloc] init];
+                aTssPhoto = [aTssPhoto initWithDescription:aTssPhotoJson[@"description"] Owner:aTssPhotoJson[@"user_id"] Image:aTssPhotoJson[@"photo"] Created_at:aTssPhotoJson[@"created_at"]];
+                [tssPhotos addObject:aTssPhoto];
+            }];
         }
     }
     return tssPhotos;

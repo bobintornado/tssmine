@@ -22,6 +22,8 @@
     }
     return self;
 }
+- (IBAction)loginClicked:(id)sender {
+}
 
 - (void)viewDidLoad
 {
@@ -33,9 +35,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)loginClicked:(id)sender {
 }
 
 - (IBAction)backgroundClicked:(id)sender {

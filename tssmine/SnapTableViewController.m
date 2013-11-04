@@ -63,7 +63,7 @@
 - (void)changeSorting
 {
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]
-                                        initWithKey:@"created_at" ascending:self.ascending];
+                                        initWithKey:@"created_at" ascending:NO];
    NSArray *sortDescriptors = @[sortDescriptor];
     
     _tssPhotos = [_tssPhotos sortedArrayUsingDescriptors:sortDescriptors];
