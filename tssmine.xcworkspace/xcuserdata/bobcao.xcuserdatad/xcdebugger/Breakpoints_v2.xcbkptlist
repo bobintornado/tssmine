@@ -95,7 +95,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "93"
             endingLineNumber = "93"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkName = "-didReceiveMemoryWarning"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -111,8 +111,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "92"
             endingLineNumber = "92"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
-            landmarkType = "5">
+            landmarkName = "@implementation SnapTableViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

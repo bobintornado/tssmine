@@ -11,4 +11,5 @@
 @interface SnapTableViewController : UITableViewController
 @property (strong, nonatomic) IBOutlet UITableView *feedsTableView;
 
+
 @end

@@ -16,7 +16,9 @@
 @interface SnapTableViewController () <TssPhotoManagerDelegate> {
     NSArray *_tssPhotos;
     TssPhotosManager *_manager;
+   
 }
+@property (assign, nonatomic) BOOL ascending;
 
 @end
 
@@ -48,6 +50,36 @@
     _manager.delegate = self;
     
     [_manager fetchTssPhotos];
+    
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc]
+                                        init];
+    refreshControl.tintColor = [UIColor magentaColor];
+    
+    [refreshControl addTarget:self action:@selector(changeSorting) forControlEvents:UIControlEventValueChanged];
+    
+    self.refreshControl = refreshControl;
+}
+
+- (void)changeSorting
+{
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]
+                                        initWithKey:@"created_at" ascending:self.ascending];
+   NSArray *sortDescriptors = @[sortDescriptor];
+    
+    _tssPhotos = [_tssPhotos sortedArrayUsingDescriptors:sortDescriptors];
+    
+    _ascending = !_ascending;
+    
+    [self performSelector:@selector(updateTable) withObject:nil
+               afterDelay:1];
+}
+
+- (void)updateTable
+{
+    
+    [self.tableView reloadData];
+    
+    [self.refreshControl endRefreshing];
 }
 
 - (void)didReceiveTssPhotos:(NSArray *)tssPhotos
