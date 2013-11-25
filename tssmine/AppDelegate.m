@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "NSRails.h"
+#import <Parse/Parse.h>
 
 @implementation AppDelegate
 
@@ -15,6 +16,9 @@
 {
     // Override point for customization after application launch.
     [NSRConfig defaultConfig].appURL = @"http://tss-back-end.herokuapp.com";
+    [Parse setApplicationId:@"dwus9w9uMQdXlXxXMgvZawLzmKEhmKbGBGdLkInZ"
+                  clientKey:@"fXJDUlzqfqpcXJZDQAd62uDF5KmwA0mWz1qOHthT"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     return YES;
 }
 							
