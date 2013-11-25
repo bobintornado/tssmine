@@ -7,12 +7,14 @@
 //
 
 #import "AppDelegate.h"
+#import "NSRails.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [NSRConfig defaultConfig].appURL = @"http://tss-back-end.herokuapp.com";
     return YES;
 }
 							

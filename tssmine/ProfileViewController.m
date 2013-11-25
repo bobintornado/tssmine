@@ -7,6 +7,7 @@
 //
 
 #import "ProfileViewController.h"
+#import "TssUser.h"
 
 @interface ProfileViewController ()
 
@@ -23,6 +24,7 @@
     return self;
 }
 - (IBAction)loginClicked:(id)sender {
+    
 }
 
 - (void)viewDidLoad
@@ -41,4 +43,16 @@
     [_emailText resignFirstResponder];
     [_passwordText resignFirstResponder];
 }
+
+- (void) alertStatus:(NSString *)msg :(NSString *)title
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
+                                                        message:msg
+                                                       delegate:self
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil, nil];
+    
+    [alertView show];
+}
+
 @end

@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSRails.h"
 
-@interface TssUser : NSObject
+@interface TssUser: NSRRemoteObject
 
 @property (strong,nonatomic) NSString *email;
 @property (strong,nonatomic) NSString *name;
+@property (strong,nonatomic) NSString *password;
 @property (strong,nonatomic) NSNumber *point;
-@property (strong,nonatomic) NSData *profile;
+@property (strong,nonatomic) NSString *profile;
 
 @end

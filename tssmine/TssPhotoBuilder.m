@@ -23,6 +23,8 @@
     
     NSMutableArray *tssPhotos = [[NSMutableArray alloc] init];
     
+    
+    
     if (!tssPhotoArray){
         NSLog(@"Error parsing JSON: %@", localError);
     } else {

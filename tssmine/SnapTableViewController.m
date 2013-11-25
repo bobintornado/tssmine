@@ -62,9 +62,10 @@
 
 - (void)changeSorting
 {
+    
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]
                                         initWithKey:@"created_at" ascending:NO];
-   NSArray *sortDescriptors = @[sortDescriptor];
+    NSArray *sortDescriptors = @[sortDescriptor];
     
     _tssPhotos = [_tssPhotos sortedArrayUsingDescriptors:sortDescriptors];
     
@@ -76,6 +77,7 @@
 
 - (void)updateTable
 {
+    //[_manager fetchTssPhotos];
     
     [self.tableView reloadData];
     

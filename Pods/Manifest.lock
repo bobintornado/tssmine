@@ -19,6 +19,7 @@ PODS:
   - AFNetworking/Serialization (2.0.2)
   - AFNetworking/UIKit (2.0.2):
     - AFNetworking/NSURLConnection
+  - NSRails (2.0.3)
   - SBJson (3.2)
   - SDWebImage (3.5):
     - SDWebImage/Core
@@ -26,11 +27,13 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - NSRails
   - SBJson (~> 3.2)
   - SDWebImage (~> 3.5)
 
 SPEC CHECKSUMS:
   AFNetworking: 22de50ae71ab1c4859773f61068d6fcd1d8f9a4d
+  NSRails: e8cf8a44ec777a63002ecae69f0ac0f9ececc6c4
   SBJson: e60b4dc22448c2ae1e754b523a4ab53408e85c8d
   SDWebImage: f1a72472f8a2d54445f1fedafe2090593d9caf7f
 

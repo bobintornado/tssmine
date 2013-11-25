@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-NSRails.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-SBJson.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>13EA1B779F724D8D81B728F5</key>
+		<key>102F0DFE6B0F47E5BDEEA1B4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B04C231B4022433A9D3AFD95</key>
+		<key>1097159B7A4A4C349D398E69</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CC199BDBC07949E8B90DD8C5</key>
+		<key>5746B12817D5468C9B6090EB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F6AC12FD8B9C4460B191F1E7</key>
+		<key>63FAAD8501324DB48AB108F3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A41C6819FF594D6AA081242F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
