@@ -47,9 +47,9 @@
     if (![PFUser currentUser] || true){
         ProfileViewController *logInViewController = self.tabBarController.viewControllers[4];
         [logInViewController setDelegate:self];
-        PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
-        [signUpViewController setDelegate:self];
-        [logInViewController setSignUpController:signUpViewController];
+        //PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
+        //[signUpViewController setDelegate:self];
+        //[logInViewController setSignUpController:signUpViewController];
     }
 
 }
@@ -74,5 +74,6 @@
     [self dismissViewControllerAnimated:YES completion:NULL];
 
 }
+
 
 @end

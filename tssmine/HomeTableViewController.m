@@ -35,7 +35,7 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     if (![PFUser currentUser] || true){
         ProfileViewController *controller = self.tabBarController.viewControllers[4];
-        [controller setFacebookPermissions:[NSArray arrayWithObjects:@"email", @"name",nil]];
+        [controller setFacebookPermissions:[NSArray arrayWithObjects:@"friends_about_me", nil]];
         [controller setFields:PFLogInFieldsFacebook | PFLogInFieldsDefault];
     }
 }
