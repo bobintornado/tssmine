@@ -39,7 +39,6 @@
 		D9F1C4F6184376EC00CC0679 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F1C4F5184376EC00CC0679 /* MobileCoreServices.framework */; };
 		D9F1C4F8184376F600CC0679 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F1C4F7184376F600CC0679 /* QuartzCore.framework */; };
 		D9F1C4FA184376FE00CC0679 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F1C4F9184376FE00CC0679 /* Security.framework */; };
-		D9F1C4FC1843770500CC0679 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F1C4FB1843770500CC0679 /* StoreKit.framework */; };
 		D9F1C4FE1843770D00CC0679 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F1C4FD1843770D00CC0679 /* SystemConfiguration.framework */; };
 		D9F1C50018437D9700CC0679 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F1C4FF18437D9700CC0679 /* FacebookSDK.framework */; };
 		E615AE07483A48CF9CBF7FAF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B5E9579A6C24A9E8800CED8 /* libPods.a */; };
@@ -107,7 +106,6 @@
 		D9F1C4F5184376EC00CC0679 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		D9F1C4F7184376F600CC0679 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D9F1C4F9184376FE00CC0679 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		D9F1C4FB1843770500CC0679 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D9F1C4FD1843770D00CC0679 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D9F1C4FF18437D9700CC0679 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,7 +116,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9F1C4FE1843770D00CC0679 /* SystemConfiguration.framework in Frameworks */,
-				D9F1C4FC1843770500CC0679 /* StoreKit.framework in Frameworks */,
 				D9F1C4FA184376FE00CC0679 /* Security.framework in Frameworks */,
 				D9F1C4F8184376F600CC0679 /* QuartzCore.framework in Frameworks */,
 				D9F1C4F6184376EC00CC0679 /* MobileCoreServices.framework in Frameworks */,
@@ -173,7 +170,6 @@
 			children = (
 				D9F1C4FF18437D9700CC0679 /* FacebookSDK.framework */,
 				D9F1C4FD1843770D00CC0679 /* SystemConfiguration.framework */,
-				D9F1C4FB1843770500CC0679 /* StoreKit.framework */,
 				D9F1C4F9184376FE00CC0679 /* Security.framework */,
 				D9F1C4F7184376F600CC0679 /* QuartzCore.framework */,
 				D9F1C4F5184376EC00CC0679 /* MobileCoreServices.framework */,
@@ -331,6 +327,11 @@
 				TargetAttributes = {
 					D98BF154182550EC00DEE19B = {
 						DevelopmentTeam = Y793MV39VU;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
 					};
 					D98BF178182550EC00DEE19B = {
 						TestTargetID = D98BF154182550EC00DEE19B;
@@ -556,6 +557,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/bobcao/Desktop/tssmine,
@@ -565,7 +567,10 @@
 				GCC_PREFIX_HEADER = "tssmine/tssmine-Prefix.pch";
 				INFOPLIST_FILE = "tssmine/tssmine-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -577,6 +582,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/bobcao/Desktop/tssmine,
@@ -586,7 +592,10 @@
 				GCC_PREFIX_HEADER = "tssmine/tssmine-Prefix.pch";
 				INFOPLIST_FILE = "tssmine/tssmine-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -7,11 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
-@interface ProfileViewController : UIViewController
-@property (strong, nonatomic) IBOutlet UITextField *emailText;
-@property (strong, nonatomic) IBOutlet UITextField *passwordText;
-- (IBAction)loginClicked:(id)sender;
-- (IBAction)backgroundClicked:(id)sender;
-
+@interface ProfileViewController : PFLogInViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 @end

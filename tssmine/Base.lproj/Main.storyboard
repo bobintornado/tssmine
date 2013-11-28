@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
@@ -157,74 +157,24 @@
         <!--Profile View Controller - Profile-->
         <scene sceneID="rvs-Ig-m1c">
             <objects>
-                <viewController id="MXZ-r5-Uxw" customClass="ProfileViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginviewcontroller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MXZ-r5-Uxw" customClass="ProfileViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="uAB-U6-kPe"/>
-                        <viewControllerLayoutGuide type="bottom" id="aVQ-zL-BwT"/>
+                        <viewControllerLayoutGuide type="top" id="bhn-Tt-ddH"/>
+                        <viewControllerLayoutGuide type="bottom" id="nOM-7w-bGH"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Dm5-Ys-idS" customClass="UIControl">
+                    <view key="view" contentMode="scaleToFill" id="ZSC-rq-653" userLabel="loginview" customClass="PFLogInView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tlg-6L-A8g">
-                                <rect key="frame" x="131" y="202" width="157" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="backgroundClicked:" destination="dwS-um-eIO" eventType="editingDidEndOnExit" id="9nZ-14-7aJ"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iol-yA-WAZ">
-                                <rect key="frame" x="131" y="259" width="157" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                <connections>
-                                    <action selector="backgroundClicked:" destination="dwS-um-eIO" eventType="editingDidEndOnExit" id="b3L-0K-8Of"/>
-                                </connections>
-                            </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgu-S1-cAp">
-                                <rect key="frame" x="50" y="206" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpE-U4-uFc">
-                                <rect key="frame" x="33" y="263" width="76" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="YYv-Bp-bDa">
-                                <rect key="frame" x="40" y="39" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmN-W7-icE">
-                                <rect key="frame" x="141" y="315" width="38" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Login">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="loginClicked:" destination="MXZ-r5-Uxw" eventType="touchUpInside" id="86b-ZP-fe9"/>
-                                </connections>
-                            </button>
-                        </subviews>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <connections>
-                            <action selector="backgroundClicked:" destination="MXZ-r5-Uxw" eventType="touchUpInside" id="pyI-S7-e4U"/>
-                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="Contact" id="9l3-Iz-PEr"/>
                     <connections>
-                        <outlet property="emailText" destination="Tlg-6L-A8g" id="ijn-Xw-Sye"/>
-                        <outlet property="passwordText" destination="iol-yA-WAZ" id="cvP-LL-AEE"/>
+                        <outlet property="loginview" destination="ZSC-rq-653" id="lA0-Wd-IGk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dwS-um-eIO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="116" y="1534"/>
+            <point key="canvasLocation" x="116" y="1558"/>
         </scene>
         <!--Design View Controller - Design-->
         <scene sceneID="Aem-fh-jck">
@@ -252,7 +202,6 @@
         <image name="Home" width="30" height="30"/>
         <image name="Picasa" width="25" height="25"/>
         <image name="Shop" width="30" height="30"/>
-        <image name="logo" width="231" height="89"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

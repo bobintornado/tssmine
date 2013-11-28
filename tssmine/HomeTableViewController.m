@@ -7,6 +7,7 @@
 //
 
 #import "HomeTableViewController.h"
+#import "ProfileViewController.h"
 
 @interface HomeTableViewController ()
 
@@ -32,6 +33,11 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    if (![PFUser currentUser] || true){
+        ProfileViewController *controller = self.tabBarController.viewControllers[4];
+        [controller setFacebookPermissions:[NSArray arrayWithObjects:@"email", @"name",nil]];
+        [controller setFields:PFLogInFieldsFacebook | PFLogInFieldsDefault];
+    }
 }
 
 - (void)didReceiveMemoryWarning
