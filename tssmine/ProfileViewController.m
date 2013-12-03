@@ -12,8 +12,6 @@
 
 @interface ProfileViewController ()
 
-@property (strong, nonatomic) IBOutlet PFLogInView *loginview;
-
 @end
 
 @implementation ProfileViewController
@@ -27,10 +25,6 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -38,20 +32,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-}
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     if (![PFUser currentUser] || true){
         ProfileViewController *logInViewController = self.tabBarController.viewControllers[4];
         [logInViewController setDelegate:self];
-        //PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
-        //[signUpViewController setDelegate:self];
-        //[logInViewController setSignUpController:signUpViewController];
     }
-
 }
 
 // Sent to the delegate to determine whether the log in request should be submitted to the server.

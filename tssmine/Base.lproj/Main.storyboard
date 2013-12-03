@@ -158,19 +158,7 @@
         <scene sceneID="rvs-Ig-m1c">
             <objects>
                 <viewController storyboardIdentifier="loginviewcontroller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MXZ-r5-Uxw" customClass="ProfileViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bhn-Tt-ddH"/>
-                        <viewControllerLayoutGuide type="bottom" id="nOM-7w-bGH"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ZSC-rq-653" userLabel="loginview" customClass="PFLogInView">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="Contact" id="9l3-Iz-PEr"/>
-                    <connections>
-                        <outlet property="loginview" destination="ZSC-rq-653" id="lA0-Wd-IGk"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dwS-um-eIO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -188,10 +176,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="jYq-dp-dSy" appends="YES" id="GMa-Yi-4ID"/>
+                            <outletCollection property="gestureRecognizers" destination="4R5-eJ-Sg7" appends="YES" id="y0d-e7-As7"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Design" image="Favorites" id="xuK-Hg-q1Z"/>
+                    <connections>
+                        <outlet property="longpress" destination="4R5-eJ-Sg7" id="FZV-y0-DtZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uIe-6z-b23" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="jYq-dp-dSy">
+                    <connections>
+                        <action selector="swipe:" destination="ehz-sP-pEw" id="0SS-Ce-qp9"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="4R5-eJ-Sg7">
+                    <connections>
+                        <action selector="longpress:" destination="ehz-sP-pEw" id="Dun-jP-dgd"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="116" y="814"/>
         </scene>

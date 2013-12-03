@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DesignViewController : UIViewController
+@interface DesignViewController : UIViewController <UIActionSheetDelegate>
+@property (strong, nonatomic) IBOutlet UILongPressGestureRecognizer *longpress;
 
 @end

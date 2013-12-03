@@ -15,12 +15,15 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    //heroku
     [NSRConfig defaultConfig].appURL = @"http://tss-back-end.herokuapp.com";
-    // Register our Parse Application.
+    // Register Parse Application.
     [Parse setApplicationId:@"dwus9w9uMQdXlXxXMgvZawLzmKEhmKbGBGdLkInZ"
                   clientKey:@"fXJDUlzqfqpcXJZDQAd62uDF5KmwA0mWz1qOHthT"];
-    // Initialize Parse's Facebook Utilities singleton. This uses the FacebookAppID we specified in our App bundle's plist.
+    // Initialize Parse's Facebook Utilities singleton. This uses the FacebookAppID specified in App bundle's plist.
     [PFFacebookUtils initializeFacebook];
+    
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     return YES;
 }

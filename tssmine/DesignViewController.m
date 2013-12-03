@@ -8,7 +8,7 @@
 
 #import "DesignViewController.h"
 
-@interface DesignViewController ()
+@interface DesignViewController () 
 
 @end
 
@@ -34,5 +34,22 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)swipe:(id)sender {
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"abc" delegate:self cancelButtonTitle:@"cancel" destructiveButtonTitle:@"yes go ahead" otherButtonTitles:@"kill him",nil];
+    [sheet showInView:self.view];
+}
+- (IBAction)longpress:(UILongPressGestureRecognizer *)sender {
+    if (sender.state == UIGestureRecognizerStateEnded) {
+        NSLog(@"UIGestureRecognizerStateEnded");
+        //Do Whatever You want on End of Gesture
+    }
+    else if (sender.state == UIGestureRecognizerStateBegan){
+        NSLog(@"UIGestureRecognizerStateBegan.");
+        //Do Whatever You want on Began of Gesture
+        UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"abc" delegate:self cancelButtonTitle:@"cancel" destructiveButtonTitle:@"yes go ahead" otherButtonTitles:@"kill him",nil];
+        [sheet showInView:self.view];
+        
+    }
 
+}
 @end
