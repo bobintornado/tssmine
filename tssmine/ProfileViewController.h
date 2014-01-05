@@ -10,4 +10,7 @@
 #import <Parse/Parse.h>
 
 @interface ProfileViewController : PFLogInViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
+
+- (void)setProfileView;
+
 @end

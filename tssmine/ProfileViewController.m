@@ -8,13 +8,19 @@
 
 #import "ProfileViewController.h"
 #import "TssUser.h"
+#import "PviewController2ViewController.h"
 #import <Parse/Parse.h>
 
 @interface ProfileViewController ()
+@property (strong, nonatomic) IBOutlet UIScrollView *profileView;
 
 @end
 
 @implementation ProfileViewController
+
+- (void)setProfileView{
+    [self setView:_profileView];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,10 +41,6 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    if (![PFUser currentUser] || true){
-        ProfileViewController *logInViewController = self.tabBarController.viewControllers[4];
-        [logInViewController setDelegate:self];
-    }
 }
 
 // Sent to the delegate to determine whether the log in request should be submitted to the server.
@@ -57,10 +59,9 @@
 }
 
 // Sent to the delegate when a PFUser is logged in.
-- (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
+- (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user
+{
     [self dismissViewControllerAnimated:YES completion:NULL];
-
 }
-
 
 @end

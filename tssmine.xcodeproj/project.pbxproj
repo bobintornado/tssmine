@@ -31,6 +31,7 @@
 		D99E50081826C69C005F4D32 /* TssPhotoCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = D99E50071826C69C005F4D32 /* TssPhotoCommunicator.m */; };
 		D99E500B1826C93F005F4D32 /* TssPhotoBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = D99E500A1826C93F005F4D32 /* TssPhotoBuilder.m */; };
 		D99E500F1826CF23005F4D32 /* TssPhotosManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D99E500E1826CF23005F4D32 /* TssPhotosManager.m */; };
+		D9C2B5E81879522D008A5392 /* PviewController2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9C2B5E71879522D008A5392 /* PviewController2ViewController.m */; };
 		D9E637201847693800E0F703 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E6371F1847693800E0F703 /* Accounts.framework */; };
 		D9E637221847694500E0F703 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E637211847694500E0F703 /* AdSupport.framework */; };
 		D9E637241847694F00E0F703 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E637231847694F00E0F703 /* Social.framework */; };
@@ -103,6 +104,8 @@
 		D99E500C1826CEB4005F4D32 /* TssPhotoManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TssPhotoManagerDelegate.h; sourceTree = "<group>"; };
 		D99E500D1826CF23005F4D32 /* TssPhotosManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TssPhotosManager.h; sourceTree = "<group>"; };
 		D99E500E1826CF23005F4D32 /* TssPhotosManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TssPhotosManager.m; sourceTree = "<group>"; };
+		D9C2B5E61879522D008A5392 /* PviewController2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PviewController2ViewController.h; sourceTree = "<group>"; };
+		D9C2B5E71879522D008A5392 /* PviewController2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PviewController2ViewController.m; sourceTree = "<group>"; };
 		D9E6371F1847693800E0F703 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		D9E637211847694500E0F703 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		D9E637231847694F00E0F703 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -283,6 +286,8 @@
 				D98BF19A1825539A00DEE19B /* DesignViewController.m */,
 				D98BF19C182553AD00DEE19B /* ProfileViewController.h */,
 				D98BF19D182553AD00DEE19B /* ProfileViewController.m */,
+				D9C2B5E61879522D008A5392 /* PviewController2ViewController.h */,
+				D9C2B5E71879522D008A5392 /* PviewController2ViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -438,6 +443,7 @@
 			files = (
 				D98BF198182552FF00DEE19B /* SnapTableViewController.m in Sources */,
 				D98BF1A118255F5500DEE19B /* TssPhoto.m in Sources */,
+				D9C2B5E81879522D008A5392 /* PviewController2ViewController.m in Sources */,
 				D98BF169182550EC00DEE19B /* AppDelegate.m in Sources */,
 				D98BF1921825514800DEE19B /* HomeTableViewController.m in Sources */,
 				D98BF165182550EC00DEE19B /* main.m in Sources */,
