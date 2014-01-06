@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D9647D52187A821C00B26CE8 /* SnapTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9647D51187A821C00B26CE8 /* SnapTimelineViewController.m */; };
+		D9647D55187A823200B26CE8 /* SnapDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9647D54187A823200B26CE8 /* SnapDetailViewController.m */; };
+		D9647D58187A823F00B26CE8 /* SnapTakePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9647D57187A823F00B26CE8 /* SnapTakePhotoViewController.m */; };
 		D98BF159182550EC00DEE19B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98BF158182550EC00DEE19B /* Foundation.framework */; };
 		D98BF15B182550EC00DEE19B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98BF15A182550EC00DEE19B /* CoreGraphics.framework */; };
 		D98BF15D182550EC00DEE19B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98BF15C182550EC00DEE19B /* UIKit.framework */; };
@@ -22,15 +25,8 @@
 		D98BF187182550EC00DEE19B /* tssmineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF186182550EC00DEE19B /* tssmineTests.m */; };
 		D98BF1921825514800DEE19B /* HomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF1911825514800DEE19B /* HomeTableViewController.m */; };
 		D98BF1951825523900DEE19B /* ShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF1941825523900DEE19B /* ShowViewController.m */; };
-		D98BF198182552FF00DEE19B /* SnapTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF197182552FF00DEE19B /* SnapTableViewController.m */; };
 		D98BF19B1825539A00DEE19B /* DesignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF19A1825539A00DEE19B /* DesignViewController.m */; };
 		D98BF19E182553AD00DEE19B /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF19D182553AD00DEE19B /* ProfileViewController.m */; };
-		D98BF1A118255F5500DEE19B /* TssPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF1A018255F5500DEE19B /* TssPhoto.m */; };
-		D98BF1A41825614500DEE19B /* TssUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF1A31825614500DEE19B /* TssUser.m */; };
-		D98BF1A7182570D400DEE19B /* TssPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF1A6182570D400DEE19B /* TssPhotoCell.m */; };
-		D99E50081826C69C005F4D32 /* TssPhotoCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = D99E50071826C69C005F4D32 /* TssPhotoCommunicator.m */; };
-		D99E500B1826C93F005F4D32 /* TssPhotoBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = D99E500A1826C93F005F4D32 /* TssPhotoBuilder.m */; };
-		D99E500F1826CF23005F4D32 /* TssPhotosManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D99E500E1826CF23005F4D32 /* TssPhotosManager.m */; };
 		D9C2B5E81879522D008A5392 /* PviewController2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9C2B5E71879522D008A5392 /* PviewController2ViewController.m */; };
 		D9E637201847693800E0F703 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E6371F1847693800E0F703 /* Accounts.framework */; };
 		D9E637221847694500E0F703 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E637211847694500E0F703 /* AdSupport.framework */; };
@@ -63,6 +59,12 @@
 /* Begin PBXFileReference section */
 		0ABE0E866C4C473DABC4F5A4 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		1B5E9579A6C24A9E8800CED8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9647D50187A821C00B26CE8 /* SnapTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapTimelineViewController.h; sourceTree = "<group>"; };
+		D9647D51187A821C00B26CE8 /* SnapTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnapTimelineViewController.m; sourceTree = "<group>"; };
+		D9647D53187A823200B26CE8 /* SnapDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapDetailViewController.h; sourceTree = "<group>"; };
+		D9647D54187A823200B26CE8 /* SnapDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnapDetailViewController.m; sourceTree = "<group>"; };
+		D9647D56187A823F00B26CE8 /* SnapTakePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapTakePhotoViewController.h; sourceTree = "<group>"; };
+		D9647D57187A823F00B26CE8 /* SnapTakePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnapTakePhotoViewController.m; sourceTree = "<group>"; };
 		D98BF155182550EC00DEE19B /* tssmine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tssmine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98BF158182550EC00DEE19B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D98BF15A182550EC00DEE19B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -84,26 +86,10 @@
 		D98BF1911825514800DEE19B /* HomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewController.m; sourceTree = "<group>"; };
 		D98BF1931825523900DEE19B /* ShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowViewController.h; sourceTree = "<group>"; };
 		D98BF1941825523900DEE19B /* ShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowViewController.m; sourceTree = "<group>"; };
-		D98BF196182552FF00DEE19B /* SnapTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapTableViewController.h; sourceTree = "<group>"; };
-		D98BF197182552FF00DEE19B /* SnapTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnapTableViewController.m; sourceTree = "<group>"; };
 		D98BF1991825539A00DEE19B /* DesignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesignViewController.h; sourceTree = "<group>"; };
 		D98BF19A1825539A00DEE19B /* DesignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesignViewController.m; sourceTree = "<group>"; };
 		D98BF19C182553AD00DEE19B /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		D98BF19D182553AD00DEE19B /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
-		D98BF19F18255F5500DEE19B /* TssPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TssPhoto.h; sourceTree = "<group>"; };
-		D98BF1A018255F5500DEE19B /* TssPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TssPhoto.m; sourceTree = "<group>"; };
-		D98BF1A21825614500DEE19B /* TssUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TssUser.h; sourceTree = "<group>"; };
-		D98BF1A31825614500DEE19B /* TssUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TssUser.m; sourceTree = "<group>"; };
-		D98BF1A5182570D400DEE19B /* TssPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TssPhotoCell.h; sourceTree = "<group>"; };
-		D98BF1A6182570D400DEE19B /* TssPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TssPhotoCell.m; sourceTree = "<group>"; };
-		D99E50051826C58E005F4D32 /* TssPhotoCommunicatorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TssPhotoCommunicatorDelegate.h; sourceTree = "<group>"; };
-		D99E50061826C69C005F4D32 /* TssPhotoCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TssPhotoCommunicator.h; sourceTree = "<group>"; };
-		D99E50071826C69C005F4D32 /* TssPhotoCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TssPhotoCommunicator.m; sourceTree = "<group>"; };
-		D99E50091826C93F005F4D32 /* TssPhotoBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TssPhotoBuilder.h; sourceTree = "<group>"; };
-		D99E500A1826C93F005F4D32 /* TssPhotoBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TssPhotoBuilder.m; sourceTree = "<group>"; };
-		D99E500C1826CEB4005F4D32 /* TssPhotoManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TssPhotoManagerDelegate.h; sourceTree = "<group>"; };
-		D99E500D1826CF23005F4D32 /* TssPhotosManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TssPhotosManager.h; sourceTree = "<group>"; };
-		D99E500E1826CF23005F4D32 /* TssPhotosManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TssPhotosManager.m; sourceTree = "<group>"; };
 		D9C2B5E61879522D008A5392 /* PviewController2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PviewController2ViewController.h; sourceTree = "<group>"; };
 		D9C2B5E71879522D008A5392 /* PviewController2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PviewController2ViewController.m; sourceTree = "<group>"; };
 		D9E6371F1847693800E0F703 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -163,6 +149,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D9647D4F187A816300B26CE8 /* Snap */ = {
+			isa = PBXGroup;
+			children = (
+				D9647D50187A821C00B26CE8 /* SnapTimelineViewController.h */,
+				D9647D51187A821C00B26CE8 /* SnapTimelineViewController.m */,
+				D9647D53187A823200B26CE8 /* SnapDetailViewController.h */,
+				D9647D54187A823200B26CE8 /* SnapDetailViewController.m */,
+				D9647D56187A823F00B26CE8 /* SnapTakePhotoViewController.h */,
+				D9647D57187A823F00B26CE8 /* SnapTakePhotoViewController.m */,
+			);
+			name = Snap;
+			sourceTree = "<group>";
+		};
 		D98BF14C182550EC00DEE19B = {
 			isa = PBXGroup;
 			children = (
@@ -257,17 +256,6 @@
 		D99E50021826AB74005F4D32 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D98BF19F18255F5500DEE19B /* TssPhoto.h */,
-				D98BF1A018255F5500DEE19B /* TssPhoto.m */,
-				D98BF1A21825614500DEE19B /* TssUser.h */,
-				D98BF1A31825614500DEE19B /* TssUser.m */,
-				D99E50051826C58E005F4D32 /* TssPhotoCommunicatorDelegate.h */,
-				D99E50061826C69C005F4D32 /* TssPhotoCommunicator.h */,
-				D99E50071826C69C005F4D32 /* TssPhotoCommunicator.m */,
-				D99E500A1826C93F005F4D32 /* TssPhotoBuilder.m */,
-				D99E500C1826CEB4005F4D32 /* TssPhotoManagerDelegate.h */,
-				D99E500D1826CF23005F4D32 /* TssPhotosManager.h */,
-				D99E500E1826CF23005F4D32 /* TssPhotosManager.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -275,13 +263,11 @@
 		D99E50031826AB91005F4D32 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D9647D4F187A816300B26CE8 /* Snap */,
 				D98BF1901825514800DEE19B /* HomeTableViewController.h */,
 				D98BF1911825514800DEE19B /* HomeTableViewController.m */,
-				D99E50091826C93F005F4D32 /* TssPhotoBuilder.h */,
 				D98BF1931825523900DEE19B /* ShowViewController.h */,
 				D98BF1941825523900DEE19B /* ShowViewController.m */,
-				D98BF196182552FF00DEE19B /* SnapTableViewController.h */,
-				D98BF197182552FF00DEE19B /* SnapTableViewController.m */,
 				D98BF1991825539A00DEE19B /* DesignViewController.h */,
 				D98BF19A1825539A00DEE19B /* DesignViewController.m */,
 				D98BF19C182553AD00DEE19B /* ProfileViewController.h */,
@@ -295,8 +281,6 @@
 		D99E50041826ABB0005F4D32 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D98BF1A5182570D400DEE19B /* TssPhotoCell.h */,
-				D98BF1A6182570D400DEE19B /* TssPhotoCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -441,18 +425,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D98BF198182552FF00DEE19B /* SnapTableViewController.m in Sources */,
-				D98BF1A118255F5500DEE19B /* TssPhoto.m in Sources */,
 				D9C2B5E81879522D008A5392 /* PviewController2ViewController.m in Sources */,
 				D98BF169182550EC00DEE19B /* AppDelegate.m in Sources */,
 				D98BF1921825514800DEE19B /* HomeTableViewController.m in Sources */,
 				D98BF165182550EC00DEE19B /* main.m in Sources */,
-				D99E500F1826CF23005F4D32 /* TssPhotosManager.m in Sources */,
 				D98BF19E182553AD00DEE19B /* ProfileViewController.m in Sources */,
-				D99E50081826C69C005F4D32 /* TssPhotoCommunicator.m in Sources */,
-				D99E500B1826C93F005F4D32 /* TssPhotoBuilder.m in Sources */,
-				D98BF1A41825614500DEE19B /* TssUser.m in Sources */,
-				D98BF1A7182570D400DEE19B /* TssPhotoCell.m in Sources */,
+				D9647D58187A823F00B26CE8 /* SnapTakePhotoViewController.m in Sources */,
+				D9647D55187A823200B26CE8 /* SnapDetailViewController.m in Sources */,
+				D9647D52187A821C00B26CE8 /* SnapTimelineViewController.m in Sources */,
 				D98BF19B1825539A00DEE19B /* DesignViewController.m in Sources */,
 				D98BF1951825523900DEE19B /* ShowViewController.m in Sources */,
 			);
@@ -580,7 +560,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0ABE0E866C4C473DABC4F5A4 /* Pods.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -605,7 +585,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0ABE0E866C4C473DABC4F5A4 /* Pods.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

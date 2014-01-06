@@ -38,11 +38,8 @@
     if (![PFUser currentUser]){
         [controller setFacebookPermissions:[NSArray arrayWithObjects:@"friends_about_me", nil]];
         [controller setFields:PFLogInFieldsFacebook | PFLogInFieldsSignUpButton | PFLogInFieldsUsernameAndPassword | PFLogInFieldsPasswordForgotten | PFLogInFieldsLogInButton];
-    } else{
-        [controller setProfileView];
     }
 }
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

@@ -7,7 +7,6 @@
 //
 
 #import "ProfileViewController.h"
-#import "TssUser.h"
 #import "PviewController2ViewController.h"
 #import <Parse/Parse.h>
 
