@@ -14,6 +14,10 @@
 
 @implementation SnapTakePhotoViewController
 
+- (id)initWithImage:(UIImage *)aImage{
+    return @"test";
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

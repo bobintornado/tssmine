@@ -17,7 +17,7 @@
     
     // Register Parse Application.
     [Parse setApplicationId:@"dwus9w9uMQdXlXxXMgvZawLzmKEhmKbGBGdLkInZ"
-                  clientKey:@"fXJDUlzqfqpcXJZDQAd62uDF5KmwA0mWz1qOHthT"];
+               clientKey:@"fXJDUlzqfqpcXJZDQAd62uDF5KmwA0mWz1qOHthT"];
     // Initialize Parse's Facebook Utilities singleton. This uses the FacebookAppID specified in App bundle's plist.
     [PFFacebookUtils initializeFacebook];
     

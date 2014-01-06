@@ -10,4 +10,6 @@
 
 @interface SnapTakePhotoViewController : UIViewController
 
+- (id)initWithImage:(UIImage *)aImage;
+
 @end

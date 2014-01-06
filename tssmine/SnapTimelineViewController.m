@@ -44,7 +44,34 @@
     // Dispose of any resources that can be recreated.
 }
 
+//********** TAKE PICTURE **********
+-(void)takePicture:(id)sender
+{
+	UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    
+	//Use camera if device has one otherwise use photo library
+	if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+	{
+		[imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
+	}
+	else
+	{
+		[imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+	}
+    
+    [imagePicker setDelegate:self];
+	//Show image picker
+	[self presentModalViewController:imagePicker animated:YES];
+}
 
-
-
+//********** RECEIVE PICTURE **********
+- (void)imagePickerController:(UIImagePickerController *)picker
+didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+	//Get image
+	UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+	//Take image picker off the screen (required)
+	[self dismissModalViewControllerAnimated:YES];
+}
 @end

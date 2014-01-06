@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SnapTimelineViewController : UIViewController <UIImagePickerControllerDelegate>
+@interface SnapTimelineViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UINavigationBar *snapTimelineNavigationBar;
 
