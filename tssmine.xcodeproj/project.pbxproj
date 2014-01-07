@@ -27,6 +27,8 @@
 		D98BF1951825523900DEE19B /* ShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF1941825523900DEE19B /* ShowViewController.m */; };
 		D98BF19B1825539A00DEE19B /* DesignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF19A1825539A00DEE19B /* DesignViewController.m */; };
 		D98BF19E182553AD00DEE19B /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF19D182553AD00DEE19B /* ProfileViewController.m */; };
+		D9B6F02A187C28210069E088 /* SnapFeedsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B6F029187C28210069E088 /* SnapFeedsViewController.m */; };
+		D9B6F02D187C32990069E088 /* snapFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B6F02C187C32990069E088 /* snapFeedTableViewCell.m */; };
 		D9C2B5E81879522D008A5392 /* PviewController2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9C2B5E71879522D008A5392 /* PviewController2ViewController.m */; };
 		D9E637201847693800E0F703 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E6371F1847693800E0F703 /* Accounts.framework */; };
 		D9E637221847694500E0F703 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E637211847694500E0F703 /* AdSupport.framework */; };
@@ -90,6 +92,10 @@
 		D98BF19A1825539A00DEE19B /* DesignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesignViewController.m; sourceTree = "<group>"; };
 		D98BF19C182553AD00DEE19B /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		D98BF19D182553AD00DEE19B /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		D9B6F028187C28210069E088 /* SnapFeedsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapFeedsViewController.h; sourceTree = "<group>"; };
+		D9B6F029187C28210069E088 /* SnapFeedsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnapFeedsViewController.m; sourceTree = "<group>"; };
+		D9B6F02B187C32990069E088 /* snapFeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = snapFeedTableViewCell.h; sourceTree = "<group>"; };
+		D9B6F02C187C32990069E088 /* snapFeedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = snapFeedTableViewCell.m; sourceTree = "<group>"; };
 		D9C2B5E61879522D008A5392 /* PviewController2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PviewController2ViewController.h; sourceTree = "<group>"; };
 		D9C2B5E71879522D008A5392 /* PviewController2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PviewController2ViewController.m; sourceTree = "<group>"; };
 		D9E6371F1847693800E0F703 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -158,6 +164,8 @@
 				D9647D54187A823200B26CE8 /* SnapDetailViewController.m */,
 				D9647D56187A823F00B26CE8 /* SnapTakePhotoViewController.h */,
 				D9647D57187A823F00B26CE8 /* SnapTakePhotoViewController.m */,
+				D9B6F028187C28210069E088 /* SnapFeedsViewController.h */,
+				D9B6F029187C28210069E088 /* SnapFeedsViewController.m */,
 			);
 			name = Snap;
 			sourceTree = "<group>";
@@ -281,6 +289,8 @@
 		D99E50041826ABB0005F4D32 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D9B6F02B187C32990069E088 /* snapFeedTableViewCell.h */,
+				D9B6F02C187C32990069E088 /* snapFeedTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -428,11 +438,13 @@
 				D9C2B5E81879522D008A5392 /* PviewController2ViewController.m in Sources */,
 				D98BF169182550EC00DEE19B /* AppDelegate.m in Sources */,
 				D98BF1921825514800DEE19B /* HomeTableViewController.m in Sources */,
+				D9B6F02D187C32990069E088 /* snapFeedTableViewCell.m in Sources */,
 				D98BF165182550EC00DEE19B /* main.m in Sources */,
 				D98BF19E182553AD00DEE19B /* ProfileViewController.m in Sources */,
 				D9647D58187A823F00B26CE8 /* SnapTakePhotoViewController.m in Sources */,
 				D9647D55187A823200B26CE8 /* SnapDetailViewController.m in Sources */,
 				D9647D52187A821C00B26CE8 /* SnapTimelineViewController.m in Sources */,
+				D9B6F02A187C28210069E088 /* SnapFeedsViewController.m in Sources */,
 				D98BF19B1825539A00DEE19B /* DesignViewController.m in Sources */,
 				D98BF1951825523900DEE19B /* ShowViewController.m in Sources */,
 			);
