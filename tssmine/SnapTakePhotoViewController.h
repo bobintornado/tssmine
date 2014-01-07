@@ -10,6 +10,7 @@
 
 @interface SnapTakePhotoViewController : UIViewController
 
-- (id)initWithImage:(UIImage *)aImage;
+@property (strong, nonatomic) IBOutlet UINavigationBar *postSnapNavBar;
 
+- (void)setSnapImage:(UIImage *)aImage;
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D901607B187AB8190003985D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D901607A187AB8190003985D /* Main.storyboard */; };
 		D9647D52187A821C00B26CE8 /* SnapTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9647D51187A821C00B26CE8 /* SnapTimelineViewController.m */; };
 		D9647D55187A823200B26CE8 /* SnapDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9647D54187A823200B26CE8 /* SnapDetailViewController.m */; };
 		D9647D58187A823F00B26CE8 /* SnapTakePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9647D57187A823F00B26CE8 /* SnapTakePhotoViewController.m */; };
@@ -16,7 +17,6 @@
 		D98BF163182550EC00DEE19B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D98BF161182550EC00DEE19B /* InfoPlist.strings */; };
 		D98BF165182550EC00DEE19B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF164182550EC00DEE19B /* main.m */; };
 		D98BF169182550EC00DEE19B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF168182550EC00DEE19B /* AppDelegate.m */; };
-		D98BF16C182550EC00DEE19B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98BF16A182550EC00DEE19B /* Main.storyboard */; };
 		D98BF174182550EC00DEE19B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D98BF173182550EC00DEE19B /* Images.xcassets */; };
 		D98BF17B182550EC00DEE19B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98BF17A182550EC00DEE19B /* XCTest.framework */; };
 		D98BF17C182550EC00DEE19B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98BF158182550EC00DEE19B /* Foundation.framework */; };
@@ -59,6 +59,7 @@
 /* Begin PBXFileReference section */
 		0ABE0E866C4C473DABC4F5A4 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		1B5E9579A6C24A9E8800CED8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D901607A187AB8190003985D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D9647D50187A821C00B26CE8 /* SnapTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapTimelineViewController.h; sourceTree = "<group>"; };
 		D9647D51187A821C00B26CE8 /* SnapTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnapTimelineViewController.m; sourceTree = "<group>"; };
 		D9647D53187A823200B26CE8 /* SnapDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapDetailViewController.h; sourceTree = "<group>"; };
@@ -75,7 +76,6 @@
 		D98BF166182550EC00DEE19B /* tssmine-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "tssmine-Prefix.pch"; sourceTree = "<group>"; };
 		D98BF167182550EC00DEE19B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D98BF168182550EC00DEE19B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D98BF16B182550EC00DEE19B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D98BF173182550EC00DEE19B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D98BF179182550EC00DEE19B /* tssmineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tssmineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98BF17A182550EC00DEE19B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -212,12 +212,12 @@
 		D98BF15E182550EC00DEE19B /* tssmine */ = {
 			isa = PBXGroup;
 			children = (
+				D901607A187AB8190003985D /* Main.storyboard */,
 				D99E50041826ABB0005F4D32 /* View */,
 				D99E50031826AB91005F4D32 /* Controller */,
 				D99E50021826AB74005F4D32 /* Model */,
 				D98BF167182550EC00DEE19B /* AppDelegate.h */,
 				D98BF168182550EC00DEE19B /* AppDelegate.m */,
-				D98BF16A182550EC00DEE19B /* Main.storyboard */,
 				D98BF173182550EC00DEE19B /* Images.xcassets */,
 				D98BF15F182550EC00DEE19B /* Supporting Files */,
 			);
@@ -371,9 +371,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D901607B187AB8190003985D /* Main.storyboard in Resources */,
 				D98BF174182550EC00DEE19B /* Images.xcassets in Resources */,
 				D98BF163182550EC00DEE19B /* InfoPlist.strings in Resources */,
-				D98BF16C182550EC00DEE19B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,14 +463,6 @@
 				D98BF162182550EC00DEE19B /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		D98BF16A182550EC00DEE19B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D98BF16B182550EC00DEE19B /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		D98BF183182550EC00DEE19B /* InfoPlist.strings */ = {

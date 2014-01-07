@@ -7,6 +7,8 @@
 //
 
 #import "SnapTimelineViewController.h"
+#import "SnapTakePhotoViewController.h"
+#import <MobileCoreServices/UTCoreTypes.h>
 
 @interface SnapTimelineViewController ()
 
@@ -47,31 +49,124 @@
 //********** TAKE PICTURE **********
 -(void)takePicture:(id)sender
 {
-	UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    BOOL cameraDeviceAvailable = [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera];
+    BOOL photoLibraryAvailable = [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary];
     
-	//Use camera if device has one otherwise use photo library
-	if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
-	{
-		[imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
-	}
-	else
-	{
-		[imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-	}
-    
-    [imagePicker setDelegate:self];
-	//Show image picker
-	[self presentModalViewController:imagePicker animated:YES];
+    if (cameraDeviceAvailable && photoLibraryAvailable) {
+        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Take Photo", @"Choose Photo", nil];
+        [actionSheet showInView:self.view];
+    } else {
+        // if we don't have at least two options, we automatically show whichever is available (camera or roll)
+        [self shouldPresentPhotoCaptureController];
+    }
 }
 
-//********** RECEIVE PICTURE **********
+- (BOOL)shouldPresentPhotoCaptureController {
+    BOOL presentedPhotoCaptureController = [self shouldStartCameraController];
+    
+    if (!presentedPhotoCaptureController) {
+        presentedPhotoCaptureController = [self shouldStartPhotoLibraryPickerController];
+    }
+    
+    return presentedPhotoCaptureController;
+}
+
+- (BOOL)shouldStartCameraController {
+    
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] == NO) {
+        return NO;
+    }
+    
+    UIImagePickerController *cameraUI = [[UIImagePickerController alloc] init];
+    
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]
+        && [[UIImagePickerController availableMediaTypesForSourceType:
+             UIImagePickerControllerSourceTypeCamera] containsObject:(NSString *) kUTTypeImage]) {
+        
+        cameraUI.mediaTypes = [NSArray arrayWithObject:(NSString *) kUTTypeImage];
+        cameraUI.sourceType = UIImagePickerControllerSourceTypeCamera;
+        
+        if ([UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceRear]) {
+            cameraUI.cameraDevice = UIImagePickerControllerCameraDeviceRear;
+        } else if ([UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceFront]) {
+            cameraUI.cameraDevice = UIImagePickerControllerCameraDeviceFront;
+        }
+        
+    } else {
+        return NO;
+    }
+    
+    cameraUI.allowsEditing = YES;
+    cameraUI.showsCameraControls = YES;
+    cameraUI.delegate = self;
+    
+    [self presentModalViewController:cameraUI animated:YES];
+    
+    return YES;
+}
+
+- (BOOL)shouldStartPhotoLibraryPickerController {
+    if (([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary] == NO
+         && [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum] == NO)) {
+        return NO;
+    }
+    
+    UIImagePickerController *cameraUI = [[UIImagePickerController alloc] init];
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]
+        && [[UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypePhotoLibrary] containsObject:(NSString *)kUTTypeImage]) {
+        
+        cameraUI.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        cameraUI.mediaTypes = [NSArray arrayWithObject:(NSString *) kUTTypeImage];
+        
+    } else if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]
+               && [[UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeSavedPhotosAlbum] containsObject:(NSString *)kUTTypeImage]) {
+        
+        cameraUI.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+        cameraUI.mediaTypes = [NSArray arrayWithObject:(NSString *) kUTTypeImage];
+        
+    } else {
+        return NO;
+    }
+    
+    cameraUI.allowsEditing = YES;
+    cameraUI.delegate = self;
+    
+    [self presentModalViewController:cameraUI animated:YES];
+    
+    return YES;
+}
+
+//action sheet delegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        [self shouldStartCameraController];
+    } else if (buttonIndex == 1) {
+        [self shouldStartPhotoLibraryPickerController];
+    }
+}
+
+//use dismissmodalviewcontrolleranimate for a momoent until finds a better solution
 - (void)imagePickerController:(UIImagePickerController *)picker
 didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-	//Get image
-	UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    //[picker dismissViewControllerAnimated:YES completion:nil];
+    [self dismissModalViewControllerAnimated:NO];
+
+    //get the image
+    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
     
-	//Take image picker off the screen (required)
-	[self dismissModalViewControllerAnimated:YES];
+    SnapTakePhotoViewController *snapViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"phototaking"];
+    
+    [snapViewController setSnapImage:image];
+    
+    //self.modalTransitionStyle = [UIModalPresentationCurrentContext];
+    //[self.navigationController pushViewController:snapViewController animated:YES];
+    [self presentViewController:snapViewController animated:YES completion:nil];
 }
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    //[self dismissModalViewControllerAnimated:NO];
+}
+
 @end
