@@ -7,6 +7,7 @@
 //
 
 #import "SnapFeedsViewController.h"
+#import "snapFeedTableViewCell.h"
 
 @interface SnapFeedsViewController ()
 @property (strong, nonatomic) IBOutlet UITableView *feedsTableView;
@@ -63,19 +64,21 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"snapCell";
     
     tableView = self.feedsTableView;
     
-    PFTableViewCell *cell = (PFTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    snapFeedTableViewCell *cell = (snapFeedTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[PFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[snapFeedTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
     // Configure the cell
-    cell.textLabel.text = [object objectForKey:self.textKey];
-    cell.imageView.file = [object objectForKey:self.imageKey];
+    //cell.snapTitle.text = [object objectForKey:self.textKey];
+    cell.snapPhoto.file = [object objectForKey:self.imageKey];
     
+    [cell.snapPhoto loadInBackground];
+
     return cell;
 }
 

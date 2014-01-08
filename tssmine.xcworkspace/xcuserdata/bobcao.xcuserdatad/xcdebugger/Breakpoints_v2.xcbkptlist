@@ -169,7 +169,7 @@
                   symbolName = "-[AppDelegate application:didFinishLaunchingWithOptions:]"
                   moduleName = "tssmine"
                   urlString = "file:///Users/bobcao/Desktop/tssmine/tssmine/AppDelegate.m"
-                  timestampString = "410692491.171436"
+                  timestampString = "410856897.922002"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "19"
@@ -183,7 +183,7 @@
                   symbolName = "-[AppDelegate application:didFinishLaunchingWithOptions:]"
                   moduleName = "tssmine"
                   urlString = "file:///Users/bobcao/Desktop/tssmine/tssmine/AppDelegate.m"
-                  timestampString = "410692491.171914"
+                  timestampString = "410856897.922283"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "19"
@@ -215,7 +215,7 @@
                   symbolName = "-[AppDelegate application:didFinishLaunchingWithOptions:]"
                   moduleName = "tssmine"
                   urlString = "file:///Users/bobcao/Desktop/tssmine/tssmine/AppDelegate.m"
-                  timestampString = "410692491.172305"
+                  timestampString = "410856897.922525"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "19"
@@ -229,7 +229,7 @@
                   symbolName = "-[AppDelegate application:didFinishLaunchingWithOptions:]"
                   moduleName = "tssmine"
                   urlString = "file:///Users/bobcao/Desktop/tssmine/tssmine/AppDelegate.m"
-                  timestampString = "410692491.172662"
+                  timestampString = "410856897.922878"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "19"
@@ -327,6 +327,36 @@
             endingLineNumber = "150"
             landmarkName = "-imagePickerController:didFinishPickingMediaWithInfo:"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[SnapTimelineViewController actionSheet:clickedButtonAtIndex:]"
+                  moduleName = "tssmine"
+                  urlString = "file:///Users/bobcao/Desktop/tssmine/tssmine/SnapTimelineViewController.m"
+                  timestampString = "410856897.925056"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "151"
+                  endingLineNumber = "151"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[SnapTimelineViewController actionSheet:clickedButtonAtIndex:]"
+                  moduleName = "tssmine"
+                  urlString = "file:///Users/bobcao/Desktop/tssmine/tssmine/SnapTimelineViewController.m"
+                  timestampString = "410856897.925387"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "151"
+                  endingLineNumber = "151"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -390,6 +420,22 @@
             startingLineNumber = "153"
             endingLineNumber = "153"
             landmarkName = "-imagePickerController:didFinishPickingMediaWithInfo:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "tssmine/SnapFeedsViewController.m"
+            timestampString = "410855267.825805"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "-tableView:cellForRowAtIndexPath:object:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
