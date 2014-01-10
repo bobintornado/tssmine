@@ -7,6 +7,7 @@
 //
 
 #import "snapFeedTableViewCell.h"
+#import "TSSUtility.h"
 
 @implementation snapFeedTableViewCell
 
@@ -28,4 +29,9 @@
     // Drawing code
 }
 
+- (IBAction)didTapLikeButton:(id)sender {
+    [TSSUtility likePhotoInBackground:self.snapPhotoObject block:^(BOOL succeeded, NSError *error) {
+        //donothing
+    }];
+}
 @end

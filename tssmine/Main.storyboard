@@ -160,6 +160,9 @@
                                             <state key="normal" title="Like">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="didTapLikeButton:" destination="1vz-dJ-vvZ" eventType="touchUpInside" id="tQ9-xL-N3s"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIa-fb-6rT">
                                             <rect key="frame" x="168" y="311" width="68" height="30"/>
@@ -194,7 +197,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bn0-Vl-qo5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="608" y="104"/>
+            <point key="canvasLocation" x="636" y="119"/>
         </scene>
         <!--Snap Take Photo View Controller-->
         <scene sceneID="C2J-lJ-BqH">
@@ -314,23 +317,6 @@
                 </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="128" y="838"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="vWy-8b-Td9">
-            <objects>
-                <viewController id="eeG-Fm-byC" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ipr-84-mxy"/>
-                        <viewControllerLayoutGuide type="bottom" id="gJF-9y-EAi"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="pNr-yZ-EKe">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Afd-FI-mVK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
     <resources>

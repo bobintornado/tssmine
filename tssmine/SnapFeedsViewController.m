@@ -75,10 +75,11 @@
     
     // Configure the cell
     //cell.snapTitle.text = [object objectForKey:self.textKey];
+    cell.snapPhotoObject = object;
     cell.snapPhoto.file = [object objectForKey:self.imageKey];
     
     [cell.snapPhoto loadInBackground];
-
+    
     return cell;
 }
 

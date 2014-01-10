@@ -11,6 +11,7 @@
 		D9647D52187A821C00B26CE8 /* SnapTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9647D51187A821C00B26CE8 /* SnapTimelineViewController.m */; };
 		D9647D55187A823200B26CE8 /* SnapDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9647D54187A823200B26CE8 /* SnapDetailViewController.m */; };
 		D9647D58187A823F00B26CE8 /* SnapTakePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9647D57187A823F00B26CE8 /* SnapTakePhotoViewController.m */; };
+		D97A35DC187E80B50006A90F /* TSSUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = D97A35DB187E80B50006A90F /* TSSUtility.m */; };
 		D98BF159182550EC00DEE19B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98BF158182550EC00DEE19B /* Foundation.framework */; };
 		D98BF15B182550EC00DEE19B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98BF15A182550EC00DEE19B /* CoreGraphics.framework */; };
 		D98BF15D182550EC00DEE19B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98BF15C182550EC00DEE19B /* UIKit.framework */; };
@@ -68,6 +69,8 @@
 		D9647D54187A823200B26CE8 /* SnapDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnapDetailViewController.m; sourceTree = "<group>"; };
 		D9647D56187A823F00B26CE8 /* SnapTakePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapTakePhotoViewController.h; sourceTree = "<group>"; };
 		D9647D57187A823F00B26CE8 /* SnapTakePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnapTakePhotoViewController.m; sourceTree = "<group>"; };
+		D97A35DA187E80B50006A90F /* TSSUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSSUtility.h; sourceTree = "<group>"; };
+		D97A35DB187E80B50006A90F /* TSSUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSSUtility.m; sourceTree = "<group>"; };
 		D98BF155182550EC00DEE19B /* tssmine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tssmine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98BF158182550EC00DEE19B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D98BF15A182550EC00DEE19B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -226,6 +229,8 @@
 				D99E50021826AB74005F4D32 /* Model */,
 				D98BF167182550EC00DEE19B /* AppDelegate.h */,
 				D98BF168182550EC00DEE19B /* AppDelegate.m */,
+				D97A35DA187E80B50006A90F /* TSSUtility.h */,
+				D97A35DB187E80B50006A90F /* TSSUtility.m */,
 				D98BF173182550EC00DEE19B /* Images.xcassets */,
 				D98BF15F182550EC00DEE19B /* Supporting Files */,
 			);
@@ -435,6 +440,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D97A35DC187E80B50006A90F /* TSSUtility.m in Sources */,
 				D9C2B5E81879522D008A5392 /* PviewController2ViewController.m in Sources */,
 				D98BF169182550EC00DEE19B /* AppDelegate.m in Sources */,
 				D98BF1921825514800DEE19B /* HomeTableViewController.m in Sources */,

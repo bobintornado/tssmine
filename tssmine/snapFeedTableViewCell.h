@@ -10,6 +10,10 @@
 
 @interface snapFeedTableViewCell : PFTableViewCell
 
+//The PFimageView used to display the photo
 @property (strong, nonatomic) IBOutlet PFImageView *snapPhoto;
+
+/// The snapPhoto associated with this view
+@property (nonatomic,strong) PFObject *snapPhotoObject;
 
 @end
