@@ -26,7 +26,6 @@
 		D98BF185182550EC00DEE19B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D98BF183182550EC00DEE19B /* InfoPlist.strings */; };
 		D98BF187182550EC00DEE19B /* tssmineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF186182550EC00DEE19B /* tssmineTests.m */; };
 		D98BF1951825523900DEE19B /* ShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF1941825523900DEE19B /* ShowViewController.m */; };
-		D98BF19B1825539A00DEE19B /* DesignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF19A1825539A00DEE19B /* DesignViewController.m */; };
 		D9B6F02A187C28210069E088 /* SnapFeedsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B6F029187C28210069E088 /* SnapFeedsViewController.m */; };
 		D9B6F02D187C32990069E088 /* snapFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B6F02C187C32990069E088 /* snapFeedTableViewCell.m */; };
 		D9DAEC9B1882EBEA0072CBAA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9EE9A531882EB1100AA30EF /* AudioToolbox.framework */; };
@@ -87,8 +86,6 @@
 		D98BF186182550EC00DEE19B /* tssmineTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tssmineTests.m; sourceTree = "<group>"; };
 		D98BF1931825523900DEE19B /* ShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowViewController.h; sourceTree = "<group>"; };
 		D98BF1941825523900DEE19B /* ShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowViewController.m; sourceTree = "<group>"; };
-		D98BF1991825539A00DEE19B /* DesignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesignViewController.h; sourceTree = "<group>"; };
-		D98BF19A1825539A00DEE19B /* DesignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesignViewController.m; sourceTree = "<group>"; };
 		D9B6F028187C28210069E088 /* SnapFeedsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapFeedsViewController.h; sourceTree = "<group>"; };
 		D9B6F029187C28210069E088 /* SnapFeedsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnapFeedsViewController.m; sourceTree = "<group>"; };
 		D9B6F02B187C32990069E088 /* snapFeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = snapFeedTableViewCell.h; sourceTree = "<group>"; };
@@ -156,6 +153,22 @@
 				D96006AF1884852400BB1C9E /* ProfileViewController.m */,
 			);
 			name = Profile;
+			sourceTree = "<group>";
+		};
+		D96006B11884867A00BB1C9E /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				D98BF1931825523900DEE19B /* ShowViewController.h */,
+				D98BF1941825523900DEE19B /* ShowViewController.m */,
+			);
+			name = Shop;
+			sourceTree = "<group>";
+		};
+		D96006B21884868D00BB1C9E /* Styling */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Styling;
 			sourceTree = "<group>";
 		};
 		D9647D4F187A816300B26CE8 /* Snap */ = {
@@ -277,12 +290,10 @@
 		D99E50031826AB91005F4D32 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D96006B21884868D00BB1C9E /* Styling */,
+				D96006B11884867A00BB1C9E /* Shop */,
 				D957F9111883FB29008955CC /* Profile */,
 				D9647D4F187A816300B26CE8 /* Snap */,
-				D98BF1931825523900DEE19B /* ShowViewController.h */,
-				D98BF1941825523900DEE19B /* ShowViewController.m */,
-				D98BF1991825539A00DEE19B /* DesignViewController.h */,
-				D98BF19A1825539A00DEE19B /* DesignViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -445,7 +456,6 @@
 				D9647D52187A821C00B26CE8 /* SnapTimelineViewController.m in Sources */,
 				D9B6F02A187C28210069E088 /* SnapFeedsViewController.m in Sources */,
 				D96006B01884852400BB1C9E /* ProfileViewController.m in Sources */,
-				D98BF19B1825539A00DEE19B /* DesignViewController.m in Sources */,
 				D98BF1951825523900DEE19B /* ShowViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
