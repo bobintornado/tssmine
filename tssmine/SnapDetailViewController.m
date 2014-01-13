@@ -7,6 +7,7 @@
 //
 
 #import "SnapDetailViewController.h"
+#import "TSSUtility.h";
 
 @interface SnapDetailViewController ()
 
@@ -30,11 +31,19 @@
     //configure the navigation bar
     self.navigationItem.title = @"Snap Detail";
     
-    //UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(shareSnap:)];
-    
+    //set right button as the sharing action button
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(shareSnap)];
-    
     self.navigationItem.rightBarButtonItem = rightButton;
+    
+    self.snapPFImageView.file = [self.snapObject objectForKey:@"snapPicture"];
+    [self.snapPFImageView loadInBackground];
+    
+    PFQuery *snapLikeCount = [[PFQuery alloc] initWithClassName:@"ActivityLike"];
+    [snapLikeCount whereKey:@"snapPhoto" equalTo:self.snapObject];
+    [snapLikeCount countObjectsInBackgroundWithBlock:^(int number, NSError *error){
+        self.detailStatLab.text = [NSString stringWithFormat:@"%d likes 0 comments", number];
+    }];
+    
     
 }
 
@@ -56,6 +65,14 @@
     activityViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     
     [self presentViewController:activityViewController animated:YES completion:nil];
+}
+
+- (void)setUpDetailViewWithObject:(PFObject *)snapObject{
+    self.snapObject = snapObject;
+}
+
+- (IBAction)didTapLikeButton:(id)sender {
+    [TSSUtility likePhotoInBackground:self.snapObject block:nil];
 }
 
 @end

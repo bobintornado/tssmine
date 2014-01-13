@@ -111,6 +111,12 @@
     
     SnapDetailViewController *snapDetailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"snapDetailVC"];
     
+    //get the object from the cell
+    UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
+    snapFeedTableViewCell *cell = (snapFeedTableViewCell *)selectedCell;
+    //set up the detail view with object
+    [snapDetailVC setUpDetailViewWithObject:cell.snapPhotoObject];
+    
     [self.navigationController pushViewController:snapDetailVC animated:YES];
 }
 
