@@ -49,13 +49,6 @@
 //********** TAKE PICTURE **********
 -(void)takePicture:(id)sender
 {
-    //user login status needs to be checked before any action is done
-    
-    if (![PFUser currentUser]){
-        //switch to tab 4
-        self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:4];
-        return;
-    }
     BOOL cameraDeviceAvailable = [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera];
     BOOL photoLibraryAvailable = [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary];
     

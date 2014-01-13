@@ -25,6 +25,24 @@
     // Register for push notifications
     [application registerForRemoteNotificationTypes: UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound];
     
+    if (![PFUser currentUser]) { // No user logged in
+        // Create the log in view controller
+        PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
+        [logInViewController setDelegate:self.window.rootViewController ]; // Set ourselves as the delegate
+        
+        // Create the sign up view controller
+        PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
+        [signUpViewController setDelegate:self.window.rootViewController ]; // Set ourselves as the delegate
+        
+        // Assign our sign up controller to be displayed from the login controller
+        [logInViewController setSignUpController:signUpViewController];
+        
+        //magic?
+        [self.window makeKeyAndVisible];
+        // Present the log in view controller
+        [self.window.rootViewController presentedViewController];
+    }
+    
     return YES;
 }
 
@@ -43,6 +61,7 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application

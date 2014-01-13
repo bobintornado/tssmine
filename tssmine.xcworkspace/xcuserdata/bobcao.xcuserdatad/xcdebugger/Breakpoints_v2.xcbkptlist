@@ -138,7 +138,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "11"
-            endingLineNumber = "11">
+            endingLineNumber = "11"
+            landmarkName = "@interface ProfileViewController"
+            landmarkType = "2">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -153,8 +155,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
             endingLineNumber = "19"
-            landmarkName = "@implementation ProfileViewController"
-            landmarkType = "3">
+            landmarkName = "-initWithNibName:bundle:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

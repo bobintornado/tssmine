@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D901607B187AB8190003985D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D901607A187AB8190003985D /* Main.storyboard */; };
+		D96006B01884852400BB1C9E /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D96006AF1884852400BB1C9E /* ProfileViewController.m */; };
 		D9647D52187A821C00B26CE8 /* SnapTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9647D51187A821C00B26CE8 /* SnapTimelineViewController.m */; };
 		D9647D55187A823200B26CE8 /* SnapDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9647D54187A823200B26CE8 /* SnapDetailViewController.m */; };
 		D9647D58187A823F00B26CE8 /* SnapTakePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9647D57187A823F00B26CE8 /* SnapTakePhotoViewController.m */; };
@@ -58,6 +59,8 @@
 		0ABE0E866C4C473DABC4F5A4 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		1B5E9579A6C24A9E8800CED8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D901607A187AB8190003985D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D96006AE1884852400BB1C9E /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		D96006AF1884852400BB1C9E /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		D9647D50187A821C00B26CE8 /* SnapTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapTimelineViewController.h; sourceTree = "<group>"; };
 		D9647D51187A821C00B26CE8 /* SnapTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnapTimelineViewController.m; sourceTree = "<group>"; };
 		D9647D53187A823200B26CE8 /* SnapDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapDetailViewController.h; sourceTree = "<group>"; };
@@ -149,6 +152,8 @@
 		D957F9111883FB29008955CC /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				D96006AE1884852400BB1C9E /* ProfileViewController.h */,
+				D96006AF1884852400BB1C9E /* ProfileViewController.m */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -439,6 +444,7 @@
 				D9647D55187A823200B26CE8 /* SnapDetailViewController.m in Sources */,
 				D9647D52187A821C00B26CE8 /* SnapTimelineViewController.m in Sources */,
 				D9B6F02A187C28210069E088 /* SnapFeedsViewController.m in Sources */,
+				D96006B01884852400BB1C9E /* ProfileViewController.m in Sources */,
 				D98BF19B1825539A00DEE19B /* DesignViewController.m in Sources */,
 				D98BF1951825523900DEE19B /* ShowViewController.m in Sources */,
 			);
