@@ -111,36 +111,6 @@
             endingLineNumber = "16"
             landmarkName = "-application:didFinishLaunchingWithOptions:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[AppDelegate application:didFinishLaunchingWithOptions:]"
-                  moduleName = "tssmine"
-                  urlString = "file:///Users/bobcao/Desktop/tssmine/tssmine/AppDelegate.m"
-                  timestampString = "411233673.020794"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "2">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[AppDelegate application:didFinishLaunchingWithOptions:]"
-                  moduleName = "tssmine"
-                  urlString = "file:///Users/bobcao/Desktop/tssmine/tssmine/AppDelegate.m"
-                  timestampString = "411233673.021194"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "8">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -241,7 +211,7 @@
                   symbolName = "-[SnapTimelineViewController actionSheet:clickedButtonAtIndex:]"
                   moduleName = "tssmine"
                   urlString = "file:///Users/bobcao/Desktop/tssmine/tssmine/SnapTimelineViewController.m"
-                  timestampString = "411233673.022729"
+                  timestampString = "411335318.643734"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "151"
@@ -255,7 +225,7 @@
                   symbolName = "-[SnapTimelineViewController actionSheet:clickedButtonAtIndex:]"
                   moduleName = "tssmine"
                   urlString = "file:///Users/bobcao/Desktop/tssmine/tssmine/SnapTimelineViewController.m"
-                  timestampString = "411233673.023173"
+                  timestampString = "411335318.643917"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "151"
@@ -356,7 +326,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "106"
-            endingLineNumber = "106">
+            endingLineNumber = "106"
+            landmarkName = "@implementation TSSUtility"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -435,6 +407,36 @@
             endingLineNumber = "38"
             landmarkName = "-setLikeStatus:"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[snapFeedTableViewCell setLikeStatus:]"
+                  moduleName = "tssmine"
+                  urlString = "file:///Users/bobcao/Desktop/tssmine/tssmine/snapFeedTableViewCell.m"
+                  timestampString = "411335318.645948"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[snapFeedTableViewCell setLikeStatus:]"
+                  moduleName = "tssmine"
+                  urlString = "file:///Users/bobcao/Desktop/tssmine/tssmine/snapFeedTableViewCell.m"
+                  timestampString = "411335318.646163"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "110">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -483,6 +485,36 @@
             endingLineNumber = "143"
             landmarkName = "-snapFeedTableViewCell:didTapLikeButton:Snap:"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__71-[SnapFeedsViewController snapFeedTableViewCell:didTapLikeButton:Snap:]_block_invoke"
+                  moduleName = "tssmine"
+                  urlString = "file:///Users/bobcao/Desktop/tssmine/tssmine/SnapFeedsViewController.m"
+                  timestampString = "411335318.646867"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "143"
+                  endingLineNumber = "143"
+                  offsetFromSymbolStart = "62">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_106"
+                  moduleName = "tssmine"
+                  urlString = "file:///Users/bobcao/Desktop/tssmine/tssmine/SnapFeedsViewController.m"
+                  timestampString = "411335318.647086"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "143"
+                  endingLineNumber = "143"
+                  offsetFromSymbolStart = "0">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

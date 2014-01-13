@@ -39,21 +39,25 @@
             }
             
             if (succeeded && ![[[snap objectForKey:@"poster"] objectId] isEqualToString:[[PFUser currentUser] objectId]]) {
-                //Push notification, implement later
-                /* NSString *privateChannelName = [[photo objectForKey:kPAPPhotoUserKey] objectForKey:kPAPUserPrivateChannelKey];
-                if (privateChannelName && privateChannelName.length != 0) {
-                    NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys:
-                                          [NSString stringWithFormat:@"%@ likes your photo.", [PAPUtility firstNameForDisplayName:[[PFUser currentUser] objectForKey:kPAPUserDisplayNameKey]]], kAPNSAlertKey,
-                                          kPAPPushPayloadPayloadTypeActivityKey, kPAPPushPayloadPayloadTypeKey,
-                                          kPAPPushPayloadActivityLikeKey, kPAPPushPayloadActivityTypeKey,
-                                          [[PFUser currentUser] objectId], kPAPPushPayloadFromUserObjectIdKey,
-                                          [photo objectId], kPAPPushPayloadPhotoObjectIdKey,
-                                          nil];
-                    PFPush *push = [[PFPush alloc] init];
-                    [push setChannel:privateChannelName];
-                    [push setData:data];
-                    [push sendPushInBackground];
-                }*/
+                
+                //sending push notification
+                //query matched user
+                PFQuery *userQuery = [PFUser query];
+                [userQuery whereKey:@"objectId" equalTo:[[snap objectForKey:@"poster"] objectId]];
+                
+                //build the actual push notification target query
+                PFQuery *pushQuery = [PFInstallation query];
+                [pushQuery whereKey:@"user" matchesQuery:userQuery];
+                
+                // Send push notification to query
+                PFPush *push = [[PFPush alloc] init];
+                [push setQuery:pushQuery]; // Set our Installation query
+                NSString *msg = [NSString stringWithFormat:@"%@ Has like your Snap %@",
+                                 [[PFUser currentUser] objectForKey:@"username"], [snap objectForKey:@"snapTitle"]];
+                NSLog(msg);
+                [push setMessage:msg];
+                [push sendPushInBackground];
+                NSLog(@"Push Sent");
             }
             
             // refresh cache
