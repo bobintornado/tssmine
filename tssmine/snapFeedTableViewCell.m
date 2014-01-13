@@ -24,14 +24,12 @@
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation. */
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
+//- (void)drawRect:(CGRect)rect
+//{
+//    
+//}
+- (IBAction)didTapLikeButton:(id)sender {
+    [TSSUtility likePhotoInBackground:self.snapPhotoObject block:nil];
 }
 
-- (IBAction)didTapLikeButton:(id)sender {
-    [TSSUtility likePhotoInBackground:self.snapPhotoObject block:^(BOOL succeeded, NSError *error) {
-        //donothing
-    }];
-}
 @end

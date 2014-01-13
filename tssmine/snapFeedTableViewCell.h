@@ -15,5 +15,10 @@
 
 /// The snapPhoto associated with this view
 @property (nonatomic,strong) PFObject *snapPhotoObject;
+@property (strong, nonatomic) IBOutlet UIButton *snapLikeButton;
+@property (strong, nonatomic) IBOutlet UIButton *snapCommentButton;
+
+//Display statistics about snap
+@property (strong, nonatomic) IBOutlet UILabel *snapStatsLabel;
 
 @end

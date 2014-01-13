@@ -31,12 +31,12 @@
     
     //adding Title
     UINavigationItem *navItem = [[UINavigationItem alloc] init];
-    navItem.title = @"Snaps";
+    navItem.title = @"Campus Snaps";
     //adding right button for photo taking
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(takePicture:)];
     navItem.rightBarButtonItem = rightButton;
     //adding all items to navigation bar
-    _snapTimelineNavigationBar.items = @[ navItem ];
+    self.navigationController.navigationBar.items = @[ navItem ];
     
 }
 

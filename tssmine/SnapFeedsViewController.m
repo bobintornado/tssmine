@@ -8,6 +8,8 @@
 
 #import "SnapFeedsViewController.h"
 #import "snapFeedTableViewCell.h"
+#import "SnapDetailViewController.h"
+#import "TSSUtility.h"
 
 @interface SnapFeedsViewController ()
 @property (strong, nonatomic) IBOutlet UITableView *feedsTableView;
@@ -64,23 +66,52 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object {
+    
+    //mark cell indentifier in storyboard
     static NSString *CellIdentifier = @"snapCell";
     
-    tableView = self.feedsTableView;
-    
+    //assign indentifer
     snapFeedTableViewCell *cell = (snapFeedTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    //initilize with identifer
     if (cell == nil) {
         cell = [[snapFeedTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
+    
+    //query cell statistics
+    PFQuery *snapLikeCount = [[PFQuery alloc] initWithClassName:@"ActivityLike"];
+    [snapLikeCount whereKey:@"snapPhoto" equalTo:object];
+    [snapLikeCount countObjectsInBackgroundWithBlock:^(int number, NSError *error){
+        cell.snapStatsLabel.text = [NSString stringWithFormat:@"%d likes 0 comments", number];
+    }];
+    
     // Configure the cell
-    //cell.snapTitle.text = [object objectForKey:self.textKey];
     cell.snapPhotoObject = object;
     cell.snapPhoto.file = [object objectForKey:self.imageKey];
-    
     [cell.snapPhoto loadInBackground];
     
+    //make button responsive
+    for (id obj in cell.subviews)
+    {
+        if ([NSStringFromClass([obj class]) isEqualToString:@"UITableViewCellScrollView"])
+        {
+            UIScrollView *scroll = (UIScrollView *) obj;
+            scroll.delaysContentTouches = NO;
+            break;
+        }
+    }
+    
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+    SnapDetailViewController *snapDetailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"snapDetailVC"];
+    
+    [self.navigationController pushViewController:snapDetailVC animated:YES];
 }
 
 @end

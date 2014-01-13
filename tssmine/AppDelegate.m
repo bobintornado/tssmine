@@ -13,7 +13,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
     
     // Register Parse Application.
     [Parse setApplicationId:@"dwus9w9uMQdXlXxXMgvZawLzmKEhmKbGBGdLkInZ"

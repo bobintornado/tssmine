@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B3116" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -17,14 +17,14 @@
                     <connections>
                         <segue destination="dVf-bh-hCo" kind="relationship" relationship="viewControllers" id="HvG-2s-yJN"/>
                         <segue destination="vTO-ci-raN" kind="relationship" relationship="viewControllers" id="mLm-dO-1T1"/>
-                        <segue destination="w0D-Rg-P06" kind="relationship" relationship="viewControllers" id="Khr-js-8re"/>
+                        <segue destination="Kh5-2z-6Ys" kind="relationship" relationship="viewControllers" id="rpP-Kf-GoX"/>
                         <segue destination="ehz-sP-pEw" kind="relationship" relationship="viewControllers" id="fPp-Sc-iLF"/>
                         <segue destination="MXZ-r5-Uxw" kind="relationship" relationship="viewControllers" id="FHf-CP-30m"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNP-y4-bzi" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1143" y="396"/>
+            <point key="canvasLocation" x="-1119" y="476"/>
         </scene>
         <!--Home Table View Controller - Home-->
         <scene sceneID="PtW-Sj-7Ce">
@@ -92,7 +92,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dwS-um-eIO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="116" y="1536"/>
+            <point key="canvasLocation" x="84" y="2424"/>
+        </scene>
+        <!--Navigation Controller - Item-->
+        <scene sceneID="Qme-aI-AA3">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="Kh5-2z-6Ys" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="QRM-hT-5zR"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jmr-hM-6HV">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="w0D-Rg-P06" kind="relationship" relationship="rootViewController" id="F4g-N0-XpQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ERj-KD-xTX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136" y="62"/>
         </scene>
         <!--Snap Timeline View Controller - Snap-->
         <scene sceneID="E9n-Mx-yEf">
@@ -106,40 +122,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V8z-Sd-OF4">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Snaps" id="zk5-d8-SLD"/>
-                                </items>
-                            </navigationBar>
                             <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0hZ-dm-ajM">
-                                <rect key="frame" x="0.0" y="64" width="320" height="453"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="576"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="TkE-XL-kpY" kind="embed" id="sXA-7h-hXJ"/>
+                                    <segue destination="TkE-XL-kpY" kind="embed" identifier="embed" id="sXA-7h-hXJ"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Snap" image="Picasa" id="gBp-YF-xSx"/>
+                    <navigationItem key="navigationItem" id="fra-Hp-kM9"/>
                     <connections>
-                        <outlet property="snapTimelineNavigationBar" destination="V8z-Sd-OF4" id="J6J-ik-VHA"/>
                         <outlet property="view" destination="EGP-hq-N8K" id="EUr-kR-oyJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gsi-IY-p3r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="96" y="62"/>
+            <point key="canvasLocation" x="624" y="62"/>
         </scene>
         <!--Snap Feeds View Controller-->
         <scene sceneID="Pf6-nv-pfz">
             <objects>
                 <tableViewController id="TkE-XL-kpY" customClass="SnapFeedsViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="342" sectionHeaderHeight="22" sectionFooterHeight="22" id="mL2-Gz-iAm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="453"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" delaysContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="342" sectionHeaderHeight="22" sectionFooterHeight="22" id="mL2-Gz-iAm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="576"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -151,37 +160,41 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gpc-Hb-vPu" customClass="PFImageView">
-                                            <rect key="frame" x="20" y="62" width="280" height="222"/>
+                                            <rect key="frame" x="7" y="48" width="307" height="222"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LwH-6S-Pmr">
-                                            <rect key="frame" x="260" y="311" width="30" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Like">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="didTapLikeButton:" destination="1vz-dJ-vvZ" eventType="touchUpInside" id="tQ9-xL-N3s"/>
-                                            </connections>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIa-fb-6rT">
-                                            <rect key="frame" x="168" y="311" width="68" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Comment">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                        </button>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="x comments x likes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcG-OW-iqg">
-                                            <rect key="frame" x="142" y="292" width="148" height="21"/>
+                                            <rect key="frame" x="146" y="290" width="154" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ssy-9Z-Noh">
+                                            <rect key="frame" x="189" y="311" width="65" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="comment">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VD8-Ty-mor">
+                                            <rect key="frame" x="266" y="311" width="34" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="like">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="didTapLike:" destination="TkE-XL-kpY" eventType="touchUpInside" id="roi-bC-wke"/>
+                                                <action selector="didTapLikeButton:" destination="1vz-dJ-vvZ" eventType="touchUpInside" id="RqY-28-zca"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="snapCommentButton" destination="Ssy-9Z-Noh" id="yaB-QZ-bmI"/>
+                                    <outlet property="snapLikeButton" destination="VD8-Ty-mor" id="72W-km-6Pp"/>
                                     <outlet property="snapPhoto" destination="gpc-Hb-vPu" id="XeH-ER-P6S"/>
+                                    <outlet property="snapStatsLabel" destination="gcG-OW-iqg" id="mdn-52-M0h"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -193,11 +206,58 @@
                     <keyCommands/>
                     <connections>
                         <outlet property="feedsTableView" destination="mL2-Gz-iAm" id="4Kn-c3-fxg"/>
+                        <segue destination="JTo-Dl-dI4" kind="push" identifier="snapdetail" id="y7s-D7-Y5W"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bn0-Vl-qo5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="636" y="119"/>
+            <point key="canvasLocation" x="1186" y="54"/>
+        </scene>
+        <!--Snap Detail View Controller-->
+        <scene sceneID="4sf-YU-MA8">
+            <objects>
+                <viewController storyboardIdentifier="snapDetailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JTo-Dl-dI4" customClass="SnapDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="elb-Kg-Bqh"/>
+                        <viewControllerLayoutGuide type="bottom" id="DKM-UY-q0O"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lo6-7v-9Zo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="576"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O2R-MQ-g1J">
+                                <rect key="frame" x="20" y="93" width="280" height="253"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSm-hW-ZBt">
+                                <rect key="frame" x="20" y="383" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Like">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XY0-03-cmd">
+                                <rect key="frame" x="66" y="383" width="68" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Comment">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="x like x comments" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TdV-2Q-OII">
+                                <rect key="frame" x="20" y="361" width="139" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="BfG-O2-UDD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Agz-ng-RNN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1700" y="58"/>
         </scene>
         <!--Snap Take Photo View Controller-->
         <scene sceneID="C2J-lJ-BqH">
@@ -211,14 +271,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test Code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZh-kI-g6y">
-                                <rect key="frame" x="121" y="533" width="78" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Testing Code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZh-kI-g6y">
+                                <rect key="frame" x="110" y="340" width="101" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login" translatesAutoresizingMaskIntoConstraints="NO" id="E7j-CV-pXb">
-                                <rect key="frame" x="20" y="72" width="280" height="453"/>
+                                <rect key="frame" x="20" y="82" width="280" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="1" green="0.98389977870000001" blue="0.65581992190000005" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
@@ -239,7 +299,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yGf-Lk-hAT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1972" y="-66"/>
+            <point key="canvasLocation" x="136" y="790"/>
         </scene>
         <!--Design View Controller - Styles-->
         <scene sceneID="Aem-fh-jck">
@@ -316,7 +376,7 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="128" y="838"/>
+            <point key="canvasLocation" x="136" y="1466"/>
         </scene>
     </scenes>
     <resources>

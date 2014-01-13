@@ -10,8 +10,6 @@
 
 @interface SnapTimelineViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
 
-@property (strong, nonatomic) IBOutlet UINavigationBar *snapTimelineNavigationBar;
-
 @property (strong, nonatomic) IBOutlet UIView *view;
 
 @end
