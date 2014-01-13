@@ -26,8 +26,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    //UIViewController *vc =[[self.tabBarController viewControllers] objectAtIndex:4];
+    //NSArray *array = [vc childViewControllers];
+    //NSLog(@"test, %@", [array[0] class]);
+    //[lvc setFields: PFLogInFieldsTwitter | PFLogInFieldsFacebook | PFLogInFieldsDismissButton];
 }
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

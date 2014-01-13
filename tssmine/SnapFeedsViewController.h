@@ -7,7 +7,8 @@
 //
 
 #import <Parse/Parse.h>
+#import "snapFeedTableViewCell.h"
 
-@interface SnapFeedsViewController : PFQueryTableViewController
+@interface SnapFeedsViewController : PFQueryTableViewController <snapFeedTableViewCellDelegate>
 
 @end

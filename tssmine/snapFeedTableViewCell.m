@@ -11,6 +11,7 @@
 
 @implementation snapFeedTableViewCell
 
+@synthesize delegate;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -21,6 +22,29 @@
     return self;
 }
 
+- (void)shouldEnableLikeButton:(BOOL)enable{
+    if(enable){
+        [self.snapLikeButton removeTarget:self action:@selector(didTapLikeButton:) forControlEvents:UIControlEventTouchUpInside];
+        NSLog(@"like remove");
+    } else {
+        [self.snapLikeButton addTarget:self action:@selector(didTapLikeButton:) forControlEvents:UIControlEventTouchUpInside];
+        NSLog(@"like add back");
+    }
+}
+
+- (void)setLikeStatus:(BOOL)liked {
+    [self.snapLikeButton setSelected:liked];
+    if (liked) {
+        [self.snapLikeButton setTitleEdgeInsets:UIEdgeInsetsMake(-1.0f, 0.0f, 0.0f, 0.0f)];
+        [[self.snapLikeButton titleLabel] setShadowOffset:CGSizeMake(0.0f, -1.0f)];
+        [self.snapLikeButton setTitle:@"liked" forState:UIControlStateNormal];
+    } else {
+        [self.snapLikeButton setTitleEdgeInsets:UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f)];
+        [[self.snapLikeButton titleLabel] setShadowOffset:CGSizeMake(0.0f, 1.0f)];
+        [self.snapLikeButton setTitle:@"like" forState:UIControlStateNormal];
+    }
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation. */
@@ -28,8 +52,14 @@
 //{
 //    
 //}
+
 - (IBAction)didTapLikeButton:(id)sender {
-    [TSSUtility likePhotoInBackground:self.snapPhotoObject block:nil];
+    NSLog(@"touch Detect");
+    if (delegate && [delegate respondsToSelector:@selector(snapFeedTableViewCell:didTapLikeButton:Snap:)]){
+        [delegate snapFeedTableViewCell:self didTapLikeButton:sender Snap:self.snapPhotoObject];
+        NSLog(@"likeTapExecute");
+    }
 }
+
 
 @end

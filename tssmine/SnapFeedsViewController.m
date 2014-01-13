@@ -11,6 +11,7 @@
 #import "SnapDetailViewController.h"
 #import "TSSUtility.h"
 
+
 @interface SnapFeedsViewController ()
 @property (strong, nonatomic) IBOutlet UITableView *feedsTableView;
 
@@ -87,6 +88,7 @@
     }];
     
     // Configure the cell
+    cell.delegate = self;
     cell.snapPhotoObject = object;
     cell.snapPhoto.file = [object objectForKey:self.imageKey];
     [cell.snapPhoto loadInBackground];
@@ -120,4 +122,39 @@
     [self.navigationController pushViewController:snapDetailVC animated:YES];
 }
 
+- (void)snapFeedTableViewCell:(snapFeedTableViewCell *)snapFeedTableViewCell didTapLikeButton:(UIButton *)button Snap:(PFObject *)snap{
+    
+    //enable/disable like button
+    [snapFeedTableViewCell shouldEnableLikeButton:NO];
+    
+    //get like status from button selection status
+    BOOL liked = !button.selected;
+    
+    //set button selection status
+    [snapFeedTableViewCell setLikeStatus:liked];
+    
+    //lots of code neglected for simplicity
+    if(liked){
+        [TSSUtility likeSnapInBackground:snap block:^(BOOL succeeded, NSError *error){
+            //can't understand the code yet
+            [snapFeedTableViewCell shouldEnableLikeButton:YES];
+            [snapFeedTableViewCell setLikeStatus:succeeded];
+            NSLog(@"like execute");
+        }];
+    } else {
+        [TSSUtility unlikeSnapInBackground:snap block:^(BOOL succeeded, NSError *error){
+            [snapFeedTableViewCell shouldEnableLikeButton:YES];
+            [snapFeedTableViewCell setLikeStatus:!succeeded];
+            NSLog(@"dislike execute");
+        }];
+    }
+}
+
 @end
+
+
+
+
+
+
+

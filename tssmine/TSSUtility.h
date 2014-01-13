@@ -10,6 +10,8 @@
 
 @interface TSSUtility : NSObject
 
-+ (void)likePhotoInBackground:(id)photo block:(void (^)(BOOL succeeded, NSError *error))completionBlock;
++ (void)likeSnapInBackground:(id)snap block:(void (^)(BOOL succeeded, NSError *error))completionBlock;
+
++ (void)unlikeSnapInBackground:(id)snap block:(void (^)(BOOL succeeded, NSError *error))completionBlock;
 
 @end

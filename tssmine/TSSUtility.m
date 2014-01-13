@@ -10,9 +10,9 @@
 
 @implementation TSSUtility
 
-+ (void)likePhotoInBackground:(id)photo block:(void (^)(BOOL succeeded, NSError *error))completionBlock {
++ (void)likeSnapInBackground:(id)snap block:(void (^)(BOOL succeeded, NSError *error))completionBlock {
     PFQuery *queryExistingLikes = [PFQuery queryWithClassName:@"ActivityLike"];
-    [queryExistingLikes whereKey:@"snapPhoto" equalTo:photo];
+    [queryExistingLikes whereKey:@"snapPhoto" equalTo:snap];
     [queryExistingLikes whereKey:@"fromUser" equalTo:[PFUser currentUser]];
     //set caching implementation later
     //[queryExistingLikes setCachePolicy:kPFCachePolicyNetworkOnly];
@@ -26,8 +26,8 @@
         // proceed to creating new like
         PFObject *likeActivity = [PFObject objectWithClassName:@"ActivityLike"];
         [likeActivity setObject:[PFUser currentUser] forKey:@"fromUser"];
-        [likeActivity setObject:[photo objectForKey:@"poster"] forKey:@"toUser"];
-        [likeActivity setObject:photo forKey:@"snapPhoto"];
+        [likeActivity setObject:[snap objectForKey:@"poster"] forKey:@"toUser"];
+        [likeActivity setObject:snap forKey:@"snapPhoto"];
         
         PFACL *likeACL = [PFACL ACLWithUser:[PFUser currentUser]];
         [likeACL setPublicReadAccess:YES];
@@ -38,7 +38,7 @@
                 completionBlock(succeeded,error);
             }
             
-            if (succeeded && ![[[photo objectForKey:@"poster"] objectId] isEqualToString:[[PFUser currentUser] objectId]]) {
+            if (succeeded && ![[[snap objectForKey:@"poster"] objectId] isEqualToString:[[PFUser currentUser] objectId]]) {
                 //Push notification, implement later
                 /* NSString *privateChannelName = [[photo objectForKey:kPAPPhotoUserKey] objectForKey:kPAPUserPrivateChannelKey];
                 if (privateChannelName && privateChannelName.length != 0) {
@@ -101,4 +101,61 @@
      [[PFFacebookUtils facebook] requestWithGraphPath:@"me/og.likes" andParams:params andHttpMethod:@"POST" andDelegate:nil];
      }
      */
+
++ (void)unlikeSnapInBackground:(id)snap block:(void (^)(BOOL succeeded, NSError *error))completionBlock{
+    PFQuery *queryExistingLikes = [PFQuery queryWithClassName:@"ActivityLike"];
+    [queryExistingLikes whereKey:@"snapPhoto" equalTo:snap];
+    [queryExistingLikes whereKey:@"fromUser" equalTo:[PFUser currentUser]];
+    //[queryExistingLikes setCachePolicy:kPFCachePolicyNetworkOnly];
+    [queryExistingLikes findObjectsInBackgroundWithBlock:^(NSArray *activities, NSError *error) {
+        if (!error) {
+            for (PFObject *activity in activities) {
+                [activity delete];
+            }
+            
+            if (completionBlock) {
+                completionBlock(YES,nil);
+            }
+            
+            // refresh cache
+            //PFQuery *query = [PAPUtility queryForActivitiesOnPhoto:photo cachePolicy:kPFCachePolicyNetworkOnly];
+//            [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//                if (!error) {
+//                    
+//                    NSMutableArray *likers = [NSMutableArray array];
+//                    NSMutableArray *commenters = [NSMutableArray array];
+//                    
+//                    BOOL isLikedByCurrentUser = NO;
+//                    
+//                    for (PFObject *activity in objects) {
+//                        if ([[activity objectForKey:kPAPActivityTypeKey] isEqualToString:kPAPActivityTypeLike]) {
+//                            [likers addObject:[activity objectForKey:kPAPActivityFromUserKey]];
+//                        } else if ([[activity objectForKey:kPAPActivityTypeKey] isEqualToString:kPAPActivityTypeComment]) {
+//                            [commenters addObject:[activity objectForKey:kPAPActivityFromUserKey]];
+//                        }
+//                        
+//                        if ([[[activity objectForKey:kPAPActivityFromUserKey] objectId] isEqualToString:[[PFUser currentUser] objectId]]) {
+//                            if ([[activity objectForKey:kPAPActivityTypeKey] isEqualToString:kPAPActivityTypeLike]) {
+//                                isLikedByCurrentUser = YES;
+//                            }
+//                        }
+//                    }
+//                    
+//                    [[PAPCache sharedCache] setAttributesForPhoto:photo likers:likers commenters:commenters likedByCurrentUser:isLikedByCurrentUser];
+//                }
+//                
+//                [[NSNotificationCenter defaultCenter] postNotificationName:PAPUtilityUserLikedUnlikedPhotoCallbackFinishedNotification object:photo userInfo:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:NO] forKey:PAPPhotoDetailsViewControllerUserLikedUnlikedPhotoNotificationUserInfoLikedKey]];
+//            }];
+            
+        } else {
+            if (completionBlock) {
+                completionBlock(NO,error);
+            }
+        }
+    }];
+}
+
 @end
+
+
+

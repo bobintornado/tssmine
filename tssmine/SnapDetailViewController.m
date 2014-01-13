@@ -76,7 +76,7 @@
 }
 
 - (IBAction)didTapLikeButton:(id)sender {
-    [TSSUtility likePhotoInBackground:self.snapObject block:nil];
+    [TSSUtility likeSnapInBackground:self.snapObject block:nil];
 }
 
 @end

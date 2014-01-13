@@ -387,6 +387,16 @@
                     <view key="view" contentMode="scaleToFill" id="oW9-Wd-Ejg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0aN-oe-50a">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="520"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="M1d-vs-R4E" kind="embed" id="y4V-ad-k8G"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Kbh-9H-5O4"/>
@@ -394,6 +404,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EdJ-Fn-4pl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136" y="2158"/>
+        </scene>
+        <!--Log In View Controller-->
+        <scene sceneID="ngU-5f-BuS">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="M1d-vs-R4E" customClass="PFLogInViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="360-Zl-7jY"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZK5-kf-ERo"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="uSg-gf-4Ld">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="520"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Eg-TQ-ugf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="635" y="2182"/>
         </scene>
     </scenes>
     <resources>
