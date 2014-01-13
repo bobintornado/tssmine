@@ -24,11 +24,11 @@
 
 - (void)shouldEnableLikeButton:(BOOL)enable{
     if(enable){
-        [self.snapLikeButton removeTarget:self action:@selector(didTapLikeButton:) forControlEvents:UIControlEventTouchUpInside];
-        NSLog(@"like remove");
-    } else {
         [self.snapLikeButton addTarget:self action:@selector(didTapLikeButton:) forControlEvents:UIControlEventTouchUpInside];
         NSLog(@"like add back");
+    } else {
+        [self.snapLikeButton removeTarget:self action:@selector(didTapLikeButton:) forControlEvents:UIControlEventTouchUpInside];
+        NSLog(@"like remove");
     }
 }
 

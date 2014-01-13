@@ -433,8 +433,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
             endingLineNumber = "38"
-            landmarkName = "@implementation snapFeedTableViewCell"
-            landmarkType = "3">
+            landmarkName = "-setLikeStatus:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -449,7 +449,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
             endingLineNumber = "32"
-            landmarkName = "-didTapLikeButton:"
+            landmarkName = "-shouldEnableLikeButton:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
