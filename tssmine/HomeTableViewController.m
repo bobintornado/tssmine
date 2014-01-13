@@ -7,8 +7,6 @@
 //
 
 #import "HomeTableViewController.h"
-#import "ProfileViewController.h"
-#import "PviewController2ViewController.h"
 
 @interface HomeTableViewController ()
 
@@ -29,16 +27,6 @@
 {
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    ProfileViewController *controller = self.tabBarController.viewControllers[4];
-    if (![PFUser currentUser]){
-        [controller setFacebookPermissions:[NSArray arrayWithObjects:@"friends_about_me", nil]];
-        [controller setFields:PFLogInFieldsFacebook | PFLogInFieldsSignUpButton | PFLogInFieldsUsernameAndPassword | PFLogInFieldsPasswordForgotten | PFLogInFieldsLogInButton];
-    }
 }
 - (void)didReceiveMemoryWarning
 {

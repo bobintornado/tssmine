@@ -27,10 +27,8 @@
 		D98BF1921825514800DEE19B /* HomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF1911825514800DEE19B /* HomeTableViewController.m */; };
 		D98BF1951825523900DEE19B /* ShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF1941825523900DEE19B /* ShowViewController.m */; };
 		D98BF19B1825539A00DEE19B /* DesignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF19A1825539A00DEE19B /* DesignViewController.m */; };
-		D98BF19E182553AD00DEE19B /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF19D182553AD00DEE19B /* ProfileViewController.m */; };
 		D9B6F02A187C28210069E088 /* SnapFeedsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B6F029187C28210069E088 /* SnapFeedsViewController.m */; };
 		D9B6F02D187C32990069E088 /* snapFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B6F02C187C32990069E088 /* snapFeedTableViewCell.m */; };
-		D9C2B5E81879522D008A5392 /* PviewController2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9C2B5E71879522D008A5392 /* PviewController2ViewController.m */; };
 		D9DAEC9B1882EBEA0072CBAA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9EE9A531882EB1100AA30EF /* AudioToolbox.framework */; };
 		D9DAEC9D1882EC9D0072CBAA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9DAEC9C1882EC9D0072CBAA /* CoreLocation.framework */; };
 		D9E637201847693800E0F703 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E6371F1847693800E0F703 /* Accounts.framework */; };
@@ -45,7 +43,6 @@
 		D9F1C4FA184376FE00CC0679 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F1C4F9184376FE00CC0679 /* Security.framework */; };
 		D9F1C4FE1843770D00CC0679 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F1C4FD1843770D00CC0679 /* SystemConfiguration.framework */; };
 		D9F1C50018437D9700CC0679 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F1C4FF18437D9700CC0679 /* FacebookSDK.framework */; };
-		E615AE07483A48CF9CBF7FAF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B5E9579A6C24A9E8800CED8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,14 +89,10 @@
 		D98BF1941825523900DEE19B /* ShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowViewController.m; sourceTree = "<group>"; };
 		D98BF1991825539A00DEE19B /* DesignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesignViewController.h; sourceTree = "<group>"; };
 		D98BF19A1825539A00DEE19B /* DesignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesignViewController.m; sourceTree = "<group>"; };
-		D98BF19C182553AD00DEE19B /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
-		D98BF19D182553AD00DEE19B /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		D9B6F028187C28210069E088 /* SnapFeedsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapFeedsViewController.h; sourceTree = "<group>"; };
 		D9B6F029187C28210069E088 /* SnapFeedsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnapFeedsViewController.m; sourceTree = "<group>"; };
 		D9B6F02B187C32990069E088 /* snapFeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = snapFeedTableViewCell.h; sourceTree = "<group>"; };
 		D9B6F02C187C32990069E088 /* snapFeedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = snapFeedTableViewCell.m; sourceTree = "<group>"; };
-		D9C2B5E61879522D008A5392 /* PviewController2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PviewController2ViewController.h; sourceTree = "<group>"; };
-		D9C2B5E71879522D008A5392 /* PviewController2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PviewController2ViewController.m; sourceTree = "<group>"; };
 		D9DAEC9C1882EC9D0072CBAA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D9E6371F1847693800E0F703 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		D9E637211847694500E0F703 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
@@ -139,7 +132,6 @@
 				D98BF15D182550EC00DEE19B /* UIKit.framework in Frameworks */,
 				D9F1C50018437D9700CC0679 /* FacebookSDK.framework in Frameworks */,
 				D98BF159182550EC00DEE19B /* Foundation.framework in Frameworks */,
-				E615AE07483A48CF9CBF7FAF /* libPods.a in Frameworks */,
 				D9F1C4EC1843767800CC0679 /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,6 +149,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D957F9111883FB29008955CC /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
 		D9647D4F187A816300B26CE8 /* Snap */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +275,7 @@
 		D99E50031826AB91005F4D32 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D957F9111883FB29008955CC /* Profile */,
 				D9647D4F187A816300B26CE8 /* Snap */,
 				D98BF1901825514800DEE19B /* HomeTableViewController.h */,
 				D98BF1911825514800DEE19B /* HomeTableViewController.m */,
@@ -283,10 +283,6 @@
 				D98BF1941825523900DEE19B /* ShowViewController.m */,
 				D98BF1991825539A00DEE19B /* DesignViewController.h */,
 				D98BF19A1825539A00DEE19B /* DesignViewController.m */,
-				D98BF19C182553AD00DEE19B /* ProfileViewController.h */,
-				D98BF19D182553AD00DEE19B /* ProfileViewController.m */,
-				D9C2B5E61879522D008A5392 /* PviewController2ViewController.h */,
-				D9C2B5E71879522D008A5392 /* PviewController2ViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -441,12 +437,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D97A35DC187E80B50006A90F /* TSSUtility.m in Sources */,
-				D9C2B5E81879522D008A5392 /* PviewController2ViewController.m in Sources */,
 				D98BF169182550EC00DEE19B /* AppDelegate.m in Sources */,
 				D98BF1921825514800DEE19B /* HomeTableViewController.m in Sources */,
 				D9B6F02D187C32990069E088 /* snapFeedTableViewCell.m in Sources */,
 				D98BF165182550EC00DEE19B /* main.m in Sources */,
-				D98BF19E182553AD00DEE19B /* ProfileViewController.m in Sources */,
 				D9647D58187A823F00B26CE8 /* SnapTakePhotoViewController.m in Sources */,
 				D9647D55187A823200B26CE8 /* SnapDetailViewController.m in Sources */,
 				D9647D52187A821C00B26CE8 /* SnapTimelineViewController.m in Sources */,
@@ -572,8 +566,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Fangzhou Cao (Z2BRF3CLN7)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Fangzhou Cao (Z2BRF3CLN7)";
+				CODE_SIGN_IDENTITY = "FBEB7EBF-BCFB-4FF1-B4D5-1C61004B44CB";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "FBEB7EBF-BCFB-4FF1-B4D5-1C61004B44CB";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/bobcao/Desktop/tssmine,
@@ -597,8 +591,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Fangzhou Cao (Z2BRF3CLN7)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Fangzhou Cao (Z2BRF3CLN7)";
+				CODE_SIGN_IDENTITY = "FBEB7EBF-BCFB-4FF1-B4D5-1C61004B44CB";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "FBEB7EBF-BCFB-4FF1-B4D5-1C61004B44CB";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/bobcao/Desktop/tssmine,

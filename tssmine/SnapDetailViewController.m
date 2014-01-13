@@ -55,15 +55,19 @@
 
 - (void)shareSnap{
     //futher customization is needed
-    NSString *shareString = @"CapTech is a great place to work.";
-    UIImage *shareImage = [UIImage imageNamed:@"captech-logo.jpg"];
-    NSURL *shareUrl = [NSURL URLWithString:@"http://www.captechconsulting.com"];
+    NSString *shareString = @"Look at what I have found out in Campus Snap!";
     
-    NSArray *activityItems = [NSArray arrayWithObjects:shareString, shareImage, shareUrl, nil];
+    //Get the image needed to shared before user clicks on sharing
+    PFFile *imageFile = [self.snapObject objectForKey:@"snapPicture"];
+    NSData *data = [imageFile getData];
+    UIImage *shareImage = [UIImage imageWithData:data];
     
+    //config the sharing
+    NSArray *activityItems = [NSArray arrayWithObjects:shareString, shareImage, nil];
+    
+    //present the sharing window
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
     activityViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    
     [self presentViewController:activityViewController animated:YES completion:nil];
 }
 
