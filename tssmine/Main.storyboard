@@ -271,11 +271,11 @@
             </objects>
             <point key="canvasLocation" x="136" y="790"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - Style-->
         <scene sceneID="yhg-6P-QR6">
             <objects>
                 <navigationController definesPresentationContext="YES" id="RbE-da-7RF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="WKZ-Of-xKo"/>
+                    <tabBarItem key="tabBarItem" title="Style" image="Favorites" id="WKZ-Of-xKo"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ADd-z6-Hbe">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -298,12 +298,39 @@
                     <view key="view" contentMode="scaleToFill" id="Bab-wl-uyH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Styling Quiz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pge-KX-KsA">
+                                <rect key="frame" x="114" y="114" width="92" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Saved Stylings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqg-g1-r15">
+                                <rect key="frame" x="103" y="340" width="114" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8ZA-LN-qgn">
+                                <rect key="frame" x="46" y="151" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="0.98389977870000001" blue="0.65581992190000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s1p-z5-j7q">
+                                <rect key="frame" x="46" y="380" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.98389977870000001" blue="0.65581992190000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="LHn-8X-Tjp"/>
                     <connections>
-                        <segue destination="0XE-Mu-pS2" kind="push" id="2ek-Vi-Qh7"/>
-                        <segue destination="K8F-TD-Gko" kind="push" id="wWf-RV-ZBR"/>
+                        <segue destination="0XE-Mu-pS2" kind="push" identifier="stylingQuiz" id="2ek-Vi-Qh7"/>
+                        <segue destination="K8F-TD-Gko" kind="push" identifier="customize" id="wWf-RV-ZBR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G8H-3h-tEC" userLabel="First Responder" sceneMemberID="firstResponder"/>
