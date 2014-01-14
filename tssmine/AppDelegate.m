@@ -30,6 +30,9 @@
         PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
         [logInViewController setDelegate:self.window.rootViewController ]; // Set ourselves as the delegate
         
+        [logInViewController setFacebookPermissions:[NSArray arrayWithObjects:@"friends_about_me", nil]];
+        [logInViewController setFields: PFLogInFieldsFacebook | PFLogInFieldsDefault];
+        
         // Create the sign up view controller
         PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
         [signUpViewController setDelegate:self.window.rootViewController ]; // Set ourselves as the delegate
@@ -40,7 +43,7 @@
         //magic?
         [self.window makeKeyAndVisible];
         // Present the log in view controller
-        [self.window.rootViewController presentedViewController];
+        [self.window.rootViewController presentViewController:logInViewController animated:NO completion:nil        ];
     }
     
     return YES;
