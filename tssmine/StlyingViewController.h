@@ -10,7 +10,4 @@
 
 @interface StlyingViewController : UIViewController <UIGestureRecognizerDelegate>
 
-
-- (IBAction)singleTap:(id)sender;
-
 @end

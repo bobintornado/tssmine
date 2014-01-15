@@ -1,18 +1,18 @@
 //
-//  StlyingViewController.m
+//  BoyStudyViewController.m
 //  tssmine
 //
-//  Created by Bob Cao on 14/1/14.
+//  Created by Bob Cao on 16/1/14.
 //  Copyright (c) 2014 Bob Cao. All rights reserved.
 //
 
-#import "StlyingViewController.h"
+#import "BoyStudyViewController.h"
 
-@interface StlyingViewController ()
+@interface BoyStudyViewController ()
 
 @end
 
-@implementation StlyingViewController
+@implementation BoyStudyViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,7 +27,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    //self.title = @"Styling"
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,15 +34,11 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)didTapOnStylingQuiz:(id)sender {
-     [self performSegueWithIdentifier: @"stylingQuiz" sender: self];
+- (IBAction)didTapOnHome:(id)sender {
+    [self performSegueWithIdentifier:@"boyQuiz2" sender:sender];
 }
-- (IBAction)didTapOnSavedStlyes:(id)sender {
-     [self performSegueWithIdentifier: @"customize" sender: self];
+- (IBAction)didTapOnSchool:(id)sender {
+    [self performSegueWithIdentifier:@"boyQuiz2" sender:sender];
 }
-- (IBAction)didTapOnQuizImage:(id)sender {
-    [self performSegueWithIdentifier: @"stylingQuiz" sender: self];
-}
-
 
 @end

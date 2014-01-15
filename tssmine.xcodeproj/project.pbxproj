@@ -32,6 +32,12 @@
 		D9B6F02D187C32990069E088 /* snapFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B6F02C187C32990069E088 /* snapFeedTableViewCell.m */; };
 		D9DAEC9B1882EBEA0072CBAA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9EE9A531882EB1100AA30EF /* AudioToolbox.framework */; };
 		D9DAEC9D1882EC9D0072CBAA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9DAEC9C1882EC9D0072CBAA /* CoreLocation.framework */; };
+		D9E38B3E1886F5F000FC9B6B /* BorGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E38B3D1886F5F000FC9B6B /* BorGViewController.m */; };
+		D9E38B441886F79C00FC9B6B /* BoyColdHotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E38B431886F79C00FC9B6B /* BoyColdHotViewController.m */; };
+		D9E38B471886F7AC00FC9B6B /* GirlStudyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E38B461886F7AC00FC9B6B /* GirlStudyViewController.m */; };
+		D9E38B4A1886F7BC00FC9B6B /* GirlColdHotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E38B491886F7BC00FC9B6B /* GirlColdHotViewController.m */; };
+		D9E38B4D1886F7C700FC9B6B /* PartyChillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E38B4C1886F7C700FC9B6B /* PartyChillViewController.m */; };
+		D9E38B501886F7FF00FC9B6B /* BoyStudyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E38B4F1886F7FF00FC9B6B /* BoyStudyViewController.m */; };
 		D9E637201847693800E0F703 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E6371F1847693800E0F703 /* Accounts.framework */; };
 		D9E637221847694500E0F703 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E637211847694500E0F703 /* AdSupport.framework */; };
 		D9E637241847694F00E0F703 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E637231847694F00E0F703 /* Social.framework */; };
@@ -97,6 +103,18 @@
 		D9B6F02B187C32990069E088 /* snapFeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = snapFeedTableViewCell.h; sourceTree = "<group>"; };
 		D9B6F02C187C32990069E088 /* snapFeedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = snapFeedTableViewCell.m; sourceTree = "<group>"; };
 		D9DAEC9C1882EC9D0072CBAA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D9E38B3C1886F5F000FC9B6B /* BorGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BorGViewController.h; sourceTree = "<group>"; };
+		D9E38B3D1886F5F000FC9B6B /* BorGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BorGViewController.m; sourceTree = "<group>"; };
+		D9E38B421886F79C00FC9B6B /* BoyColdHotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoyColdHotViewController.h; sourceTree = "<group>"; };
+		D9E38B431886F79C00FC9B6B /* BoyColdHotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoyColdHotViewController.m; sourceTree = "<group>"; };
+		D9E38B451886F7AC00FC9B6B /* GirlStudyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GirlStudyViewController.h; sourceTree = "<group>"; };
+		D9E38B461886F7AC00FC9B6B /* GirlStudyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GirlStudyViewController.m; sourceTree = "<group>"; };
+		D9E38B481886F7BC00FC9B6B /* GirlColdHotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GirlColdHotViewController.h; sourceTree = "<group>"; };
+		D9E38B491886F7BC00FC9B6B /* GirlColdHotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GirlColdHotViewController.m; sourceTree = "<group>"; };
+		D9E38B4B1886F7C700FC9B6B /* PartyChillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartyChillViewController.h; sourceTree = "<group>"; };
+		D9E38B4C1886F7C700FC9B6B /* PartyChillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartyChillViewController.m; sourceTree = "<group>"; };
+		D9E38B4E1886F7FF00FC9B6B /* BoyStudyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoyStudyViewController.h; sourceTree = "<group>"; };
+		D9E38B4F1886F7FF00FC9B6B /* BoyStudyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoyStudyViewController.m; sourceTree = "<group>"; };
 		D9E6371F1847693800E0F703 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		D9E637211847694500E0F703 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		D9E637231847694F00E0F703 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -177,6 +195,18 @@
 				D98438431884D1CC008BDCA8 /* StlyingViewController.m */,
 				D98438451884D3F4008BDCA8 /* CustomizeViewController.h */,
 				D98438461884D3F4008BDCA8 /* CustomizeViewController.m */,
+				D9E38B3C1886F5F000FC9B6B /* BorGViewController.h */,
+				D9E38B3D1886F5F000FC9B6B /* BorGViewController.m */,
+				D9E38B421886F79C00FC9B6B /* BoyColdHotViewController.h */,
+				D9E38B431886F79C00FC9B6B /* BoyColdHotViewController.m */,
+				D9E38B451886F7AC00FC9B6B /* GirlStudyViewController.h */,
+				D9E38B461886F7AC00FC9B6B /* GirlStudyViewController.m */,
+				D9E38B481886F7BC00FC9B6B /* GirlColdHotViewController.h */,
+				D9E38B491886F7BC00FC9B6B /* GirlColdHotViewController.m */,
+				D9E38B4B1886F7C700FC9B6B /* PartyChillViewController.h */,
+				D9E38B4C1886F7C700FC9B6B /* PartyChillViewController.m */,
+				D9E38B4E1886F7FF00FC9B6B /* BoyStudyViewController.h */,
+				D9E38B4F1886F7FF00FC9B6B /* BoyStudyViewController.m */,
 			);
 			name = Styling;
 			sourceTree = "<group>";
@@ -460,14 +490,20 @@
 				D98438441884D1CC008BDCA8 /* StlyingViewController.m in Sources */,
 				D97A35DC187E80B50006A90F /* TSSUtility.m in Sources */,
 				D98BF169182550EC00DEE19B /* AppDelegate.m in Sources */,
+				D9E38B501886F7FF00FC9B6B /* BoyStudyViewController.m in Sources */,
 				D9B6F02D187C32990069E088 /* snapFeedTableViewCell.m in Sources */,
 				D98BF165182550EC00DEE19B /* main.m in Sources */,
 				D9647D58187A823F00B26CE8 /* SnapTakePhotoViewController.m in Sources */,
 				D9647D55187A823200B26CE8 /* SnapDetailViewController.m in Sources */,
 				D9647D52187A821C00B26CE8 /* SnapTimelineViewController.m in Sources */,
+				D9E38B441886F79C00FC9B6B /* BoyColdHotViewController.m in Sources */,
+				D9E38B4A1886F7BC00FC9B6B /* GirlColdHotViewController.m in Sources */,
+				D9E38B471886F7AC00FC9B6B /* GirlStudyViewController.m in Sources */,
 				D9B6F02A187C28210069E088 /* SnapFeedsViewController.m in Sources */,
 				D96006B01884852400BB1C9E /* ProfileViewController.m in Sources */,
+				D9E38B4D1886F7C700FC9B6B /* PartyChillViewController.m in Sources */,
 				D98438471884D3F4008BDCA8 /* CustomizeViewController.m in Sources */,
+				D9E38B3E1886F5F000FC9B6B /* BorGViewController.m in Sources */,
 				D98BF1951825523900DEE19B /* ShowViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

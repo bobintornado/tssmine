@@ -1,18 +1,18 @@
 //
-//  StlyingViewController.m
+//  GirlColdHotViewController.m
 //  tssmine
 //
-//  Created by Bob Cao on 14/1/14.
+//  Created by Bob Cao on 16/1/14.
 //  Copyright (c) 2014 Bob Cao. All rights reserved.
 //
 
-#import "StlyingViewController.h"
+#import "GirlColdHotViewController.h"
 
-@interface StlyingViewController ()
+@interface GirlColdHotViewController ()
 
 @end
 
-@implementation StlyingViewController
+@implementation GirlColdHotViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,7 +27,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    //self.title = @"Styling"
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,14 +34,11 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)didTapOnStylingQuiz:(id)sender {
-     [self performSegueWithIdentifier: @"stylingQuiz" sender: self];
+- (IBAction)didTapOnCold:(id)sender {
+    [self performSegueWithIdentifier:@"gQuiz3" sender:sender];
 }
-- (IBAction)didTapOnSavedStlyes:(id)sender {
-     [self performSegueWithIdentifier: @"customize" sender: self];
-}
-- (IBAction)didTapOnQuizImage:(id)sender {
-    [self performSegueWithIdentifier: @"stylingQuiz" sender: self];
+- (IBAction)didTapOnHot:(id)sender {
+    [self performSegueWithIdentifier:@"gQuiz3" sender:sender];
 }
 
 
