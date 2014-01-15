@@ -27,21 +27,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    PFQuery *upperQuery = [PFQuery queryWithClassName:@"Upper"];
-    [upperQuery getObjectInBackgroundWithId:@"jcezeEkp7K" block:^(PFObject *upperImageFile, NSError *error) {
-        // Do something with the returned PFObject in the gameScore variable.
-        NSLog(@"%@", upperImageFile);
-        self.upperImage.file = [upperImageFile objectForKey:@"image"];
-        [self.upperImage loadInBackground];
-    }];
-    
-    PFQuery *underQuery = [PFQuery queryWithClassName:@"Under"];
-    [underQuery getObjectInBackgroundWithId:@"jcezeEkp7K" block:^(PFObject *upperImageFile, NSError *error) {
-        // Do something with the returned PFObject in the gameScore variable.
-        NSLog(@"%@", upperImageFile);
-        self.downImage.file = [upperImageFile objectForKey:@"image"];
-        [self.downImage loadInBackground];
-    }];
     
 }
 

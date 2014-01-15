@@ -40,5 +40,9 @@
 - (IBAction)didTapOnSavedStlyes:(id)sender {
      [self performSegueWithIdentifier: @"customize" sender: self];
 }
+- (IBAction)didTapOnQuizImage:(id)sender {
+    [self performSegueWithIdentifier: @"stylingQuiz" sender: self];
+}
+
 
 @end

@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StlyingViewController : UIViewController
+@interface StlyingViewController : UIViewController <UIGestureRecognizerDelegate>
 
 
+- (IBAction)singleTap:(id)sender;
 
 @end

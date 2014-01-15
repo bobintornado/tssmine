@@ -10,7 +10,4 @@
 
 @interface CustomizeViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet PFImageView *upperImage;
-@property (strong, nonatomic) IBOutlet PFImageView *downImage;
-
 @end
