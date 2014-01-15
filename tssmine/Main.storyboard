@@ -361,22 +361,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eN2-x5-AYX" customClass="PFImageView">
-                                <rect key="frame" x="20" y="74" width="280" height="188"/>
+                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wMD-lf-icf">
+                                <rect key="frame" x="0.0" y="64" width="320" height="454"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L0H-X2-1d9" customClass="PFImageView">
-                                <rect key="frame" x="20" y="260" width="280" height="177"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="iUw-5D-Hbl" kind="embed" id="CIO-DF-adE"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="ih4-kX-Kdd"/>
-                    <connections>
-                        <outlet property="downImage" destination="L0H-X2-1d9" id="zTF-8Y-pEl"/>
-                        <outlet property="upperImage" destination="eN2-x5-AYX" id="TS0-bB-ckH"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ct-4L-4oq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -482,13 +478,38 @@
                     <view key="view" contentMode="scaleToFill" id="Cum-ix-2ma">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DO YOU ALWAYS...." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IY3-VH-MLI">
+                                <rect key="frame" x="81" y="91" width="158" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OR" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5d-rt-HE4">
+                                <rect key="frame" x="150" y="300" width="25" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gril dress up" translatesAutoresizingMaskIntoConstraints="NO" id="8Y0-7h-8Fz">
+                                <rect key="frame" x="70" y="120" width="185" height="167"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="teen_Lisa_Simpson_by_toongrowner" translatesAutoresizingMaskIntoConstraints="NO" id="rog-Jp-dVS">
+                                <rect key="frame" x="81" y="329" width="178" height="173"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Jfq-G1-wDA"/>
+                    <connections>
+                        <segue destination="C5w-0C-qIA" kind="push" id="dh7-fJ-bFm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CdK-fg-rCd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2596" y="1777"/>
+            <point key="canvasLocation" x="2624" y="1777"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="uhc-71-0tf">
@@ -545,13 +566,82 @@
                     <view key="view" contentMode="scaleToFill" id="a6c-66-rYe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DO YOU ALWAYS......" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q6Y-da-TV7">
+                                <rect key="frame" x="77" y="94" width="167" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OR" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXW-bx-Yfs">
+                                <rect key="frame" x="148" y="305" width="25" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="boy no cloth" translatesAutoresizingMaskIntoConstraints="NO" id="Ezl-pa-o8R">
+                                <rect key="frame" x="25" y="123" width="275" height="169"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="boy hoodie" translatesAutoresizingMaskIntoConstraints="NO" id="b8x-bd-M7x">
+                                <rect key="frame" x="25" y="334" width="275" height="168"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="3kb-7C-aQx"/>
+                    <connections>
+                        <segue destination="C5w-0C-qIA" kind="push" id="gE5-83-hOD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="icp-jN-xvi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2624" y="937"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="dST-BJ-BPL">
+            <objects>
+                <viewController id="C5w-0C-qIA" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Obj-sE-mnY"/>
+                        <viewControllerLayoutGuide type="bottom" id="bVm-kY-usu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2X7-0X-TCM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DO YOU ALWAYS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFy-Yq-8gp">
+                                <rect key="frame" x="91" y="89" width="139" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OR" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SaX-ih-5LX">
+                                <rect key="frame" x="148" y="286" width="25" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="the-simpsons-summer-pool-party-simpsons-characters-11824646-1680-1050" translatesAutoresizingMaskIntoConstraints="NO" id="7Fv-1y-vV7">
+                                <rect key="frame" x="20" y="118" width="286" height="155"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Party" translatesAutoresizingMaskIntoConstraints="NO" id="6Yu-ld-7df">
+                                <rect key="frame" x="17" y="315" width="287" height="177"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Fyy-nG-raq"/>
+                    <connections>
+                        <segue destination="K8F-TD-Gko" kind="push" id="wVf-Bl-npU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ScH-IT-i5R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3316" y="1369"/>
         </scene>
         <!--Profile View Controller - Profile-->
         <scene sceneID="fJ4-YE-RGW">
@@ -622,19 +712,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5C9-35-HkR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="YyC-YJ-toZ">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="iUw-5D-Hbl" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aM5-j7-A7j"/>
+                        <viewControllerLayoutGuide type="bottom" id="pZ2-8M-krZ"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ZtO-au-s3t">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="454"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yIg-i7-owq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1943" y="2730"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Contact" width="25" height="25"/>
         <image name="Favorites" width="27" height="26"/>
+        <image name="Party" width="562" height="327"/>
         <image name="Picasa" width="25" height="25"/>
         <image name="Shop" width="30" height="30"/>
         <image name="body study IN home" width="500" height="379"/>
         <image name="boy" width="200" height="298"/>
+        <image name="boy hoodie" width="576" height="639"/>
+        <image name="boy no cloth" width="1328" height="714"/>
         <image name="boy study in school" width="640" height="480"/>
         <image name="girl" width="740" height="1200"/>
         <image name="girl study in home" width="500" height="270"/>
         <image name="girl study in sch" width="500" height="352"/>
+        <image name="gril dress up" width="300" height="463"/>
         <image name="login" width="320" height="568"/>
+        <image name="teen_Lisa_Simpson_by_toongrowner" width="766" height="1042"/>
+        <image name="the-simpsons-summer-pool-party-simpsons-characters-11824646-1680-1050" width="1680" height="1050"/>
         <image name="whatsyourstlye" width="1024" height="768"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -642,4 +757,8 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="wVf-Bl-npU"/>
+        <segue reference="dh7-fJ-bFm"/>
+    </inferredMetricsTieBreakers>
 </document>
