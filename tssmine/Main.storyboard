@@ -36,11 +36,11 @@
                         <viewControllerLayoutGuide type="bottom" id="34S-4U-v8G"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="A1t-7W-ihq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3LE-Cp-wHR">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
@@ -81,7 +81,7 @@
                         <viewControllerLayoutGuide type="bottom" id="eDn-ao-VIT"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="EGP-hq-N8K">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0hZ-dm-ajM">
@@ -238,7 +238,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Ysl-4V-aUV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nRN-zv-YLt">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Testing Code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZh-kI-g6y">
@@ -296,7 +296,7 @@
                         <viewControllerLayoutGuide type="bottom" id="C5L-Tn-0I7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Bab-wl-uyH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s1p-z5-j7q">
@@ -348,7 +348,7 @@
                     </navigationItem>
                     <connections>
                         <segue destination="0XE-Mu-pS2" kind="push" identifier="stylingQuiz" id="2ek-Vi-Qh7"/>
-                        <segue destination="K8F-TD-Gko" kind="push" identifier="customize" id="wWf-RV-ZBR"/>
+                        <segue destination="t2Q-Kd-apx" kind="modal" identifier="customize" id="dlc-X5-SWL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G8H-3h-tEC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -360,35 +360,6 @@
             </objects>
             <point key="canvasLocation" x="803" y="1473"/>
         </scene>
-        <!--Customize View Controller-->
-        <scene sceneID="l8M-u6-ZTM">
-            <objects>
-                <viewController id="K8F-TD-Gko" customClass="CustomizeViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3vk-8R-NSj"/>
-                        <viewControllerLayoutGuide type="bottom" id="JBF-pw-dE3"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="9hH-rf-JEN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wMD-lf-icf">
-                                <rect key="frame" x="0.0" y="64" width="320" height="454"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <connections>
-                                    <segue destination="iUw-5D-Hbl" kind="embed" id="CIO-DF-adE"/>
-                                </connections>
-                            </containerView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="ih4-kX-Kdd"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9ct-4L-4oq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1467" y="2673"/>
-        </scene>
         <!--BorG View Controller - Quiz-->
         <scene sceneID="Y2T-IH-Y4U">
             <objects>
@@ -398,7 +369,7 @@
                         <viewControllerLayoutGuide type="bottom" id="TFr-4n-uF6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8ek-ss-gcu">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AER YOU A....." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rrF-j5-wgX">
@@ -454,6 +425,36 @@
             </objects>
             <point key="canvasLocation" x="1433" y="1231"/>
         </scene>
+        <!--Customize View Controller-->
+        <scene sceneID="KqL-de-d0E">
+            <objects>
+                <viewController id="t2Q-Kd-apx" customClass="CustomizeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0PP-Mb-lKf"/>
+                        <viewControllerLayoutGuide type="bottom" id="RcR-2E-eb7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pom-CG-SQG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zYB-ko-6f7">
+                                <rect key="frame" x="0.0" y="19" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Cusotmzie" id="v7c-us-3DL"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="customizeNavBar" destination="zYB-ko-6f7" id="UOY-o8-fWD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fZx-0M-o1K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1428" y="2409"/>
+        </scene>
         <!--Girl Study View Controller - Quiz-->
         <scene sceneID="WVZ-ZI-Xyw">
             <objects>
@@ -463,7 +464,7 @@
                         <viewControllerLayoutGuide type="bottom" id="uHg-2S-c4a"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Znl-x3-eyl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DO YOU ALWAYS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1r-2w-f27">
@@ -527,7 +528,7 @@
                         <viewControllerLayoutGuide type="bottom" id="NdT-Jk-Vko"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Cum-ix-2ma">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DO YOU ALWAYS...." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IY3-VH-MLI">
@@ -591,7 +592,7 @@
                         <viewControllerLayoutGuide type="bottom" id="eHz-Ng-u4w"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2eR-G1-K70">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DO YOU ALWAYS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ROD-ti-dhV">
@@ -655,7 +656,7 @@
                         <viewControllerLayoutGuide type="bottom" id="YUd-7q-gk2"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="a6c-66-rYe">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DO YOU ALWAYS......" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q6Y-da-TV7">
@@ -710,16 +711,16 @@
             </objects>
             <point key="canvasLocation" x="2624" y="937"/>
         </scene>
-        <!--View Controller - Quiz-->
+        <!--Party Chill View Controller - Quiz-->
         <scene sceneID="dST-BJ-BPL">
             <objects>
-                <viewController id="C5w-0C-qIA" sceneMemberID="viewController">
+                <viewController id="C5w-0C-qIA" customClass="PartyChillViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Obj-sE-mnY"/>
                         <viewControllerLayoutGuide type="bottom" id="bVm-kY-usu"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2X7-0X-TCM">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DO YOU ALWAYS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFy-Yq-8gp">
@@ -737,10 +738,18 @@
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="the-simpsons-summer-pool-party-simpsons-characters-11824646-1680-1050" translatesAutoresizingMaskIntoConstraints="NO" id="7Fv-1y-vV7">
                                 <rect key="frame" x="20" y="118" width="286" height="155"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Ndk-64-Lu1" appends="YES" id="MrB-Mi-gC8"/>
+                                </connections>
                             </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Party" translatesAutoresizingMaskIntoConstraints="NO" id="6Yu-ld-7df">
                                 <rect key="frame" x="17" y="315" width="287" height="177"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Gae-dl-Jso" appends="YES" id="uxG-Tn-qhc"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -749,12 +758,22 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="Jv0-BU-3zM"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="K8F-TD-Gko" kind="push" id="wVf-Bl-npU"/>
+                        <segue destination="t2Q-Kd-apx" kind="modal" identifier="quizResult" id="phY-sp-7eq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ScH-IT-i5R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Ndk-64-Lu1" userLabel="Tap Gesture Recognizer chill">
+                    <connections>
+                        <action selector="didTapOnChill:" destination="C5w-0C-qIA" id="VsJ-xE-mvl"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Gae-dl-Jso" userLabel="Tap Gesture Recognizer party">
+                    <connections>
+                        <action selector="didTapOnParty:" destination="C5w-0C-qIA" id="hYA-tD-ZDB"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3316" y="1369"/>
+            <point key="canvasLocation" x="3988" y="1261"/>
         </scene>
         <!--Profile View Controller - Profile-->
         <scene sceneID="fJ4-YE-RGW">
@@ -765,7 +784,7 @@
                         <viewControllerLayoutGuide type="bottom" id="tD3-id-9wJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="oW9-Wd-Ejg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loyalty Points" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0OB-Co-fOZ">
@@ -810,7 +829,7 @@
                         <viewControllerLayoutGuide type="bottom" id="6ZH-ws-vEl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="s54-BT-Lbh">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -819,25 +838,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T7X-RR-ZmJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="128" y="2309"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="YyC-YJ-toZ">
-            <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="iUw-5D-Hbl" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="aM5-j7-A7j"/>
-                        <viewControllerLayoutGuide type="bottom" id="pZ2-8M-krZ"/>
-                    </layoutGuides>
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ZtO-au-s3t">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="454"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yIg-i7-owq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1943" y="2730"/>
         </scene>
     </scenes>
     <resources>
@@ -864,10 +864,10 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="dh7-fJ-bFm"/>
-        <segue reference="wVf-Bl-npU"/>
+        <segue reference="phY-sp-7eq"/>
     </inferredMetricsTieBreakers>
 </document>

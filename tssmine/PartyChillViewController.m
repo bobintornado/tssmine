@@ -34,5 +34,11 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)didTapOnChill:(id)sender {
+    [self performSegueWithIdentifier:@"quizResult" sender:sender];
+}
+- (IBAction)didTapOnParty:(id)sender {
+    [self performSegueWithIdentifier:@"quizResult" sender:sender];
+}
 
 @end
