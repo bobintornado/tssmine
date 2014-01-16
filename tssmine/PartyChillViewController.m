@@ -35,9 +35,12 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)didTapOnChill:(id)sender {
-    [self performSegueWithIdentifier:@"quizResult" sender:sender];
+    [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"popBack" object:nil]];
+    
+    //[self performSegueWithIdentifier:@"quizResult" sender:sender];
 }
 - (IBAction)didTapOnParty:(id)sender {
+    [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"popBack" object:nil]];
     [self performSegueWithIdentifier:@"quizResult" sender:sender];
 }
 

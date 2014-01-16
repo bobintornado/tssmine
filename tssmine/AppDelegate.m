@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import "TssLoginViewController.h"
 
 @implementation AppDelegate
 
@@ -24,27 +25,6 @@
     
     // Register for push notifications
     [application registerForRemoteNotificationTypes: UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound];
-    
-    if (![PFUser currentUser]) { // No user logged in
-        // Create the log in view controller
-        PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
-        [logInViewController setDelegate:self.window.rootViewController ]; // Set ourselves as the delegate
-        
-        [logInViewController setFacebookPermissions:[NSArray arrayWithObjects:@"friends_about_me", nil]];
-        [logInViewController setFields: PFLogInFieldsFacebook | PFLogInFieldsDefault];
-        
-        // Create the sign up view controller
-        PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
-        [signUpViewController setDelegate:self.window.rootViewController ]; // Set ourselves as the delegate
-        
-        // Assign our sign up controller to be displayed from the login controller
-        [logInViewController setSignUpController:signUpViewController];
-        
-        //magic?
-        [self.window makeKeyAndVisible];
-        // Present the log in view controller
-        [self.window.rootViewController presentViewController:logInViewController animated:NO completion:nil        ];
-    }
     
     return YES;
 }
@@ -64,7 +44,6 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
@@ -97,6 +76,13 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)newDeviceToken {
 - (void)application:(UIApplication *)application
 didReceiveRemoteNotification:(NSDictionary *)userInfo {
     [PFPush handlePush:userInfo];
+}
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+    if ([viewController isKindOfClass:[UINavigationController class]]) {
+        [(UINavigationController*)viewController popToRootViewControllerAnimated:YES];
+        NSLog(@"happ");
+    }
 }
 
 @end

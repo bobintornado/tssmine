@@ -28,6 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"snap");
     
     //adding Title
     UINavigationItem *navItem = [[UINavigationItem alloc] init];

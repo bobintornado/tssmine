@@ -1,18 +1,18 @@
 //
-//  ProfileViewController.m
+//  TssLoginViewController.m
 //  tssmine
 //
-//  Created by Bob Cao on 14/1/14.
+//  Created by Bob Cao on 16/1/14.
 //  Copyright (c) 2014 Bob Cao. All rights reserved.
 //
 
-#import "ProfileViewController.h"
+#import "TssLoginViewController.h"
 
-@interface ProfileViewController ()
+@interface TssLoginViewController ()
 
 @end
 
-@implementation ProfileViewController
+@implementation TssLoginViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -25,7 +25,6 @@
 
 - (void)viewDidLoad
 {
-    NSLog(@"profile");
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }

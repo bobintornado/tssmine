@@ -7,6 +7,7 @@
 //
 
 #import "StlyingViewController.h"
+#import "CustomizeViewController.h"
 
 @interface StlyingViewController ()
 
@@ -25,9 +26,10 @@
 
 - (void)viewDidLoad
 {
+    NSLog(@"styling");
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushViews) name:@"popBack" object:nil];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    //self.title = @"Styling"
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,6 +45,12 @@
 }
 - (IBAction)didTapOnQuizImage:(id)sender {
     [self performSegueWithIdentifier: @"stylingQuiz" sender: self];
+}
+
+- (void)pushViews {
+    //Pop back to the root view controller
+    [self.navigationController popToRootViewControllerAnimated:NO];
+    [self performSegueWithIdentifier: @"customize" sender: self];
 }
 
 
