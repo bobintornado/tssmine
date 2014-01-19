@@ -27,7 +27,6 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     //log out user object id for debugging purpose 
-    NSLog([[PFUser currentUser] objectId]);
     if (![PFUser currentUser]) { // No user logged in
         // Create the log in view controller
         
