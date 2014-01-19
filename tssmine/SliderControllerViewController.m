@@ -37,9 +37,7 @@
             NSLog(@"successfully retrieve all sliders");
             for (PFObject *object in objects) {
                 SliderContentViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"sliderContent"];
-                PFFile *file = [object objectForKey:@"banner"];
-                NSData *data = [file getData];
-                vc.imageFile = [UIImage imageWithData:data];
+                vc.sliderObject = object;
                 vc.pageIndex = [objects indexOfObject:object];
                 [self.contentViewControllers addObject:vc];
             }

@@ -27,7 +27,8 @@
 {
     [super viewDidLoad];
 	// Load the view when user swipes. Pre-caching is a good idea but not implemented yet
-    [self.sliderView setImage:self.imageFile];
+    self.sliderView.file = [self.sliderObject objectForKey:@"banner"];
+    [self.sliderView loadInBackground];
 }
 
 - (void)didReceiveMemoryWarning

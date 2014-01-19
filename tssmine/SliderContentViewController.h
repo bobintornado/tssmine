@@ -10,8 +10,8 @@
 
 @interface SliderContentViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UIImageView *sliderView;
-@property (strong, nonatomic) UIImage *imageFile;
+@property (strong, nonatomic) IBOutlet PFImageView *sliderView;
+@property (strong, nonatomic) PFObject *sliderObject;
 
 @property NSUInteger pageIndex;
 

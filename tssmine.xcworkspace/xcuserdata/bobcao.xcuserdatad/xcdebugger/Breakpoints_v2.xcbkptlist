@@ -387,7 +387,7 @@
                   symbolName = "-[snapFeedTableViewCell setLikeStatus:]"
                   moduleName = "tssmine"
                   urlString = "file:///Users/bobcao/Desktop/tssmine/tssmine/snapFeedTableViewCell.m"
-                  timestampString = "411792981.005269"
+                  timestampString = "411827988.749568"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "38"
@@ -401,7 +401,7 @@
                   symbolName = "-[snapFeedTableViewCell setLikeStatus:]"
                   moduleName = "tssmine"
                   urlString = "file:///Users/bobcao/Desktop/tssmine/tssmine/snapFeedTableViewCell.m"
-                  timestampString = "411792981.005578"
+                  timestampString = "411827988.74975"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "38"
@@ -465,7 +465,7 @@
                   symbolName = "__71-[SnapFeedsViewController snapFeedTableViewCell:didTapLikeButton:Snap:]_block_invoke"
                   moduleName = "tssmine"
                   urlString = "file:///Users/bobcao/Desktop/tssmine/tssmine/SnapFeedsViewController.m"
-                  timestampString = "411792981.006714"
+                  timestampString = "411827988.75115"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "143"
@@ -479,7 +479,7 @@
                   symbolName = "__destroy_helper_block_106"
                   moduleName = "tssmine"
                   urlString = "file:///Users/bobcao/Desktop/tssmine/tssmine/SnapFeedsViewController.m"
-                  timestampString = "411792981.00706"
+                  timestampString = "411827988.751471"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "143"
@@ -541,11 +541,11 @@
                   symbolName = "-[SliderControllerViewController pageViewController:viewControllerBeforeViewController:]"
                   moduleName = "tssmine"
                   urlString = "file:///Users/bobcao/Desktop/tssmine/tssmine/SliderControllerViewController.m"
-                  timestampString = "411792981.00785"
+                  timestampString = "411827988.752233"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "61"
-                  endingLineNumber = "61"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
                   offsetFromSymbolStart = "4">
                </Location>
                <Location
@@ -555,12 +555,12 @@
                   symbolName = "-[SliderControllerViewController pageViewController:viewControllerBeforeViewController:]"
                   moduleName = "tssmine"
                   urlString = "file:///Users/bobcao/Desktop/tssmine/tssmine/SliderControllerViewController.m"
-                  timestampString = "411792981.008207"
+                  timestampString = "411827988.752659"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "59"
                   endingLineNumber = "59"
-                  offsetFromSymbolStart = "12">
+                  offsetFromSymbolStart = "14">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -587,11 +587,11 @@
                   symbolName = "-[SliderControllerViewController pageViewController:viewControllerBeforeViewController:]"
                   moduleName = "tssmine"
                   urlString = "file:///Users/bobcao/Desktop/tssmine/tssmine/SliderControllerViewController.m"
-                  timestampString = "411792981.008616"
+                  timestampString = "411827988.752868"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "61"
-                  endingLineNumber = "61"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
                   offsetFromSymbolStart = "4">
                </Location>
                <Location
@@ -601,12 +601,12 @@
                   symbolName = "-[SliderControllerViewController pageViewController:viewControllerBeforeViewController:]"
                   moduleName = "tssmine"
                   urlString = "file:///Users/bobcao/Desktop/tssmine/tssmine/SliderControllerViewController.m"
-                  timestampString = "411792981.008886"
+                  timestampString = "411827988.753033"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "59"
                   endingLineNumber = "59"
-                  offsetFromSymbolStart = "12">
+                  offsetFromSymbolStart = "14">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -625,134 +625,6 @@
             endingLineNumber = "43"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__45-[SliderControllerViewController viewDidLoad]_block_invoke"
-                  moduleName = "tssmine"
-                  urlString = "file:///Users/bobcao/Desktop/tssmine/tssmine/SliderControllerViewController.m"
-                  timestampString = "411792981.009243"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "256">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__45-[SliderControllerViewController viewDidLoad]_block_invoke"
-                  moduleName = "tssmine"
-                  urlString = "file:///Users/bobcao/Desktop/tssmine/tssmine/SliderControllerViewController.m"
-                  timestampString = "411792981.009562"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "264">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__45-[SliderControllerViewController viewDidLoad]_block_invoke"
-                  moduleName = "tssmine"
-                  urlString = "file:///Users/bobcao/Desktop/tssmine/tssmine/SliderControllerViewController.m"
-                  timestampString = "411792981.009802"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "276">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__45-[SliderControllerViewController viewDidLoad]_block_invoke"
-                  moduleName = "tssmine"
-                  urlString = "file:///Users/bobcao/Desktop/tssmine/tssmine/SliderControllerViewController.m"
-                  timestampString = "411792981.010031"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "282">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__45-[SliderControllerViewController viewDidLoad]_block_invoke"
-                  moduleName = "tssmine"
-                  urlString = "file:///Users/bobcao/Desktop/tssmine/tssmine/SliderControllerViewController.m"
-                  timestampString = "411792981.01025"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "288">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__45-[SliderControllerViewController viewDidLoad]_block_invoke"
-                  moduleName = "tssmine"
-                  urlString = "file:///Users/bobcao/Desktop/tssmine/tssmine/SliderControllerViewController.m"
-                  timestampString = "411792981.01047"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "304">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__45-[SliderControllerViewController viewDidLoad]_block_invoke"
-                  moduleName = "tssmine"
-                  urlString = "file:///Users/bobcao/Desktop/tssmine/tssmine/SliderControllerViewController.m"
-                  timestampString = "411792981.010762"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "314">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__45-[SliderControllerViewController viewDidLoad]_block_invoke"
-                  moduleName = "tssmine"
-                  urlString = "file:///Users/bobcao/Desktop/tssmine/tssmine/SliderControllerViewController.m"
-                  timestampString = "411792981.010986"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "320">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__45-[SliderControllerViewController viewDidLoad]_block_invoke"
-                  moduleName = "tssmine"
-                  urlString = "file:///Users/bobcao/Desktop/tssmine/tssmine/SliderControllerViewController.m"
-                  timestampString = "411792981.011214"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "546">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
