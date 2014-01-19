@@ -1,18 +1,18 @@
 //
-//  ProfileViewController.m
+//  SliderContentViewController.m
 //  tssmine
 //
-//  Created by Bob Cao on 14/1/14.
+//  Created by Bob Cao on 18/1/14.
 //  Copyright (c) 2014 Bob Cao. All rights reserved.
 //
 
-#import "ProfileViewController.h"
+#import "SliderContentViewController.h"
 
-@interface ProfileViewController ()
+@interface SliderContentViewController ()
 
 @end
 
-@implementation ProfileViewController
+@implementation SliderContentViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -25,18 +25,15 @@
 
 - (void)viewDidLoad
 {
-    NSLog(@"profile");
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	// Load the view when user swipes. Pre-caching is a good idea but not implemented yet
+    [self.sliderView setImage:self.imageFile];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-- (IBAction)didTapOnLogOut:(id)sender {
-    [PFUser logOut];
 }
 
 @end

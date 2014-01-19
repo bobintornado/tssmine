@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D901607B187AB8190003985D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D901607A187AB8190003985D /* Main.storyboard */; };
+		D954DFCF1888229600CCA262 /* shopNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D954DFCE1888229600CCA262 /* shopNavigationController.m */; };
 		D96006B01884852400BB1C9E /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D96006AF1884852400BB1C9E /* ProfileViewController.m */; };
 		D9647D52187A821C00B26CE8 /* SnapTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9647D51187A821C00B26CE8 /* SnapTimelineViewController.m */; };
 		D9647D55187A823200B26CE8 /* SnapDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9647D54187A823200B26CE8 /* SnapDetailViewController.m */; };
@@ -27,6 +28,8 @@
 		D98BF185182550EC00DEE19B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D98BF183182550EC00DEE19B /* InfoPlist.strings */; };
 		D98BF187182550EC00DEE19B /* tssmineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF186182550EC00DEE19B /* tssmineTests.m */; };
 		D98BF1951825523900DEE19B /* ShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF1941825523900DEE19B /* ShowViewController.m */; };
+		D98F12F7188A9B7000BA7335 /* SliderContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98F12F6188A9B7000BA7335 /* SliderContentViewController.m */; };
+		D98F12FA188AA14500BA7335 /* SliderControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98F12F9188AA14500BA7335 /* SliderControllerViewController.m */; };
 		D9B6F02A187C28210069E088 /* SnapFeedsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B6F029187C28210069E088 /* SnapFeedsViewController.m */; };
 		D9B6F02D187C32990069E088 /* snapFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B6F02C187C32990069E088 /* snapFeedTableViewCell.m */; };
 		D9CCC77C1887928C005A8B95 /* CustomizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9CCC77B1887928C005A8B95 /* CustomizeViewController.m */; };
@@ -68,6 +71,8 @@
 		0ABE0E866C4C473DABC4F5A4 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		1B5E9579A6C24A9E8800CED8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D901607A187AB8190003985D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D954DFCD1888229600CCA262 /* shopNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shopNavigationController.h; sourceTree = "<group>"; };
+		D954DFCE1888229600CCA262 /* shopNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shopNavigationController.m; sourceTree = "<group>"; };
 		D96006AE1884852400BB1C9E /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		D96006AF1884852400BB1C9E /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		D9647D50187A821C00B26CE8 /* SnapTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapTimelineViewController.h; sourceTree = "<group>"; };
@@ -98,6 +103,10 @@
 		D98BF186182550EC00DEE19B /* tssmineTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tssmineTests.m; sourceTree = "<group>"; };
 		D98BF1931825523900DEE19B /* ShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowViewController.h; sourceTree = "<group>"; };
 		D98BF1941825523900DEE19B /* ShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowViewController.m; sourceTree = "<group>"; };
+		D98F12F5188A9B7000BA7335 /* SliderContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderContentViewController.h; sourceTree = "<group>"; };
+		D98F12F6188A9B7000BA7335 /* SliderContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderContentViewController.m; sourceTree = "<group>"; };
+		D98F12F8188AA14500BA7335 /* SliderControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderControllerViewController.h; sourceTree = "<group>"; };
+		D98F12F9188AA14500BA7335 /* SliderControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderControllerViewController.m; sourceTree = "<group>"; };
 		D9B6F028187C28210069E088 /* SnapFeedsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapFeedsViewController.h; sourceTree = "<group>"; };
 		D9B6F029187C28210069E088 /* SnapFeedsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnapFeedsViewController.m; sourceTree = "<group>"; };
 		D9B6F02B187C32990069E088 /* snapFeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = snapFeedTableViewCell.h; sourceTree = "<group>"; };
@@ -190,6 +199,12 @@
 			children = (
 				D98BF1931825523900DEE19B /* ShowViewController.h */,
 				D98BF1941825523900DEE19B /* ShowViewController.m */,
+				D954DFCD1888229600CCA262 /* shopNavigationController.h */,
+				D954DFCE1888229600CCA262 /* shopNavigationController.m */,
+				D98F12F5188A9B7000BA7335 /* SliderContentViewController.h */,
+				D98F12F6188A9B7000BA7335 /* SliderContentViewController.m */,
+				D98F12F8188AA14500BA7335 /* SliderControllerViewController.h */,
+				D98F12F9188AA14500BA7335 /* SliderControllerViewController.m */,
 			);
 			name = Shop;
 			sourceTree = "<group>";
@@ -513,6 +528,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D954DFCF1888229600CCA262 /* shopNavigationController.m in Sources */,
 				D98438441884D1CC008BDCA8 /* StlyingViewController.m in Sources */,
 				D97A35DC187E80B50006A90F /* TSSUtility.m in Sources */,
 				D98BF169182550EC00DEE19B /* AppDelegate.m in Sources */,
@@ -523,9 +539,11 @@
 				D98BF165182550EC00DEE19B /* main.m in Sources */,
 				D9647D58187A823F00B26CE8 /* SnapTakePhotoViewController.m in Sources */,
 				D9647D55187A823200B26CE8 /* SnapDetailViewController.m in Sources */,
+				D98F12F7188A9B7000BA7335 /* SliderContentViewController.m in Sources */,
 				D9647D52187A821C00B26CE8 /* SnapTimelineViewController.m in Sources */,
 				D9E38B441886F79C00FC9B6B /* BoyColdHotViewController.m in Sources */,
 				D9E38B4A1886F7BC00FC9B6B /* GirlColdHotViewController.m in Sources */,
+				D98F12FA188AA14500BA7335 /* SliderControllerViewController.m in Sources */,
 				D9E38B471886F7AC00FC9B6B /* GirlStudyViewController.m in Sources */,
 				D9B6F02A187C28210069E088 /* SnapFeedsViewController.m in Sources */,
 				D96006B01884852400BB1C9E /* ProfileViewController.m in Sources */,

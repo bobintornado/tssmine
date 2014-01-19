@@ -11,6 +11,9 @@
 @interface CustomizeViewController ()
 
 @property (strong, nonatomic) IBOutlet UINavigationBar *customizeNavBar;
+@property (strong, nonatomic) IBOutlet PFImageView *upper;
+@property (strong, nonatomic) IBOutlet PFImageView *under;
+@property (strong, nonatomic) IBOutlet PFImageView *accessory;
 
 @end
 
@@ -40,6 +43,8 @@
     
     //adding all items to navigation bar
     self.customizeNavBar.items = @[ navItem ];
+    
+    //self.upper =
 }
 
 - (void)didReceiveMemoryWarning

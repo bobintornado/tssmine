@@ -8,6 +8,7 @@
 
 #import "ShowViewController.h"
 #import "TssLoginViewController.h"
+#import "SliderControllerViewController.h"
 
 @interface ShowViewController ()
 
@@ -25,9 +26,11 @@
 }
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
+    //log out user object id for debugging purpose 
+    NSLog([[PFUser currentUser] objectId]);
     if (![PFUser currentUser]) { // No user logged in
         // Create the log in view controller
+        
         TssLoginViewController *logInViewController = [[TssLoginViewController alloc] init];
         [logInViewController setDelegate:self]; // Set ourselves as the delegate
         
@@ -51,9 +54,6 @@
     [super viewDidLoad];
     NSLog(@"shop");
 	// Do any additional setup after loading the view.
-    NSURL *url = [NSURL URLWithString:@"http://shop.smu.edu.sg"];
-    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-    [_shopWebView loadRequest:requestObj];
 }
 
 - (void)didReceiveMemoryWarning

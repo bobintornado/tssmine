@@ -9,5 +9,4 @@
 #import <UIKit/UIKit.h>
 
 @interface ShowViewController : UIViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
-@property (strong, nonatomic) IBOutlet UIWebView *shopWebView;
 @end
