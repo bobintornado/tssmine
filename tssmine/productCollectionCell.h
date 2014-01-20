@@ -11,6 +11,7 @@
 @interface productCollectionCell : UICollectionViewCell
 
 @property (strong, nonatomic) IBOutlet PFImageView *image;
+@property (strong, nonatomic) IBOutlet UILabel *priceLabel;
 
 @end
 

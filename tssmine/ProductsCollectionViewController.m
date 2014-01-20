@@ -53,8 +53,11 @@
     static NSString *identifier = @"productCell";
     productCollectionCell *cell = (productCollectionCell *)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     PFObject *object = (PFObject *)[_productPhotos objectAtIndex:indexPath.row];
+    
+    //configure the cell
     cell.image.file = [object objectForKey:@"Picture"];
     [cell.image loadInBackground];
+    cell.priceLabel.text = [NSString stringWithFormat:@"$ %@", [object objectForKey:@"Price"]];
     return cell;
 }
 
