@@ -11,5 +11,6 @@
 @interface CategoryTableViewCell : PFTableViewCell
 @property (strong, nonatomic) IBOutlet PFImageView *categoryImage;
 @property (strong, nonatomic) IBOutlet UILabel *CategoryName;
+@property (strong, nonatomic) PFObject *categoryObject;
 
 @end

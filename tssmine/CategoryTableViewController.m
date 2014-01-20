@@ -8,6 +8,7 @@
 
 #import "CategoryTableViewController.h"
 #import "CategoryTableViewCell.h"
+#import "ProductsCollectionViewController.h"
 
 @interface CategoryTableViewController ()
 
@@ -77,11 +78,28 @@
     }
     
     //configure the cell
+    cell.categoryObject = object;
     cell.categoryImage.file = [object objectForKey:@"Picture"];
     [cell.categoryImage loadInBackground];
     cell.CategoryName.text = [object objectForKey:@"Name"];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+    ProductsCollectionViewController *productsCVC = [self.storyboard instantiateViewControllerWithIdentifier:@"productsCollectionView"];
+    
+    //get the object from the cell
+    UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
+    CategoryTableViewCell *cell = (CategoryTableViewCell *)selectedCell;
+    
+    //pass the category object from cell to detination view controller
+    productsCVC.selectedCategory = cell.categoryObject;
+    
+    [self.navigationController pushViewController:productsCVC animated:YES];
 }
 
 @end

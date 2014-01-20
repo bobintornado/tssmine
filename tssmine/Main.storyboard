@@ -148,8 +148,8 @@
                     </tableView>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <segue destination="9x7-j2-hPa" kind="push" id="OAp-eh-mZQ"/>
-                        <segue destination="g54-C8-8xK" kind="push" id="bVv-Sz-qmR"/>
+                        <segue destination="g54-C8-8xK" kind="push" identifier="productsCollectionView" id="jpR-v4-s8i"/>
+                        <segue destination="9x7-j2-hPa" kind="push" id="srW-gf-Y0s"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fma-nf-ZeD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -182,12 +182,12 @@
                     <navigationItem key="navigationItem" id="bZI-T5-81a"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <segue destination="g54-C8-8xK" kind="push" id="XMx-Z4-lqW"/>
+                        <segue destination="g54-C8-8xK" kind="push" id="gdY-T1-7h4"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O8K-1C-lJs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2123" y="-1131"/>
+            <point key="canvasLocation" x="1903" y="-1083"/>
         </scene>
         <!--Slider Content View Controller-->
         <scene sceneID="LaE-G3-lI8">
@@ -318,28 +318,38 @@
             </objects>
             <point key="canvasLocation" x="1186" y="54"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Products Collection View Controller-->
         <scene sceneID="v2E-7a-5J9">
             <objects>
-                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="g54-C8-8xK" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="productsCollectionView" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="g54-C8-8xK" customClass="ProductsCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="Lw4-g3-7FZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8ev-dn-hd5">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="147" height="110"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="EFN-5o-KLZ">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="100" contentMode="center" reuseIdentifier="productCell" id="EFN-5o-KLZ" customClass="productCollectionCell">
+                                <rect key="frame" x="0.0" y="0.0" width="147" height="110"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="147" height="110"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xNM-ds-JzC" customClass="PFImageView">
+                                            <rect key="frame" x="0.0" y="0.0" width="147" height="110"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <outlet property="image" destination="xNM-ds-JzC" id="C4k-cu-jU2"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -351,7 +361,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sGb-Ez-dIB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2924" y="-635"/>
+            <point key="canvasLocation" x="2448" y="-635"/>
         </scene>
         <!--Snap Detail View Controller-->
         <scene sceneID="4sf-YU-MA8">
@@ -564,8 +574,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="boy" translatesAutoresizingMaskIntoConstraints="NO" id="haG-bh-qZO">
-                                <rect key="frame" x="68" y="122" width="185" height="166"/>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="qtn1-boy" translatesAutoresizingMaskIntoConstraints="NO" id="haG-bh-qZO">
+                                <rect key="frame" x="95" y="117" width="129" height="181"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -1043,7 +1053,6 @@
         <image name="Picasa" width="25" height="25"/>
         <image name="Shop" width="30" height="30"/>
         <image name="body study IN home" width="500" height="379"/>
-        <image name="boy" width="200" height="298"/>
         <image name="boy hoodie" width="576" height="639"/>
         <image name="boy no cloth" width="1328" height="714"/>
         <image name="boy study in school" width="640" height="480"/>
@@ -1052,6 +1061,7 @@
         <image name="girl study in sch" width="500" height="352"/>
         <image name="gril dress up" width="300" height="463"/>
         <image name="logo" width="231" height="89"/>
+        <image name="qtn1-boy" width="2000" height="2892"/>
         <image name="teen_Lisa_Simpson_by_toongrowner" width="766" height="1042"/>
         <image name="the-simpsons-summer-pool-party-simpsons-characters-11824646-1680-1050" width="1680" height="1050"/>
         <image name="whatsyourstlye" width="1024" height="768"/>
@@ -1062,7 +1072,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="XMx-Z4-lqW"/>
+        <segue reference="jpR-v4-s8i"/>
         <segue reference="dh7-fJ-bFm"/>
     </inferredMetricsTieBreakers>
 </document>

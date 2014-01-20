@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D901607B187AB8190003985D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D901607A187AB8190003985D /* Main.storyboard */; };
+		D91770EE188CC9DE00FF3B93 /* ProductsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D91770ED188CC9DE00FF3B93 /* ProductsCollectionViewController.m */; };
+		D91770F1188CE6AF00FF3B93 /* productCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D91770F0188CE6AF00FF3B93 /* productCollectionCell.m */; };
 		D92F9DA7188C0019004F2231 /* CategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D92F9DA6188C0019004F2231 /* CategoryTableViewController.m */; };
 		D92F9DAA188C0804004F2231 /* CategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D92F9DA9188C0804004F2231 /* CategoryTableViewCell.m */; };
 		D954DFCF1888229600CCA262 /* shopNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D954DFCE1888229600CCA262 /* shopNavigationController.m */; };
@@ -73,6 +75,10 @@
 		0ABE0E866C4C473DABC4F5A4 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		1B5E9579A6C24A9E8800CED8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D901607A187AB8190003985D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D91770EC188CC9DE00FF3B93 /* ProductsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductsCollectionViewController.h; sourceTree = "<group>"; };
+		D91770ED188CC9DE00FF3B93 /* ProductsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductsCollectionViewController.m; sourceTree = "<group>"; };
+		D91770EF188CE6AF00FF3B93 /* productCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = productCollectionCell.h; sourceTree = "<group>"; };
+		D91770F0188CE6AF00FF3B93 /* productCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = productCollectionCell.m; sourceTree = "<group>"; };
 		D92F9DA5188C0019004F2231 /* CategoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTableViewController.h; sourceTree = "<group>"; };
 		D92F9DA6188C0019004F2231 /* CategoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTableViewController.m; sourceTree = "<group>"; };
 		D92F9DA8188C0804004F2231 /* CategoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTableViewCell.h; sourceTree = "<group>"; };
@@ -213,6 +219,8 @@
 				D98F12F9188AA14500BA7335 /* SliderControllerViewController.m */,
 				D92F9DA5188C0019004F2231 /* CategoryTableViewController.h */,
 				D92F9DA6188C0019004F2231 /* CategoryTableViewController.m */,
+				D91770EC188CC9DE00FF3B93 /* ProductsCollectionViewController.h */,
+				D91770ED188CC9DE00FF3B93 /* ProductsCollectionViewController.m */,
 			);
 			name = Shop;
 			sourceTree = "<group>";
@@ -376,6 +384,8 @@
 				D92F9DA9188C0804004F2231 /* CategoryTableViewCell.m */,
 				D9B6F02B187C32990069E088 /* snapFeedTableViewCell.h */,
 				D9B6F02C187C32990069E088 /* snapFeedTableViewCell.m */,
+				D91770EF188CE6AF00FF3B93 /* productCollectionCell.h */,
+				D91770F0188CE6AF00FF3B93 /* productCollectionCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -542,6 +552,7 @@
 				D98438441884D1CC008BDCA8 /* StlyingViewController.m in Sources */,
 				D97A35DC187E80B50006A90F /* TSSUtility.m in Sources */,
 				D98BF169182550EC00DEE19B /* AppDelegate.m in Sources */,
+				D91770EE188CC9DE00FF3B93 /* ProductsCollectionViewController.m in Sources */,
 				D9E38B501886F7FF00FC9B6B /* BoyStudyViewController.m in Sources */,
 				D9CF91951887A0B70070B10B /* RootTabBarViewController.m in Sources */,
 				D9CF91981887A9140070B10B /* TssLoginViewController.m in Sources */,
@@ -554,6 +565,7 @@
 				D92F9DA7188C0019004F2231 /* CategoryTableViewController.m in Sources */,
 				D9E38B441886F79C00FC9B6B /* BoyColdHotViewController.m in Sources */,
 				D9E38B4A1886F7BC00FC9B6B /* GirlColdHotViewController.m in Sources */,
+				D91770F1188CE6AF00FF3B93 /* productCollectionCell.m in Sources */,
 				D98F12FA188AA14500BA7335 /* SliderControllerViewController.m in Sources */,
 				D9E38B471886F7AC00FC9B6B /* GirlStudyViewController.m in Sources */,
 				D9B6F02A187C28210069E088 /* SnapFeedsViewController.m in Sources */,
