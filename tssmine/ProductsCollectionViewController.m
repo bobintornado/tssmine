@@ -8,10 +8,11 @@
 
 #import "ProductsCollectionViewController.h"
 #import "productCollectionCell.h"
+#import "ProductDetailViewController.h"
 
 @interface ProductsCollectionViewController ()
 
-@property (strong,nonatomic) NSArray *productPhotos;
+@property (strong,nonatomic) NSArray *products;
 
 @end
 
@@ -34,7 +35,7 @@
     PFQuery *query = [PFQuery queryWithClassName:@"TSSProduct"];
     [query whereKey:@"Category" equalTo:self.selectedCategory];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        _productPhotos = objects;
+        _products = objects;
         [self.collectionView reloadData];
     }];
 }
@@ -46,19 +47,27 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return _productPhotos.count;
+    return _products.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifier = @"productCell";
     productCollectionCell *cell = (productCollectionCell *)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
-    PFObject *object = (PFObject *)[_productPhotos objectAtIndex:indexPath.row];
+    PFObject *object = (PFObject *)[_products objectAtIndex:indexPath.row];
     
     //configure the cell
     cell.image.file = [object objectForKey:@"Picture"];
     [cell.image loadInBackground];
     cell.priceLabel.text = [NSString stringWithFormat:@"$ %@", [object objectForKey:@"Price"]];
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [collectionView deselectItemAtIndexPath:indexPath animated:YES];
+    PFObject *product = [_products objectAtIndex:indexPath.row];
+    ProductDetailViewController *pdVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProductDeatil"];
+    pdVC.selectedProduct = product;
+    [self.navigationController pushViewController:pdVC animated:YES];
 }
 
 @end

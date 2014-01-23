@@ -1,21 +1,20 @@
 //
-//  CategoryTableViewController.m
+//  SubCategoryTableViewController.m
 //  tssmine
 //
-//  Created by Bob Cao on 19/1/14.
+//  Created by Bob Cao on 23/1/14.
 //  Copyright (c) 2014 Bob Cao. All rights reserved.
 //
 
-#import "CategoryTableViewController.h"
+#import "SubCategoryTableViewController.h"
 #import "CategoryTableViewCell.h"
 #import "ProductsCollectionViewController.h"
-#import "SubCategoryTableViewController.h"
 
-@interface CategoryTableViewController ()
+@interface SubCategoryTableViewController ()
 
 @end
 
-@implementation CategoryTableViewController
+@implementation SubCategoryTableViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -80,7 +79,7 @@
     [cell.categoryImage loadInBackground];
     cell.CategoryName.text = [object objectForKey:@"Name"];
     
-    //Put there first until there is a better solution 
+    //Put there first until there is a better solution
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     return cell;
@@ -111,7 +110,7 @@
 
 - (PFQuery *)queryForTable {
     PFQuery *query = [PFQuery queryWithClassName:@"Category"];
-    [query whereKeyDoesNotExist:@"ParentCategory"];
+    [query whereKey:@"ParentCategory" equalTo:self.parentCategory];
     return query;
 }
 

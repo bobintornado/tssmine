@@ -12,6 +12,8 @@
 		D91770F1188CE6AF00FF3B93 /* productCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D91770F0188CE6AF00FF3B93 /* productCollectionCell.m */; };
 		D92F9DA7188C0019004F2231 /* CategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D92F9DA6188C0019004F2231 /* CategoryTableViewController.m */; };
 		D92F9DAA188C0804004F2231 /* CategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D92F9DA9188C0804004F2231 /* CategoryTableViewCell.m */; };
+		D94F5C751890D5AE007B6116 /* SubCategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D94F5C741890D5AE007B6116 /* SubCategoryTableViewController.m */; };
+		D94F5C781890E3D9007B6116 /* ProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D94F5C771890E3D8007B6116 /* ProductDetailViewController.m */; };
 		D954DFCF1888229600CCA262 /* shopNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D954DFCE1888229600CCA262 /* shopNavigationController.m */; };
 		D96006B01884852400BB1C9E /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D96006AF1884852400BB1C9E /* ProfileViewController.m */; };
 		D9647D52187A821C00B26CE8 /* SnapTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9647D51187A821C00B26CE8 /* SnapTimelineViewController.m */; };
@@ -83,6 +85,10 @@
 		D92F9DA6188C0019004F2231 /* CategoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTableViewController.m; sourceTree = "<group>"; };
 		D92F9DA8188C0804004F2231 /* CategoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTableViewCell.h; sourceTree = "<group>"; };
 		D92F9DA9188C0804004F2231 /* CategoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTableViewCell.m; sourceTree = "<group>"; };
+		D94F5C731890D5AE007B6116 /* SubCategoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubCategoryTableViewController.h; sourceTree = "<group>"; };
+		D94F5C741890D5AE007B6116 /* SubCategoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubCategoryTableViewController.m; sourceTree = "<group>"; };
+		D94F5C761890E3D8007B6116 /* ProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailViewController.h; sourceTree = "<group>"; };
+		D94F5C771890E3D8007B6116 /* ProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailViewController.m; sourceTree = "<group>"; };
 		D954DFCD1888229600CCA262 /* shopNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shopNavigationController.h; sourceTree = "<group>"; };
 		D954DFCE1888229600CCA262 /* shopNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shopNavigationController.m; sourceTree = "<group>"; };
 		D96006AE1884852400BB1C9E /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
@@ -221,6 +227,10 @@
 				D92F9DA6188C0019004F2231 /* CategoryTableViewController.m */,
 				D91770EC188CC9DE00FF3B93 /* ProductsCollectionViewController.h */,
 				D91770ED188CC9DE00FF3B93 /* ProductsCollectionViewController.m */,
+				D94F5C731890D5AE007B6116 /* SubCategoryTableViewController.h */,
+				D94F5C741890D5AE007B6116 /* SubCategoryTableViewController.m */,
+				D94F5C761890E3D8007B6116 /* ProductDetailViewController.h */,
+				D94F5C771890E3D8007B6116 /* ProductDetailViewController.m */,
 			);
 			name = Shop;
 			sourceTree = "<group>";
@@ -553,6 +563,7 @@
 				D97A35DC187E80B50006A90F /* TSSUtility.m in Sources */,
 				D98BF169182550EC00DEE19B /* AppDelegate.m in Sources */,
 				D91770EE188CC9DE00FF3B93 /* ProductsCollectionViewController.m in Sources */,
+				D94F5C781890E3D9007B6116 /* ProductDetailViewController.m in Sources */,
 				D9E38B501886F7FF00FC9B6B /* BoyStudyViewController.m in Sources */,
 				D9CF91951887A0B70070B10B /* RootTabBarViewController.m in Sources */,
 				D9CF91981887A9140070B10B /* TssLoginViewController.m in Sources */,
@@ -560,6 +571,7 @@
 				D98BF165182550EC00DEE19B /* main.m in Sources */,
 				D9647D58187A823F00B26CE8 /* SnapTakePhotoViewController.m in Sources */,
 				D9647D55187A823200B26CE8 /* SnapDetailViewController.m in Sources */,
+				D94F5C751890D5AE007B6116 /* SubCategoryTableViewController.m in Sources */,
 				D98F12F7188A9B7000BA7335 /* SliderContentViewController.m in Sources */,
 				D9647D52187A821C00B26CE8 /* SnapTimelineViewController.m in Sources */,
 				D92F9DA7188C0019004F2231 /* CategoryTableViewController.m in Sources */,

@@ -8,6 +8,6 @@
 
 #import <Parse/Parse.h>
 
-@interface CategoryTableViewController : PFQueryTableViewController
+@interface CategoryTableViewController : PFQueryTableViewController <UITableViewDataSource>
 
 @end
