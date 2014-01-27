@@ -43,9 +43,9 @@
 		D9CF91981887A9140070B10B /* TssLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9CF91971887A9140070B10B /* TssLoginViewController.m */; };
 		D9DAEC9B1882EBEA0072CBAA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9EE9A531882EB1100AA30EF /* AudioToolbox.framework */; };
 		D9DAEC9D1882EC9D0072CBAA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9DAEC9C1882EC9D0072CBAA /* CoreLocation.framework */; };
+		D9E0026C189618CB0053FB0C /* BoyColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E0026B189618CB0053FB0C /* BoyColorViewController.m */; };
 		D9E38B3E1886F5F000FC9B6B /* BorGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E38B3D1886F5F000FC9B6B /* BorGViewController.m */; };
 		D9E38B441886F79C00FC9B6B /* BoyColdHotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E38B431886F79C00FC9B6B /* BoyColdHotViewController.m */; };
-		D9E38B471886F7AC00FC9B6B /* GirlStudyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E38B461886F7AC00FC9B6B /* GirlStudyViewController.m */; };
 		D9E38B4A1886F7BC00FC9B6B /* GirlColdHotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E38B491886F7BC00FC9B6B /* GirlColdHotViewController.m */; };
 		D9E38B4D1886F7C700FC9B6B /* PartyChillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E38B4C1886F7C700FC9B6B /* PartyChillViewController.m */; };
 		D9E38B501886F7FF00FC9B6B /* BoyStudyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E38B4F1886F7FF00FC9B6B /* BoyStudyViewController.m */; };
@@ -136,12 +136,12 @@
 		D9CF91961887A9140070B10B /* TssLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TssLoginViewController.h; sourceTree = "<group>"; };
 		D9CF91971887A9140070B10B /* TssLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TssLoginViewController.m; sourceTree = "<group>"; };
 		D9DAEC9C1882EC9D0072CBAA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D9E0026A189618CB0053FB0C /* BoyColorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoyColorViewController.h; sourceTree = "<group>"; };
+		D9E0026B189618CB0053FB0C /* BoyColorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoyColorViewController.m; sourceTree = "<group>"; };
 		D9E38B3C1886F5F000FC9B6B /* BorGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BorGViewController.h; sourceTree = "<group>"; };
 		D9E38B3D1886F5F000FC9B6B /* BorGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BorGViewController.m; sourceTree = "<group>"; };
 		D9E38B421886F79C00FC9B6B /* BoyColdHotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoyColdHotViewController.h; sourceTree = "<group>"; };
 		D9E38B431886F79C00FC9B6B /* BoyColdHotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoyColdHotViewController.m; sourceTree = "<group>"; };
-		D9E38B451886F7AC00FC9B6B /* GirlStudyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GirlStudyViewController.h; sourceTree = "<group>"; };
-		D9E38B461886F7AC00FC9B6B /* GirlStudyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GirlStudyViewController.m; sourceTree = "<group>"; };
 		D9E38B481886F7BC00FC9B6B /* GirlColdHotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GirlColdHotViewController.h; sourceTree = "<group>"; };
 		D9E38B491886F7BC00FC9B6B /* GirlColdHotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GirlColdHotViewController.m; sourceTree = "<group>"; };
 		D9E38B4B1886F7C700FC9B6B /* PartyChillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartyChillViewController.h; sourceTree = "<group>"; };
@@ -244,14 +244,14 @@
 				D9E38B3D1886F5F000FC9B6B /* BorGViewController.m */,
 				D9E38B421886F79C00FC9B6B /* BoyColdHotViewController.h */,
 				D9E38B431886F79C00FC9B6B /* BoyColdHotViewController.m */,
-				D9E38B451886F7AC00FC9B6B /* GirlStudyViewController.h */,
-				D9E38B461886F7AC00FC9B6B /* GirlStudyViewController.m */,
 				D9E38B481886F7BC00FC9B6B /* GirlColdHotViewController.h */,
 				D9E38B491886F7BC00FC9B6B /* GirlColdHotViewController.m */,
 				D9E38B4B1886F7C700FC9B6B /* PartyChillViewController.h */,
 				D9E38B4C1886F7C700FC9B6B /* PartyChillViewController.m */,
 				D9E38B4E1886F7FF00FC9B6B /* BoyStudyViewController.h */,
 				D9E38B4F1886F7FF00FC9B6B /* BoyStudyViewController.m */,
+				D9E0026A189618CB0053FB0C /* BoyColorViewController.h */,
+				D9E0026B189618CB0053FB0C /* BoyColorViewController.m */,
 			);
 			name = Styling;
 			sourceTree = "<group>";
@@ -579,8 +579,8 @@
 				D9E38B4A1886F7BC00FC9B6B /* GirlColdHotViewController.m in Sources */,
 				D91770F1188CE6AF00FF3B93 /* productCollectionCell.m in Sources */,
 				D98F12FA188AA14500BA7335 /* SliderControllerViewController.m in Sources */,
-				D9E38B471886F7AC00FC9B6B /* GirlStudyViewController.m in Sources */,
 				D9B6F02A187C28210069E088 /* SnapFeedsViewController.m in Sources */,
+				D9E0026C189618CB0053FB0C /* BoyColorViewController.m in Sources */,
 				D96006B01884852400BB1C9E /* ProfileViewController.m in Sources */,
 				D9E38B4D1886F7C700FC9B6B /* PartyChillViewController.m in Sources */,
 				D92F9DAA188C0804004F2231 /* CategoryTableViewCell.m in Sources */,

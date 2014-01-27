@@ -625,14 +625,14 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="XC8-rm-lkL"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="0XE-Mu-pS2" kind="push" identifier="stylingQuiz" id="2ek-Vi-Qh7"/>
                         <segue destination="t2Q-Kd-apx" kind="modal" identifier="customize" id="dlc-X5-SWL"/>
+                        <segue destination="0XE-Mu-pS2" kind="push" identifier="stylingQuiz" id="ekl-PY-ef3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G8H-3h-tEC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="h80-vE-17b">
                     <connections>
-                        <action selector="didTapOnQuizImage:" destination="VvB-2J-9aT" id="oHc-kt-6Ob"/>
+                        <action selector="didTapOnQuiz:" destination="VvB-2J-9aT" id="KJr-3b-x27"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -650,44 +650,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AER YOU A....." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rrF-j5-wgX">
-                                <rect key="frame" x="103" y="93" width="115" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OR" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hh2-G3-Ehj">
-                                <rect key="frame" x="140" y="306" width="25" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="qtn1-boy" translatesAutoresizingMaskIntoConstraints="NO" id="haG-bh-qZO">
-                                <rect key="frame" x="95" y="117" width="129" height="181"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="dLs-QR-FkC" appends="YES" id="YrD-U2-rH5"/>
-                                </connections>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Question1" translatesAutoresizingMaskIntoConstraints="NO" id="3h5-CJ-TN1">
+                                <rect key="frame" x="16" y="79" width="293" height="426"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="girl" translatesAutoresizingMaskIntoConstraints="NO" id="vC0-1N-hbl">
-                                <rect key="frame" x="95" y="342" width="145" height="160"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZV4-P2-vYm">
+                                <rect key="frame" x="20" y="166" width="272" height="124"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="90"/>
+                                <state key="normal" title="BOY">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="6fa-sG-S8A" appends="YES" id="WcB-WN-RZF"/>
+                                    <segue destination="epd-8l-Tli" kind="push" id="dFy-XR-AFa"/>
                                 </connections>
-                            </imageView>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVB-mS-dwu">
+                                <rect key="frame" x="20" y="362" width="272" height="117"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="90"/>
+                                <state key="normal" title="GIRL">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Xvm-Zv-gyo" kind="push" id="xTu-fc-gMW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Quiz" id="2d6-5G-43B">
                         <barButtonItem key="backBarButtonItem" title="Back" id="fgL-zu-IjN"/>
                     </navigationItem>
-                    <connections>
-                        <segue destination="epd-8l-Tli" kind="push" identifier="imboy" id="5cb-zf-Tcq"/>
-                        <segue destination="Xvm-Zv-gyo" kind="push" identifier="imgirl" id="PTc-nr-wSC"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zHg-Rb-nlL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="dLs-QR-FkC" userLabel="Tap Gesture Recognizer for Boy">
@@ -701,7 +697,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1433" y="1231"/>
+            <point key="canvasLocation" x="1445" y="1131"/>
         </scene>
         <!--Customize View Controller-->
         <scene sceneID="KqL-de-d0E">
@@ -810,7 +806,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2164" y="1777"/>
+            <point key="canvasLocation" x="2066" y="1709"/>
         </scene>
         <!--Girl Cold Hot View Controller - Quiz-->
         <scene sceneID="jja-D0-N55">
@@ -874,12 +870,12 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2624" y="1777"/>
+            <point key="canvasLocation" x="2672" y="1709"/>
         </scene>
-        <!--Boy Study View Controller - Quiz-->
+        <!--Boy Color View Controller - Quiz-->
         <scene sceneID="uhc-71-0tf">
             <objects>
-                <viewController id="epd-8l-Tli" customClass="BoyStudyViewController" sceneMemberID="viewController">
+                <viewController id="epd-8l-Tli" customClass="BoyColorViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="F5k-BP-IO4"/>
                         <viewControllerLayoutGuide type="bottom" id="eHz-Ng-u4w"/>
@@ -888,34 +884,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DO YOU ALWAYS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ROD-ti-dhV">
-                                <rect key="frame" x="91" y="91" width="139" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OR" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DoM-7w-c3o">
-                                <rect key="frame" x="148" y="310" width="25" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="body study IN home" translatesAutoresizingMaskIntoConstraints="NO" id="tQT-yT-Tvj">
-                                <rect key="frame" x="20" y="120" width="280" height="182"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="bl5-Tt-TvL" appends="YES" id="Cyz-4i-grR"/>
-                                </connections>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BoyColor" translatesAutoresizingMaskIntoConstraints="NO" id="aKh-dS-eyf">
+                                <rect key="frame" x="10" y="83" width="300" height="423"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="boy study in school" translatesAutoresizingMaskIntoConstraints="NO" id="Fqb-I8-lLm">
-                                <rect key="frame" x="16" y="338" width="296" height="171"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgp-lD-wii">
+                                <rect key="frame" x="10" y="169" width="290" height="124"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="75"/>
+                                <state key="normal" title="BRIGHT">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="rWS-DN-6Vd" appends="YES" id="zja-NX-aRR"/>
+                                    <action selector="choseBright:" destination="epd-8l-Tli" eventType="touchUpInside" id="Iba-TH-zfU"/>
                                 </connections>
-                            </imageView>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afd-TL-L0x">
+                                <rect key="frame" x="15" y="360" width="290" height="124"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="75"/>
+                                <state key="normal" title="DARK">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="choseDark:" destination="epd-8l-Tli" eventType="touchUpInside" id="aCs-5v-pSY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -938,7 +934,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2184" y="937"/>
+            <point key="canvasLocation" x="2054" y="863"/>
         </scene>
         <!--Boy Cold Hot View Controller - Quiz-->
         <scene sceneID="f8R-4i-aQJ">
@@ -1135,21 +1131,19 @@
     </scenes>
     <resources>
         <image name="Alerts" width="27" height="26"/>
+        <image name="BoyColor" width="883" height="1361"/>
         <image name="Contact" width="25" height="25"/>
         <image name="Favorites" width="27" height="26"/>
         <image name="Party" width="562" height="327"/>
         <image name="Picasa" width="25" height="25"/>
+        <image name="Question1" width="883" height="1361"/>
         <image name="Shop" width="30" height="30"/>
-        <image name="body study IN home" width="500" height="379"/>
         <image name="boy hoodie" width="576" height="639"/>
         <image name="boy no cloth" width="1328" height="714"/>
-        <image name="boy study in school" width="640" height="480"/>
-        <image name="girl" width="740" height="1200"/>
         <image name="girl study in home" width="500" height="270"/>
         <image name="girl study in sch" width="500" height="352"/>
         <image name="gril dress up" width="300" height="463"/>
         <image name="logo" width="231" height="89"/>
-        <image name="qtn1-boy" width="2000" height="2892"/>
         <image name="teen_Lisa_Simpson_by_toongrowner" width="766" height="1042"/>
         <image name="the-simpsons-summer-pool-party-simpsons-characters-11824646-1680-1050" width="1680" height="1050"/>
         <image name="whatsyourstlye" width="1024" height="768"/>

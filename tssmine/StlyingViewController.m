@@ -37,15 +37,14 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)didTapOnStylingQuiz:(id)sender {
-     [self performSegueWithIdentifier: @"stylingQuiz" sender: self];
-}
+
 - (IBAction)didTapOnSavedStlyes:(id)sender {
      [self performSegueWithIdentifier: @"customize" sender: self];
 }
-- (IBAction)didTapOnQuizImage:(id)sender {
-    [self performSegueWithIdentifier: @"stylingQuiz" sender: self];
+- (IBAction)didTapOnQuiz:(id)sender {
+    [self performSegueWithIdentifier:@"stylingQuiz" sender:sender];
 }
+
 
 - (void)pushViews {
     //Pop back to the root view controller

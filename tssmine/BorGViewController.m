@@ -34,11 +34,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)didTapOnBoy:(id)sender {
-    [self performSegueWithIdentifier:@"imboy" sender:sender];
-}
-- (IBAction)didTapOnGirl:(id)sender {
-    [self performSegueWithIdentifier:@"imgirl" sender:sender];
-}
 
 @end
