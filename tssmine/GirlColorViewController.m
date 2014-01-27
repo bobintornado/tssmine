@@ -1,18 +1,18 @@
 //
-//  BoyColorViewController.m
+//  GirlColorViewController.m
 //  tssmine
 //
 //  Created by Bob Cao on 27/1/14.
 //  Copyright (c) 2014 Bob Cao. All rights reserved.
 //
 
-#import "BoyColorViewController.h"
+#import "GirlColorViewController.h"
 
-@interface BoyColorViewController ()
+@interface GirlColorViewController ()
 
 @end
 
-@implementation BoyColorViewController
+@implementation GirlColorViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,10 +35,10 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)choseBright:(id)sender {
-    [self performSegueWithIdentifier:@"BoyQuiz3" sender:sender];
+    [self performSegueWithIdentifier:@"GirlQuiz3" sender:sender];
 }
 - (IBAction)choseDark:(id)sender {
-    [self performSegueWithIdentifier:@"BoyQuiz3" sender:sender];
+    [self performSegueWithIdentifier:@"GirlQuiz3" sender:sender];
 }
 
 @end

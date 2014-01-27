@@ -698,10 +698,10 @@
             </objects>
             <point key="canvasLocation" x="1445" y="1131"/>
         </scene>
-        <!--View Controller - Quiz-->
+        <!--Girl Color View Controller - Quiz-->
         <scene sceneID="WVZ-ZI-Xyw">
             <objects>
-                <viewController id="Xvm-Zv-gyo" sceneMemberID="viewController">
+                <viewController id="Xvm-Zv-gyo" customClass="GirlColorViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="b9h-D5-rwu"/>
                         <viewControllerLayoutGuide type="bottom" id="uHg-2S-c4a"/>
@@ -714,6 +714,30 @@
                                 <rect key="frame" x="8" y="68" width="307" height="446"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fd5-vm-Dam">
+                                <rect key="frame" x="20" y="168" width="273" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="75"/>
+                                <state key="normal" title="BRIGHT">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="choseBright:" destination="Xvm-Zv-gyo" eventType="touchUpInside" id="Uyf-q8-E6B"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="otn-zY-cS2">
+                                <rect key="frame" x="30" y="368" width="260" height="122"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="75"/>
+                                <state key="normal" title="DARK">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="choseDark:" destination="Xvm-Zv-gyo" eventType="touchUpInside" id="DDk-w2-Yp7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -721,7 +745,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="rlS-fj-efd"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="ba9-oa-6N4" kind="push" identifier="GirlQuiz2" id="hCF-MS-Brz"/>
+                        <segue destination="ba9-oa-6N4" kind="push" identifier="GirlQuiz3" id="hCF-MS-Brz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qcn-oH-TMB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -738,10 +762,10 @@
             </objects>
             <point key="canvasLocation" x="2098" y="1709"/>
         </scene>
-        <!--Girl Cold Hot View Controller - Quiz-->
+        <!--Girl Study View Controller - Quiz-->
         <scene sceneID="jja-D0-N55">
             <objects>
-                <viewController id="ba9-oa-6N4" customClass="GirlColdHotViewController" sceneMemberID="viewController">
+                <viewController id="ba9-oa-6N4" customClass="GirlStudyViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XE4-JZ-lQf"/>
                         <viewControllerLayoutGuide type="bottom" id="NdT-Jk-Vko"/>
@@ -767,7 +791,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="RG5-eW-FgU" appends="YES" id="xjB-9j-ZdF"/>
+                                    <outletCollection property="gestureRecognizers" destination="Xxy-oZ-IjB" appends="YES" id="wmD-UB-wKK"/>
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="girl gym" translatesAutoresizingMaskIntoConstraints="NO" id="rog-Jp-dVS">
@@ -775,7 +799,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="nFC-QP-1iZ" appends="YES" id="SDR-pe-SYU"/>
+                                    <outletCollection property="gestureRecognizers" destination="i0F-aj-rNQ" appends="YES" id="uvn-nW-e1z"/>
                                 </connections>
                             </imageView>
                         </subviews>
@@ -785,18 +809,18 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="uHP-U2-6WB"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="99E-gN-PsY" kind="push" identifier="GirlQuiz3" id="FZT-he-xxz"/>
+                        <segue destination="99E-gN-PsY" kind="push" identifier="GirlQuiz4" id="FZT-he-xxz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CdK-fg-rCd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="nFC-QP-1iZ" userLabel="Tap Gesture Recognizer Cold">
+                <tapGestureRecognizer id="Xxy-oZ-IjB" userLabel="Tap Gesture Recognizer Study">
                     <connections>
-                        <action selector="didTapOnCold:" destination="ba9-oa-6N4" id="Wfh-UZ-DkX"/>
+                        <action selector="choseStudy:" destination="ba9-oa-6N4" id="TqI-fN-Dre"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="RG5-eW-FgU" userLabel="Tap Gesture Recognizer Hot">
+                <tapGestureRecognizer id="i0F-aj-rNQ" userLabel="Tap Gesture Recognizer gym">
                     <connections>
-                        <action selector="didTapOnHot:" destination="ba9-oa-6N4" id="vxS-M2-BrB"/>
+                        <action selector="choseGym:" destination="ba9-oa-6N4" id="6ab-R5-pXf"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -849,7 +873,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="Ab6-VQ-K4q"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="8Wm-4K-rhc" kind="push" identifier="BoyQuiz2" id="Cmz-qo-su9"/>
+                        <segue destination="8Wm-4K-rhc" kind="push" identifier="BoyQuiz3" id="Cmz-qo-su9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cL7-f9-B9z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -866,10 +890,10 @@
             </objects>
             <point key="canvasLocation" x="2098" y="863"/>
         </scene>
-        <!--Boy Cold Hot View Controller - Quiz-->
+        <!--Boy Study View Controller - Quiz-->
         <scene sceneID="f8R-4i-aQJ">
             <objects>
-                <viewController id="8Wm-4K-rhc" customClass="BoyColdHotViewController" sceneMemberID="viewController">
+                <viewController id="8Wm-4K-rhc" customClass="BoyStudyViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1Cd-fo-XCD"/>
                         <viewControllerLayoutGuide type="bottom" id="YUd-7q-gk2"/>
@@ -895,7 +919,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="BLh-nc-jUa" appends="YES" id="i6H-pM-HzD"/>
+                                    <outletCollection property="gestureRecognizers" destination="kw9-dS-UNW" appends="YES" id="XYd-Pl-ERg"/>
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="boy gym" translatesAutoresizingMaskIntoConstraints="NO" id="b8x-bd-M7x">
@@ -903,7 +927,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="PJC-Ea-8hf" appends="YES" id="78k-CI-8Un"/>
+                                    <outletCollection property="gestureRecognizers" destination="oSQ-Zf-oa0" appends="YES" id="Zis-pY-Xu7"/>
                                 </connections>
                             </imageView>
                         </subviews>
@@ -913,27 +937,27 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="Voj-OG-p6W"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="OqL-3b-7jv" kind="push" identifier="BoyQuiz3" id="ntH-ve-P7T"/>
+                        <segue destination="OqL-3b-7jv" kind="push" identifier="BoyQuiz4" id="ntH-ve-P7T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="icp-jN-xvi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="BLh-nc-jUa" userLabel="Tap Gesture Recognizer Hot">
+                <tapGestureRecognizer id="kw9-dS-UNW" userLabel="Tap Gesture Recognizer Study">
                     <connections>
-                        <action selector="didTapOnHot:" destination="8Wm-4K-rhc" id="Gvh-7B-1Do"/>
+                        <action selector="choseStudy:" destination="8Wm-4K-rhc" id="Gsj-Ye-Qfp"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="PJC-Ea-8hf" userLabel="Tap Gesture Recognizer Cold">
+                <tapGestureRecognizer id="oSQ-Zf-oa0" userLabel="Tap Gesture Recognizer Gym">
                     <connections>
-                        <action selector="didTapOnCold:" destination="8Wm-4K-rhc" id="MMd-yS-L1j"/>
+                        <action selector="choseGym:" destination="8Wm-4K-rhc" id="3ht-xD-ZV2"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2648" y="857"/>
         </scene>
-        <!--View Controller-->
+        <!--BoySMU View Controller - Quiz-->
         <scene sceneID="xgJ-F7-cAY">
             <objects>
-                <viewController id="OqL-3b-7jv" sceneMemberID="viewController">
+                <viewController id="OqL-3b-7jv" customClass="BoySMUViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gfl-DC-0At"/>
                         <viewControllerLayoutGuide type="bottom" id="17S-kp-Fig"/>
@@ -942,13 +966,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="boy smu" translatesAutoresizingMaskIntoConstraints="NO" id="bHA-tq-zlS">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="boy smu" translatesAutoresizingMaskIntoConstraints="NO" id="bHA-tq-zlS">
                                 <rect key="frame" x="20" y="116" width="288" height="179"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="27n-OX-QJX" appends="YES" id="bkt-Bs-F7O"/>
+                                </connections>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="boy no-smu" translatesAutoresizingMaskIntoConstraints="NO" id="JWS-hi-NCr">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="boy no-smu" translatesAutoresizingMaskIntoConstraints="NO" id="JWS-hi-NCr">
                                 <rect key="frame" x="20" y="354" width="288" height="153"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="fb9-bA-Y1q" appends="YES" id="N3b-Bb-tgE"/>
+                                </connections>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Do you like" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTT-nG-eWY">
                                 <rect key="frame" x="121" y="80" width="86" height="21"/>
@@ -966,19 +998,31 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="7XE-1l-Ore"/>
+                    <navigationItem key="navigationItem" title="Quiz" id="7XE-1l-Ore">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="ieh-gu-c7w"/>
+                    </navigationItem>
                     <connections>
-                        <segue destination="1BQ-Ar-NL3" kind="push" id="xuH-fJ-37p"/>
+                        <segue destination="1BQ-Ar-NL3" kind="modal" identifier="BoyResult" id="xuH-fJ-37p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9SL-ZD-O9b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="27n-OX-QJX" userLabel="Tap Gesture Recognizer SMU">
+                    <connections>
+                        <action selector="choseSMU:" destination="OqL-3b-7jv" id="Egz-QE-xh7"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="fb9-bA-Y1q" userLabel="Tap Gesture Recognizer NonSMU">
+                    <connections>
+                        <action selector="choseNonSMU:" destination="OqL-3b-7jv" id="Bn3-BM-c4r"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3180" y="857"/>
         </scene>
-        <!--View Controller-->
+        <!--Customize View Controller-->
         <scene sceneID="s8x-NX-pY3">
             <objects>
-                <viewController id="1BQ-Ar-NL3" sceneMemberID="viewController">
+                <viewController id="1BQ-Ar-NL3" customClass="CustomizeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mIt-F0-J7V"/>
                         <viewControllerLayoutGuide type="bottom" id="BC0-aN-RDy"/>
@@ -994,10 +1038,10 @@
             </objects>
             <point key="canvasLocation" x="4000" y="1409"/>
         </scene>
-        <!--View Controller-->
+        <!--GirlSMU View Controller - Quiz-->
         <scene sceneID="1hJ-eC-dSw">
             <objects>
-                <viewController id="99E-gN-PsY" sceneMemberID="viewController">
+                <viewController id="99E-gN-PsY" customClass="GirlSMUViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="H1f-nM-b7D"/>
                         <viewControllerLayoutGuide type="bottom" id="pcX-UH-knt"/>
@@ -1006,13 +1050,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="girl smu" translatesAutoresizingMaskIntoConstraints="NO" id="d7l-oc-Q9Q">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="girl smu" translatesAutoresizingMaskIntoConstraints="NO" id="d7l-oc-Q9Q">
                                 <rect key="frame" x="69" y="116" width="183" height="172"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="fb6-HJ-SE4" appends="YES" id="ZCh-uP-MrD"/>
+                                </connections>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="girl no-smu" translatesAutoresizingMaskIntoConstraints="NO" id="WNS-k4-PeD">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="girl no-smu" translatesAutoresizingMaskIntoConstraints="NO" id="WNS-k4-PeD">
                                 <rect key="frame" x="75" y="325" width="177" height="174"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="DJw-rm-PNI" appends="YES" id="ugx-kw-2Iq"/>
+                                </connections>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Do you like" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NE9-7N-82r">
                                 <rect key="frame" x="117" y="87" width="86" height="21"/>
@@ -1029,12 +1081,24 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ub3-DR-r6y"/>
+                    <navigationItem key="navigationItem" title="Quiz" id="ub3-DR-r6y">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="bGi-S5-R9z"/>
+                    </navigationItem>
                     <connections>
-                        <segue destination="1BQ-Ar-NL3" kind="push" id="hib-ow-2ea"/>
+                        <segue destination="1BQ-Ar-NL3" kind="modal" identifier="GirlResult" id="hib-ow-2ea"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JUf-cZ-BO5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="fb6-HJ-SE4" userLabel="Tap Gesture Recognizer SMU">
+                    <connections>
+                        <action selector="choseSMU:" destination="99E-gN-PsY" id="b6o-X6-dK1"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="DJw-rm-PNI" userLabel="Tap Gesture Recognizer Non-smu">
+                    <connections>
+                        <action selector="choseNonSMU:" destination="99E-gN-PsY" id="GqO-ny-yPa"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3180" y="1709"/>
         </scene>
@@ -1132,7 +1196,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="xuH-fJ-37p"/>
+        <segue reference="hib-ow-2ea"/>
         <segue reference="gdY-T1-7h4"/>
     </inferredMetricsTieBreakers>
 </document>

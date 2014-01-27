@@ -34,11 +34,11 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)didTapOnHome:(id)sender {
-    [self performSegueWithIdentifier:@"boyQuiz2" sender:sender];
+- (IBAction)choseStudy:(id)sender {
+    [self performSegueWithIdentifier:@"BoyQuiz4" sender:sender];
 }
-- (IBAction)didTapOnSchool:(id)sender {
-    [self performSegueWithIdentifier:@"boyQuiz2" sender:sender];
+- (IBAction)choseGym:(id)sender {
+    [self performSegueWithIdentifier:@"BoyQuiz4" sender:sender];
 }
 
 @end
