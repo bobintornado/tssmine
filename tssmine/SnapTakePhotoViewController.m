@@ -129,7 +129,7 @@
 }
 
 - (void)publishNewSnap {
-    NSDictionary *userInfo = [NSDictionary dictionary];
+    //NSDictionary *userInfo = [NSDictionary dictionary];
     
     if (!self.photoFile || !self.thumbnailFile) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Couldn't post your photo" message:nil delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Dismiss", nil];

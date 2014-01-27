@@ -387,7 +387,7 @@
                   symbolName = "-[snapFeedTableViewCell setLikeStatus:]"
                   moduleName = "tssmine"
                   urlString = "file:///Users/bobcao/Desktop/tssmine/tssmine/snapFeedTableViewCell.m"
-                  timestampString = "411961132.785677"
+                  timestampString = "412507824.489486"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "38"
@@ -401,7 +401,7 @@
                   symbolName = "-[snapFeedTableViewCell setLikeStatus:]"
                   moduleName = "tssmine"
                   urlString = "file:///Users/bobcao/Desktop/tssmine/tssmine/snapFeedTableViewCell.m"
-                  timestampString = "411961132.78586"
+                  timestampString = "412507824.489648"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "38"
@@ -566,6 +566,22 @@
             startingLineNumber = "60"
             endingLineNumber = "60"
             landmarkName = "-collectionView:cellForItemAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "tssmine/BorGViewController.m"
+            timestampString = "412502380.974373"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "-choseBoy:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

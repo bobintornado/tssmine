@@ -7,6 +7,7 @@
 //
 
 #import "GirlSMUViewController.h"
+#import "QuizCenter.h"
 
 @interface GirlSMUViewController ()
 
@@ -35,9 +36,17 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)choseSMU:(id)sender {
+    QuizCenter *sharedCenter = [QuizCenter sharedCenter];
+    NSRange range = NSMakeRange(3,1);
+    sharedCenter.result = [sharedCenter.result stringByReplacingCharactersInRange:range withString:@"A"];
+    NSLog(sharedCenter.result);
     [self performSegueWithIdentifier:@"GirlResult" sender:sender];
 }
 - (IBAction)choseNonSMU:(id)sender {
+    QuizCenter *sharedCenter = [QuizCenter sharedCenter];
+    NSRange range = NSMakeRange(3,1);
+    sharedCenter.result = [sharedCenter.result stringByReplacingCharactersInRange:range withString:@"B"];
+    NSLog(sharedCenter.result);
     [self performSegueWithIdentifier:@"GirlResult" sender:sender];
 }
 
