@@ -27,7 +27,24 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [self.logInView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"woodentexture.png"]]];
+    [self.logInView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TSS-WoodenLogo.png"]]];
+    [self.logInView.usernameField setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"darkwoodtexture.png"]]];
+    [self.logInView.passwordField setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"darkwoodtexture.png"]]];
+    
+    
+    [self.logInView.signUpButton setBackgroundImage:[UIImage imageNamed:@"darkwoodtexture.png"] forState:UIControlStateNormal];
+    [self.logInView.signUpButton setBackgroundImage:[UIImage imageNamed:@"darkwoodtexture.png"] forState:UIControlStateHighlighted];
+    [self.logInView.signUpButton setTitle:@"Sign Up" forState:UIControlStateNormal];
+    [self.logInView.signUpButton setTitle:@"Sign Up" forState:UIControlStateHighlighted];
+    
+    // Set field text color
+    [self.logInView.usernameField setTextColor:[UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:1.0]];
+    [self.logInView.passwordField setTextColor:[UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:1.0]];
+    
+    
 }
+
 
 - (void)didReceiveMemoryWarning
 {

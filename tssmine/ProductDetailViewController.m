@@ -10,6 +10,8 @@
 
 @interface ProductDetailViewController ()
 @property (strong, nonatomic) IBOutlet PFImageView *productImageView;
+@property (strong, nonatomic) IBOutlet UILabel *productName;
+@property (strong, nonatomic) IBOutlet UILabel *price;
 
 @end
 
@@ -28,8 +30,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.productImageView.file = [self.selectedProduct objectForKey:@"Picture"];
+    self.productImageView.file = [self.selectedProduct objectForKey:@"PreviewImage"];
     [self.productImageView loadInBackground];
+    self.productName.text = [self.selectedProduct objectForKey:@"Name"];
+    self.price.text = [NSString stringWithFormat:@"$ %@", [self.selectedProduct objectForKey:@"Price"]];
 }
 
 - (void)didReceiveMemoryWarning

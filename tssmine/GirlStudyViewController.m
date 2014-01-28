@@ -40,6 +40,9 @@
     NSRange range = NSMakeRange(2,1);
     sharedCenter.result = [sharedCenter.result stringByReplacingCharactersInRange:range withString:@"A"];
     NSLog(sharedCenter.result);
+    
+    [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"popBack" object:nil]];
+    
     [self performSegueWithIdentifier:@"GirlQuiz4" sender:sender];
 }
 - (IBAction)choseGym:(id)sender {
@@ -47,6 +50,7 @@
     NSRange range = NSMakeRange(2,1);
     sharedCenter.result = [sharedCenter.result stringByReplacingCharactersInRange:range withString:@"B"];
     NSLog(sharedCenter.result);
+    
     [self performSegueWithIdentifier:@"GirlQuiz4" sender:sender];
 }
 @end

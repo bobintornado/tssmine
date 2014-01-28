@@ -7,7 +7,6 @@
 //
 
 #import "StlyingViewController.h"
-#import "CustomizeViewController.h"
 
 @interface StlyingViewController ()
 
@@ -38,18 +37,18 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)didTapOnSavedStlyes:(id)sender {
-     [self performSegueWithIdentifier: @"customize" sender: self];
-}
-- (IBAction)didTapOnQuiz:(id)sender {
-    [self performSegueWithIdentifier:@"stylingQuiz" sender:sender];
-}
-
-
 - (void)pushViews {
     //Pop back to the root view controller
-    [self.navigationController popToRootViewControllerAnimated:NO];
-    [self performSegueWithIdentifier: @"customize" sender: self];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self performSegueWithIdentifier: @"quizResult" sender: self];
+}
+
+- (IBAction)createStyle:(id)sender {
+    [self performSegueWithIdentifier:@"createStyle" sender:self];
+}
+
+- (IBAction)takeQuiz:(id)sender {
+    [self performSegueWithIdentifier:@"stylingQuiz" sender:self];
 }
 
 

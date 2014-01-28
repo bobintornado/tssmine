@@ -1,22 +1,22 @@
 //
-//  ProductsCollectionViewController.m
-//  tssmine
+//  ChoseUnderViewController.m
+//  TheSMUShop
 //
-//  Created by Bob Cao on 20/1/14.
+//  Created by Bob Cao on 28/1/14.
 //  Copyright (c) 2014 Bob Cao. All rights reserved.
 //
 
-#import "ProductsCollectionViewController.h"
-#import "productCollectionCell.h"
-#import "ProductDetailViewController.h"
+#import "ChoseUnderViewController.h"
+#import "CustomizeUICollectionViewCell.h"
+#import "StyleCenter.h"
 
-@interface ProductsCollectionViewController ()
+@interface ChoseUnderViewController ()
 
 @property (strong,nonatomic) NSArray *products;
 
 @end
 
-@implementation ProductsCollectionViewController
+@implementation ChoseUnderViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,11 +31,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.title = [self.selectedCategory objectForKey:@"Name"];
+    self.title = @"Chose Under";
     PFQuery *query = [PFQuery queryWithClassName:@"TSSProduct"];
-    [query whereKey:@"Category" equalTo:self.selectedCategory];
+    [query whereKey:@"Position" equalTo:@2];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        _products = objects;
+        self.products = objects;
         [self.collectionView reloadData];
     }];
 }
@@ -47,27 +47,32 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return _products.count;
+    return self.products.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *identifier = @"productCell";
-    productCollectionCell *cell = (productCollectionCell *)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    static NSString *identifier = @"customizeCollectionCell";
+    CustomizeUICollectionViewCell *cell = (CustomizeUICollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     PFObject *object = (PFObject *)[_products objectAtIndex:indexPath.row];
     
     //configure the cell
-    cell.image.file = [object objectForKey:@"ThumbnailImage"];
-    [cell.image loadInBackground];
-    cell.priceLabel.text = [NSString stringWithFormat:@"$ %@", [object objectForKey:@"Price"]];
+    cell.productImage.file = [object objectForKey:@"ThumbnailImage"];
+    [cell.productImage loadInBackground];
+    
     return cell;
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    //disselect and get the product
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     PFObject *product = [_products objectAtIndex:indexPath.row];
-    ProductDetailViewController *pdVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProductDeatil"];
-    pdVC.selectedProduct = product;
-    [self.navigationController pushViewController:pdVC animated:YES];
+    
+    //assign the product to center
+    StyleCenter *sharedCenter = [StyleCenter sharedCenter];
+    sharedCenter.under = product;
+    
+    [self performSegueWithIdentifier:@"choseBottom" sender:self];
 }
 
 @end

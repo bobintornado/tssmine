@@ -10,8 +10,4 @@
 
 @interface QuizViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
-@property (strong,nonatomic) PFFile *upper;
-@property (strong,nonatomic) PFFile *under;
-@property (strong,nonatomic) PFFile *bottom;
-
 @end

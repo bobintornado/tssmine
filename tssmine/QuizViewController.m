@@ -12,6 +12,11 @@
 
 @interface QuizViewController ()
 
+@property (strong, nonatomic) IBOutlet UINavigationBar *quizResultNavBar;
+@property (strong,nonatomic) PFFile *upper;
+@property (strong,nonatomic) PFFile *under;
+@property (strong,nonatomic) PFFile *bottom;
+
 @end
 
 @implementation QuizViewController
@@ -54,6 +59,21 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+
+    //adding Title
+    UINavigationItem *navItem = [[UINavigationItem alloc] init];
+    navItem.title = @"Styling";
+    
+    //set left button for cancel
+    UIBarButtonItem *leftCancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(cancelQuizStyling:)];
+    
+    //set right button as the sharing action button
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(shareStyling)];
+    
+    //Adding two buttons
+    navItem.leftBarButtonItem = leftCancelButton;
+    navItem.rightBarButtonItem = rightButton;
+    self.quizResultNavBar.items = @[ navItem ];
 }
 
 - (void)didReceiveMemoryWarning
@@ -89,6 +109,28 @@
 
     //return the cell
     return cell;
+}
+
+- (void)cancelQuizStyling:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)shareStyling{
+    //futher customization is needed
+    NSString *shareString = @"My style!";
+    
+    //Get the image needed to shared before user clicks on sharing
+    //PFFile *imageFile = [self.snapObject objectForKey:@"snapPicture"];
+    //NSData *data = [imageFile getData];
+    //UIImage *shareImage = [UIImage imageWithData:data];
+    
+    //config the sharing
+    NSArray *activityItems = [NSArray arrayWithObjects:shareString, nil];
+    
+    //present the sharing window
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+    activityViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentViewController:activityViewController animated:YES completion:nil];
 }
 
 @end

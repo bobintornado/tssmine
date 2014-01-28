@@ -40,6 +40,9 @@
     NSRange range = NSMakeRange(3,1);
     sharedCenter.result = [sharedCenter.result stringByReplacingCharactersInRange:range withString:@"A"];
     NSLog(sharedCenter.result);
+    
+    [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"popBack" object:nil]];
+    
     [self performSegueWithIdentifier:@"GirlResult" sender:sender];
 }
 - (IBAction)choseNonSMU:(id)sender {
@@ -47,6 +50,9 @@
     NSRange range = NSMakeRange(3,1);
     sharedCenter.result = [sharedCenter.result stringByReplacingCharactersInRange:range withString:@"B"];
     NSLog(sharedCenter.result);
+    
+    [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"popBack" object:nil]];
+    
     [self performSegueWithIdentifier:@"GirlResult" sender:sender];
 }
 
