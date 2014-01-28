@@ -37,6 +37,7 @@
 }
 - (IBAction)didTapOnLogOut:(id)sender {
     [PFUser logOut];
+    [self.tabBarController setSelectedIndex:0];
 }
 
 @end
