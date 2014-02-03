@@ -35,25 +35,22 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)choseSMU:(id)sender {
+- (IBAction)choseSMULogo:(id)sender {
     QuizCenter *sharedCenter = [QuizCenter sharedCenter];
     NSRange range = NSMakeRange(3,1);
     sharedCenter.result = [sharedCenter.result stringByReplacingCharactersInRange:range withString:@"A"];
     NSLog(sharedCenter.result);
     
     [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"popBack" object:nil]];
-    
-    //[self performSegueWithIdentifier:@"BoyResult" sender:sender];
 }
-- (IBAction)choseNonSMU:(id)sender {
+
+- (IBAction)choseNoSMULogo:(id)sender {
     QuizCenter *sharedCenter = [QuizCenter sharedCenter];
     NSRange range = NSMakeRange(3,1);
     sharedCenter.result = [sharedCenter.result stringByReplacingCharactersInRange:range withString:@"B"];
     NSLog(sharedCenter.result);
     
     [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"popBack" object:nil]];
-    
-    //[self performSegueWithIdentifier:@"BoyResult" sender:sender];
 }
 
 @end

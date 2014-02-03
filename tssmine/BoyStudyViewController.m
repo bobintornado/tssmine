@@ -42,7 +42,8 @@
     NSLog(sharedCenter.result);
     [self performSegueWithIdentifier:@"BoyQuiz4" sender:sender];
 }
-- (IBAction)choseGym:(id)sender {
+
+- (IBAction)choseGYM:(id)sender {
     QuizCenter *sharedCenter = [QuizCenter sharedCenter];
     NSRange range = NSMakeRange(2,1);
     sharedCenter.result = [sharedCenter.result stringByReplacingCharactersInRange:range withString:@"B"];
