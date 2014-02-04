@@ -113,6 +113,7 @@
 
 - (void)cancelQuizStyling:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
 - (void)shareStyling{

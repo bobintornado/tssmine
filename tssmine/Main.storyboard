@@ -574,16 +574,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jIX-w0-lCc">
-                                <rect key="frame" x="224" y="452" width="90" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Saved Styles">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="didTapOnSavedStlyes:" destination="VvB-2J-9aT" eventType="touchUpInside" id="zsd-8r-kEn"/>
-                                </connections>
-                            </button>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="whatsyourstlye" translatesAutoresizingMaskIntoConstraints="NO" id="8ZA-LN-qgn">
                                 <rect key="frame" x="20" y="114" width="283" height="189"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -599,9 +589,9 @@
                                 </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4D-VJ-lg4">
-                                <rect key="frame" x="183" y="483" width="131" height="30"/>
+                                <rect key="frame" x="86" y="398" width="148" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Craft from Scracth!">
+                                <state key="normal" title="Craft Your Own Style!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -898,7 +888,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BoyColor" translatesAutoresizingMaskIntoConstraints="NO" id="gqu-7Z-zI4" customClass="boy">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="question1" translatesAutoresizingMaskIntoConstraints="NO" id="gqu-7Z-zI4" customClass="boy">
                                 <rect key="frame" x="8" y="68" width="307" height="446"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -1383,7 +1373,6 @@
     </scenes>
     <resources>
         <image name="Alerts" width="27" height="26"/>
-        <image name="BoyColor" width="883" height="1361"/>
         <image name="Contact" width="25" height="25"/>
         <image name="Favorites" width="27" height="26"/>
         <image name="Picasa" width="25" height="25"/>
@@ -1407,7 +1396,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="xuH-fJ-37p"/>
+        <segue reference="5dq-j7-ttZ"/>
         <segue reference="gdY-T1-7h4"/>
     </inferredMetricsTieBreakers>
 </document>

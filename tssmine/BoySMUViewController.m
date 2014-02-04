@@ -40,7 +40,7 @@
     NSRange range = NSMakeRange(3,1);
     sharedCenter.result = [sharedCenter.result stringByReplacingCharactersInRange:range withString:@"A"];
     NSLog(sharedCenter.result);
-    
+    [self.navigationController popToRootViewControllerAnimated:NO];
     [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"popBack" object:nil]];
 }
 
@@ -49,7 +49,7 @@
     NSRange range = NSMakeRange(3,1);
     sharedCenter.result = [sharedCenter.result stringByReplacingCharactersInRange:range withString:@"B"];
     NSLog(sharedCenter.result);
-    
+    [self.navigationController popToRootViewControllerAnimated:NO];
     [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"popBack" object:nil]];
 }
 

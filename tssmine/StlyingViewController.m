@@ -39,7 +39,6 @@
 
 - (void)pushViews {
     //Pop back to the root view controller
-    [self.navigationController popToRootViewControllerAnimated:YES];
     [self performSegueWithIdentifier: @"quizResult" sender: self];
 }
 
