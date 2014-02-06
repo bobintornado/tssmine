@@ -632,7 +632,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZV4-P2-vYm">
-                                <rect key="frame" x="20" y="166" width="272" height="124"/>
+                                <rect key="frame" x="41" y="130" width="259" height="136"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="90"/>
                                 <state key="normal" title="BOY">
@@ -641,11 +641,11 @@
                                 </state>
                                 <connections>
                                     <action selector="choseBoy:" destination="0XE-Mu-pS2" eventType="touchUpInside" id="2r8-8C-sWy"/>
-                                    <segue destination="epd-8l-Tli" kind="push" id="dFy-XR-AFa"/>
+                                    <segue destination="epd-8l-Tli" kind="push" identifier="" id="dFy-XR-AFa"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVB-mS-dwu">
-                                <rect key="frame" x="20" y="362" width="272" height="117"/>
+                                <rect key="frame" x="41" y="329" width="259" height="126"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="90"/>
                                 <state key="normal" title="GIRL">
@@ -654,11 +654,11 @@
                                 </state>
                                 <connections>
                                     <action selector="choseGirl:" destination="0XE-Mu-pS2" eventType="touchUpInside" id="tei-yv-REJ"/>
-                                    <segue destination="Xvm-Zv-gyo" kind="push" id="xTu-fc-gMW"/>
+                                    <segue destination="Xvm-Zv-gyo" kind="push" identifier="" id="xTu-fc-gMW"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="question1" translatesAutoresizingMaskIntoConstraints="NO" id="HBo-OL-Oqc">
-                                <rect key="frame" x="0.0" y="65" width="320" height="454"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="boyOrGirl" translatesAutoresizingMaskIntoConstraints="NO" id="HBo-OL-Oqc">
+                                <rect key="frame" x="0.0" y="57" width="328" height="464"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -670,7 +670,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zHg-Rb-nlL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1493" y="1307"/>
+            <point key="canvasLocation" x="1487" y="1315"/>
         </scene>
         <!--Chose Upper View Controller - Styling-->
         <scene sceneID="Ae9-Pa-PBe">
@@ -888,8 +888,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="question1" translatesAutoresizingMaskIntoConstraints="NO" id="gqu-7Z-zI4" customClass="boy">
-                                <rect key="frame" x="8" y="68" width="307" height="446"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="question2" translatesAutoresizingMaskIntoConstraints="NO" id="gqu-7Z-zI4" customClass="boy">
+                                <rect key="frame" x="0.0" y="65" width="320" height="453"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fd5-vm-Dam">
@@ -1378,13 +1378,13 @@
         <image name="Picasa" width="25" height="25"/>
         <image name="Shop" width="30" height="30"/>
         <image name="award ribbon" width="380" height="400"/>
+        <image name="boyOrGirl" width="1000" height="1500"/>
         <image name="girl gym" width="489" height="387"/>
         <image name="girl no-smu" width="518" height="518"/>
         <image name="girl smu" width="518" height="518"/>
         <image name="girl study" width="210" height="210"/>
         <image name="logo" width="231" height="89"/>
         <image name="profile_round" width="312" height="312"/>
-        <image name="question1" width="1000" height="1500"/>
         <image name="question2" width="1000" height="1500"/>
         <image name="question3" width="1000" height="1500"/>
         <image name="question4" width="1000" height="1500"/>
