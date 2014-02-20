@@ -32,7 +32,7 @@
     
     //adding Title
     UINavigationItem *navItem = [[UINavigationItem alloc] init];
-    navItem.title = @"Campus Snaps";
+    navItem.title = @"Campus Buzz";
     //adding right button for photo taking
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(takePicture:)];
     navItem.rightBarButtonItem = rightButton;

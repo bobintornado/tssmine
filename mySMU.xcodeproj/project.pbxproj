@@ -53,6 +53,7 @@
 		D9A2DCDA18972A930069B5E0 /* CustomizeResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A2DCD918972A920069B5E0 /* CustomizeResultViewController.m */; };
 		D9A71FEA18B675BD00B15375 /* BazaarPFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A71FE918B675BD00B15375 /* BazaarPFTableViewCell.m */; };
 		D9A71FED18B67EB100B15375 /* AnnouncementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A71FEC18B67EB100B15375 /* AnnouncementViewController.m */; };
+		D9A71FF418B68C8300B15375 /* AddNewSHItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A71FF318B68C8300B15375 /* AddNewSHItemViewController.m */; };
 		D9B6F02A187C28210069E088 /* SnapFeedsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B6F029187C28210069E088 /* SnapFeedsViewController.m */; };
 		D9B6F02D187C32990069E088 /* snapFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B6F02C187C32990069E088 /* snapFeedTableViewCell.m */; };
 		D9CF91951887A0B70070B10B /* RootTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9CF91941887A0B70070B10B /* RootTabBarViewController.m */; };
@@ -169,6 +170,8 @@
 		D9A71FE918B675BD00B15375 /* BazaarPFTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BazaarPFTableViewCell.m; sourceTree = "<group>"; };
 		D9A71FEB18B67EB100B15375 /* AnnouncementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnouncementViewController.h; sourceTree = "<group>"; };
 		D9A71FEC18B67EB100B15375 /* AnnouncementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnouncementViewController.m; sourceTree = "<group>"; };
+		D9A71FF218B68C8300B15375 /* AddNewSHItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNewSHItemViewController.h; sourceTree = "<group>"; };
+		D9A71FF318B68C8300B15375 /* AddNewSHItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNewSHItemViewController.m; sourceTree = "<group>"; };
 		D9B6F028187C28210069E088 /* SnapFeedsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapFeedsViewController.h; sourceTree = "<group>"; };
 		D9B6F029187C28210069E088 /* SnapFeedsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnapFeedsViewController.m; sourceTree = "<group>"; };
 		D9B6F02B187C32990069E088 /* snapFeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = snapFeedTableViewCell.h; sourceTree = "<group>"; };
@@ -254,6 +257,8 @@
 			children = (
 				D952DAE318B6484B0032D40F /* BazaarViewController.h */,
 				D952DAE418B6484B0032D40F /* BazaarViewController.m */,
+				D9A71FF218B68C8300B15375 /* AddNewSHItemViewController.h */,
+				D9A71FF318B68C8300B15375 /* AddNewSHItemViewController.m */,
 			);
 			name = Bazaar;
 			sourceTree = "<group>";
@@ -744,6 +749,7 @@
 				D9A2DCDA18972A930069B5E0 /* CustomizeResultViewController.m in Sources */,
 				D9B6F02A187C28210069E088 /* SnapFeedsViewController.m in Sources */,
 				D9E0026C189618CB0053FB0C /* BoyColorViewController.m in Sources */,
+				D9A71FF418B68C8300B15375 /* AddNewSHItemViewController.m in Sources */,
 				D96006B01884852400BB1C9E /* ProfileViewController.m in Sources */,
 				D92F9DAA188C0804004F2231 /* CategoryTableViewCell.m in Sources */,
 				D9E38B3E1886F5F000FC9B6B /* BorGViewController.m in Sources */,

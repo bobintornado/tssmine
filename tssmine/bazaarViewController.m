@@ -11,6 +11,8 @@
 
 @interface BazaarViewController ()
 
+@property (strong, nonatomic) IBOutlet UINavigationItem *bazaarUINav;
+
 @end
 
 @implementation BazaarViewController
@@ -27,7 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	// Do any additional setup after loading the view
 }
 
 - (void)didReceiveMemoryWarning
@@ -79,10 +81,11 @@
     cell.itemDes.text = [object objectForKey:@"description"];
     cell.itemPrice.text = [NSString stringWithFormat:@"$%@", [object objectForKey:@"price"]];
     cell.itemContact.text = [NSString stringWithFormat:@"HP: %@", [object objectForKey:@"phone"]];
-
     
     return cell;
 }
 
+- (IBAction)pressCompose:(id)sender {
+}
 
 @end
