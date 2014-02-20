@@ -1,19 +1,18 @@
 //
-//  BazaarViewController.m
-//  TheSMUShop
+//  AnnouncementViewController.m
+//  mySMU
 //
-//  Created by Bob Cao on 20/2/14.
+//  Created by Bob Cao on 21/2/14.
 //  Copyright (c) 2014 Bob Cao. All rights reserved.
 //
 
-#import "BazaarViewController.h"
-#import "BazaarPFTableViewCell.h"
+#import "AnnouncementViewController.h"
 
-@interface BazaarViewController ()
+@interface AnnouncementViewController ()
 
 @end
 
-@implementation BazaarViewController
+@implementation AnnouncementViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -42,11 +41,10 @@
         // Customize the table
         
         // The className to query on
-        self.parseClassName = @"SHItem";
+        self.parseClassName = @"Announcement";
         
         // Whether the built-in pull-to-refresh is enabled
         self.pullToRefreshEnabled = YES;
-         NSLog(@"%@", @"42");
         
         // Whether the built-in pagination is enabled
         self.paginationEnabled = YES;
@@ -60,29 +58,22 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object {
     
     //mark cell indentifier in storyboard
-    static NSString *CellIdentifier = @"bazaarTBV";
-    NSLog(@"%@", @"22");
+    static NSString *CellIdentifier = @"announcement";
+    NSLog(@"%@", @"11");
     
     //assign indentifer
-    BazaarPFTableViewCell *cell = (BazaarPFTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     //initilize with identifer
     if (cell == nil) {
-        cell = (BazaarPFTableViewCell *)[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell =[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
     // Configure the cell
-    cell.itemImg.file = [object objectForKey:@"img"];
-    [cell.itemImg loadInBackground];
-    cell.itemTitle.text = [object objectForKey:@"title"];
-    cell.itemDes.editable = false;
-    cell.itemDes.text = [object objectForKey:@"description"];
-    cell.itemPrice.text = [NSString stringWithFormat:@"$%@", [object objectForKey:@"price"]];
-    cell.itemContact.text = [NSString stringWithFormat:@"HP: %@", [object objectForKey:@"phone"]];
-
+    cell.textLabel.text = [object objectForKey:@"title"];
+    NSLog(@"%@", @"AAA");
     
     return cell;
 }
-
 
 @end
