@@ -16,6 +16,7 @@
 @property (nonatomic, strong) PFFile *thumbnailFile;
 @property (nonatomic, assign) UIBackgroundTaskIdentifier fileUploadBackgroundTaskId;
 @property (nonatomic, assign) UIBackgroundTaskIdentifier photoPostBackgroundTaskId;
+@property (strong, nonatomic) IBOutlet UITextField *snapTitle;
 
 @end
 
@@ -65,6 +66,15 @@
     
     //prepare to uploading the photo
     [self shouldUploadImage:self.image];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
+}
+
+-(void)dismissKeyboard {
+    [self.view endEditing:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -144,11 +154,8 @@
     [photo setObject:[PFUser currentUser] forKey:@"poster"];
     [photo setObject:self.photoFile forKey:@"snapPicture"];
     [photo setObject:self.thumbnailFile forKey:@"snapThumbnail"];
+    [photo setObject:self.snapTitle.text forKey:@"snapTitle"];
     
-    //set photos to be public, but may only be modified by the user who uploaded them
-    PFACL *photoACL = [PFACL ACLWithUser:[PFUser currentUser]];
-    [photoACL setPublicReadAccess:YES];
-    photo.ACL = photoACL;
     
     // Request a background execution task to allow us to finish uploading the photo even if the app is backgrounded
     self.photoPostBackgroundTaskId = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{

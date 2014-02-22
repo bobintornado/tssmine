@@ -58,7 +58,7 @@
     //configure the cell
     cell.image.file = [object objectForKey:@"ThumbnailImage"];
     [cell.image loadInBackground];
-    cell.priceLabel.text = [NSString stringWithFormat:@"$ %@", [object objectForKey:@"Price"]];
+    cell.priceLabel.text = [NSString stringWithFormat:@"$%@", [object objectForKey:@"Price"]];
     return cell;
 }
 

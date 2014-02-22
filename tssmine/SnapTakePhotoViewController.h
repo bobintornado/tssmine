@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SnapTakePhotoViewController : UIViewController
+@interface SnapTakePhotoViewController : UIViewController <UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UINavigationBar *postSnapNavBar;
 

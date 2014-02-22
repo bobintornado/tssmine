@@ -7,6 +7,7 @@
 //
 
 #import "ProductDetailViewController.h"
+#import "webPaymentViewController.h"
 
 @interface ProductDetailViewController ()
 @property (strong, nonatomic) IBOutlet PFImageView *productImageView;
@@ -33,13 +34,26 @@
     self.productImageView.file = [self.selectedProduct objectForKey:@"PreviewImage"];
     [self.productImageView loadInBackground];
     self.productName.text = [self.selectedProduct objectForKey:@"Name"];
-    self.price.text = [NSString stringWithFormat:@"$ %@", [self.selectedProduct objectForKey:@"Price"]];
+    self.price.text = [NSString stringWithFormat:@"SGD $ %@", [self.selectedProduct objectForKey:@"Price"]];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Make sure your segue name in storyboard is the same as this line
+    if ([[segue identifier] isEqualToString:@"webpurchase"])
+    {
+        // Get reference to the destination view controller
+        webPaymentViewController *vc = [segue destinationViewController];
+        
+        // Pass any objects to the view controller here, like...
+        vc.fullURL = [self.selectedProduct objectForKey:@"Link"];
+    }
 }
 
 @end
