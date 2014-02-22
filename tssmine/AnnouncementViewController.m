@@ -7,6 +7,7 @@
 //
 
 #import "AnnouncementViewController.h"
+#import "AnnouncementCell.h"
 
 @interface AnnouncementViewController ()
 
@@ -62,15 +63,27 @@
     NSLog(@"%@", @"11");
     
     //assign indentifer
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    AnnouncementCell *cell = (AnnouncementCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     //initilize with identifer
     if (cell == nil) {
-        cell =[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = (AnnouncementCell *)[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
     // Configure the cell
-    cell.textLabel.text = [object objectForKey:@"title"];
+    cell.title.text = [object objectForKey:@"title"];
+    cell.faulty.text = [object objectForKey:@"Faulty"];
+    NSDate *date = [object objectForKey:@"AnnounDate"];
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    [format setDateFormat:@"MMM-dd-yyyy"];
+    cell.announcementDate.text = [format stringFromDate:date];
+    cell.announcementText.editable = false;
+    cell.announcementText.text = [object objectForKey:@"detail"];
+    NSString *fileName = [NSString stringWithFormat:@"%@.png",
+                         [object objectForKey:@"Faulty"]];
+    UIImage *image = [UIImage imageNamed:fileName];
+    cell.symbol.image = image;
+    
     NSLog(@"%@", @"AAA");
     
     return cell;

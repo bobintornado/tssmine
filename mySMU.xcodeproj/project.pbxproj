@@ -9,8 +9,12 @@
 /* Begin PBXBuildFile section */
 		D901607B187AB8190003985D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D901607A187AB8190003985D /* Main.storyboard */; };
 		D91081211896A83100E46B51 /* QuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D91081201896A83100E46B51 /* QuizViewController.m */; };
+		D916C2EE18B89AEB00486DFD /* AnnouncementCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D916C2ED18B89AEB00486DFD /* AnnouncementCell.m */; };
+		D916C2F118B8DD6500486DFD /* BuzzViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D916C2F018B8DD6500486DFD /* BuzzViewController.m */; };
+		D916C2F418B8E53E00486DFD /* BuzzCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D916C2F318B8E53E00486DFD /* BuzzCell.m */; };
 		D91770EE188CC9DE00FF3B93 /* ProductsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D91770ED188CC9DE00FF3B93 /* ProductsCollectionViewController.m */; };
 		D91770F1188CE6AF00FF3B93 /* productCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D91770F0188CE6AF00FF3B93 /* productCollectionCell.m */; };
+		D91C890718B935CE008E7536 /* Filter.m in Sources */ = {isa = PBXBuildFile; fileRef = D91C890618B935CE008E7536 /* Filter.m */; };
 		D91CBB0A1896839B00372F9A /* CustomizeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D91CBB091896839B00372F9A /* CustomizeCell.m */; };
 		D92F9DA7188C0019004F2231 /* CategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D92F9DA6188C0019004F2231 /* CategoryTableViewController.m */; };
 		D92F9DAA188C0804004F2231 /* CategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D92F9DA9188C0804004F2231 /* CategoryTableViewCell.m */; };
@@ -27,7 +31,6 @@
 		D954DFCF1888229600CCA262 /* shopNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D954DFCE1888229600CCA262 /* shopNavigationController.m */; };
 		D96006B01884852400BB1C9E /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D96006AF1884852400BB1C9E /* ProfileViewController.m */; };
 		D9647D52187A821C00B26CE8 /* SnapTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9647D51187A821C00B26CE8 /* SnapTimelineViewController.m */; };
-		D9647D55187A823200B26CE8 /* SnapDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9647D54187A823200B26CE8 /* SnapDetailViewController.m */; };
 		D9647D58187A823F00B26CE8 /* SnapTakePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9647D57187A823F00B26CE8 /* SnapTakePhotoViewController.m */; };
 		D97A35DC187E80B50006A90F /* TSSUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = D97A35DB187E80B50006A90F /* TSSUtility.m */; };
 		D98438441884D1CC008BDCA8 /* StlyingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98438431884D1CC008BDCA8 /* StlyingViewController.m */; };
@@ -98,10 +101,18 @@
 		D901607A187AB8190003985D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D910811F1896A83100E46B51 /* QuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizViewController.h; sourceTree = "<group>"; };
 		D91081201896A83100E46B51 /* QuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizViewController.m; sourceTree = "<group>"; };
+		D916C2EC18B89AEB00486DFD /* AnnouncementCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnouncementCell.h; sourceTree = "<group>"; };
+		D916C2ED18B89AEB00486DFD /* AnnouncementCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnouncementCell.m; sourceTree = "<group>"; };
+		D916C2EF18B8DD6500486DFD /* BuzzViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuzzViewController.h; sourceTree = "<group>"; };
+		D916C2F018B8DD6500486DFD /* BuzzViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuzzViewController.m; sourceTree = "<group>"; };
+		D916C2F218B8E53E00486DFD /* BuzzCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuzzCell.h; sourceTree = "<group>"; };
+		D916C2F318B8E53E00486DFD /* BuzzCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuzzCell.m; sourceTree = "<group>"; };
 		D91770EC188CC9DE00FF3B93 /* ProductsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductsCollectionViewController.h; sourceTree = "<group>"; };
 		D91770ED188CC9DE00FF3B93 /* ProductsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductsCollectionViewController.m; sourceTree = "<group>"; };
 		D91770EF188CE6AF00FF3B93 /* productCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = productCollectionCell.h; sourceTree = "<group>"; };
 		D91770F0188CE6AF00FF3B93 /* productCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = productCollectionCell.m; sourceTree = "<group>"; };
+		D91C890518B935CE008E7536 /* Filter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Filter.h; sourceTree = "<group>"; };
+		D91C890618B935CE008E7536 /* Filter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Filter.m; sourceTree = "<group>"; };
 		D91CBB081896839B00372F9A /* CustomizeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomizeCell.h; sourceTree = "<group>"; };
 		D91CBB091896839B00372F9A /* CustomizeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomizeCell.m; sourceTree = "<group>"; };
 		D92F9DA5188C0019004F2231 /* CategoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTableViewController.h; sourceTree = "<group>"; };
@@ -125,8 +136,6 @@
 		D96006AF1884852400BB1C9E /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		D9647D50187A821C00B26CE8 /* SnapTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapTimelineViewController.h; sourceTree = "<group>"; };
 		D9647D51187A821C00B26CE8 /* SnapTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnapTimelineViewController.m; sourceTree = "<group>"; };
-		D9647D53187A823200B26CE8 /* SnapDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapDetailViewController.h; sourceTree = "<group>"; };
-		D9647D54187A823200B26CE8 /* SnapDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnapDetailViewController.m; sourceTree = "<group>"; };
 		D9647D56187A823F00B26CE8 /* SnapTakePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapTakePhotoViewController.h; sourceTree = "<group>"; };
 		D9647D57187A823F00B26CE8 /* SnapTakePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnapTakePhotoViewController.m; sourceTree = "<group>"; };
 		D97A35DA187E80B50006A90F /* TSSUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSSUtility.h; sourceTree = "<group>"; };
@@ -252,6 +261,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D916C2EB18B89AC400486DFD /* Announcement */ = {
+			isa = PBXGroup;
+			children = (
+				D916C2EC18B89AEB00486DFD /* AnnouncementCell.h */,
+				D916C2ED18B89AEB00486DFD /* AnnouncementCell.m */,
+			);
+			name = Announcement;
+			sourceTree = "<group>";
+		};
 		D952DAE218B648190032D40F /* Bazaar */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,6 +315,8 @@
 			children = (
 				D9B6F02B187C32990069E088 /* snapFeedTableViewCell.h */,
 				D9B6F02C187C32990069E088 /* snapFeedTableViewCell.m */,
+				D916C2F218B8E53E00486DFD /* BuzzCell.h */,
+				D916C2F318B8E53E00486DFD /* BuzzCell.m */,
 			);
 			name = Buzz;
 			sourceTree = "<group>";
@@ -360,12 +380,14 @@
 			children = (
 				D9647D50187A821C00B26CE8 /* SnapTimelineViewController.h */,
 				D9647D51187A821C00B26CE8 /* SnapTimelineViewController.m */,
-				D9647D53187A823200B26CE8 /* SnapDetailViewController.h */,
-				D9647D54187A823200B26CE8 /* SnapDetailViewController.m */,
 				D9647D56187A823F00B26CE8 /* SnapTakePhotoViewController.h */,
 				D9647D57187A823F00B26CE8 /* SnapTakePhotoViewController.m */,
 				D9B6F028187C28210069E088 /* SnapFeedsViewController.h */,
 				D9B6F029187C28210069E088 /* SnapFeedsViewController.m */,
+				D916C2EF18B8DD6500486DFD /* BuzzViewController.h */,
+				D916C2F018B8DD6500486DFD /* BuzzViewController.m */,
+				D91C890518B935CE008E7536 /* Filter.h */,
+				D91C890618B935CE008E7536 /* Filter.m */,
 			);
 			name = Buzz;
 			sourceTree = "<group>";
@@ -495,6 +517,7 @@
 		D99E50041826ABB0005F4D32 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D916C2EB18B89AC400486DFD /* Announcement */,
 				D9A71FE718B675A400B15375 /* Bazaar */,
 				D952DAF318B65D370032D40F /* Styling */,
 				D952DAF218B65D260032D40F /* Buzz */,
@@ -720,6 +743,7 @@
 				D9A08574189714B600B000B9 /* ChoseUpperViewController.m in Sources */,
 				D9E002721896324D0053FB0C /* GirlColorViewController.m in Sources */,
 				D9A2DCD41897265E0069B5E0 /* ChoseBottomViewController.m in Sources */,
+				D916C2F118B8DD6500486DFD /* BuzzViewController.m in Sources */,
 				D91770EE188CC9DE00FF3B93 /* ProductsCollectionViewController.m in Sources */,
 				D94F5C781890E3D9007B6116 /* ProductDetailViewController.m in Sources */,
 				D9E38B501886F7FF00FC9B6B /* BoyStudyViewController.m in Sources */,
@@ -727,16 +751,18 @@
 				D9CF91981887A9140070B10B /* TssLoginViewController.m in Sources */,
 				D9A085771897187100B000B9 /* CustomizeUICollectionViewCell.m in Sources */,
 				D9A2DCD7189728B10069B5E0 /* StyleCenter.m in Sources */,
+				D91C890718B935CE008E7536 /* Filter.m in Sources */,
 				D9B6F02D187C32990069E088 /* snapFeedTableViewCell.m in Sources */,
 				D9E0026F189631440053FB0C /* BoySMUViewController.m in Sources */,
 				D952DAEE18B65CF90032D40F /* PromotionPFTableViewCell.m in Sources */,
 				D9E00278189632680053FB0C /* GirlSMUViewController.m in Sources */,
 				D98BF165182550EC00DEE19B /* main.m in Sources */,
 				D9A71FEA18B675BD00B15375 /* BazaarPFTableViewCell.m in Sources */,
+				D916C2EE18B89AEB00486DFD /* AnnouncementCell.m in Sources */,
 				D9647D58187A823F00B26CE8 /* SnapTakePhotoViewController.m in Sources */,
-				D9647D55187A823200B26CE8 /* SnapDetailViewController.m in Sources */,
 				D91081211896A83100E46B51 /* QuizViewController.m in Sources */,
 				D94F5C751890D5AE007B6116 /* SubCategoryTableViewController.m in Sources */,
+				D916C2F418B8E53E00486DFD /* BuzzCell.m in Sources */,
 				D98F12F7188A9B7000BA7335 /* SliderContentViewController.m in Sources */,
 				D952DAE918B65AB00032D40F /* PromotionViewController.m in Sources */,
 				D9647D52187A821C00B26CE8 /* SnapTimelineViewController.m in Sources */,
