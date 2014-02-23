@@ -11,6 +11,7 @@
 #import "Filter.h"
 #import "SnapTakePhotoViewController.h"
 #import "AppDelegate.h"
+#import <MobileCoreServices/UTCoreTypes.h>
 
 @interface BuzzViewController ()
 
@@ -33,6 +34,15 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(uploadNewBuzz) name:@"publishNew" object:nil];
+}
+
+- (void)uploadNewBuzz {
+    SnapTakePhotoViewController *snapViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"phototaking"];
+    
+    [snapViewController setSnapImage:self.photoChosen];
+    
+    [self presentViewController:snapViewController animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -110,28 +120,33 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     if (buttonIndex == 0) {
-        [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
+        
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        imagePicker.mediaTypes = [NSArray arrayWithObject:(NSString *) kUTTypeImage];
+        imagePicker.delegate = self;
+        imagePicker.allowsEditing = YES;
+        imagePicker.showsCameraControls = YES;
+        
         [self.navigationController presentViewController:imagePicker animated:YES completion:nil];
+        
     } else if (buttonIndex == 1) {
         [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+        imagePicker.delegate = self;
         [self.navigationController presentViewController:imagePicker animated:YES completion:nil];
     }
     [imagePicker setDelegate:self];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
-    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];  
+    
+    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
+    
     self.photoChosen = image;
-    //[self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    
     //use this method first, i still didn't get why this is happending
-    //[picker dismissViewControllerAnimated:YES completion:nil];
-    [self dismissModalViewControllerAnimated:NO];
+    [self dismissViewControllerAnimated:NO completion:nil];
     
-    SnapTakePhotoViewController *snapViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"phototaking"];
-    
-    [snapViewController setSnapImage:self.photoChosen];
-    
-    [self presentViewController:snapViewController animated:YES completion:nil];
+    [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"publishNew" object:nil]];
 }
 
 
