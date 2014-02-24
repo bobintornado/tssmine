@@ -22,20 +22,6 @@
 
 @implementation SnapTakePhotoViewController
 
-//depreciated init method due to init with storyboard identifier
-- (id)initWithImage:(UIImage *)aImage{
-    self = [super initWithNibName:nil bundle:nil];
-    //passing the image
-    if (self) {
-        if (!aImage) {
-            return nil;
-        }
-        self.image = aImage;
-        self.fileUploadBackgroundTaskId = UIBackgroundTaskInvalid;
-        self.photoPostBackgroundTaskId = UIBackgroundTaskInvalid;
-    }
-    return self;
-}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

@@ -31,7 +31,6 @@
     pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
     pageControl.backgroundColor = [UIColor whiteColor];
 
-    
     return YES;
 }
 

@@ -8,6 +8,6 @@
 
 #import <Parse/Parse.h>
 
-@interface BazaarViewController : PFQueryTableViewController
+@interface BazaarViewController : PFQueryTableViewController <UIImagePickerControllerDelegate,UIActionSheetDelegate,UINavigationControllerDelegate>
 
 @end

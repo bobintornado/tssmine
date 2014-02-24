@@ -10,10 +10,12 @@
 
 @interface BazaarPFTableViewCell : PFTableViewCell
 
-@property (strong, nonatomic) IBOutlet PFImageView *itemImg;
 @property (strong, nonatomic) IBOutlet UILabel *itemTitle;
-@property (strong, nonatomic) IBOutlet UITextView *itemDes;
-@property (strong, nonatomic) IBOutlet UILabel *itemPrice;
-@property (strong, nonatomic) IBOutlet UILabel *itemContact;
+@property (strong, nonatomic) IBOutlet PFImageView *itemImg;
+@property (strong, nonatomic) IBOutlet UILabel *itemDes;
+@property (strong, nonatomic) IBOutlet UILabel *category;
+@property (strong, nonatomic) IBOutlet UILabel *price;
+@property (strong, nonatomic) IBOutlet UILabel *contact;
+
 
 @end

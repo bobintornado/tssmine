@@ -8,8 +8,12 @@
 
 #import "BazaarViewController.h"
 #import "BazaarPFTableViewCell.h"
+#import <MobileCoreServices/UTCoreTypes.h>
+#import "AddNewSHItemViewController.h"
 
 @interface BazaarViewController ()
+
+@property UIImage *itemPhoto;
 
 @property (strong, nonatomic) IBOutlet UINavigationItem *bazaarUINav;
 
@@ -30,6 +34,53 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(publishNewItem) name:@"publishNewItem" object:nil];
+}
+
+- (void)publishNewItem {
+    AddNewSHItemViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"newItem"];
+    
+    vc.itemPhoto = self.itemPhoto;
+    
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
+- (IBAction)addNewItem:(id)sender {
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Snap the Item", @"Choose From Library",nil];
+    [actionSheet showInView:self.view];
+}
+
+//action sheet delegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    if (buttonIndex == 0) {
+        
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        imagePicker.mediaTypes = [NSArray arrayWithObject:(NSString *) kUTTypeImage];
+        imagePicker.delegate = self;
+        imagePicker.allowsEditing = YES;
+        imagePicker.showsCameraControls = YES;
+        
+        [self.navigationController presentViewController:imagePicker animated:YES completion:nil];
+        
+    } else if (buttonIndex == 1) {
+        [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+        imagePicker.delegate = self;
+        imagePicker.allowsEditing = YES;
+        [self.navigationController presentViewController:imagePicker animated:YES completion:nil];
+    }
+    [imagePicker setDelegate:self];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    
+    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
+    
+    self.itemPhoto = image;
+    
+    [self dismissViewControllerAnimated:NO completion:nil];
+    
+    [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"publishNewItem" object:nil]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -74,18 +125,20 @@
     }
     
     // Configure the cell
+    cell.itemTitle.text = [object objectForKey:@"title"];
     cell.itemImg.file = [object objectForKey:@"img"];
     [cell.itemImg loadInBackground];
-    cell.itemTitle.text = [object objectForKey:@"title"];
-    cell.itemDes.editable = false;
     cell.itemDes.text = [object objectForKey:@"description"];
-    cell.itemPrice.text = [NSString stringWithFormat:@"$%@", [object objectForKey:@"price"]];
-    cell.itemContact.text = [NSString stringWithFormat:@"HP: %@", [object objectForKey:@"phone"]];
+    cell.category.text = [object objectForKey:@"category"];
+    cell.price.text = [NSString stringWithFormat:@"SGD $%@",                                                [[object objectForKey:@"price"] stringValue]];
     
+        
     return cell;
 }
 
-- (IBAction)pressCompose:(id)sender {
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 160;
 }
 
 @end

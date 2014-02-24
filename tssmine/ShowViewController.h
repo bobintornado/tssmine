@@ -8,5 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ShowViewController : UIViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
+@interface ShowViewController : UIViewController
+
 @end

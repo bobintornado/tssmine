@@ -7,8 +7,9 @@
 //
 
 #import <Parse/Parse.h>
+#import "BuzzCell.h"
 
-@interface BuzzViewController : PFQueryTableViewController <UIImagePickerControllerDelegate,UIActionSheetDelegate,UINavigationControllerDelegate>
+@interface BuzzViewController : PFQueryTableViewController <UIImagePickerControllerDelegate,UIActionSheetDelegate,UINavigationControllerDelegate,BuzzViewCellDelegate>
 {
     CIContext *context;
     NSMutableArray *filters;

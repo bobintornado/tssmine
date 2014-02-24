@@ -96,6 +96,7 @@
     cell.buzzImg.file = [object objectForKey:@"snapPicture"];
     [cell.buzzImg loadInBackground];
     cell.buzzTitle.text = [object objectForKey:@"snapTitle"];
+    cell.delegate = self;
     
     //make button responsive
     for (id obj in cell.subviews)
@@ -150,6 +151,22 @@
 }
 
 
+//like related stuff below
+- (void) buzzViewCell:(BuzzCell *)buzzViewCell didTapLikeButton:(UIButton *)button Buzz:(PFObject *)buzz{
+    
+    [buzzViewCell shouldEnableThumbUpButton:NO];
+    
+    //fake a soultion until i got time fixing this
+    NSNumber *count= [NSNumber numberWithInt:[[buzzViewCell.thumbsups.text substringToIndex:2] intValue] + 1];
+    
+    
+    //last step
+    NSLog(@"%@", count);
+    buzzViewCell.thumbsups.text =  [NSString stringWithFormat:@"%@ ThumbUps",count];
+}
+
+
+//fliter related stuff below
 - (void)loadFiltersForImage:(UIImage *)image{
     CIImage *filterPreviewImage = [[CIImage alloc] initWithImage:image];
     

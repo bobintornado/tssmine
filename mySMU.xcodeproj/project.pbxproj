@@ -647,7 +647,7 @@
 				ORGANIZATIONNAME = "Bob Cao";
 				TargetAttributes = {
 					D98BF154182550EC00DEE19B = {
-						DevelopmentTeam = Y793MV39VU;
+						DevelopmentTeam = Q9Z2F5P657;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
 								enabled = 0;
