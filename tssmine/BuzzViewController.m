@@ -12,6 +12,7 @@
 #import "SnapTakePhotoViewController.h"
 #import "AppDelegate.h"
 #import <MobileCoreServices/UTCoreTypes.h>
+#import "TSSUtility.h"
 
 @interface BuzzViewController ()
 
@@ -151,18 +152,38 @@
 }
 
 
-//like related stuff below
+//thumb up related stuff below
 - (void) buzzViewCell:(BuzzCell *)buzzViewCell didTapLikeButton:(UIButton *)button Buzz:(PFObject *)buzz{
     
+    //disable thumbUp button
     [buzzViewCell shouldEnableThumbUpButton:NO];
     
+    //get thumb up status from button selection status
+    BOOL thumbuped = !button.selected;
+
+    
     //fake a soultion until i got time fixing this
-    NSNumber *count= [NSNumber numberWithInt:[[buzzViewCell.thumbsups.text substringToIndex:2] intValue] + 1];
     
     
-    //last step
-    NSLog(@"%@", count);
-    buzzViewCell.thumbsups.text =  [NSString stringWithFormat:@"%@ ThumbUps",count];
+    //Chose process based on button selection status
+    if(thumbuped){
+        [TSSUtility likeSnapInBackground:buzz block:^(BOOL succeeded, NSError *error){
+            [buzzViewCell shouldEnableThumbUpButton:YES];
+            [buzzViewCell.thumbUpButton setSelected:thumbuped];
+             NSNumber *count= [NSNumber numberWithInt:[[buzzViewCell.thumbsups.text substringToIndex:2] intValue] + 1];
+            buzzViewCell.thumbsups.text =  [NSString stringWithFormat:@"%@ ThumbUps",count];
+            NSLog(@"like execute");
+        }];
+    } else {
+        [TSSUtility unlikeSnapInBackground:buzz block:^(BOOL succeeded, NSError *error){
+            [buzzViewCell shouldEnableThumbUpButton:YES];
+            [buzzViewCell.thumbUpButton setSelected:thumbuped];
+            NSNumber *count= [NSNumber numberWithInt:[[buzzViewCell.thumbsups.text substringToIndex:2] intValue] - 1];
+            buzzViewCell.thumbsups.text =  [NSString stringWithFormat:@"%@ ThumbUps",count];
+            
+            NSLog(@"dislike execute");
+        }];
+    }
 }
 
 

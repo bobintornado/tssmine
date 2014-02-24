@@ -27,6 +27,7 @@
  @param enable a BOOL indicating if the like button should be enabled.
  */
 - (void)shouldEnableThumbUpButton:(BOOL)enable;
+- (void)setThumbUpStatus:(BOOL)status;
 
 @end
 

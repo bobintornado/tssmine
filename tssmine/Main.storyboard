@@ -76,6 +76,7 @@
                                             <state key="normal" image="thumbs-up">
                                                 <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <state key="selected" image="thumbuped"/>
                                             <connections>
                                                 <action selector="didTapLikeButton:" destination="Jbw-ng-cqi" eventType="touchUpInside" id="0pQ-kG-uPt"/>
                                             </connections>
@@ -1767,6 +1768,7 @@
         <image name="question3" width="1000" height="1500"/>
         <image name="question4" width="1000" height="1500"/>
         <image name="thumbs-up" width="84" height="71"/>
+        <image name="thumbuped" width="84" height="71"/>
         <image name="whatsyourstlye" width="1024" height="768"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
