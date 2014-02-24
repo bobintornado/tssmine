@@ -41,8 +41,6 @@
     sharedCenter.result = [sharedCenter.result stringByReplacingCharactersInRange:range withString:@"A"];
     NSLog(sharedCenter.result);
     
-    [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"popBack" object:nil]];
-    
     [self performSegueWithIdentifier:@"GirlQuiz4" sender:sender];
 }
 - (IBAction)choseGym:(id)sender {

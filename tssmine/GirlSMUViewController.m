@@ -43,7 +43,7 @@
     
     [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"popBack" object:nil]];
     
-    [self performSegueWithIdentifier:@"GirlResult" sender:sender];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 - (IBAction)choseNonSMU:(id)sender {
     QuizCenter *sharedCenter = [QuizCenter sharedCenter];
@@ -53,7 +53,8 @@
     
     [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"popBack" object:nil]];
     
-    [self performSegueWithIdentifier:@"GirlResult" sender:sender];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+
 }
 
 @end
