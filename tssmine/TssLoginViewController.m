@@ -30,9 +30,6 @@
     //[self.logInView setBackgroundColor:[UIColor whiteColor]];
     [self.logInView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo.png"]]];
     
-    
-    //[self.logInView.signUpButton setBackgroundImage:[UIImage imageNamed:@"darkwoodtexture.png"] forState:UIControlStateNormal];
-    //[self.logInView.signUpButton setBackgroundImage:[UIImage imageNamed:@"darkwoodtexture.png"] forState:UIControlStateHighlighted];
     [self.logInView.signUpButton setTitle:@"Sign Up" forState:UIControlStateNormal];
     [self.logInView.signUpButton setTitle:@"Sign Up" forState:UIControlStateHighlighted];
     

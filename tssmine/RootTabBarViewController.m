@@ -8,6 +8,7 @@
 
 #import "RootTabBarViewController.h"
 #import "TssLoginViewController.h"
+#import "MySMUViewController.h"
 
 @interface RootTabBarViewController ()
 
@@ -50,7 +51,8 @@
         [logInViewController setFields: PFLogInFieldsFacebook | PFLogInFieldsUsernameAndPassword | PFLogInFieldsLogInButton | PFLogInFieldsSignUpButton| PFLogInFieldsPasswordForgotten];
         
         // Create the sign up view controller
-        PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
+        MySMUViewController *signUpViewController = [[MySMUViewController alloc] init];
+        [signUpViewController setFields:PFSignUpFieldsDefault | PFSignUpFieldsAdditional];
         [signUpViewController setDelegate:self]; // Set ourselves as the delegate
         
         // Assign our sign up controller to be displayed from the login controller

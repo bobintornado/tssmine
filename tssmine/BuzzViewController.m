@@ -84,12 +84,18 @@
         double secondsInAnHour = 3600;
         NSInteger age = distanceBetweenDates / secondsInAnHour;
         [thumbupCount countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
-             object[@"score"] = @(number*100/pow((age + 2), 1.8));
+             object[@"score"] = @(number*50/pow((age + 2), 1.8));
              [object saveInBackground];
         }];
     }
     [query orderByDescending:@"score"];
     [query addDescendingOrder:@"createdAt"];
+    
+//    NSArray *obs = [query findObjects];
+//    for(PFObject *ob in obs){
+//        NSString *s1 = [ob objectForKey:@"score"];
+//        NSLog(@"the score is %@,", s1);
+//    }
     return query;
 }
 

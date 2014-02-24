@@ -58,6 +58,9 @@
 		D9A71FEA18B675BD00B15375 /* BazaarPFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A71FE918B675BD00B15375 /* BazaarPFTableViewCell.m */; };
 		D9A71FED18B67EB100B15375 /* AnnouncementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A71FEC18B67EB100B15375 /* AnnouncementViewController.m */; };
 		D9A71FF418B68C8300B15375 /* AddNewSHItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A71FF318B68C8300B15375 /* AddNewSHItemViewController.m */; };
+		D9ACAF3218BBCD0900AD7A57 /* MySMUViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9ACAF3118BBCD0900AD7A57 /* MySMUViewController.m */; };
+		D9ACAF3718BBDF2500AD7A57 /* ProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9ACAF3618BBDF2500AD7A57 /* ProfileCell.m */; };
+		D9ACAF3A18BBEB5500AD7A57 /* ProfileEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9ACAF3918BBEB5500AD7A57 /* ProfileEditViewController.m */; };
 		D9B6F02D187C32990069E088 /* snapFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B6F02C187C32990069E088 /* snapFeedTableViewCell.m */; };
 		D9CF91951887A0B70070B10B /* RootTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9CF91941887A0B70070B10B /* RootTabBarViewController.m */; };
 		D9CF91981887A9140070B10B /* TssLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9CF91971887A9140070B10B /* TssLoginViewController.m */; };
@@ -183,6 +186,12 @@
 		D9A71FEC18B67EB100B15375 /* AnnouncementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnouncementViewController.m; sourceTree = "<group>"; };
 		D9A71FF218B68C8300B15375 /* AddNewSHItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNewSHItemViewController.h; sourceTree = "<group>"; };
 		D9A71FF318B68C8300B15375 /* AddNewSHItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNewSHItemViewController.m; sourceTree = "<group>"; };
+		D9ACAF3018BBCD0900AD7A57 /* MySMUViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySMUViewController.h; sourceTree = "<group>"; };
+		D9ACAF3118BBCD0900AD7A57 /* MySMUViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySMUViewController.m; sourceTree = "<group>"; };
+		D9ACAF3518BBDF2500AD7A57 /* ProfileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileCell.h; sourceTree = "<group>"; };
+		D9ACAF3618BBDF2500AD7A57 /* ProfileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileCell.m; sourceTree = "<group>"; };
+		D9ACAF3818BBEB5500AD7A57 /* ProfileEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileEditViewController.h; sourceTree = "<group>"; };
+		D9ACAF3918BBEB5500AD7A57 /* ProfileEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileEditViewController.m; sourceTree = "<group>"; };
 		D9B6F02B187C32990069E088 /* snapFeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = snapFeedTableViewCell.h; sourceTree = "<group>"; };
 		D9B6F02C187C32990069E088 /* snapFeedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = snapFeedTableViewCell.m; sourceTree = "<group>"; };
 		D9CF91931887A0B70070B10B /* RootTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootTabBarViewController.h; sourceTree = "<group>"; };
@@ -337,6 +346,8 @@
 			children = (
 				D96006AE1884852400BB1C9E /* ProfileViewController.h */,
 				D96006AF1884852400BB1C9E /* ProfileViewController.m */,
+				D9ACAF3818BBEB5500AD7A57 /* ProfileEditViewController.h */,
+				D9ACAF3918BBEB5500AD7A57 /* ProfileEditViewController.m */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -517,6 +528,7 @@
 		D99E50041826ABB0005F4D32 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D9ACAF3318BBDF0300AD7A57 /* Profile */,
 				D916C2EB18B89AC400486DFD /* Announcement */,
 				D9A71FE718B675A400B15375 /* Bazaar */,
 				D952DAF318B65D370032D40F /* Styling */,
@@ -583,11 +595,22 @@
 			name = Announcement;
 			sourceTree = "<group>";
 		};
+		D9ACAF3318BBDF0300AD7A57 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				D9ACAF3518BBDF2500AD7A57 /* ProfileCell.h */,
+				D9ACAF3618BBDF2500AD7A57 /* ProfileCell.m */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
 		D9CCC77518879216005A8B95 /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				D9CF91961887A9140070B10B /* TssLoginViewController.h */,
 				D9CF91971887A9140070B10B /* TssLoginViewController.m */,
+				D9ACAF3018BBCD0900AD7A57 /* MySMUViewController.h */,
+				D9ACAF3118BBCD0900AD7A57 /* MySMUViewController.m */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -769,13 +792,16 @@
 				D9647D52187A821C00B26CE8 /* SnapTimelineViewController.m in Sources */,
 				D9A71FED18B67EB100B15375 /* AnnouncementViewController.m in Sources */,
 				D92F9DA7188C0019004F2231 /* CategoryTableViewController.m in Sources */,
+				D9ACAF3A18BBEB5500AD7A57 /* ProfileEditViewController.m in Sources */,
 				D9E0027B189637FE0053FB0C /* GirlStudyViewController.m in Sources */,
 				D91770F1188CE6AF00FF3B93 /* productCollectionCell.m in Sources */,
 				D9E0027E1896428A0053FB0C /* QuizCenter.m in Sources */,
 				D98F12FA188AA14500BA7335 /* SliderControllerViewController.m in Sources */,
 				D9A2DCDA18972A930069B5E0 /* CustomizeResultViewController.m in Sources */,
 				D9E0026C189618CB0053FB0C /* BoyColorViewController.m in Sources */,
+				D9ACAF3218BBCD0900AD7A57 /* MySMUViewController.m in Sources */,
 				D9A71FF418B68C8300B15375 /* AddNewSHItemViewController.m in Sources */,
+				D9ACAF3718BBDF2500AD7A57 /* ProfileCell.m in Sources */,
 				D96006B01884852400BB1C9E /* ProfileViewController.m in Sources */,
 				D92F9DAA188C0804004F2231 /* CategoryTableViewCell.m in Sources */,
 				D9E38B3E1886F5F000FC9B6B /* BorGViewController.m in Sources */,
