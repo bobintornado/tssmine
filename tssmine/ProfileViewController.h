@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ProfileViewController : UIViewController <UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface ProfileViewController : UIViewController <UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate,UIActionSheetDelegate>
 
 @end

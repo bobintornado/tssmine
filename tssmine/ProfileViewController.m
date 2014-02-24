@@ -10,10 +10,15 @@
 #import <QuartzCore/QuartzCore.h>
 #import "ProfileCell.h"
 #import "ProfileEditViewController.h"
+#import <MobileCoreServices/UTCoreTypes.h>
 
 @interface ProfileViewController ()
 
 @property (strong, nonatomic) IBOutlet UITableView *profileTableView;
+@property (nonatomic, strong) PFFile *photoFile;
+@property (nonatomic, assign) UIBackgroundTaskIdentifier fileUploadBackgroundTaskId;
+@property (nonatomic, assign) UIBackgroundTaskIdentifier photoPostBackgroundTaskId;
+@property (strong, nonatomic) IBOutlet PFImageView *profileImg;
 
 @end
 
@@ -33,6 +38,11 @@
     NSLog(@"profile");
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    if ([[PFUser currentUser] objectForKey:@"profileImg"] !=NULL) {
+        self.profileImg.file = [[PFUser currentUser] objectForKey:@"profileImg"];
+        [self.profileImg loadInBackground];
+    }
+    self.profileImg.layer.cornerRadius = 100;
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -112,6 +122,69 @@
     vc.editMood = indexPath.row;
     
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (IBAction)didTapProfilePicture:(id)sender {
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Snap A Profile", @"Choose From Library",nil];
+    [actionSheet showInView:self.view];
+}
+//action sheet delegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+        if (buttonIndex == 0) {
+            
+            imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+            imagePicker.mediaTypes = [NSArray arrayWithObject:(NSString *) kUTTypeImage];
+            imagePicker.delegate = self;
+            imagePicker.allowsEditing = YES;
+            imagePicker.showsCameraControls = YES;
+            
+            [self.navigationController presentViewController:imagePicker animated:YES completion:nil];
+            
+        } else if (buttonIndex == 1) {
+            [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+            imagePicker.delegate = self;
+            imagePicker.allowsEditing = YES;
+            [self.navigationController presentViewController:imagePicker animated:YES completion:nil];
+        }
+        [imagePicker setDelegate:self];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
+    
+    //dismiss
+    [self dismissViewControllerAnimated:NO completion:nil];
+    
+    //processing
+    NSData *imageData = UIImageJPEGRepresentation(image, 0.8f);
+    self.photoFile = [PFFile fileWithData:imageData];
+    self.fileUploadBackgroundTaskId = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
+        [[UIApplication sharedApplication] endBackgroundTask:self.fileUploadBackgroundTaskId];
+    }];
+    [self.photoFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            NSLog(@"Photo uploaded successfully");
+        } else {
+            [[UIApplication sharedApplication] endBackgroundTask:self.fileUploadBackgroundTaskId];
+        }
+    }];
+    [[PFUser currentUser] setObject:self.photoFile forKey:@"profileImg"];
+    self.photoPostBackgroundTaskId = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
+        [[UIApplication sharedApplication] endBackgroundTask:self.photoPostBackgroundTaskId];
+    }];
+    [[PFUser currentUser] saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            NSLog(@"Photo uploaded");
+            self.profileImg.file = [[PFUser currentUser] objectForKey:@"profileImg"];
+            [self.profileImg loadInBackground];
+        } else {
+            NSLog(@"Photo failed to save: %@", error);
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Couldn't post your photo" message:nil delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Dismiss", nil];
+            [alert show];
+        }
+        [[UIApplication sharedApplication] endBackgroundTask:self.photoPostBackgroundTaskId];
+    }];
 }
 
 

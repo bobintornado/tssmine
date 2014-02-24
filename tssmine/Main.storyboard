@@ -1426,9 +1426,13 @@
                                     <action selector="didTapOnLogOut:" destination="a1m-ZF-pSz" eventType="touchUpInside" id="emb-Kb-7Ow"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile_round" translatesAutoresizingMaskIntoConstraints="NO" id="Fxl-8y-k5y">
-                                <rect key="frame" x="58" y="82" width="205" height="210"/>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile_round" translatesAutoresizingMaskIntoConstraints="NO" id="Fxl-8y-k5y" customClass="PFImageView">
+                                <rect key="frame" x="60" y="85" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="n9G-HE-HrQ" appends="YES" id="rcA-ad-i96"/>
+                                </connections>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="36" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pBv-Gn-lup">
                                 <rect key="frame" x="0.0" y="327" width="320" height="135"/>
@@ -1523,11 +1527,17 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="doN-UD-qsV"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="profileImg" destination="Fxl-8y-k5y" id="Tpl-vs-SsS"/>
                         <outlet property="profileTableView" destination="pBv-Gn-lup" id="Gqb-ee-lIw"/>
                         <segue destination="djE-pf-CrQ" kind="push" identifier="editProfile" id="nNw-Nf-bOc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EdJ-Fn-4pl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="n9G-HE-HrQ">
+                    <connections>
+                        <action selector="didTapProfilePicture:" destination="a1m-ZF-pSz" id="cnT-IO-0dw"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="734" y="2998"/>
         </scene>
