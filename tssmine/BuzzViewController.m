@@ -72,6 +72,27 @@
     return self;
 }
 
+- (PFQuery *)queryForTable {
+    PFQuery *query = [PFQuery queryWithClassName:@"snap"];
+    NSArray *objects = [query findObjects];
+    for (PFObject *object in objects){
+        PFQuery *thumbupCount = [PFQuery queryWithClassName:@"ThumbUp"];
+        [thumbupCount whereKey:@"target" equalTo:object];
+        NSDate *creationTime = [object createdAt];
+        NSDate *now = [NSDate date];
+        NSTimeInterval distanceBetweenDates = [now timeIntervalSinceDate:creationTime];
+        double secondsInAnHour = 3600;
+        NSInteger age = distanceBetweenDates / secondsInAnHour;
+        [thumbupCount countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
+             object[@"score"] = @(number*100/pow((age + 2), 1.8));
+             [object saveInBackground];
+        }];
+    }
+    [query orderByDescending:@"score"];
+    [query addDescendingOrder:@"createdAt"];
+    return query;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object {
     
     //mark cell indentifier in storyboard
@@ -87,17 +108,31 @@
     
     
     //query cell statistics
-    PFQuery *snapLikeCount = [[PFQuery alloc] initWithClassName:@"ActivityLike"];
-    [snapLikeCount whereKey:@"snapPhoto" equalTo:object];
-    [snapLikeCount countObjectsInBackgroundWithBlock:^(int number, NSError *error){
+  
+    
+    PFQuery *thumbUpsCount = [[PFQuery alloc] initWithClassName:@"ThumbUp"];
+    [thumbUpsCount whereKey:@"target" equalTo:object];
+    [thumbUpsCount countObjectsInBackgroundWithBlock:^(int number, NSError *error){
         cell.thumbsups.text = [NSString stringWithFormat:@"%d ThumbUps", number];
+        if ([PFUser currentUser]){
+            //PFQuery *thumbUpsCount2 = [[PFQuery alloc] initWithClassName:@"ThumbUp"];
+            [thumbUpsCount whereKey:@"fromUser" equalTo:[PFUser currentUser]];
+            [thumbUpsCount countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
+                if (number>0){
+                    cell.thumbUpButton.selected = true;
+                }
+            }];
+        }
     }];
+
     
     // Configure the cell
     cell.buzzImg.file = [object objectForKey:@"snapPicture"];
     [cell.buzzImg loadInBackground];
     cell.buzzTitle.text = [object objectForKey:@"snapTitle"];
     cell.delegate = self;
+    cell.buzzObject = object;
+    cell.thumbUpButton.selected = false;
     
     //make button responsive
     for (id obj in cell.subviews)
@@ -111,6 +146,26 @@
     }
     
     return cell;
+}
+
+//swipe editing related
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return YES if you want the specified item to be editable.
+    PFObject *buzz = [self.objects objectAtIndex:indexPath.row];
+    if ([[buzz[@"poster"] objectId] isEqualToString:[[PFUser currentUser] objectId]]){
+        return YES;
+    }
+    return NO;
+}
+
+//swipe editing related
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        PFObject *object = [self.objects objectAtIndex:indexPath.row];
+        [object deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            [self loadObjects];
+        }];
+    }
 }
 
 - (IBAction)takeNewBuzz:(id)sender {
@@ -134,6 +189,7 @@
     } else if (buttonIndex == 1) {
         [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
         imagePicker.delegate = self;
+        imagePicker.allowsEditing = YES;
         [self.navigationController presentViewController:imagePicker animated:YES completion:nil];
     }
     [imagePicker setDelegate:self];
@@ -160,30 +216,27 @@
     
     //get thumb up status from button selection status
     BOOL thumbuped = !button.selected;
-
-    
-    //fake a soultion until i got time fixing this
-    
     
     //Chose process based on button selection status
     if(thumbuped){
-        [TSSUtility likeSnapInBackground:buzz block:^(BOOL succeeded, NSError *error){
+        [TSSUtility thumbUpBuzzInBackground:buzz block:^(BOOL succeeded, NSError *error){
             [buzzViewCell shouldEnableThumbUpButton:YES];
             [buzzViewCell.thumbUpButton setSelected:thumbuped];
-             NSNumber *count= [NSNumber numberWithInt:[[buzzViewCell.thumbsups.text substringToIndex:2] intValue] + 1];
+            NSNumber *count= [NSNumber numberWithInt:[[buzzViewCell.thumbsups.text substringToIndex:2] intValue] + 1];
             buzzViewCell.thumbsups.text =  [NSString stringWithFormat:@"%@ ThumbUps",count];
             NSLog(@"like execute");
         }];
     } else {
-        [TSSUtility unlikeSnapInBackground:buzz block:^(BOOL succeeded, NSError *error){
+        [TSSUtility unThumbUpBuzzInBackground:buzz block:^(BOOL succeeded, NSError *error){
+            NSLog(@"unthumb testing log");
             [buzzViewCell shouldEnableThumbUpButton:YES];
             [buzzViewCell.thumbUpButton setSelected:thumbuped];
             NSNumber *count= [NSNumber numberWithInt:[[buzzViewCell.thumbsups.text substringToIndex:2] intValue] - 1];
             buzzViewCell.thumbsups.text =  [NSString stringWithFormat:@"%@ ThumbUps",count];
-            
             NSLog(@"dislike execute");
         }];
     }
+    
 }
 
 

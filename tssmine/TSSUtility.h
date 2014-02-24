@@ -10,8 +10,8 @@
 
 @interface TSSUtility : NSObject
 
-+ (void)likeSnapInBackground:(id)snap block:(void (^)(BOOL succeeded, NSError *error))completionBlock;
++ (void)thumbUpBuzzInBackground:(id)buzz block:(void (^)(BOOL succeeded, NSError *error))completionBlock;
 
-+ (void)unlikeSnapInBackground:(id)snap block:(void (^)(BOOL succeeded, NSError *error))completionBlock;
++ (void)unThumbUpBuzzInBackground:(id)snap block:(void (^)(BOOL succeeded, NSError *error))completionBlock;
 
 @end

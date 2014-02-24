@@ -58,7 +58,6 @@
 		D9A71FEA18B675BD00B15375 /* BazaarPFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A71FE918B675BD00B15375 /* BazaarPFTableViewCell.m */; };
 		D9A71FED18B67EB100B15375 /* AnnouncementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A71FEC18B67EB100B15375 /* AnnouncementViewController.m */; };
 		D9A71FF418B68C8300B15375 /* AddNewSHItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A71FF318B68C8300B15375 /* AddNewSHItemViewController.m */; };
-		D9B6F02A187C28210069E088 /* SnapFeedsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B6F029187C28210069E088 /* SnapFeedsViewController.m */; };
 		D9B6F02D187C32990069E088 /* snapFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B6F02C187C32990069E088 /* snapFeedTableViewCell.m */; };
 		D9CF91951887A0B70070B10B /* RootTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9CF91941887A0B70070B10B /* RootTabBarViewController.m */; };
 		D9CF91981887A9140070B10B /* TssLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9CF91971887A9140070B10B /* TssLoginViewController.m */; };
@@ -184,8 +183,6 @@
 		D9A71FEC18B67EB100B15375 /* AnnouncementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnouncementViewController.m; sourceTree = "<group>"; };
 		D9A71FF218B68C8300B15375 /* AddNewSHItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNewSHItemViewController.h; sourceTree = "<group>"; };
 		D9A71FF318B68C8300B15375 /* AddNewSHItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNewSHItemViewController.m; sourceTree = "<group>"; };
-		D9B6F028187C28210069E088 /* SnapFeedsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapFeedsViewController.h; sourceTree = "<group>"; };
-		D9B6F029187C28210069E088 /* SnapFeedsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnapFeedsViewController.m; sourceTree = "<group>"; };
 		D9B6F02B187C32990069E088 /* snapFeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = snapFeedTableViewCell.h; sourceTree = "<group>"; };
 		D9B6F02C187C32990069E088 /* snapFeedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = snapFeedTableViewCell.m; sourceTree = "<group>"; };
 		D9CF91931887A0B70070B10B /* RootTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootTabBarViewController.h; sourceTree = "<group>"; };
@@ -387,8 +384,6 @@
 				D9647D51187A821C00B26CE8 /* SnapTimelineViewController.m */,
 				D9647D56187A823F00B26CE8 /* SnapTakePhotoViewController.h */,
 				D9647D57187A823F00B26CE8 /* SnapTakePhotoViewController.m */,
-				D9B6F028187C28210069E088 /* SnapFeedsViewController.h */,
-				D9B6F029187C28210069E088 /* SnapFeedsViewController.m */,
 				D916C2EF18B8DD6500486DFD /* BuzzViewController.h */,
 				D916C2F018B8DD6500486DFD /* BuzzViewController.m */,
 				D91C890518B935CE008E7536 /* Filter.h */,
@@ -779,7 +774,6 @@
 				D9E0027E1896428A0053FB0C /* QuizCenter.m in Sources */,
 				D98F12FA188AA14500BA7335 /* SliderControllerViewController.m in Sources */,
 				D9A2DCDA18972A930069B5E0 /* CustomizeResultViewController.m in Sources */,
-				D9B6F02A187C28210069E088 /* SnapFeedsViewController.m in Sources */,
 				D9E0026C189618CB0053FB0C /* BoyColorViewController.m in Sources */,
 				D9A71FF418B68C8300B15375 /* AddNewSHItemViewController.m in Sources */,
 				D96006B01884852400BB1C9E /* ProfileViewController.m in Sources */,

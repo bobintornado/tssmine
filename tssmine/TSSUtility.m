@@ -10,10 +10,39 @@
 
 @implementation TSSUtility
 
-+ (void)likeSnapInBackground:(id)snap block:(void (^)(BOOL succeeded, NSError *error))completionBlock {
++ (void)thumbUpBuzzInBackground:(id)buzz block:(void (^)(BOOL succeeded, NSError *error))completionBlock{
+    
+    PFObject *thumbUp = [PFObject objectWithClassName:@"ThumbUp"];
+    [thumbUp setObject:[PFUser currentUser] forKey:@"fromUser"];
+    [thumbUp setObject:buzz forKey:@"target"];
+    
+    [thumbUp saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (completionBlock) {
+            completionBlock(succeeded,error);
+        }
+    }];
+}
+
++ (void)unThumbUpBuzzInBackground:(id)snap block:(void (^)(BOOL succeeded, NSError *error))completionBlock{
+    PFQuery *queryExistingThumbUps = [PFQuery queryWithClassName:@"ThumbUp"];
+    [queryExistingThumbUps whereKey:@"fromUser" equalTo:[PFUser currentUser]];
+    [queryExistingThumbUps findObjectsInBackgroundWithBlock:^(NSArray *thumbUps, NSError *error) {
+        if (!error) {
+            for (PFObject *thumbUp in thumbUps) {
+                [thumbUp delete];
+            }
+        }
+        
+        if (completionBlock) {
+            completionBlock(YES,nil);
+        }
+    }];
+}
+
++ (void)likeSnapInBackground:(id)buzz block:(void (^)(BOOL succeeded, NSError *error))completionBlock {
     PFQuery *queryExistingLikes = [PFQuery queryWithClassName:@"ActivityLike"];
-    [queryExistingLikes whereKey:@"snapPhoto" equalTo:snap];
-    [queryExistingLikes whereKey:@"fromUser" equalTo:[PFUser currentUser]];
+    //[queryExistingLikes whereKey:@"snapPhoto" equalTo:buzz];
+    //[queryExistingLikes whereKey:@"fromUser" equalTo:[PFUser currentUser]];
     //set caching implementation later
     //[queryExistingLikes setCachePolicy:kPFCachePolicyNetworkOnly];
     [queryExistingLikes findObjectsInBackgroundWithBlock:^(NSArray *likes, NSError *error) {
@@ -25,9 +54,7 @@
         
         // proceed to creating new like
         PFObject *likeActivity = [PFObject objectWithClassName:@"ActivityLike"];
-        [likeActivity setObject:[PFUser currentUser] forKey:@"fromUser"];
-        [likeActivity setObject:[snap objectForKey:@"poster"] forKey:@"toUser"];
-        [likeActivity setObject:snap forKey:@"snapPhoto"];
+
         
         PFACL *likeACL = [PFACL ACLWithUser:[PFUser currentUser]];
         [likeACL setPublicReadAccess:YES];
@@ -38,12 +65,12 @@
                 completionBlock(succeeded,error);
             }
             
-            if (succeeded && ![[[snap objectForKey:@"poster"] objectId] isEqualToString:[[PFUser currentUser] objectId]]) {
+            if (succeeded && ![[[buzz objectForKey:@"poster"] objectId] isEqualToString:[[PFUser currentUser] objectId]]) {
                 
                 //sending push notification
                 //query matched user
                 PFQuery *userQuery = [PFUser query];
-                [userQuery whereKey:@"objectId" equalTo:[[snap objectForKey:@"poster"] objectId]];
+                [userQuery whereKey:@"objectId" equalTo:[[buzz objectForKey:@"poster"] objectId]];
                 
                 //build the actual push notification target query
                 PFQuery *pushQuery = [PFInstallation query];
@@ -53,7 +80,7 @@
                 PFPush *push = [[PFPush alloc] init];
                 [push setQuery:pushQuery]; // Set our Installation query
                 NSString *msg = [NSString stringWithFormat:@"%@ Has like your Snap %@",
-                                 [[PFUser currentUser] objectForKey:@"username"], [snap objectForKey:@"snapTitle"]];
+                                 [[PFUser currentUser] objectForKey:@"username"], [buzz objectForKey:@"snapTitle"]];
                 NSLog(msg);
                 [push setMessage:msg];
                 [push sendPushInBackground];
