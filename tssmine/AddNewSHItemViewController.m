@@ -160,8 +160,7 @@
     [item setObject:self.itemTitle.text forKey:@"title"];
     [item setObject:[PFUser currentUser] forKey:@"seller"];
     [item setObject:self.itemDes.text forKey:@"description"];
-    [item setObject:[[PFUser currentUser] objectForKey:@"displayName"] forKey:@"contactName"];
-    [item setObject:[[PFUser currentUser] objectForKey:@"phoneNumber"] forKey:@"contactPhone"];
+    
     NSNumber *price = [NSNumber numberWithDouble:[self.itemPrice.text doubleValue]];
     [item setObject:price forKey:@"price"];
     

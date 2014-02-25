@@ -35,22 +35,6 @@
     [self.productImageView loadInBackground];
     self.productName.text = [self.selectedProduct objectForKey:@"Name"];
     self.price.text = [NSString stringWithFormat:@"SGD $ %@", [self.selectedProduct objectForKey:@"Price"]];
-    
-    //adding Title
-    UINavigationItem *navItem = [[UINavigationItem alloc] init];
-    navItem.title = @"Product";
-    
-    //set left button for cancel
-    UIBarButtonItem *leftCancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(back)];
-    
-    //set right button as the sharing action button
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(shareProduct)];
-    
-    //Adding two buttons
-    navItem.leftBarButtonItem = leftCancelButton;
-    navItem.rightBarButtonItem = rightButton;
-    self.navigationController.navigationBar.items = @[ navItem ];
-    //self.quizResultNavBar.items =
 }
 
 - (void)didReceiveMemoryWarning
