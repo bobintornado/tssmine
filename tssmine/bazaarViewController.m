@@ -114,7 +114,7 @@
     
     //mark cell indentifier in storyboard
     static NSString *CellIdentifier = @"bazaarTBV";
-    NSLog(@"%@", @"22");
+    //NSLog(@"%@", @"22");
     
     //assign indentifer
     BazaarPFTableViewCell *cell = (BazaarPFTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -132,7 +132,20 @@
     cell.category.text = [object objectForKey:@"category"];
     cell.price.text = [NSString stringWithFormat:@"SGD $%@",                                                [[object objectForKey:@"price"] stringValue]];
     
-        
+    PFQuery *query = [PFQuery queryWithClassName:@"SHItem"];
+    [query includeKey:@"seller"];
+    [query getObjectInBackgroundWithId:object.objectId block:^(PFObject *item, NSError *error) {
+        NSString *displayName = item[@"seller"][@"displayName"];
+        NSString *phoneNumber = item[@"seller"][@"phoneNumber"];
+        //NSLog(item[@"seller"][@"username"]);
+        if (displayName == NULL){
+            displayName = item[@"seller"][@"username"];
+        }
+        if (phoneNumber==NULL) {
+            phoneNumber = @"N/A";
+        }
+        cell.contact.text = [NSString stringWithFormat:@"%@:%@",displayName,phoneNumber];
+    }];
     return cell;
 }
 

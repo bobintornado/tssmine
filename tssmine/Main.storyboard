@@ -1402,7 +1402,7 @@
                                     <action selector="didTapOnLogOut:" destination="a1m-ZF-pSz" eventType="touchUpInside" id="emb-Kb-7Ow"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile_round" translatesAutoresizingMaskIntoConstraints="NO" id="Fxl-8y-k5y" customClass="PFImageView">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blue" translatesAutoresizingMaskIntoConstraints="NO" id="Fxl-8y-k5y" customClass="PFImageView">
                                 <rect key="frame" x="60" y="85" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
@@ -1559,7 +1559,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kiY-fm-ixV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1163" y="2998"/>
+            <point key="canvasLocation" x="1247" y="2998"/>
         </scene>
         <!--Navigation Controller - Bazaar-->
         <scene sceneID="1rs-Er-oWj">
@@ -1668,7 +1668,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cpl-6d-cHA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <barButtonItem title="Item" id="SVd-ri-utN"/>
             </objects>
-            <point key="canvasLocation" x="610" y="3733"/>
+            <point key="canvasLocation" x="734" y="3725"/>
         </scene>
         <!--Add NewSH Item View Controller-->
         <scene sceneID="s6X-hS-LpO">
@@ -1756,7 +1756,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vKb-bJ-l76" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1092" y="3733"/>
+            <point key="canvasLocation" x="1247" y="3725"/>
         </scene>
         <!--Navigation Controller - UNIVANTAGE-->
         <scene sceneID="lUq-OM-3rH">
@@ -1860,7 +1860,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cV6-gS-hrI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="660" y="4457"/>
+            <point key="canvasLocation" x="740" y="4457"/>
         </scene>
     </scenes>
     <resources>
@@ -1870,6 +1870,7 @@
         <image name="Profile" width="24" height="21"/>
         <image name="Shop" width="26" height="19"/>
         <image name="bizcom" width="28" height="23"/>
+        <image name="blue" width="1024" height="1024"/>
         <image name="boyOrGirl" width="1000" height="1500"/>
         <image name="cover" width="1000" height="1500"/>
         <image name="g2" width="1000" height="1500"/>
@@ -1877,7 +1878,6 @@
         <image name="g4" width="1000" height="1500"/>
         <image name="group" width="32" height="21"/>
         <image name="poster" width="468" height="303"/>
-        <image name="profile_round" width="312" height="312"/>
         <image name="question2" width="1000" height="1500"/>
         <image name="question3" width="1000" height="1500"/>
         <image name="question4" width="1000" height="1500"/>
