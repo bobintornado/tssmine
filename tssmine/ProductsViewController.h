@@ -1,5 +1,5 @@
 //
-//  SubCategoryTableViewController.h
+//  ProductsViewController.h
 //  mySMU
 //
 //  Created by Bob Cao on 4/3/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SubCategoryTableViewController : UITableViewController
+@interface ProductsViewController : UICollectionViewController
 
 @end

@@ -104,7 +104,7 @@
         [self.navigationController pushViewController:productsCVC animated:YES];
     } else {
         SubCategoryTableViewController *scTVC = [self.storyboard instantiateViewControllerWithIdentifier:@"subCategoryTableView"];
-        scTVC.parentCategory = cell.categoryObject;
+        //scTVC.parentCategory = cell.categoryObject;
         [self.navigationController pushViewController:scTVC animated:YES];
     }
 }

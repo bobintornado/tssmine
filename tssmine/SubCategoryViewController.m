@@ -1,21 +1,20 @@
 //
-//  SubCategoryTableViewController.m
+//  SubCategoryViewController.m
 //  mySMU
 //
 //  Created by Bob Cao on 4/3/14.
 //  Copyright (c) 2014 Bob Cao. All rights reserved.
 //
 
-#import "SubCategoryTableViewController.h"
+#import "SubCategoryViewController.h"
 
-@interface SubCategoryTableViewController ()
+@interface SubCategoryViewController ()
 
 @end
 
-@implementation SubCategoryTableViewController
+@implementation SubCategoryViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
+- (id)initWithStyle:(UITableViewStyle)style {
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
