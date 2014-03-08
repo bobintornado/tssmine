@@ -14,6 +14,7 @@
 #import "MYSMUConstants.h"
 #import "TSSCategories.h"
 #import "SubCategoryViewController.h"
+#import "ProductsViewController.h"
 
 @interface MainShopViewController ()
 
@@ -151,8 +152,11 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    //initilize the cell
-    UITableViewCell * cell = [[UITableViewCell alloc] init];
+    
+    //static NSString *CellIdentifier = @"subcategorycell";
+    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    UITableViewCell *cell = [[UITableViewCell alloc] init];
     
     //get corresponding category object from the array
     TSSCategories *cateogry = (TSSCategories *)[self.categories objectAtIndex:indexPath.row];
@@ -193,11 +197,17 @@
                 if ([[results valueForKey:@"count"] isEqual:@0]) {
                     //initialize collection view
                     NSLog(@"and the count is %@", [results valueForKey:@"count"]);
-                    [self performSelectorOnMainThread:@selector(pushProductCollectionsVC) withObject:self.categories[indexPath.row] waitUntilDone:NO];
+                    [self performSelectorOnMainThread:@selector(pushProductCollectionsVC:) withObject:self.categories[indexPath.row] waitUntilDone:NO];
                 } else {
                     //initialize subcategory view
-                    NSLog(@"and the count is %@", [results valueForKey:@"count"]);
-                    [self performSelectorOnMainThread:@selector(pushSubCategoryVC:) withObject:nil waitUntilDone:NO];
+                    NSMutableArray *subCategories = [[NSMutableArray alloc] init];
+                    //code for constructing new categories objects
+                    for (NSObject *ob in [results valueForKey:@"categories"]){
+                        TSSCategories *category = [[TSSCategories alloc] init];
+                        [category setCategoryName:[ob valueForKey:@"name"] CategoryID:[ob valueForKey:@"category_id"] parentID:[ob valueForKey:@"parent_id"] andImageURLString:[ob valueForKey:@"image"]];
+                        [subCategories addObject:category];
+                    }
+                    [self performSelectorOnMainThread:@selector(pushSubCategoryVC:) withObject:subCategories waitUntilDone:NO];
                 }
             } else {
                 NSLog(@"what we get is not a kind of clss nsdictionary class");
@@ -206,17 +216,22 @@
     }];
 }
 
-- (void)pushSubCategoryVC:(TSSCategories *)selectedCategory{
+- (void)pushSubCategoryVC:(NSMutableArray *)subCategories {
     //initialize
     SubCategoryViewController *subCategoriesVC = [self.storyboard instantiateViewControllerWithIdentifier:@"subCategories"];
-    //set category
-    subCategoriesVC.selectedCategory = selectedCategory;
-    //NSLog(selectedCategory);
+    //set sub categories
+    subCategoriesVC.categories = [NSArray arrayWithArray:subCategories];
+    NSLog(@"%lu",subCategoriesVC.categories.count);
     [self.navigationController pushViewController:subCategoriesVC animated:YES];
 }
 
-- (void)pushProductCollectionsVC:(TSSCategories *)selectedCategory{
-    
+- (void)pushProductCollectionsVC:(TSSCategories *)selectedCategory {
+    //initialize
+    ProductsViewController *productsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"productsVC"];
+    //set category
+    productsVC.selectedCategory = selectedCategory;
+    //NSLog(selectedCategory);
+    [self.navigationController pushViewController:productsVC animated:YES];
 }
 
 @end

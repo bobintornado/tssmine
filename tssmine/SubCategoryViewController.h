@@ -11,6 +11,6 @@
 
 @interface SubCategoryViewController : UITableViewController
 
-@property TSSCategories *selectedCategory;
+@property NSArray *categories;
 
 @end

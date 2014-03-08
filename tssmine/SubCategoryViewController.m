@@ -7,6 +7,8 @@
 //
 
 #import "SubCategoryViewController.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+
 
 @interface SubCategoryViewController ()
 
@@ -14,7 +16,8 @@
 
 @implementation SubCategoryViewController
 
-- (id)initWithStyle:(UITableViewStyle)style {
+- (id)initWithStyle:(UITableViewStyle)style
+{
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
@@ -25,12 +28,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,24 +40,30 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return self.categories.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    //static NSString *CellIdentifier = @"Cell";
+    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+  
+    UITableViewCell *cell = [[UITableViewCell alloc] init];
+    TSSCategories *cateogry = (TSSCategories *)[self.categories objectAtIndex:indexPath.row];
+
+    //config the cell
+    cell.textLabel.text = cateogry.name;
+    [cell.textLabel sizeToFit];
     
-    // Configure the cell...
+    if ([cateogry.imageURLString isKindOfClass:[NSString class]])  {
+        NSURL *imageURL = [NSURL URLWithString:cateogry.imageURLString];
+        [cell.imageView setImageWithURL:imageURL];
+    }
     
     return cell;
 }

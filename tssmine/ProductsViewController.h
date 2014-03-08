@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TSSCategories.h"
 
 @interface ProductsViewController : UICollectionViewController
+
+@property TSSCategories *selectedCategory;
 
 @end
