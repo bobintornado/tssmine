@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:mySMU.xcodeproj">
+      location = "self:mySMUShop.xcodeproj">
    </FileRef>
 </Workspace>

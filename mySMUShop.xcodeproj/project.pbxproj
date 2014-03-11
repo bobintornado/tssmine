@@ -50,8 +50,9 @@
 		D9A2DCD41897265E0069B5E0 /* ChoseBottomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A2DCD31897265E0069B5E0 /* ChoseBottomViewController.m */; };
 		D9A2DCD7189728B10069B5E0 /* StyleCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A2DCD6189728B10069B5E0 /* StyleCenter.m */; };
 		D9A2DCDA18972A930069B5E0 /* CustomizeResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A2DCD918972A920069B5E0 /* CustomizeResultViewController.m */; };
+		D9A4948E18CEEFA700975005 /* TSSOption.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A4948D18CEEFA700975005 /* TSSOption.m */; };
+		D9A4949118CEFC2900975005 /* CartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A4949018CEFC2900975005 /* CartViewController.m */; };
 		D9A71FEA18B675BD00B15375 /* BazaarPFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A71FE918B675BD00B15375 /* BazaarPFTableViewCell.m */; };
-		D9A71FED18B67EB100B15375 /* AnnouncementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A71FEC18B67EB100B15375 /* AnnouncementViewController.m */; };
 		D9A71FF418B68C8300B15375 /* AddNewSHItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A71FF318B68C8300B15375 /* AddNewSHItemViewController.m */; };
 		D9ACAF3218BBCD0900AD7A57 /* MySMUViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9ACAF3118BBCD0900AD7A57 /* MySMUViewController.m */; };
 		D9ACAF3718BBDF2500AD7A57 /* ProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9ACAF3618BBDF2500AD7A57 /* ProfileCell.m */; };
@@ -139,19 +140,19 @@
 		D98989AA18C2080F000092F0 /* MainShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainShopViewController.m; sourceTree = "<group>"; };
 		D98989AC18C20B21000092F0 /* ShopSliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopSliderViewController.h; sourceTree = "<group>"; };
 		D98989AD18C20B21000092F0 /* ShopSliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopSliderViewController.m; sourceTree = "<group>"; };
-		D98BF155182550EC00DEE19B /* mySMU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mySMU.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D98BF155182550EC00DEE19B /* mySMUShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mySMUShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98BF158182550EC00DEE19B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D98BF15A182550EC00DEE19B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D98BF15C182550EC00DEE19B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		D98BF160182550EC00DEE19B /* mySMU-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mySMU-Info.plist"; sourceTree = "<group>"; };
+		D98BF160182550EC00DEE19B /* mySMUShop-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mySMUShop-Info.plist"; sourceTree = "<group>"; };
 		D98BF162182550EC00DEE19B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D98BF164182550EC00DEE19B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D98BF166182550EC00DEE19B /* mySMU-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mySMU-Prefix.pch"; sourceTree = "<group>"; };
+		D98BF166182550EC00DEE19B /* mySMUShop-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mySMUShop-Prefix.pch"; sourceTree = "<group>"; };
 		D98BF167182550EC00DEE19B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D98BF168182550EC00DEE19B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D98BF179182550EC00DEE19B /* mySMUTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mySMUTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D98BF179182550EC00DEE19B /* mySMUShopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mySMUShopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98BF17A182550EC00DEE19B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		D98BF182182550EC00DEE19B /* mySMUTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mySMUTests-Info.plist"; sourceTree = "<group>"; };
+		D98BF182182550EC00DEE19B /* mySMUShopTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mySMUShopTests-Info.plist"; sourceTree = "<group>"; };
 		D98BF184182550EC00DEE19B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D98BF186182550EC00DEE19B /* tssmineTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tssmineTests.m; sourceTree = "<group>"; };
 		D9A08572189714B600B000B9 /* ChoseUpperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChoseUpperViewController.h; sourceTree = "<group>"; };
@@ -166,10 +167,12 @@
 		D9A2DCD6189728B10069B5E0 /* StyleCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StyleCenter.m; sourceTree = "<group>"; };
 		D9A2DCD818972A920069B5E0 /* CustomizeResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomizeResultViewController.h; sourceTree = "<group>"; };
 		D9A2DCD918972A920069B5E0 /* CustomizeResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomizeResultViewController.m; sourceTree = "<group>"; };
+		D9A4948C18CEEFA700975005 /* TSSOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSSOption.h; sourceTree = "<group>"; };
+		D9A4948D18CEEFA700975005 /* TSSOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSSOption.m; sourceTree = "<group>"; };
+		D9A4948F18CEFC2900975005 /* CartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartViewController.h; sourceTree = "<group>"; };
+		D9A4949018CEFC2900975005 /* CartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartViewController.m; sourceTree = "<group>"; };
 		D9A71FE818B675BD00B15375 /* BazaarPFTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BazaarPFTableViewCell.h; sourceTree = "<group>"; };
 		D9A71FE918B675BD00B15375 /* BazaarPFTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BazaarPFTableViewCell.m; sourceTree = "<group>"; };
-		D9A71FEB18B67EB100B15375 /* AnnouncementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnouncementViewController.h; sourceTree = "<group>"; };
-		D9A71FEC18B67EB100B15375 /* AnnouncementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnouncementViewController.m; sourceTree = "<group>"; };
 		D9A71FF218B68C8300B15375 /* AddNewSHItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNewSHItemViewController.h; sourceTree = "<group>"; };
 		D9A71FF318B68C8300B15375 /* AddNewSHItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNewSHItemViewController.m; sourceTree = "<group>"; };
 		D9ACAF3018BBCD0900AD7A57 /* MySMUViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySMUViewController.h; sourceTree = "<group>"; };
@@ -378,6 +381,8 @@
 				D9E8CF4118CC69DE002EA436 /* ProductListViewController.m */,
 				D9E8CF4E18CE9AAE002EA436 /* ProductViewController.h */,
 				D9E8CF4F18CE9AAE002EA436 /* ProductViewController.m */,
+				D9A4948F18CEFC2900975005 /* CartViewController.h */,
+				D9A4949018CEFC2900975005 /* CartViewController.m */,
 			);
 			name = TheSMUShop;
 			sourceTree = "<group>";
@@ -395,8 +400,8 @@
 		D98BF156182550EC00DEE19B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D98BF155182550EC00DEE19B /* mySMU.app */,
-				D98BF179182550EC00DEE19B /* mySMUTests.xctest */,
+				D98BF155182550EC00DEE19B /* mySMUShop.app */,
+				D98BF179182550EC00DEE19B /* mySMUShopTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -456,10 +461,10 @@
 		D98BF15F182550EC00DEE19B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D98BF160182550EC00DEE19B /* mySMU-Info.plist */,
+				D98BF160182550EC00DEE19B /* mySMUShop-Info.plist */,
 				D98BF161182550EC00DEE19B /* InfoPlist.strings */,
 				D98BF164182550EC00DEE19B /* main.m */,
-				D98BF166182550EC00DEE19B /* mySMU-Prefix.pch */,
+				D98BF166182550EC00DEE19B /* mySMUShop-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -476,7 +481,7 @@
 		D98BF181182550EC00DEE19B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D98BF182182550EC00DEE19B /* mySMUTests-Info.plist */,
+				D98BF182182550EC00DEE19B /* mySMUShopTests-Info.plist */,
 				D98BF183182550EC00DEE19B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -494,7 +499,6 @@
 			isa = PBXGroup;
 			children = (
 				D98989A818C20800000092F0 /* TheSMUShop */,
-				D9A71FEE18B67EB700B15375 /* Announcement */,
 				D952DAEB18B65AB50032D40F /* Promotion */,
 				D952DAE218B648190032D40F /* Bazaar */,
 				D9CCC77518879216005A8B95 /* Login */,
@@ -568,15 +572,6 @@
 			name = Bazaar;
 			sourceTree = "<group>";
 		};
-		D9A71FEE18B67EB700B15375 /* Announcement */ = {
-			isa = PBXGroup;
-			children = (
-				D9A71FEB18B67EB100B15375 /* AnnouncementViewController.h */,
-				D9A71FEC18B67EB100B15375 /* AnnouncementViewController.m */,
-			);
-			name = Announcement;
-			sourceTree = "<group>";
-		};
 		D9ACAF3318BBDF0300AD7A57 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -613,6 +608,8 @@
 				D9F8910E18C46BDB003793BA /* TSSCategories.m */,
 				D9E8CF4318CCA903002EA436 /* TSSProduct.h */,
 				D9E8CF4418CCA903002EA436 /* TSSProduct.m */,
+				D9A4948C18CEEFA700975005 /* TSSOption.h */,
+				D9A4948D18CEEFA700975005 /* TSSOption.m */,
 			);
 			name = Shop;
 			sourceTree = "<group>";
@@ -620,9 +617,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D98BF154182550EC00DEE19B /* mySMU */ = {
+		D98BF154182550EC00DEE19B /* mySMUShop */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D98BF18A182550EC00DEE19B /* Build configuration list for PBXNativeTarget "mySMU" */;
+			buildConfigurationList = D98BF18A182550EC00DEE19B /* Build configuration list for PBXNativeTarget "mySMUShop" */;
 			buildPhases = (
 				D98BF151182550EC00DEE19B /* Sources */,
 				D98BF152182550EC00DEE19B /* Frameworks */,
@@ -632,14 +629,14 @@
 			);
 			dependencies = (
 			);
-			name = mySMU;
+			name = mySMUShop;
 			productName = tssmine;
-			productReference = D98BF155182550EC00DEE19B /* mySMU.app */;
+			productReference = D98BF155182550EC00DEE19B /* mySMUShop.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D98BF178182550EC00DEE19B /* mySMUTests */ = {
+		D98BF178182550EC00DEE19B /* mySMUShopTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D98BF18D182550EC00DEE19B /* Build configuration list for PBXNativeTarget "mySMUTests" */;
+			buildConfigurationList = D98BF18D182550EC00DEE19B /* Build configuration list for PBXNativeTarget "mySMUShopTests" */;
 			buildPhases = (
 				D98BF175182550EC00DEE19B /* Sources */,
 				D98BF176182550EC00DEE19B /* Frameworks */,
@@ -650,9 +647,9 @@
 			dependencies = (
 				D98BF17F182550EC00DEE19B /* PBXTargetDependency */,
 			);
-			name = mySMUTests;
+			name = mySMUShopTests;
 			productName = tssmineTests;
-			productReference = D98BF179182550EC00DEE19B /* mySMUTests.xctest */;
+			productReference = D98BF179182550EC00DEE19B /* mySMUShopTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -665,7 +662,7 @@
 				ORGANIZATIONNAME = "Bob Cao";
 				TargetAttributes = {
 					D98BF154182550EC00DEE19B = {
-						DevelopmentTeam = Y793MV39VU;
+						DevelopmentTeam = Q9Z2F5P657;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
 								enabled = 0;
@@ -677,7 +674,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D98BF150182550EC00DEE19B /* Build configuration list for PBXProject "mySMU" */;
+			buildConfigurationList = D98BF150182550EC00DEE19B /* Build configuration list for PBXProject "mySMUShop" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -690,8 +687,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D98BF154182550EC00DEE19B /* mySMU */,
-				D98BF178182550EC00DEE19B /* mySMUTests */,
+				D98BF154182550EC00DEE19B /* mySMUShop */,
+				D98BF178182550EC00DEE19B /* mySMUShopTests */,
 			);
 		};
 /* End PBXProject section */
@@ -729,6 +726,7 @@
 				D9259BCC18C52474006A254A /* SubCategoryViewController.m in Sources */,
 				D97A35DC187E80B50006A90F /* TSSUtility.m in Sources */,
 				D9E8CF4918CCAECB002EA436 /* TSSProductCell.m in Sources */,
+				D9A4949118CEFC2900975005 /* CartViewController.m in Sources */,
 				D98BF169182550EC00DEE19B /* AppDelegate.m in Sources */,
 				D93FB68118C436A70080E3E6 /* MYSMUConstants.m in Sources */,
 				D9A0857A18971AB000B000B9 /* ChoseUnderViewController.m in Sources */,
@@ -744,6 +742,7 @@
 				D9E8CF5018CE9AAE002EA436 /* ProductViewController.m in Sources */,
 				D91C890718B935CE008E7536 /* Filter.m in Sources */,
 				D9B6F02D187C32990069E088 /* snapFeedTableViewCell.m in Sources */,
+				D9A4948E18CEEFA700975005 /* TSSOption.m in Sources */,
 				D9E0026F189631440053FB0C /* BoySMUViewController.m in Sources */,
 				D98989AE18C20B21000092F0 /* ShopSliderViewController.m in Sources */,
 				D952DAEE18B65CF90032D40F /* PromotionPFTableViewCell.m in Sources */,
@@ -758,7 +757,6 @@
 				D916C2F418B8E53E00486DFD /* BuzzCell.m in Sources */,
 				D952DAE918B65AB00032D40F /* PromotionViewController.m in Sources */,
 				D9647D52187A821C00B26CE8 /* SnapTimelineViewController.m in Sources */,
-				D9A71FED18B67EB100B15375 /* AnnouncementViewController.m in Sources */,
 				D9E8CF4518CCA903002EA436 /* TSSProduct.m in Sources */,
 				D9ACAF3A18BBEB5500AD7A57 /* ProfileEditViewController.m in Sources */,
 				D9E0027B189637FE0053FB0C /* GirlStudyViewController.m in Sources */,
@@ -790,7 +788,7 @@
 /* Begin PBXTargetDependency section */
 		D98BF17F182550EC00DEE19B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D98BF154182550EC00DEE19B /* mySMU */;
+			target = D98BF154182550EC00DEE19B /* mySMUShop */;
 			targetProxy = D98BF17E182550EC00DEE19B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -900,12 +898,12 @@
 					/Users/bobcao/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "tssmine/mySMU-Prefix.pch";
-				INFOPLIST_FILE = "tssmine/mySMU-Info.plist";
+				GCC_PREFIX_HEADER = "tssmine/mySMUShop-Prefix.pch";
+				INFOPLIST_FILE = "tssmine/mySMUShop-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = mySMU;
+				PRODUCT_NAME = mySMUShop;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s";
@@ -926,12 +924,12 @@
 					/Users/bobcao/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "tssmine/mySMU-Prefix.pch";
-				INFOPLIST_FILE = "tssmine/mySMU-Info.plist";
+				GCC_PREFIX_HEADER = "tssmine/mySMUShop-Prefix.pch";
+				INFOPLIST_FILE = "tssmine/mySMUShop-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = mySMU;
+				PRODUCT_NAME = mySMUShop;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s";
@@ -955,8 +953,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "tssmineTests/mySMUTests-Info.plist";
-				PRODUCT_NAME = mySMUTests;
+				INFOPLIST_FILE = "tssmineTests/mySMUShopTests-Info.plist";
+				PRODUCT_NAME = mySMUShopTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -974,8 +972,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "tssmine/tssmine-Prefix.pch";
-				INFOPLIST_FILE = "tssmineTests/mySMUTests-Info.plist";
-				PRODUCT_NAME = mySMUTests;
+				INFOPLIST_FILE = "tssmineTests/mySMUShopTests-Info.plist";
+				PRODUCT_NAME = mySMUShopTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -984,7 +982,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D98BF150182550EC00DEE19B /* Build configuration list for PBXProject "mySMU" */ = {
+		D98BF150182550EC00DEE19B /* Build configuration list for PBXProject "mySMUShop" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D98BF188182550EC00DEE19B /* Debug */,
@@ -993,7 +991,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D98BF18A182550EC00DEE19B /* Build configuration list for PBXNativeTarget "mySMU" */ = {
+		D98BF18A182550EC00DEE19B /* Build configuration list for PBXNativeTarget "mySMUShop" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D98BF18B182550EC00DEE19B /* Debug */,
@@ -1002,7 +1000,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D98BF18D182550EC00DEE19B /* Build configuration list for PBXNativeTarget "mySMUTests" */ = {
+		D98BF18D182550EC00DEE19B /* Build configuration list for PBXNativeTarget "mySMUShopTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D98BF18E182550EC00DEE19B /* Debug */,

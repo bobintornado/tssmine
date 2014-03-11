@@ -15,6 +15,7 @@
 #import "TSSCategories.h"
 #import "SubCategoryViewController.h"
 #import "ProductListViewController.h"
+#import "CartViewController.h"
 
 @interface MainShopViewController ()
 
@@ -40,10 +41,15 @@
     [super viewDidLoad];
     self.categories = [[NSMutableArray alloc] init];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(shoppingCart:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(shoppingCart)];
     
     [self getSliders];
     [self getCategories];
+}
+
+- (void)shoppingCart{
+    CartViewController *cVC = [self.storyboard instantiateViewControllerWithIdentifier:@"cart"];
+    [self.navigationController pushViewController:cVC animated:YES];
 }
 
 - (void)getSliders {
