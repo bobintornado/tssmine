@@ -14,14 +14,14 @@
 #import "MYSMUConstants.h"
 #import "TSSCategories.h"
 #import "SubCategoryViewController.h"
-#import "ProductsViewController.h"
+#import "ProductListViewController.h"
 
 @interface MainShopViewController ()
 
 @property (strong, nonatomic) IBOutlet UITableView *categoryTableView;
 @property (strong, nonatomic) NSMutableArray *sliderViewControllers;
 @property (strong, nonatomic) UIPageViewController *sliderPageVC;
-@property NSArray *sliderImages;
+@property NSMutableArray *sliderImagesURLs;
 @property (strong, nonatomic) NSMutableArray *categories;
 
 @end
@@ -39,41 +39,80 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.categories = [[NSMutableArray alloc] init];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(shoppingCart:)];
+    
     [self getSliders];
     [self getCategories];
 }
 
 - (void)getSliders {
     NSLog(@"get sldiers");
-    // Do any additional setup after loading the view.
     
-    //getting the array of banners
-    //get an array of links...
-    self.sliderImages = @[@"banner1.png",@"banner2.png",@"banner3.png"];
+    //initialize two mutuable arraies
+    self.sliderImagesURLs = [[NSMutableArray alloc] init];
     self.sliderViewControllers = [[NSMutableArray alloc] init];
     
-    //loop through and add relevant slider content view controllers
-    for (NSString *slider in self.sliderImages) {
-        ShopSliderViewController *sliderContentVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SliderContentViewController"];
-        sliderContentVC.sliderImage = [UIImage imageNamed:slider];
-        [self.sliderViewControllers addObject:sliderContentVC];
-    }
-    
-    self.sliderPageVC = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    self.sliderPageVC = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     
     self.sliderPageVC.dataSource = self;
     
-    //NSLog(@"%lu",(unsigned long)self.sliderViewControllers.count);
-    NSArray *array = @[[self.sliderViewControllers objectAtIndex:0]];
+    NSString *urlString = [NSString stringWithFormat:@"%@index.php?route=%@&key=%@",ShopDomain,@"feed/web_api/banner",RESTfulKey,Nil];
     
-    [self.sliderPageVC setViewControllers:array direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+    NSURL *bannerURL = [NSURL URLWithString:urlString];
     
-    // Change the size of page view controller
-    self.sliderPageVC.view.frame = CGRectMake(0, 64, 320, 160);
-    
-    [self addChildViewController:self.sliderPageVC];
-    [self.view addSubview:self.sliderPageVC.view];
-    [self.sliderPageVC didMoveToParentViewController:self];
+    [NSURLConnection sendAsynchronousRequest:[[NSURLRequest alloc] initWithURL:bannerURL] queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+            if (error) {
+                NSLog(@"fetching banners data failed");
+            } else {
+                NSError *localError = nil;
+                id parsedObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&localError];
+            
+                NSLog(@"fetching banners data success");
+                
+                if([parsedObject isKindOfClass:[NSDictionary class]])
+                {
+                    NSLog(@"banners data is dict");
+                    
+                    NSDictionary *results = parsedObject;
+                    //construct objects and pass to array
+                    
+                    //NSLog([results objectForKey:@"banners"]);
+                    
+                    for (NSObject *ob in [results valueForKey:@"banners"]){
+                        
+                        NSString *imageURLStr = [NSString stringWithFormat:@"%@%@%@",ShopDomain, @"image/", [ob valueForKey:@"image"]];
+                        NSURL *imageURL = [NSURL URLWithString:imageURLStr];
+                        NSLog(imageURLStr);
+                        [self.sliderImagesURLs addObject:imageURL];
+                    }
+                
+                    //loop through and add relevant slider content view controllers
+                    for (NSURL *sliderURL in self.sliderImagesURLs) {
+                        ShopSliderViewController *sliderContentVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SliderContentViewController"];
+                        //sliderContentVC.sliderURL = sliderURL;
+                        [sliderContentVC.sliderImageView setImageWithURL:sliderURL];
+                        //[sliderContentVC.sliderImageView setImage: [UIImage imageNamed:@"banner1.png"]];
+                        [self.sliderViewControllers addObject:sliderContentVC];
+                        NSLog(@"slider content vc being added");
+                    }
+                    
+                    //NSLog(@"%lu",(unsigned long)self.sliderViewControllers.count);
+                    NSArray *array = @[[self.sliderViewControllers objectAtIndex:0]];
+                    
+                    [self.sliderPageVC setViewControllers:array direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+                    
+                    // Change the size of page view controller
+                    self.sliderPageVC.view.frame = CGRectMake(0, 64, 320, 160);
+                    
+                    [self addChildViewController:self.sliderPageVC];
+                    [self.view addSubview:self.sliderPageVC.view];
+                    [self.sliderPageVC didMoveToParentViewController:self];
+                } else {
+                    NSLog(@"what we get is not a kind of clss nsdictionary class");
+                }
+            }
+    }];
 }
 
 - (void)getCategories{
@@ -103,7 +142,7 @@
                 for (NSObject *ob in [results valueForKey:@"categories"]){
                     TSSCategories *category = [[TSSCategories alloc] init];
                     [category setCategoryName:[ob valueForKey:@"name"] CategoryID:[ob valueForKey:@"category_id"] parentID:[ob valueForKey:@"parent_id"] andImageURLString:[ob valueForKey:@"image"]];
-                    NSLog(@"%@",[ob valueForKey:@"image"]);
+                    //NSLog(@"%@",[ob valueForKey:@"image"]);
                     
                     [self.categories addObject:category];
                 }
@@ -111,7 +150,7 @@
                 NSLog(@"what we get is not a kind of clss nsdictionary class");
             }
         }
-        NSLog(@"reload data");
+        //NSLog(@"reload data");
         [self.categoryTableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
     }];
 }
@@ -197,7 +236,7 @@
                 if ([[results valueForKey:@"count"] isEqual:@0]) {
                     //initialize collection view
                     NSLog(@"and the count is %@", [results valueForKey:@"count"]);
-                    [self performSelectorOnMainThread:@selector(pushProductCollectionsVC:) withObject:self.categories[indexPath.row] waitUntilDone:NO];
+                    [self performSelectorOnMainThread:@selector(pushProductsListVC:) withObject:self.categories[indexPath.row] waitUntilDone:NO];
                 } else {
                     //initialize subcategory view
                     NSMutableArray *subCategories = [[NSMutableArray alloc] init];
@@ -221,15 +260,15 @@
     SubCategoryViewController *subCategoriesVC = [self.storyboard instantiateViewControllerWithIdentifier:@"subCategories"];
     //set sub categories
     subCategoriesVC.categories = [NSArray arrayWithArray:subCategories];
-    NSLog(@"%lu",subCategoriesVC.categories.count);
+    //NSLog(@"%lu",subCategoriesVC.categories.count);
     [self.navigationController pushViewController:subCategoriesVC animated:YES];
 }
 
-- (void)pushProductCollectionsVC:(TSSCategories *)selectedCategory {
+- (void)pushProductsListVC:(TSSCategories *)selectedCategory {
     //initialize
-    ProductsViewController *productsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"productsVC"];
+    ProductListViewController *productsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"pLVC"];
     //set category
-    productsVC.selectedCategory = selectedCategory;
+    productsVC.category = selectedCategory;
     //NSLog(selectedCategory);
     [self.navigationController pushViewController:productsVC animated:YES];
 }

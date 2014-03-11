@@ -8,7 +8,8 @@
 
 #import "SubCategoryViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-
+#import "MYSMUConstants.h"
+#import "ProductListViewController.h"
 
 @interface SubCategoryViewController ()
 
@@ -28,6 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(shoppingCart:)];
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,6 +68,66 @@
     }
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    NSString *parentID = [self.categories[indexPath.row] categoryID];
+    
+    NSString *urlString = [NSString stringWithFormat:@"%@index.php?route=feed/web_api/%@&key=%@&id=%@",ShopDomain,@"getCategoriesByParentId",RESTfulKey,parentID];
+    
+    //NSLog(@"and the calling url is .. %@",urlString);
+    NSURL *categoryURL = [NSURL URLWithString:urlString];
+    
+    //asking for information
+    [NSURLConnection sendAsynchronousRequest:[[NSURLRequest alloc] initWithURL:categoryURL] queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        
+        if (error) {
+            NSLog(@"fetching sub categories data failed");
+        } else {
+            NSError *localError = nil;
+            id parsedObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&localError];
+            
+            if([parsedObject isKindOfClass:[NSDictionary class]])
+            {
+                NSDictionary *results = parsedObject;
+                if ([[results valueForKey:@"count"] isEqual:@0]) {
+                    //initialize collection view
+                    NSLog(@"and the count is %@", [results valueForKey:@"count"]);
+                    [self performSelectorOnMainThread:@selector(pushProductListVC:) withObject:self.categories[indexPath.row] waitUntilDone:NO];
+                    
+                } else {
+                    //initialize subcategory view
+                    NSMutableArray *subCategories = [[NSMutableArray alloc] init];
+                    //code for constructing new categories objects
+                    for (NSObject *ob in [results valueForKey:@"categories"]){
+                        TSSCategories *category = [[TSSCategories alloc] init];
+                        [category setCategoryName:[ob valueForKey:@"name"] CategoryID:[ob valueForKey:@"category_id"] parentID:[ob valueForKey:@"parent_id"] andImageURLString:[ob valueForKey:@"image"]];
+                        [subCategories addObject:category];
+                    }
+                    [self performSelectorOnMainThread:@selector(pushSubCategoryVC:) withObject:subCategories waitUntilDone:NO];
+                }
+            } else {
+                NSLog(@"what we get is not a kind of clss nsdictionary class");
+            }
+        }
+    }];
+}
+
+- (void)pushProductListVC:(TSSCategories *)category {
+    ProductListViewController *pLVC = [self.storyboard instantiateViewControllerWithIdentifier:@"pLVC"];
+    pLVC.category = category;
+    [self.navigationController pushViewController:pLVC animated:YES];
+}
+
+- (void)pushSubCategoryVC:(NSMutableArray *)subCategories {
+    //initialize
+    SubCategoryViewController *subCategoriesVC = [self.storyboard instantiateViewControllerWithIdentifier:@"subCategories"];
+    //set sub categories
+    subCategoriesVC.categories = [NSArray arrayWithArray:subCategories];
+
+    [self.navigationController pushViewController:subCategoriesVC animated:YES];
 }
 
 /*

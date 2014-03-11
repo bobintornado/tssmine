@@ -11,6 +11,6 @@
 @interface ShopSliderViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UIImageView *sliderImageView;
-@property (strong, nonatomic) UIImage *sliderImage;
+@property (strong, nonatomic) NSURL *sliderURL;
 
 @end

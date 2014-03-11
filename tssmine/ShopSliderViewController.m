@@ -7,6 +7,7 @@
 //
 
 #import "ShopSliderViewController.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface ShopSliderViewController ()
 
@@ -26,8 +27,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    [self.sliderImageView setImage:self.sliderImage];
+    //[self.sliderImageView setImage:[UIImage imageNamed:@"banner1.png"]];
+    [self reloadInputViews];
 }
 
 - (void)didReceiveMemoryWarning
