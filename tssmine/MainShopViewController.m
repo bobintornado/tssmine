@@ -24,6 +24,7 @@
 @property (strong, nonatomic) UIPageViewController *sliderPageVC;
 @property NSMutableArray *sliderImagesURLs;
 @property (strong, nonatomic) NSMutableArray *categories;
+@property NSString *chosenCategory;
 
 @end
 
@@ -45,6 +46,7 @@
     
     [self getSliders];
     [self getCategories];
+    self.navigationItem.title = @"The SMU Shop";
 }
 
 - (void)shoppingCart{
@@ -222,6 +224,8 @@
     
     NSString *parentID = [self.categories[indexPath.row] categoryID];
     
+    self.chosenCategory = [self.categories[indexPath.row] name];
+    
     NSString *urlString = [NSString stringWithFormat:@"%@index.php?route=feed/web_api/%@&key=%@&id=%@",ShopDomain,@"getCategoriesByParentId",RESTfulKey,parentID];
     
     //NSLog(@"and the calling url is .. %@",urlString);
@@ -266,6 +270,7 @@
     SubCategoryViewController *subCategoriesVC = [self.storyboard instantiateViewControllerWithIdentifier:@"subCategories"];
     //set sub categories
     subCategoriesVC.categories = [NSArray arrayWithArray:subCategories];
+    subCategoriesVC.navigationItem.title = self.chosenCategory;
     //NSLog(@"%lu",subCategoriesVC.categories.count);
     [self.navigationController pushViewController:subCategoriesVC animated:YES];
 }

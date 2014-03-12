@@ -85,7 +85,6 @@
 		D9F1C4F8184376F600CC0679 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F1C4F7184376F600CC0679 /* QuartzCore.framework */; };
 		D9F1C4FA184376FE00CC0679 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F1C4F9184376FE00CC0679 /* Security.framework */; };
 		D9F1C4FE1843770D00CC0679 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F1C4FD1843770D00CC0679 /* SystemConfiguration.framework */; };
-		D9F1C50018437D9700CC0679 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F1C4FF18437D9700CC0679 /* FacebookSDK.framework */; };
 		D9F8910F18C46BDB003793BA /* TSSCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F8910E18C46BDB003793BA /* TSSCategories.m */; };
 /* End PBXBuildFile section */
 
@@ -226,7 +225,6 @@
 		D9F1C4F7184376F600CC0679 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D9F1C4F9184376FE00CC0679 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D9F1C4FD1843770D00CC0679 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		D9F1C4FF18437D9700CC0679 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		D9F8910D18C46BDB003793BA /* TSSCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSSCategories.h; sourceTree = "<group>"; };
 		D9F8910E18C46BDB003793BA /* TSSCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSSCategories.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -251,7 +249,6 @@
 				D9F1C4FA184376FE00CC0679 /* Security.framework in Frameworks */,
 				D9F1C4F4184376E500CC0679 /* libz.1.1.3.dylib in Frameworks */,
 				D98BF15D182550EC00DEE19B /* UIKit.framework in Frameworks */,
-				D9F1C50018437D9700CC0679 /* FacebookSDK.framework in Frameworks */,
 				D98BF159182550EC00DEE19B /* Foundation.framework in Frameworks */,
 				D97BA73F18C38275004CC262 /* SDWebImage.framework in Frameworks */,
 				D9F1C4EC1843767800CC0679 /* Parse.framework in Frameworks */,
@@ -420,7 +417,6 @@
 				D9E637231847694F00E0F703 /* Social.framework */,
 				D9E637211847694500E0F703 /* AdSupport.framework */,
 				D9E6371F1847693800E0F703 /* Accounts.framework */,
-				D9F1C4FF18437D9700CC0679 /* FacebookSDK.framework */,
 				D9F1C4FD1843770D00CC0679 /* SystemConfiguration.framework */,
 				D9F1C4F9184376FE00CC0679 /* Security.framework */,
 				D9F1C4F7184376F600CC0679 /* QuartzCore.framework */,

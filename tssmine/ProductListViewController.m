@@ -12,11 +12,14 @@
 #import "TSSProductCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "ProductViewController.h"
+#import "CartViewController.h"
+#import "TSSOption.h"
 
 @interface ProductListViewController ()
 
 @property (strong, nonatomic) IBOutlet UITableView *prListTableView;
 @property NSMutableArray *products;
+@property NSMutableArray *ops;
 
 
 @end
@@ -35,21 +38,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    self.ops = [[NSMutableArray alloc] init];
+    
     [self getProducts];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(shoppingCart:)];
-    self.navigationItem.title = @"The SMU Shop";
-}
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(shoppingCart)];
+    self.navigationItem.title = self.category.name;
+    
+    }
 
 - (void)getProducts{
-    NSLog(@"get all products");
-    
     self.products = [[NSMutableArray alloc] init];
-    
     //implement this if the json is huge
     //[NSThread detachNewThreadSelector:@selector(loadData) toTarget:self withObject:nil];
     
     NSString *urlString = [NSString stringWithFormat:@"%@index.php?route=%@&key=%@&category=%@",ShopDomain,@"feed/web_api/products",RESTfulKey,self.category.categoryID,nil];
-    NSLog(urlString);
+    
     //NSLog(@"and the calling url is .. %@",urlString);
     NSURL *productsURL = [NSURL URLWithString:urlString];
     
@@ -69,20 +73,31 @@
                 NSLog(@"products is dict");
                 for (NSObject *ob in [results valueForKey:@"products"]){
                     TSSProduct *pr = [[TSSProduct alloc] init];
+                    
                     pr.productID = [ob valueForKey:@"id"];
-                    NSLog(@"product ID is %@", [ob valueForKey:@"id"]);
-                    
                     pr.name = [ob valueForKey:@"name"];
-                    NSLog(@"product Name is %@", [ob valueForKey:@"name"]);
-                    
                     pr.thumbURL = [NSURL URLWithString:[ob valueForKey:@"thumb"]];
-                    [self.products addObject:pr];
-                    
                     pr.price = [ob valueForKey:@"pirce"];
                     
-                    NSLog(@"and the products count is %lu",self.products.count);
+                    TSSOption *pop = [[TSSOption alloc] init];
+                    for (NSObject *op in [ob valueForKey:@"options"]) {
+                        NSLog(@"runing1");
+                        pop.product_option_id = [op valueForKey:@"product_option_id"];
+                        pop.optionId = [op valueForKey:@"option_id"];
+                        pop.name = [op valueForKey:@"name"];
+                        
+                        if ([[op valueForKey:@"option_value"] isKindOfClass:[NSArray class]]) {
+                            for (NSObject *opv in [op valueForKey:@"option_value"]){
+                                [pop.optionValues addObject:opv];
+                            }
+                        } else {
+                            NSLog(@"non array option");
+                        }
+                    }
+                    pr.option = pop;
+                    
+                    [self.products addObject:pr];
                 }
-                NSLog(@"there are %lu number of item in %@ category",self.products.count,self.category.name);
             } else {
                 NSLog(@"what we get is not a kind of clss nsdictionary class");
             }
@@ -107,9 +122,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"products list view number of rows in section called");
-    NSLog(@"%lu",self.products.count);
-    return self.products.count;
+    return [self.products count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -148,6 +161,10 @@
     [self.navigationController pushViewController:pVC animated:YES];
 }
 
+- (void)shoppingCart{
+    CartViewController *cVC = [self.storyboard instantiateViewControllerWithIdentifier:@"cart"];
+    [self.navigationController pushViewController:cVC animated:YES];
+}
 
 /*
 // Override to support conditional editing of the table view.

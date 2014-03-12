@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TSSOption.h"
 
 @interface TSSProduct : NSObject
 
@@ -17,6 +18,8 @@
 
 @property NSURL *image;
 @property NSMutableArray *images;
-@property NSMutableArray *options;
+
+//for now there is only one option
+@property TSSOption *option;
 
 @end

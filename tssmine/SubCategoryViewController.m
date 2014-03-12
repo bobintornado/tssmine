@@ -10,6 +10,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "MYSMUConstants.h"
 #import "ProductListViewController.h"
+#import "CartViewController.h"
 
 @interface SubCategoryViewController ()
 
@@ -29,7 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(shoppingCart:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(shoppingCart)];
 }
 
 - (void)didReceiveMemoryWarning
@@ -128,6 +129,11 @@
     subCategoriesVC.categories = [NSArray arrayWithArray:subCategories];
 
     [self.navigationController pushViewController:subCategoriesVC animated:YES];
+}
+
+- (void)shoppingCart{
+    CartViewController *cVC = [self.storyboard instantiateViewControllerWithIdentifier:@"cart"];
+    [self.navigationController pushViewController:cVC animated:YES];
 }
 
 /*
