@@ -47,8 +47,7 @@
         TssLoginViewController *logInViewController = [[TssLoginViewController alloc] init];
         [logInViewController setDelegate:self]; // Set ourselves as the delegate
         
-        [logInViewController setFacebookPermissions:[NSArray arrayWithObjects:@"friends_about_me", nil]];
-        [logInViewController setFields: PFLogInFieldsFacebook | PFLogInFieldsUsernameAndPassword | PFLogInFieldsLogInButton | PFLogInFieldsSignUpButton| PFLogInFieldsPasswordForgotten];
+        //[logInViewController setFields: PFLogInFieldsUsernameAndPassword | PFLogInFieldsLogInButton | PFLogInFieldsSignUpButton| PFLogInFieldsPasswordForgotten];
         
         // Create the sign up view controller
         MySMUViewController *signUpViewController = [[MySMUViewController alloc] init];

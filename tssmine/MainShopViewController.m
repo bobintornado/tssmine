@@ -16,15 +16,16 @@
 #import "SubCategoryViewController.h"
 #import "ProductListViewController.h"
 #import "CartViewController.h"
+#import "TSSSlider.h"
 
 @interface MainShopViewController ()
 
 @property (strong, nonatomic) IBOutlet UITableView *categoryTableView;
 @property (strong, nonatomic) NSMutableArray *sliderViewControllers;
 @property (strong, nonatomic) UIPageViewController *sliderPageVC;
-@property NSMutableArray *sliderImagesURLs;
 @property (strong, nonatomic) NSMutableArray *categories;
 @property NSString *chosenCategory;
+@property (strong, nonatomic) IBOutlet UIView *mainView;
 
 @end
 
@@ -44,6 +45,10 @@
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(shoppingCart)];
     
+    self.sliderViewControllers = [[NSMutableArray alloc] init];
+    self.sliderPageVC = [self.storyboard instantiateViewControllerWithIdentifier:@"pageVC"];
+    self.sliderPageVC.dataSource = self;
+    
     [self getSliders];
     [self getCategories];
     self.navigationItem.title = @"The SMU Shop";
@@ -56,14 +61,6 @@
 
 - (void)getSliders {
     NSLog(@"get sldiers");
-    
-    //initialize two mutuable arraies
-    self.sliderImagesURLs = [[NSMutableArray alloc] init];
-    self.sliderViewControllers = [[NSMutableArray alloc] init];
-    
-    self.sliderPageVC = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-    
-    self.sliderPageVC.dataSource = self;
     
     NSString *urlString = [NSString stringWithFormat:@"%@index.php?route=%@&key=%@",ShopDomain,@"feed/web_api/banner",RESTfulKey,Nil];
     
@@ -87,22 +84,15 @@
                     
                     //NSLog([results objectForKey:@"banners"]);
                     
-                    for (NSObject *ob in [results valueForKey:@"banners"]){
+                    for (NSObject *banner in [results valueForKey:@"banners"]){
+                        TSSSlider *slider = [[TSSSlider alloc] init];
+                        slider.title = [banner valueForKey:@"title"];
+                        slider.link = [NSURL URLWithString:[banner valueForKey:@"link"]];
+                        slider.image = [NSURL URLWithString:[banner valueForKey:@"image"]];
                         
-                        NSString *imageURLStr = [NSString stringWithFormat:@"%@%@%@",ShopDomain, @"image/", [ob valueForKey:@"image"]];
-                        NSURL *imageURL = [NSURL URLWithString:imageURLStr];
-                        NSLog(imageURLStr);
-                        [self.sliderImagesURLs addObject:imageURL];
-                    }
-                
-                    //loop through and add relevant slider content view controllers
-                    for (NSURL *sliderURL in self.sliderImagesURLs) {
                         ShopSliderViewController *sliderContentVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SliderContentViewController"];
-                        //sliderContentVC.sliderURL = sliderURL;
-                        [sliderContentVC.sliderImageView setImageWithURL:sliderURL];
-                        //[sliderContentVC.sliderImageView setImage: [UIImage imageNamed:@"banner1.png"]];
+                        sliderContentVC.slider = slider;
                         [self.sliderViewControllers addObject:sliderContentVC];
-                        NSLog(@"slider content vc being added");
                     }
                     
                     //NSLog(@"%lu",(unsigned long)self.sliderViewControllers.count);
@@ -110,12 +100,15 @@
                     
                     [self.sliderPageVC setViewControllers:array direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
                     
-                    // Change the size of page view controller
                     self.sliderPageVC.view.frame = CGRectMake(0, 64, 320, 160);
                     
-                    [self addChildViewController:self.sliderPageVC];
-                    [self.view addSubview:self.sliderPageVC.view];
-                    [self.sliderPageVC didMoveToParentViewController:self];
+                    [self performSelectorOnMainThread:@selector(addChildViewController:) withObject:self.sliderPageVC waitUntilDone:NO];
+                    [self.mainView performSelectorOnMainThread:@selector(addSubview:) withObject:self.sliderPageVC.view waitUntilDone:NO];
+                    [self.sliderPageVC performSelectorOnMainThread:@selector(didMoveToParentViewController:) withObject:self waitUntilDone:NO];
+                    
+                    //[self.mainView addSubview:self.sliderPageVC.view];
+                    //[self addChildViewController:self.sliderPageVC];
+                    //[self.sliderPageVC didMoveToParentViewController:self];
                 } else {
                     NSLog(@"what we get is not a kind of clss nsdictionary class");
                 }
@@ -283,6 +276,7 @@
     //NSLog(selectedCategory);
     [self.navigationController pushViewController:productsVC animated:YES];
 }
+
 
 @end
 

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "TSSProduct.h"
 
-@interface ProductViewController : UIViewController
+@interface ProductViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property (strong, nonatomic) TSSProduct *product;
 

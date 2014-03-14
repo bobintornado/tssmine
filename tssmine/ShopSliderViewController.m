@@ -27,8 +27,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //[self.sliderImageView setImage:[UIImage imageNamed:@"banner1.png"]];
-    [self reloadInputViews];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    //[self.sliderImageView setImageWithURL:self.slider.image];
+    
+    [SDWebImageDownloader.sharedDownloader downloadImageWithURL:self.slider.image options:0 progress:^(NSUInteger receivedSize, long long expectedSize)
+     {
+         // progression tracking code
+     } completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished)
+     {
+         if (image && finished)
+         {
+             self.image = image;
+             [self.sliderImageView setImage:self.image];
+         }
+     }];
 }
 
 - (void)didReceiveMemoryWarning

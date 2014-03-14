@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D901607B187AB8190003985D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D901607A187AB8190003985D /* Main.storyboard */; };
+		D905DA3818D213220092AD3A /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = D905DA3718D213220092AD3A /* FXBlurView.m */; };
+		D905DA3B18D21E6A0092AD3A /* OptionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D905DA3A18D21E6A0092AD3A /* OptionTableViewController.m */; };
 		D91081211896A83100E46B51 /* QuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D91081201896A83100E46B51 /* QuizViewController.m */; };
 		D916C2EE18B89AEB00486DFD /* AnnouncementCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D916C2ED18B89AEB00486DFD /* AnnouncementCell.m */; };
 		D916C2F118B8DD6500486DFD /* BuzzViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D916C2F018B8DD6500486DFD /* BuzzViewController.m */; };
@@ -44,6 +46,7 @@
 		D98BF17D182550EC00DEE19B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98BF15C182550EC00DEE19B /* UIKit.framework */; };
 		D98BF185182550EC00DEE19B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D98BF183182550EC00DEE19B /* InfoPlist.strings */; };
 		D98BF187182550EC00DEE19B /* tssmineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF186182550EC00DEE19B /* tssmineTests.m */; };
+		D99D5FB918D1F70900BD0751 /* TSSOptionValue.m in Sources */ = {isa = PBXBuildFile; fileRef = D99D5FB818D1F70900BD0751 /* TSSOptionValue.m */; };
 		D9A08574189714B600B000B9 /* ChoseUpperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A08573189714B600B000B9 /* ChoseUpperViewController.m */; };
 		D9A085771897187100B000B9 /* CustomizeUICollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A085761897187100B000B9 /* CustomizeUICollectionViewCell.m */; };
 		D9A0857A18971AB000B000B9 /* ChoseUnderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A0857918971AB000B000B9 /* ChoseUnderViewController.m */; };
@@ -75,6 +78,8 @@
 		D9E637241847694F00E0F703 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E637231847694F00E0F703 /* Social.framework */; };
 		D9E637261847695A00E0F703 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E637251847695A00E0F703 /* libsqlite3.dylib */; };
 		D9E63728184769CB00E0F703 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E63727184769CB00E0F703 /* StoreKit.framework */; };
+		D9E76AB418D1949400F3957A /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E76AB318D1949400F3957A /* FacebookSDK.framework */; };
+		D9E76AB718D1D64200F3957A /* TSSSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E76AB618D1D64200F3957A /* TSSSlider.m */; };
 		D9E8CF4218CC69DE002EA436 /* ProductListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E8CF4118CC69DE002EA436 /* ProductListViewController.m */; };
 		D9E8CF4518CCA903002EA436 /* TSSProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E8CF4418CCA903002EA436 /* TSSProduct.m */; };
 		D9E8CF4918CCAECB002EA436 /* TSSProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E8CF4818CCAECB002EA436 /* TSSProductCell.m */; };
@@ -100,6 +105,10 @@
 
 /* Begin PBXFileReference section */
 		D901607A187AB8190003985D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D905DA3618D213220092AD3A /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
+		D905DA3718D213220092AD3A /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
+		D905DA3918D21E6A0092AD3A /* OptionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionTableViewController.h; sourceTree = "<group>"; };
+		D905DA3A18D21E6A0092AD3A /* OptionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionTableViewController.m; sourceTree = "<group>"; };
 		D910811F1896A83100E46B51 /* QuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizViewController.h; sourceTree = "<group>"; };
 		D91081201896A83100E46B51 /* QuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizViewController.m; sourceTree = "<group>"; };
 		D916C2EC18B89AEB00486DFD /* AnnouncementCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnouncementCell.h; sourceTree = "<group>"; };
@@ -154,6 +163,8 @@
 		D98BF182182550EC00DEE19B /* mySMUShopTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mySMUShopTests-Info.plist"; sourceTree = "<group>"; };
 		D98BF184182550EC00DEE19B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D98BF186182550EC00DEE19B /* tssmineTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tssmineTests.m; sourceTree = "<group>"; };
+		D99D5FB718D1F70900BD0751 /* TSSOptionValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSSOptionValue.h; sourceTree = "<group>"; };
+		D99D5FB818D1F70900BD0751 /* TSSOptionValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSSOptionValue.m; sourceTree = "<group>"; };
 		D9A08572189714B600B000B9 /* ChoseUpperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChoseUpperViewController.h; sourceTree = "<group>"; };
 		D9A08573189714B600B000B9 /* ChoseUpperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChoseUpperViewController.m; sourceTree = "<group>"; };
 		D9A085751897187100B000B9 /* CustomizeUICollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomizeUICollectionViewCell.h; sourceTree = "<group>"; };
@@ -208,6 +219,9 @@
 		D9E637231847694F00E0F703 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		D9E637251847695A00E0F703 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		D9E63727184769CB00E0F703 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		D9E76AB318D1949400F3957A /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		D9E76AB518D1D64200F3957A /* TSSSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSSSlider.h; sourceTree = "<group>"; };
+		D9E76AB618D1D64200F3957A /* TSSSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSSSlider.m; sourceTree = "<group>"; };
 		D9E8CF4018CC69DE002EA436 /* ProductListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductListViewController.h; sourceTree = "<group>"; };
 		D9E8CF4118CC69DE002EA436 /* ProductListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductListViewController.m; sourceTree = "<group>"; };
 		D9E8CF4318CCA903002EA436 /* TSSProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSSProduct.h; sourceTree = "<group>"; };
@@ -235,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D97BA74118C3829E004CC262 /* ImageIO.framework in Frameworks */,
+				D9E76AB418D1949400F3957A /* FacebookSDK.framework in Frameworks */,
 				D9DAEC9D1882EC9D0072CBAA /* CoreLocation.framework in Frameworks */,
 				D9DAEC9B1882EBEA0072CBAA /* AudioToolbox.framework in Frameworks */,
 				D9F1C4FE1843770D00CC0679 /* SystemConfiguration.framework in Frameworks */,
@@ -380,6 +395,8 @@
 				D9E8CF4F18CE9AAE002EA436 /* ProductViewController.m */,
 				D9A4948F18CEFC2900975005 /* CartViewController.h */,
 				D9A4949018CEFC2900975005 /* CartViewController.m */,
+				D905DA3918D21E6A0092AD3A /* OptionTableViewController.h */,
+				D905DA3A18D21E6A0092AD3A /* OptionTableViewController.m */,
 			);
 			name = TheSMUShop;
 			sourceTree = "<group>";
@@ -406,6 +423,7 @@
 		D98BF157182550EC00DEE19B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D9E76AB318D1949400F3957A /* FacebookSDK.framework */,
 				D97BA74018C3829E004CC262 /* ImageIO.framework */,
 				D97BA73E18C38274004CC262 /* SDWebImage.framework */,
 				D9DAEC9C1882EC9D0072CBAA /* CoreLocation.framework */,
@@ -434,6 +452,8 @@
 		D98BF15E182550EC00DEE19B /* tssmine */ = {
 			isa = PBXGroup;
 			children = (
+				D905DA3618D213220092AD3A /* FXBlurView.h */,
+				D905DA3718D213220092AD3A /* FXBlurView.m */,
 				D93FB67F18C436450080E3E6 /* MYSMUConstants.h */,
 				D93FB68018C436A70080E3E6 /* MYSMUConstants.m */,
 				D9A2DCD5189728B10069B5E0 /* StyleCenter.h */,
@@ -606,6 +626,10 @@
 				D9E8CF4418CCA903002EA436 /* TSSProduct.m */,
 				D9A4948C18CEEFA700975005 /* TSSOption.h */,
 				D9A4948D18CEEFA700975005 /* TSSOption.m */,
+				D9E76AB518D1D64200F3957A /* TSSSlider.h */,
+				D9E76AB618D1D64200F3957A /* TSSSlider.m */,
+				D99D5FB718D1F70900BD0751 /* TSSOptionValue.h */,
+				D99D5FB818D1F70900BD0751 /* TSSOptionValue.m */,
 			);
 			name = Shop;
 			sourceTree = "<group>";
@@ -654,7 +678,7 @@
 		D98BF14D182550EC00DEE19B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Bob Cao";
 				TargetAttributes = {
 					D98BF154182550EC00DEE19B = {
@@ -727,6 +751,7 @@
 				D93FB68118C436A70080E3E6 /* MYSMUConstants.m in Sources */,
 				D9A0857A18971AB000B000B9 /* ChoseUnderViewController.m in Sources */,
 				D9A08574189714B600B000B9 /* ChoseUpperViewController.m in Sources */,
+				D99D5FB918D1F70900BD0751 /* TSSOptionValue.m in Sources */,
 				D9E002721896324D0053FB0C /* GirlColorViewController.m in Sources */,
 				D9A2DCD41897265E0069B5E0 /* ChoseBottomViewController.m in Sources */,
 				D916C2F118B8DD6500486DFD /* BuzzViewController.m in Sources */,
@@ -741,8 +766,11 @@
 				D9A4948E18CEEFA700975005 /* TSSOption.m in Sources */,
 				D9E0026F189631440053FB0C /* BoySMUViewController.m in Sources */,
 				D98989AE18C20B21000092F0 /* ShopSliderViewController.m in Sources */,
+				D9E76AB718D1D64200F3957A /* TSSSlider.m in Sources */,
 				D952DAEE18B65CF90032D40F /* PromotionPFTableViewCell.m in Sources */,
+				D905DA3B18D21E6A0092AD3A /* OptionTableViewController.m in Sources */,
 				D9E00278189632680053FB0C /* GirlSMUViewController.m in Sources */,
+				D905DA3818D213220092AD3A /* FXBlurView.m in Sources */,
 				D9E8CF4218CC69DE002EA436 /* ProductListViewController.m in Sources */,
 				D98BF165182550EC00DEE19B /* main.m in Sources */,
 				D9A71FEA18B675BD00B15375 /* BazaarPFTableViewCell.m in Sources */,
@@ -813,7 +841,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -852,7 +879,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -936,7 +962,6 @@
 		D98BF18E182550EC00DEE19B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/tssmine.app/tssmine";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -959,7 +984,6 @@
 		D98BF18F182550EC00DEE19B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/tssmine.app/tssmine";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

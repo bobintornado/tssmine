@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TSSSlider.h"
 
 @interface ShopSliderViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UIImageView *sliderImageView;
-@property (strong, nonatomic) NSURL *sliderURL;
+@property (strong, nonatomic) TSSSlider *slider;
+@property (strong, nonatomic) UIImage *image;
 
 @end

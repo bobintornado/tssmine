@@ -14,6 +14,7 @@
 #import "ProductViewController.h"
 #import "CartViewController.h"
 #import "TSSOption.h"
+#import "TSSOptionValue.h"
 
 @interface ProductListViewController ()
 
@@ -78,17 +79,23 @@
                     pr.name = [ob valueForKey:@"name"];
                     pr.thumbURL = [NSURL URLWithString:[ob valueForKey:@"thumb"]];
                     pr.price = [ob valueForKey:@"pirce"];
-                    
+                    pr.image = [NSURL URLWithString: [ob valueForKey:@"image"]];
+
                     TSSOption *pop = [[TSSOption alloc] init];
                     for (NSObject *op in [ob valueForKey:@"options"]) {
                         NSLog(@"runing1");
                         pop.product_option_id = [op valueForKey:@"product_option_id"];
                         pop.optionId = [op valueForKey:@"option_id"];
                         pop.name = [op valueForKey:@"name"];
+                        pop.optionValues = [[NSMutableArray alloc] init];
                         
                         if ([[op valueForKey:@"option_value"] isKindOfClass:[NSArray class]]) {
                             for (NSObject *opv in [op valueForKey:@"option_value"]){
-                                [pop.optionValues addObject:opv];
+                                TSSOptionValue *v = [[TSSOptionValue alloc] init];
+                                v.product_option_value_id = [opv valueForKey:@"product_option_value_id"];
+                                v.option_value_id = [opv valueForKey:@"option_value_id"];
+                                v.name = [opv valueForKey:@"name"];
+                                [pop.optionValues addObject:v];
                             }
                         } else {
                             NSLog(@"non array option");

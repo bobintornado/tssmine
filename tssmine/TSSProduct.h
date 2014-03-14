@@ -20,6 +20,6 @@
 @property NSMutableArray *images;
 
 //for now there is only one option
-@property TSSOption *option;
+@property (strong, nonatomic)TSSOption *option;
 
 @end

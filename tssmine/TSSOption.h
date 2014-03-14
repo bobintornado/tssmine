@@ -10,10 +10,10 @@
 
 @interface TSSOption : NSObject
 
-@property NSString *product_option_id;
-@property NSString *optionId;
-@property NSString *name;
-@property NSString *type;
-@property NSMutableArray *optionValues;
+@property (strong) NSString *product_option_id;
+@property (strong) NSString *optionId;
+@property (strong) NSString *name;
+@property (strong) NSString *type;
+@property (strong) NSMutableArray *optionValues;
 
 @end
