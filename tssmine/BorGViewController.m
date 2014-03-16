@@ -40,13 +40,11 @@
     QuizCenter *sharedCenter = [QuizCenter sharedCenter];
     NSRange range = NSMakeRange(0,1);
     sharedCenter.result = [sharedCenter.result stringByReplacingCharactersInRange:range withString:@"A"];
-    NSLog(sharedCenter.result);
 }
 - (IBAction)choseGirl:(id)sender {
     QuizCenter *sharedCenter = [QuizCenter sharedCenter];
     NSRange range = NSMakeRange(0,1);
     sharedCenter.result = [sharedCenter.result stringByReplacingCharactersInRange:range withString:@"B"];
-     NSLog(sharedCenter.result);
 }
 
 @end

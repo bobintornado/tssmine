@@ -193,10 +193,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    //static NSString *CellIdentifier = @"subcategorycell";
-    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    UITableViewCell *cell = [[UITableViewCell alloc] init];
+    static NSString *CellIdentifier = @"mainCategoryCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     //get corresponding category object from the array
     TSSCategories *cateogry = (TSSCategories *)[self.categories objectAtIndex:indexPath.row];

@@ -285,7 +285,7 @@
         
         filterNameLabel.font = [UIFont fontWithName:@"AppleColorEmoji" size:10];
         
-        filterNameLabel.textAlignment = UITextAlignmentCenter;
+        //filterNameLabel.textAlignment = UITextAlignmentCenter;
         CIImage *outputImage = [filter.filter outputImage];
         CGImageRef cgimg =
         [context createCGImage:outputImage fromRect:[outputImage extent]];

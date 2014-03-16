@@ -10,6 +10,8 @@
 
 @interface PaymentTableViewController ()
 
+@property (nonatomic, strong, readwrite) PayPalConfiguration *payPalConfiguration;
+
 @end
 
 @implementation PaymentTableViewController
@@ -21,6 +23,70 @@
         // Custom initialization
     }
     return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        _payPalConfiguration = [[PayPalConfiguration alloc] init];
+    }
+    return self;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    // Start out working with the test environment! When you are ready, switch to PayPalEnvironmentProduction.
+    [PayPalMobile preconnectWithEnvironment:PayPalEnvironmentSandbox];
+}
+
+- (void)pay{
+    PayPalPayment *payment = [[PayPalPayment alloc] init];
+    // Amount, currency, and description
+    payment.amount = [[NSDecimalNumber alloc] initWithString:@"39.95"];
+    payment.currencyCode = @"SGD";
+    payment.shortDescription = @"The SMU Shop Products";
+    payment.intent = PayPalPaymentIntentSale;
+    if (!payment.processable) {
+        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Payment"
+                                                     message:@"Invalid Payment Information"
+                                                    delegate:self
+                                           cancelButtonTitle:nil
+                                           otherButtonTitles:@"OK", nil];
+        [av show];
+    } else {
+        PayPalPaymentViewController *paymentViewController;
+        paymentViewController = [[PayPalPaymentViewController alloc] initWithPayment:payment configuration:self.payPalConfiguration delegate:self];
+        
+        // Present the PayPalPaymentViewController.
+        [self presentViewController:paymentViewController animated:YES completion:nil];
+    }
+}
+
+#pragma mark - PayPalPaymentDelegate methods
+
+- (void)payPalPaymentViewController:(PayPalPaymentViewController *)paymentViewController
+                 didCompletePayment:(PayPalPayment *)completedPayment {
+    // Payment was processed successfully; send to server for verification and fulfillment.
+    [self verifyCompletedPayment:completedPayment];
+    
+    // Dismiss the PayPalPaymentViewController.
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+- (void)verifyCompletedPayment:(PayPalPayment *)completedPayment {
+    // Send the entire confirmation dictionary
+    //NSData *confirmation = [NSJSONSerialization dataWithJSONObject:completedPayment.confirmation options:0 error:nil];
+    
+    // Send confirmation to your server; your server should verify the proof of payment
+    // and give the user their goods or services. If the server is not reachable, save
+    // the confirmation and try again later.
+}
+
+- (void)payPalPaymentDidCancel:(PayPalPaymentViewController *)paymentViewController {
+    // The payment was canceled; dismiss the PayPalPaymentViewController.
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)viewDidLoad
@@ -60,6 +126,11 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row == 0) {
+        [self pay];
+    }
+}
 
 /*
 // Override to support conditional editing of the table view.

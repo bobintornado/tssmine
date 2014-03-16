@@ -81,6 +81,7 @@
                     pr.thumbURL = [NSURL URLWithString:[ob valueForKey:@"thumb"]];
                     pr.price = [ob valueForKey:@"pirce"];
                     pr.image = [NSURL URLWithString: [ob valueForKey:@"image"]];
+                    pr.pDescription = [ob valueForKey:@"description"];
 
                     TSSOption *pop = [[TSSOption alloc] init];
                     for (NSObject *op in [ob valueForKey:@"options"]) {
@@ -88,6 +89,7 @@
                         pop.product_option_id = [op valueForKey:@"product_option_id"];
                         pop.optionId = [op valueForKey:@"option_id"];
                         pop.name = [op valueForKey:@"name"];
+                        
                         pop.optionValues = [[NSMutableArray alloc] init];
                         
                         if ([[op valueForKey:@"option_value"] isKindOfClass:[NSArray class]]) {
@@ -139,8 +141,6 @@
     
     static NSString *CellIdentifier = @"pProductCell";
     TSSProductCell *cell = (TSSProductCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    NSLog(@"there are %lu numbers of items wehen cellforindex is called", self.products.count);
     TSSProduct *pr = self.products[indexPath.row];
     
     [cell.pThumb setImageWithURL:pr.thumbURL];

@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import "TssLoginViewController.h"
+#import "PayPalMobile.h"
 
 @implementation AppDelegate
 
@@ -18,14 +19,16 @@
     // Register Parse Application.
     [Parse setApplicationId:@"dwus9w9uMQdXlXxXMgvZawLzmKEhmKbGBGdLkInZ"
                clientKey:@"fXJDUlzqfqpcXJZDQAd62uDF5KmwA0mWz1qOHthT"];
-    // Initialize Parse's Facebook Utilities singleton. This uses the FacebookAppID specified in App bundle's plist.
     [PFFacebookUtils initializeFacebook];
-    
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
     // Register for push notifications
     [application registerForRemoteNotificationTypes: UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound];
     
+    [PayPalMobile initializeWithClientIdsForEnvironments:@{ PayPalEnvironmentSandbox : @"AQLv9RCZSfPuSSlSsxDohHBDiFnX8N-bOLx8oR7HLGSTk2HouT46jwsY0UHU"}];
+    
+    
+    //UIControl config
     UIPageControl *pageControl = [UIPageControl appearance];
     pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     pageControl.currentPageIndicatorTintColor = [UIColor blackColor];

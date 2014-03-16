@@ -39,14 +39,12 @@
     QuizCenter *sharedCenter = [QuizCenter sharedCenter];
     NSRange range = NSMakeRange(1,1);
     sharedCenter.result = [sharedCenter.result stringByReplacingCharactersInRange:range withString:@"A"];
-    NSLog(sharedCenter.result);
     [self performSegueWithIdentifier:@"BoyQuiz3" sender:self];
 }
 - (IBAction)choseDark:(id)sender {
     QuizCenter *sharedCenter = [QuizCenter sharedCenter];
     NSRange range = NSMakeRange(1,1);
     sharedCenter.result = [sharedCenter.result stringByReplacingCharactersInRange:range withString:@"B"];
-    NSLog(sharedCenter.result);
     [self performSegueWithIdentifier:@"BoyQuiz3" sender:self];
 }
 

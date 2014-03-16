@@ -81,7 +81,6 @@
                 [push setQuery:pushQuery]; // Set our Installation query
                 NSString *msg = [NSString stringWithFormat:@"%@ Has like your Snap %@",
                                  [[PFUser currentUser] objectForKey:@"username"], [buzz objectForKey:@"snapTitle"]];
-                NSLog(msg);
                 [push setMessage:msg];
                 [push sendPushInBackground];
                 NSLog(@"Push Sent");

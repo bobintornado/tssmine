@@ -31,11 +31,11 @@
 {
     [super viewDidLoad];
     self.title = @"Billing Details";
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Payment" style:UIBarButtonItemStylePlain target:self action:@selector(pay)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Payment" style:UIBarButtonItemStylePlain target:self action:@selector(paymentMethods)];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
-- (void)pay{
+- (void)paymentMethods{
     //if pass all verificatons, then create order and proceed to payment
     PaymentTableViewController *pVC = [self.storyboard instantiateViewControllerWithIdentifier:@"payment"];
     [self.navigationController pushViewController:pVC animated:YES];

@@ -25,6 +25,7 @@
 @property (strong, nonatomic) NSArray *options;
 @property (strong, nonatomic) IBOutlet UIScrollView *productScrollView;
 @property (strong) TSSOptionValue *chosenOptionValue;
+@property (strong, nonatomic) IBOutlet UILabel *desContent;
 
 @end
 
@@ -42,19 +43,38 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = self.product.name;
-    [self.productImageView setImageWithURL:self.product.image];
     
+    self.title = self.product.name;
+    
+    [self.productImageView setImageWithURL:self.product.image];
     self.pTitleLabel.text = self.product.name;
     self.pPriceLabel.text = self.product.price;
     NSString *t = [NSString stringWithFormat:@"Select %@ >",self.product.option.name];
     [self.optionButton setTitle:t forState:UIControlStateNormal];
     self.productScrollView.delaysContentTouches = NO;
     
-    UIImage *bG = [self imageWithColor:[UIColor colorWithRed:14.0/255.0 green:114.0/255.0 blue:199.0/255.0 alpha:1] andSize:CGSizeMake(199,32)];
+    UIFont *font = [UIFont fontWithName:@"Helvetica" size:14];
+    CGSize constraint = CGSizeMake(280,NSUIntegerMax);
     
+    NSDictionary *attributes = @{NSFontAttributeName: font};
+
+    CGRect rect = [self.product.pDescription boundingRectWithSize:constraint options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading) attributes:attributes context:nil];
+    
+    self.desContent.frame = CGRectMake(20, 450, rect.size.width, rect.size.height);
+    [self.desContent setText:self.product.pDescription];
+    [self.desContent setTextAlignment:NSTextAlignmentLeft];
+    self.desContent.lineBreakMode = NSLineBreakByWordWrapping;
+    self.desContent.numberOfLines = 0;
+    [self.desContent setFont:font];
+    
+    //reconfig this part later
+    self.productScrollView.contentSize =CGSizeMake(320, rect.size.height + 550);
+    
+    //button
+    UIImage *bG = [self imageWithColor:[UIColor colorWithRed:14.0/255.0 green:114.0/255.0 blue:199.0/255.0 alpha:1] andSize:CGSizeMake(199,32)];
     [self.ATCButton setBackgroundImage:bG forState:UIControlStateHighlighted];
     
+    //navigation
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(shoppingCart)];
 }
 

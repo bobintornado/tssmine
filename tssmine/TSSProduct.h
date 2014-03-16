@@ -22,4 +22,7 @@
 //for now there is only one option
 @property (strong, nonatomic)TSSOption *option;
 
+@property (strong, nonatomic) NSString *pDescription;
+
+
 @end

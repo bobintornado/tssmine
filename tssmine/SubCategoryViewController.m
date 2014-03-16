@@ -54,10 +54,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //static NSString *CellIdentifier = @"Cell";
-    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"subCat";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
   
-    UITableViewCell *cell = [[UITableViewCell alloc] init];
     TSSCategories *cateogry = (TSSCategories *)[self.categories objectAtIndex:indexPath.row];
 
     //config the cell
