@@ -101,7 +101,7 @@
     cameraUI.showsCameraControls = YES;
     cameraUI.delegate = self;
     
-    [self presentModalViewController:cameraUI animated:YES];
+    [self.tabBarController presentViewController:cameraUI animated:YES completion:nil];
     
     return YES;
 }
@@ -132,7 +132,7 @@
     cameraUI.allowsEditing = YES;
     cameraUI.delegate = self;
     
-    [self presentModalViewController:cameraUI animated:YES];
+    [self.tabBarController presentViewController:cameraUI animated:YES completion:nil];
     
     return YES;
 }
@@ -151,7 +151,7 @@
 didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     //[picker dismissViewControllerAnimated:YES completion:nil];
-    [self dismissModalViewControllerAnimated:NO];
+    [self dismissViewControllerAnimated:YES completion:nil];
 
     //get the image
     UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
