@@ -12,6 +12,7 @@
 #import "CartViewController.h"
 #import "TSSOption.h"
 #import "TSSOptionValue.h"
+#import "OptionTableViewController.h"
 
 
 @interface ProductViewController ()
@@ -24,7 +25,6 @@
 @property (strong, nonatomic) NSArray *options;
 @property (strong, nonatomic) IBOutlet UIScrollView *productScrollView;
 @property (strong) TSSOptionValue *chosenOptionValue;
-@property (strong, nonatomic) IBOutlet UITextField *tr;
 
 @end
 
@@ -42,6 +42,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = self.product.name;
     [self.productImageView setImageWithURL:self.product.image];
     
     self.pTitleLabel.text = self.product.name;
@@ -75,42 +76,21 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)addToCart:(id)sender {
-    
-}
-
 - (void)shoppingCart{
     CartViewController *cVC = [self.storyboard instantiateViewControllerWithIdentifier:@"cart"];
     [self.navigationController pushViewController:cVC animated:YES];
 }
 
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)thePickerView {
-    return 1;
-}
-
-- (NSInteger)pickerView:(UIPickerView *)thePickerView numberOfRowsInComponent:(NSInteger)component {
-    return [self.product.option.optionValues count];
-}
-
-- (NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return [self.product.option.optionValues[row] name];
-}
-
-- (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    self.chosenOptionValue = self.product.option.optionValues[row];
-    NSLog(@"chosen %@", [self.chosenOptionValue name]);
-}
-
 - (IBAction)choseOption:(id)sender {
     //[self.optionPicker setHidden:NO];
+    OptionTableViewController *otvc = [self.storyboard instantiateViewControllerWithIdentifier:@"optionTVC"];
+    otvc.option = self.product.option;
+    otvc.delegate = self;
+    [self.navigationController pushViewController:otvc animated:YES];
 }
 
 - (IBAction)tapATCButton:(id)sender {
-    TSSOption * o = self.product.option;
-    
     if (self.product.option.name != NULL) {
-        NSString * l = [o.optionValues[0] name];
-        NSLog(@"value is %@",l);
         if (self.chosenOptionValue == NULL) {
             NSString *message = [NSString stringWithFormat:@"You Must Select a %@ ", self.product.option.name];
             UIAlertView *av = [[UIAlertView alloc] initWithTitle:self.product.option.name
@@ -119,10 +99,50 @@
                                                cancelButtonTitle:nil
                                                otherButtonTitles:@"OK", nil];
             [av show];
+        } else {
+            NSString * str = [NSString stringWithFormat:@"%@index.php?route=feed/web_api/addToCart",ShopDomain];
+            NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:str]];
+            [request setHTTPMethod:@"POST"];
+            NSString *postString = [NSString stringWithFormat:@"product_id=%@&option[%@]=%@", self.product.productID, self.product.option.product_option_id, self.chosenOptionValue.product_option_value_id];
+            [request setValue:[NSString stringWithFormat:@"%d", [postString length]] forHTTPHeaderField:@"Content-length"];
+            [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
+            [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+                if (error) {
+                    NSLog(@"adding product into cart failed");
+                } else {
+                    NSError *localError = nil;
+                    id parsedObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&localError];
+                    if ([parsedObject isKindOfClass:[NSDictionary class]]) {
+                        NSLog(@"successfully add in new products. indicator undone");
+                    }
+                }
+            }];
         }
     } else {
-        NSLog(@"no option and directly ad");
+        NSString * str = [NSString stringWithFormat:@"%@index.php?route=feed/web_api/addToCart",ShopDomain];
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:str]];
+        [request setHTTPMethod:@"POST"];
+        NSString *postString = [NSString stringWithFormat:@"product_id=%@", self.product.productID];
+        [request setValue:[NSString stringWithFormat:@"%d", [postString length]] forHTTPHeaderField:@"Content-length"];
+        [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
+        [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+            if (error) {
+                NSLog(@"adding product into cart failed");
+            } else {
+                NSError *localError = nil;
+                id parsedObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&localError];
+                if ([parsedObject isKindOfClass:[NSDictionary class]]) {
+                    NSLog(@"successfully add in new products. indicator undone");
+                }
+            }
+        }];
     }
+}
+
+- (void)setChosenOption:(OptionTableViewController *)OptionTableViewController{
+    self.chosenOptionValue = OptionTableViewController.chosenOptionValue;
+    NSString *t = [NSString stringWithFormat:@"%@ : %@",self.product.option.name ,self.chosenOptionValue.name];
+    [self.optionButton setTitle:t forState:UIControlStateNormal];
 }
 
 @end

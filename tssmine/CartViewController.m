@@ -8,6 +8,9 @@
 
 #import "CartViewController.h"
 #import "MYSMUConstants.h"
+#import "TSSCartTableViewCell.h"
+#import "ProductInCart.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface CartViewController ()
 
@@ -30,7 +33,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"Cart";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Check Out" style:UIBarButtonItemStylePlain target:self action:@selector(checkOut)];
+    [self getProductsInCart];
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 - (void)getProductsInCart {
@@ -51,14 +57,23 @@
             
             if([parsedObject isKindOfClass:[NSDictionary class]])
             {
-                NSLog(@"dict or not");
+                NSLog(@"it is dict");
                 NSDictionary *result = parsedObject;
                 //construct objects and pass to array
                 
                 self.productsInCart = [[NSMutableArray alloc] init];
-                
                 for (NSObject *ob in [result valueForKey:@"products_in_cart"]){
-                    [self.productsInCart addObject:ob];
+                    ProductInCart *pic = [[ProductInCart alloc] init];
+                    //configure paramaters
+                    pic.name = [ob valueForKey:@"name"];
+                    pic.thumb = [NSURL URLWithString:[ob valueForKey:@"thumb"]];
+                    for (NSObject *obo in [ob valueForKey:@"option"]) {
+                        pic.option_name = [obo valueForKey:@"name"];
+                        pic.option_value = [obo valueForKey:@"value"];
+                    }
+                    pic.quantity = [ob valueForKey:@"quantity"];
+                    //add object into array
+                    [self.productsInCart addObject:pic];
                 }
             } else {
                 NSLog(@"what we get is not a kind of clss nsdictionary class");
@@ -91,21 +106,28 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //static NSString *CellIdentifier = @"Cell";
-    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"cartCell";
+    TSSCartTableViewCell *cell = (TSSCartTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    UITableViewCell *cell = [[UITableViewCell alloc] init];
     
-    NSObject *ob = self.productsInCart[indexPath.row];
-    
-    [cell.textLabel setText:[ob valueForKey:@"Name"]];
-    [cell.detailTextLabel setText:[ob valueForKey:@"quantity"]];
-    
+    ProductInCart *p = self.productsInCart[indexPath.row];
     // Configure the cell...
+    [cell.image setImageWithURL:p.thumb];
+    [cell.productName setText:p.name];
     
+    if (p.option_name != NULL) {
+        NSString *s = [NSString stringWithFormat:@"- %@ : %@",p.option_name, p.option_value];
+        [cell.optionValue setText:s];
+        NSString *q = [NSString stringWithFormat:@"x%@",p.quantity];
+        [cell.quantity setText:q];
+    }
     return cell;
 }
 
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 
 - (void)checkOut{
     

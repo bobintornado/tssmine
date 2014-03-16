@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "TSSProduct.h"
+#import "OptionTableViewController.h"
 
-@interface ProductViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
+@interface ProductViewController : UIViewController <OptionDelegate>
 
 @property (strong, nonatomic) TSSProduct *product;
 

@@ -45,8 +45,9 @@
     [self getProducts];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(shoppingCart)];
     self.navigationItem.title = self.category.name;
-    
-    }
+    //remove extra rows in the end of the table
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+}
 
 - (void)getProducts{
     self.products = [[NSMutableArray alloc] init];

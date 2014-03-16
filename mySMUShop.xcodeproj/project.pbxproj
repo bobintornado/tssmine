@@ -16,6 +16,8 @@
 		D916C2F418B8E53E00486DFD /* BuzzCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D916C2F318B8E53E00486DFD /* BuzzCell.m */; };
 		D91C890718B935CE008E7536 /* Filter.m in Sources */ = {isa = PBXBuildFile; fileRef = D91C890618B935CE008E7536 /* Filter.m */; };
 		D91CBB0A1896839B00372F9A /* CustomizeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D91CBB091896839B00372F9A /* CustomizeCell.m */; };
+		D920B24F18D5A831001A4F7E /* ProductInCart.m in Sources */ = {isa = PBXBuildFile; fileRef = D920B24E18D5A831001A4F7E /* ProductInCart.m */; };
+		D920B25818D5AB39001A4F7E /* TSSCartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D920B25718D5AB39001A4F7E /* TSSCartTableViewCell.m */; };
 		D9259BCC18C52474006A254A /* SubCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9259BCB18C52474006A254A /* SubCategoryViewController.m */; };
 		D93FB68118C436A70080E3E6 /* MYSMUConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = D93FB68018C436A70080E3E6 /* MYSMUConstants.m */; };
 		D952DADC18B5E5250032D40F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D952DADB18B5E5250032D40F /* Images.xcassets */; };
@@ -121,6 +123,10 @@
 		D91C890618B935CE008E7536 /* Filter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Filter.m; sourceTree = "<group>"; };
 		D91CBB081896839B00372F9A /* CustomizeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomizeCell.h; sourceTree = "<group>"; };
 		D91CBB091896839B00372F9A /* CustomizeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomizeCell.m; sourceTree = "<group>"; };
+		D920B24D18D5A831001A4F7E /* ProductInCart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductInCart.h; sourceTree = "<group>"; };
+		D920B24E18D5A831001A4F7E /* ProductInCart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductInCart.m; sourceTree = "<group>"; };
+		D920B25618D5AB39001A4F7E /* TSSCartTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSSCartTableViewCell.h; sourceTree = "<group>"; };
+		D920B25718D5AB39001A4F7E /* TSSCartTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSSCartTableViewCell.m; sourceTree = "<group>"; };
 		D9259BCA18C52474006A254A /* SubCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubCategoryViewController.h; sourceTree = "<group>"; };
 		D9259BCB18C52474006A254A /* SubCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubCategoryViewController.m; sourceTree = "<group>"; };
 		D93FB67F18C436450080E3E6 /* MYSMUConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYSMUConstants.h; sourceTree = "<group>"; };
@@ -613,6 +619,8 @@
 			children = (
 				D9E8CF4718CCAECB002EA436 /* TSSProductCell.h */,
 				D9E8CF4818CCAECB002EA436 /* TSSProductCell.m */,
+				D920B25618D5AB39001A4F7E /* TSSCartTableViewCell.h */,
+				D920B25718D5AB39001A4F7E /* TSSCartTableViewCell.m */,
 			);
 			name = TheSMUShop;
 			sourceTree = "<group>";
@@ -630,6 +638,8 @@
 				D9E76AB618D1D64200F3957A /* TSSSlider.m */,
 				D99D5FB718D1F70900BD0751 /* TSSOptionValue.h */,
 				D99D5FB818D1F70900BD0751 /* TSSOptionValue.m */,
+				D920B24D18D5A831001A4F7E /* ProductInCart.h */,
+				D920B24E18D5A831001A4F7E /* ProductInCart.m */,
 			);
 			name = Shop;
 			sourceTree = "<group>";
@@ -783,6 +793,7 @@
 				D9647D52187A821C00B26CE8 /* SnapTimelineViewController.m in Sources */,
 				D9E8CF4518CCA903002EA436 /* TSSProduct.m in Sources */,
 				D9ACAF3A18BBEB5500AD7A57 /* ProfileEditViewController.m in Sources */,
+				D920B25818D5AB39001A4F7E /* TSSCartTableViewCell.m in Sources */,
 				D9E0027B189637FE0053FB0C /* GirlStudyViewController.m in Sources */,
 				D9E0027E1896428A0053FB0C /* QuizCenter.m in Sources */,
 				D9A2DCDA18972A930069B5E0 /* CustomizeResultViewController.m in Sources */,
@@ -792,6 +803,7 @@
 				D9A71FF418B68C8300B15375 /* AddNewSHItemViewController.m in Sources */,
 				D9ACAF3718BBDF2500AD7A57 /* ProfileCell.m in Sources */,
 				D96006B01884852400BB1C9E /* ProfileViewController.m in Sources */,
+				D920B24F18D5A831001A4F7E /* ProductInCart.m in Sources */,
 				D9E38B3E1886F5F000FC9B6B /* BorGViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
