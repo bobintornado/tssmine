@@ -10,6 +10,7 @@
 
 @interface ProductInCart : NSObject
 
+@property NSString *key;
 @property NSString *name;
 @property NSURL *thumb;
 @property NSString *option_name;

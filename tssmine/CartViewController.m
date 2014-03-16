@@ -11,6 +11,8 @@
 #import "TSSCartTableViewCell.h"
 #import "ProductInCart.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "DeliveryTableViewController.h"
+
 
 @interface CartViewController ()
 
@@ -33,19 +35,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.productsInCart = [[NSMutableArray alloc] init];
     self.title = @"Cart";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Check Out" style:UIBarButtonItemStylePlain target:self action:@selector(checkOut)];
     [self getProductsInCart];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
-- (void)getProductsInCart {
-    
+- (void)getProductsInCart
+{
     NSString *urlString = [NSString stringWithFormat:@"%@index.php?route=%@&key=%@",ShopDomain,@"feed/web_api/cart",RESTfulKey,nil];
-    //NSLog(@"and the calling url is .. %@",urlString);
     NSURL *cartURL = [NSURL URLWithString:urlString];
-    
-    
     [NSURLConnection sendAsynchronousRequest:[[NSURLRequest alloc] initWithURL:cartURL] queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
         
         if (error) {
@@ -61,10 +61,10 @@
                 NSDictionary *result = parsedObject;
                 //construct objects and pass to array
                 
-                self.productsInCart = [[NSMutableArray alloc] init];
                 for (NSObject *ob in [result valueForKey:@"products_in_cart"]){
                     ProductInCart *pic = [[ProductInCart alloc] init];
                     //configure paramaters
+                    pic.key = [ob valueForKey:@"key"];
                     pic.name = [ob valueForKey:@"name"];
                     pic.thumb = [NSURL URLWithString:[ob valueForKey:@"thumb"]];
                     for (NSObject *obo in [ob valueForKey:@"option"]) {
@@ -72,6 +72,7 @@
                         pic.option_value = [obo valueForKey:@"value"];
                     }
                     pic.quantity = [ob valueForKey:@"quantity"];
+                    pic.remove = [NSURL URLWithString:[ob valueForKey:@"remove"]];
                     //add object into array
                     [self.productsInCart addObject:pic];
                 }
@@ -79,7 +80,6 @@
                 NSLog(@"what we get is not a kind of clss nsdictionary class");
             }
         }
-        //NSLog(@"reload data");
         [self.pICTB performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
     }];
 }
@@ -130,7 +130,8 @@
 }
 
 - (void)checkOut{
-    
+    DeliveryTableViewController *dVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Delivery"];
+    [self.navigationController pushViewController:dVC animated:YES];
 }
 
 /*
@@ -142,19 +143,32 @@
 }
 */
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+        // Delete the row from the data sources
+        if ([self.productsInCart count] >= 1) {
+            [tableView beginUpdates];
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            ProductInCart *rp = self.productsInCart[indexPath.row];
+            NSString *urlString = [NSString stringWithFormat:@"%@index.php?route=feed/web_api/%@&key=%@&remove=%@",ShopDomain,@"removeProduct",RESTfulKey,rp.key];
+            //NSLog(@"and the calling url is .. %@",urlString);
+            NSURL *removeURL = [NSURL URLWithString:urlString];
+            [NSURLConnection sendAsynchronousRequest:[[NSURLRequest alloc] initWithURL:removeURL] queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+                if (error) {
+                    NSLog(@"removing product failed");
+                } else {
+                    NSLog(@"succesfully remove product");
+                }
+            }];
+            [self.productsInCart removeObjectAtIndex:[indexPath row]];
+            [tableView endUpdates];
+        }
+    }
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.

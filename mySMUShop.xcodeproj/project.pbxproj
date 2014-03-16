@@ -18,6 +18,12 @@
 		D91CBB0A1896839B00372F9A /* CustomizeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D91CBB091896839B00372F9A /* CustomizeCell.m */; };
 		D920B24F18D5A831001A4F7E /* ProductInCart.m in Sources */ = {isa = PBXBuildFile; fileRef = D920B24E18D5A831001A4F7E /* ProductInCart.m */; };
 		D920B25818D5AB39001A4F7E /* TSSCartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D920B25718D5AB39001A4F7E /* TSSCartTableViewCell.m */; };
+		D920B25B18D5ED04001A4F7E /* DeliveryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D920B25A18D5ED04001A4F7E /* DeliveryTableViewController.m */; };
+		D920B25E18D5FB91001A4F7E /* InputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D920B25D18D5FB91001A4F7E /* InputTableViewCell.m */; };
+		D920B26118D5FB9E001A4F7E /* ChoseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D920B26018D5FB9E001A4F7E /* ChoseTableViewCell.m */; };
+		D920B26818D5FC9C001A4F7E /* BillingDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D920B26718D5FC9C001A4F7E /* BillingDetailsTableViewController.m */; };
+		D920B26E18D605A8001A4F7E /* SalutationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D920B26D18D605A8001A4F7E /* SalutationTableViewController.m */; };
+		D920B27118D60A17001A4F7E /* PaymentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D920B27018D60A17001A4F7E /* PaymentTableViewController.m */; };
 		D9259BCC18C52474006A254A /* SubCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9259BCB18C52474006A254A /* SubCategoryViewController.m */; };
 		D93FB68118C436A70080E3E6 /* MYSMUConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = D93FB68018C436A70080E3E6 /* MYSMUConstants.m */; };
 		D952DADC18B5E5250032D40F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D952DADB18B5E5250032D40F /* Images.xcassets */; };
@@ -127,6 +133,18 @@
 		D920B24E18D5A831001A4F7E /* ProductInCart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductInCart.m; sourceTree = "<group>"; };
 		D920B25618D5AB39001A4F7E /* TSSCartTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSSCartTableViewCell.h; sourceTree = "<group>"; };
 		D920B25718D5AB39001A4F7E /* TSSCartTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSSCartTableViewCell.m; sourceTree = "<group>"; };
+		D920B25918D5ED04001A4F7E /* DeliveryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeliveryTableViewController.h; sourceTree = "<group>"; };
+		D920B25A18D5ED04001A4F7E /* DeliveryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeliveryTableViewController.m; sourceTree = "<group>"; };
+		D920B25C18D5FB91001A4F7E /* InputTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputTableViewCell.h; sourceTree = "<group>"; };
+		D920B25D18D5FB91001A4F7E /* InputTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputTableViewCell.m; sourceTree = "<group>"; };
+		D920B25F18D5FB9E001A4F7E /* ChoseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChoseTableViewCell.h; sourceTree = "<group>"; };
+		D920B26018D5FB9E001A4F7E /* ChoseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChoseTableViewCell.m; sourceTree = "<group>"; };
+		D920B26618D5FC9C001A4F7E /* BillingDetailsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BillingDetailsTableViewController.h; sourceTree = "<group>"; };
+		D920B26718D5FC9C001A4F7E /* BillingDetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BillingDetailsTableViewController.m; sourceTree = "<group>"; };
+		D920B26C18D605A8001A4F7E /* SalutationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalutationTableViewController.h; sourceTree = "<group>"; };
+		D920B26D18D605A8001A4F7E /* SalutationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalutationTableViewController.m; sourceTree = "<group>"; };
+		D920B26F18D60A17001A4F7E /* PaymentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentTableViewController.h; sourceTree = "<group>"; };
+		D920B27018D60A17001A4F7E /* PaymentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentTableViewController.m; sourceTree = "<group>"; };
 		D9259BCA18C52474006A254A /* SubCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubCategoryViewController.h; sourceTree = "<group>"; };
 		D9259BCB18C52474006A254A /* SubCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubCategoryViewController.m; sourceTree = "<group>"; };
 		D93FB67F18C436450080E3E6 /* MYSMUConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYSMUConstants.h; sourceTree = "<group>"; };
@@ -403,6 +421,14 @@
 				D9A4949018CEFC2900975005 /* CartViewController.m */,
 				D905DA3918D21E6A0092AD3A /* OptionTableViewController.h */,
 				D905DA3A18D21E6A0092AD3A /* OptionTableViewController.m */,
+				D920B25918D5ED04001A4F7E /* DeliveryTableViewController.h */,
+				D920B25A18D5ED04001A4F7E /* DeliveryTableViewController.m */,
+				D920B26618D5FC9C001A4F7E /* BillingDetailsTableViewController.h */,
+				D920B26718D5FC9C001A4F7E /* BillingDetailsTableViewController.m */,
+				D920B26C18D605A8001A4F7E /* SalutationTableViewController.h */,
+				D920B26D18D605A8001A4F7E /* SalutationTableViewController.m */,
+				D920B26F18D60A17001A4F7E /* PaymentTableViewController.h */,
+				D920B27018D60A17001A4F7E /* PaymentTableViewController.m */,
 			);
 			name = TheSMUShop;
 			sourceTree = "<group>";
@@ -621,6 +647,10 @@
 				D9E8CF4818CCAECB002EA436 /* TSSProductCell.m */,
 				D920B25618D5AB39001A4F7E /* TSSCartTableViewCell.h */,
 				D920B25718D5AB39001A4F7E /* TSSCartTableViewCell.m */,
+				D920B25C18D5FB91001A4F7E /* InputTableViewCell.h */,
+				D920B25D18D5FB91001A4F7E /* InputTableViewCell.m */,
+				D920B25F18D5FB9E001A4F7E /* ChoseTableViewCell.h */,
+				D920B26018D5FB9E001A4F7E /* ChoseTableViewCell.m */,
 			);
 			name = TheSMUShop;
 			sourceTree = "<group>";
@@ -750,6 +780,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D920B26818D5FC9C001A4F7E /* BillingDetailsTableViewController.m in Sources */,
 				D952DAE518B6484B0032D40F /* BazaarViewController.m in Sources */,
 				D98438441884D1CC008BDCA8 /* StlyingViewController.m in Sources */,
 				D91CBB0A1896839B00372F9A /* CustomizeCell.m in Sources */,
@@ -769,7 +800,10 @@
 				D9CF91951887A0B70070B10B /* RootTabBarViewController.m in Sources */,
 				D9CF91981887A9140070B10B /* TssLoginViewController.m in Sources */,
 				D9A085771897187100B000B9 /* CustomizeUICollectionViewCell.m in Sources */,
+				D920B25E18D5FB91001A4F7E /* InputTableViewCell.m in Sources */,
+				D920B25B18D5ED04001A4F7E /* DeliveryTableViewController.m in Sources */,
 				D9A2DCD7189728B10069B5E0 /* StyleCenter.m in Sources */,
+				D920B26118D5FB9E001A4F7E /* ChoseTableViewCell.m in Sources */,
 				D9E8CF5018CE9AAE002EA436 /* ProductViewController.m in Sources */,
 				D91C890718B935CE008E7536 /* Filter.m in Sources */,
 				D9B6F02D187C32990069E088 /* snapFeedTableViewCell.m in Sources */,
@@ -779,6 +813,7 @@
 				D9E76AB718D1D64200F3957A /* TSSSlider.m in Sources */,
 				D952DAEE18B65CF90032D40F /* PromotionPFTableViewCell.m in Sources */,
 				D905DA3B18D21E6A0092AD3A /* OptionTableViewController.m in Sources */,
+				D920B26E18D605A8001A4F7E /* SalutationTableViewController.m in Sources */,
 				D9E00278189632680053FB0C /* GirlSMUViewController.m in Sources */,
 				D905DA3818D213220092AD3A /* FXBlurView.m in Sources */,
 				D9E8CF4218CC69DE002EA436 /* ProductListViewController.m in Sources */,
@@ -794,6 +829,7 @@
 				D9E8CF4518CCA903002EA436 /* TSSProduct.m in Sources */,
 				D9ACAF3A18BBEB5500AD7A57 /* ProfileEditViewController.m in Sources */,
 				D920B25818D5AB39001A4F7E /* TSSCartTableViewCell.m in Sources */,
+				D920B27118D60A17001A4F7E /* PaymentTableViewController.m in Sources */,
 				D9E0027B189637FE0053FB0C /* GirlStudyViewController.m in Sources */,
 				D9E0027E1896428A0053FB0C /* QuizCenter.m in Sources */,
 				D9A2DCDA18972A930069B5E0 /* CustomizeResultViewController.m in Sources */,
