@@ -38,7 +38,6 @@
     navItem.rightBarButtonItem = rightButton;
     //adding all items to navigation bar
     self.navigationController.navigationBar.items = @[ navItem ];
-    
 }
 
 - (void)didReceiveMemoryWarning

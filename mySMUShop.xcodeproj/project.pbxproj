@@ -30,6 +30,7 @@
 		D9259BCC18C52474006A254A /* SubCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9259BCB18C52474006A254A /* SubCategoryViewController.m */; };
 		D93FB68118C436A70080E3E6 /* MYSMUConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = D93FB68018C436A70080E3E6 /* MYSMUConstants.m */; };
 		D952608218D68E8E00C24EE0 /* CheckoutCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D952608118D68E8E00C24EE0 /* CheckoutCenter.m */; };
+		D952608518D6C06300C24EE0 /* RankTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D952608418D6C06300C24EE0 /* RankTableViewController.m */; };
 		D952DADC18B5E5250032D40F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D952DADB18B5E5250032D40F /* Images.xcassets */; };
 		D952DADD18B5E5250032D40F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D952DADB18B5E5250032D40F /* Images.xcassets */; };
 		D952DAE518B6484B0032D40F /* BazaarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D952DAE418B6484B0032D40F /* BazaarViewController.m */; };
@@ -163,6 +164,8 @@
 		D93FB68018C436A70080E3E6 /* MYSMUConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYSMUConstants.m; sourceTree = "<group>"; };
 		D952608018D68E8E00C24EE0 /* CheckoutCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckoutCenter.h; sourceTree = "<group>"; };
 		D952608118D68E8E00C24EE0 /* CheckoutCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckoutCenter.m; sourceTree = "<group>"; };
+		D952608318D6C06300C24EE0 /* RankTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankTableViewController.h; sourceTree = "<group>"; };
+		D952608418D6C06300C24EE0 /* RankTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankTableViewController.m; sourceTree = "<group>"; };
 		D952DADB18B5E5250032D40F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D952DAE318B6484B0032D40F /* BazaarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BazaarViewController.h; sourceTree = "<group>"; };
 		D952DAE418B6484B0032D40F /* BazaarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BazaarViewController.m; sourceTree = "<group>"; };
@@ -443,6 +446,8 @@
 				D916C2F018B8DD6500486DFD /* BuzzViewController.m */,
 				D91C890518B935CE008E7536 /* Filter.h */,
 				D91C890618B935CE008E7536 /* Filter.m */,
+				D952608318D6C06300C24EE0 /* RankTableViewController.h */,
+				D952608418D6C06300C24EE0 /* RankTableViewController.m */,
 			);
 			name = Buzz;
 			sourceTree = "<group>";
@@ -841,6 +846,7 @@
 				D916C2F118B8DD6500486DFD /* BuzzViewController.m in Sources */,
 				D9E38B501886F7FF00FC9B6B /* BoyStudyViewController.m in Sources */,
 				D9CF91951887A0B70070B10B /* RootTabBarViewController.m in Sources */,
+				D952608518D6C06300C24EE0 /* RankTableViewController.m in Sources */,
 				D9CF91981887A9140070B10B /* TssLoginViewController.m in Sources */,
 				D9A085771897187100B000B9 /* CustomizeUICollectionViewCell.m in Sources */,
 				D920B25E18D5FB91001A4F7E /* InputTableViewCell.m in Sources */,

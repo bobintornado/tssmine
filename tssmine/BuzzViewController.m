@@ -17,6 +17,8 @@
 @interface BuzzViewController ()
 
 @property UIImage *photoChosen;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *cameraButton;
+@property int rankingIndex;
 
 @end
 
@@ -36,13 +38,27 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(uploadNewBuzz) name:@"publishNew" object:nil];
+    //adding right button for photo taking
+    UIBarButtonItem *rightButtonRank = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(rank)];
+    NSArray *arr= [[NSArray alloc] initWithObjects:self.cameraButton,rightButtonRank,nil];
+    self.navigationItem.rightBarButtonItems=arr;
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
+
+- (void)rank{
+    RankTableViewController *rTVC = [self.storyboard instantiateViewControllerWithIdentifier:@"rankTVC"];
+    rTVC.checkMarkIndex = self.rankingIndex;
+    //rTVC.delegate = self;
+    [self.navigationController pushViewController:rTVC animated:YES];
+}
+
+//- (void)setRankingIndex:(RankTableViewController *)RankTableViewController{
+//    self.rankingIndex = RankTableViewController.checkMarkIndex;
+//}
 
 - (void)uploadNewBuzz {
     SnapTakePhotoViewController *snapViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"phototaking"];
-    
     [snapViewController setSnapImage:self.photoChosen];
-    
     [self presentViewController:snapViewController animated:YES completion:nil];
 }
 
@@ -55,19 +71,11 @@
 - (id)initWithCoder:(NSCoder *)aCoder {
     self = [super initWithCoder:aCoder];
     if (self) {
-        // Customize the table
-        
-        // The className to query on
         self.parseClassName = @"snap";
-        
-        // Whether the built-in pull-to-refresh is enabled
         self.pullToRefreshEnabled = YES;
-        
-        // Whether the built-in pagination is enabled
         self.paginationEnabled = YES;
-        
-        // The number of objects to show per page
         self.objectsPerPage = 25;
+        self.rankingIndex = 0;
     }
     return self;
 }

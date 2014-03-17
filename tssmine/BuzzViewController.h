@@ -8,6 +8,8 @@
 
 #import <Parse/Parse.h>
 #import "BuzzCell.h"
+#import "RankTableViewController.h"
+
 
 @interface BuzzViewController : PFQueryTableViewController <UIImagePickerControllerDelegate,UIActionSheetDelegate,UINavigationControllerDelegate,BuzzViewCellDelegate>
 {
@@ -19,5 +21,7 @@
 @property (nonatomic,weak) IBOutlet UIScrollView *filtersScrollView;
 @property (nonatomic,weak) IBOutlet UIImageView *imageView;
 
-
 @end
+
+
+
