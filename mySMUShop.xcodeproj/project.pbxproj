@@ -29,6 +29,7 @@
 		D920B27D18D60DCC001A4F7E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D920B27C18D60DCC001A4F7E /* MessageUI.framework */; };
 		D9259BCC18C52474006A254A /* SubCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9259BCB18C52474006A254A /* SubCategoryViewController.m */; };
 		D93FB68118C436A70080E3E6 /* MYSMUConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = D93FB68018C436A70080E3E6 /* MYSMUConstants.m */; };
+		D952608218D68E8E00C24EE0 /* CheckoutCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D952608118D68E8E00C24EE0 /* CheckoutCenter.m */; };
 		D952DADC18B5E5250032D40F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D952DADB18B5E5250032D40F /* Images.xcassets */; };
 		D952DADD18B5E5250032D40F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D952DADB18B5E5250032D40F /* Images.xcassets */; };
 		D952DAE518B6484B0032D40F /* BazaarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D952DAE418B6484B0032D40F /* BazaarViewController.m */; };
@@ -160,6 +161,8 @@
 		D9259BCB18C52474006A254A /* SubCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubCategoryViewController.m; sourceTree = "<group>"; };
 		D93FB67F18C436450080E3E6 /* MYSMUConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYSMUConstants.h; sourceTree = "<group>"; };
 		D93FB68018C436A70080E3E6 /* MYSMUConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYSMUConstants.m; sourceTree = "<group>"; };
+		D952608018D68E8E00C24EE0 /* CheckoutCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckoutCenter.h; sourceTree = "<group>"; };
+		D952608118D68E8E00C24EE0 /* CheckoutCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckoutCenter.m; sourceTree = "<group>"; };
 		D952DADB18B5E5250032D40F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D952DAE318B6484B0032D40F /* BazaarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BazaarViewController.h; sourceTree = "<group>"; };
 		D952DAE418B6484B0032D40F /* BazaarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BazaarViewController.m; sourceTree = "<group>"; };
@@ -343,6 +346,19 @@
 			path = PayPalMobile;
 			sourceTree = "<group>";
 		};
+		D952607F18D68E0300C24EE0 /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				D9A2DCD5189728B10069B5E0 /* StyleCenter.h */,
+				D9A2DCD6189728B10069B5E0 /* StyleCenter.m */,
+				D9E0027C1896428A0053FB0C /* QuizCenter.h */,
+				D9E0027D1896428A0053FB0C /* QuizCenter.m */,
+				D952608018D68E8E00C24EE0 /* CheckoutCenter.h */,
+				D952608118D68E8E00C24EE0 /* CheckoutCenter.m */,
+			);
+			name = Singleton;
+			sourceTree = "<group>";
+		};
 		D952DAE218B648190032D40F /* Bazaar */ = {
 			isa = PBXGroup;
 			children = (
@@ -513,15 +529,12 @@
 		D98BF15E182550EC00DEE19B /* tssmine */ = {
 			isa = PBXGroup;
 			children = (
+				D952607F18D68E0300C24EE0 /* Singleton */,
 				D920B27218D60D25001A4F7E /* PayPalMobile */,
 				D905DA3618D213220092AD3A /* FXBlurView.h */,
 				D905DA3718D213220092AD3A /* FXBlurView.m */,
 				D93FB67F18C436450080E3E6 /* MYSMUConstants.h */,
 				D93FB68018C436A70080E3E6 /* MYSMUConstants.m */,
-				D9A2DCD5189728B10069B5E0 /* StyleCenter.h */,
-				D9A2DCD6189728B10069B5E0 /* StyleCenter.m */,
-				D9E0027C1896428A0053FB0C /* QuizCenter.h */,
-				D9E0027D1896428A0053FB0C /* QuizCenter.m */,
 				D901607A187AB8190003985D /* Main.storyboard */,
 				D99E50041826ABB0005F4D32 /* View */,
 				D99E50031826AB91005F4D32 /* Controller */,
@@ -860,6 +873,7 @@
 				D9ACAF3A18BBEB5500AD7A57 /* ProfileEditViewController.m in Sources */,
 				D920B25818D5AB39001A4F7E /* TSSCartTableViewCell.m in Sources */,
 				D920B27118D60A17001A4F7E /* PaymentTableViewController.m in Sources */,
+				D952608218D68E8E00C24EE0 /* CheckoutCenter.m in Sources */,
 				D9E0027B189637FE0053FB0C /* GirlStudyViewController.m in Sources */,
 				D9E0027E1896428A0053FB0C /* QuizCenter.m in Sources */,
 				D9A2DCDA18972A930069B5E0 /* CustomizeResultViewController.m in Sources */,

@@ -7,6 +7,7 @@
 //
 
 #import "PaymentTableViewController.h"
+#import "CheckoutCenter.h"
 
 @interface PaymentTableViewController ()
 
@@ -43,7 +44,8 @@
 - (void)pay{
     PayPalPayment *payment = [[PayPalPayment alloc] init];
     // Amount, currency, and description
-    payment.amount = [[NSDecimalNumber alloc] initWithString:@"39.95"];
+    CheckoutCenter *shareCenter = [CheckoutCenter sharedCenter];
+    payment.amount = [[NSDecimalNumber alloc] initWithString:shareCenter.total];
     payment.currencyCode = @"SGD";
     payment.shortDescription = @"The SMU Shop Products";
     payment.intent = PayPalPaymentIntentSale;

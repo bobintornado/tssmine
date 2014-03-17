@@ -148,12 +148,6 @@
         [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
             if (error) {
                 NSLog(@"adding product into cart failed");
-            } else {
-                NSError *localError = nil;
-                id parsedObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&localError];
-                if ([parsedObject isKindOfClass:[NSDictionary class]]) {
-                    NSLog(@"successfully add in new products. indicator undone");
-                }
             }
         }];
     }

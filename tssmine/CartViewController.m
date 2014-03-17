@@ -12,6 +12,7 @@
 #import "ProductInCart.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "DeliveryTableViewController.h"
+#import "CheckoutCenter.h"
 
 
 @interface CartViewController ()
@@ -35,7 +36,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.productsInCart = [[NSMutableArray alloc] init];
+   
     self.title = @"Cart";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Check Out" style:UIBarButtonItemStylePlain target:self action:@selector(checkOut)];
     [self getProductsInCart];
@@ -44,6 +45,7 @@
 
 - (void)getProductsInCart
 {
+    self.productsInCart = [[NSMutableArray alloc] init];
     NSString *urlString = [NSString stringWithFormat:@"%@index.php?route=%@&key=%@",ShopDomain,@"feed/web_api/cart",RESTfulKey,nil];
     NSURL *cartURL = [NSURL URLWithString:urlString];
     [NSURLConnection sendAsynchronousRequest:[[NSURLRequest alloc] initWithURL:cartURL] queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
@@ -76,6 +78,12 @@
                     //add object into array
                     [self.productsInCart addObject:pic];
                 }
+                
+                ProductInCart* p = [[ProductInCart alloc] init];
+                p.name = [result valueForKey:@"total"];
+                [self.productsInCart addObject:p];
+                CheckoutCenter *sharedCenter = [CheckoutCenter sharedCenter];
+                sharedCenter.total = [[result valueForKey:@"amount"] substringFromIndex:1];
             } else {
                 NSLog(@"what we get is not a kind of clss nsdictionary class");
             }
@@ -107,19 +115,23 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"cartCell";
+
+    ProductInCart *p = self.productsInCart[indexPath.row];
+    
     TSSCartTableViewCell *cell = (TSSCartTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    
-    ProductInCart *p = self.productsInCart[indexPath.row];
     // Configure the cell...
     [cell.image setImageWithURL:p.thumb];
     [cell.productName setText:p.name];
     
+    if (p.quantity !=NULL) {
+        NSString *q = [NSString stringWithFormat:@"Qty:%@",p.quantity];
+        [cell.quantity setText:q];
+    }
+    
     if (p.option_name != NULL) {
         NSString *s = [NSString stringWithFormat:@"- %@ : %@",p.option_name, p.option_value];
         [cell.optionValue setText:s];
-        NSString *q = [NSString stringWithFormat:@"x%@",p.quantity];
-        [cell.quantity setText:q];
     }
     return cell;
 }
@@ -130,8 +142,17 @@
 }
 
 - (void)checkOut{
-    DeliveryTableViewController *dVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Delivery"];
-    [self.navigationController pushViewController:dVC animated:YES];
+    if ([self.productsInCart count] == 1) {
+        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Cart"
+                                                     message:@"You Cart Is Empty!"
+                                                    delegate:self
+                                           cancelButtonTitle:nil
+                                           otherButtonTitles:@"OK", nil];
+        [av show];
+    } else {
+        DeliveryTableViewController *dVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Delivery"];
+        [self.navigationController pushViewController:dVC animated:YES];
+    }
 }
 
 /*
@@ -143,6 +164,12 @@
 }
 */
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row == [self.productsInCart count]-1) {
+        return NO;
+    }
+    return YES;
+}
 
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -161,6 +188,7 @@
                     NSLog(@"removing product failed");
                 } else {
                     NSLog(@"succesfully remove product");
+                    [self getProductsInCart];
                 }
             }];
             [self.productsInCart removeObjectAtIndex:[indexPath row]];

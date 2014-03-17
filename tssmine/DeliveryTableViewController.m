@@ -37,8 +37,12 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    BillingDetailsTableViewController *bVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Billing"];
-    [self.navigationController pushViewController:bVC animated:YES];
+    if (indexPath.row == 0) {
+        BillingDetailsTableViewController *bVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Billing"];
+        [self.navigationController pushViewController:bVC animated:YES];
+    } else {
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,8 +74,10 @@
         [cell.textLabel setText:@"Pick Up From Store"];
     } else if (indexPath.row == 0){
         [cell.textLabel setText:@"Singpost Stanardar (Coming Soon)"];
+        cell.textLabel.textColor = [UIColor darkGrayColor];
     } else {
         [cell.textLabel setText:@"Singpost Register (Coming Soon)"];
+        cell.textLabel.textColor = [UIColor darkGrayColor];
     }
     return cell;
 }
