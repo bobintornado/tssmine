@@ -7,13 +7,12 @@
 //
 
 #import "AddNewSHItemViewController.h"
+#import "InputTableViewCell.h"
+#import "ChoseTableViewCell.h"
 
 @interface AddNewSHItemViewController ()
 
 @property (strong, nonatomic) IBOutlet UITextView *itemDes;
-@property (strong, nonatomic) IBOutlet UITextField *itemPrice;
-@property (strong, nonatomic) IBOutlet UITextField *category;
-@property (strong, nonatomic) IBOutlet UITextField *itemTitle;
 @property (strong, nonatomic) IBOutlet UIImageView *itemPhotoView;
 @property (strong, nonatomic) IBOutlet UINavigationBar *nav;
 @property PFFile *photoFile;
@@ -156,13 +155,8 @@
     PFObject *item = [PFObject objectWithClassName:@"SHItem"];
     [item setObject:self.photoFile forKey:@"img"];
     
-    [item setObject:self.category.text forKey:@"category"];
-    [item setObject:self.itemTitle.text forKey:@"title"];
     [item setObject:[PFUser currentUser] forKey:@"seller"];
     [item setObject:self.itemDes.text forKey:@"description"];
-    
-    NSNumber *price = [NSNumber numberWithDouble:[self.itemPrice.text doubleValue]];
-    [item setObject:price forKey:@"price"];
     
     // Request a background execution task to allow us to finish uploading the photo even if the app is backgrounded
     self.photoPostBackgroundTaskId = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
@@ -209,6 +203,39 @@
         [[UIApplication sharedApplication] endBackgroundTask:self.photoPostBackgroundTaskId];
     }];
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 3;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *identifier;
+    if (indexPath.row == 1) {
+        identifier = @"choseCell";
+    } else {
+        identifier = @"inputCell";
+    }
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
+    
+    if (indexPath.row == 0) {
+        InputTableViewCell *c = (InputTableViewCell *)cell;
+        c.inputTitle.text = @"Title";
+    } else if (indexPath.row == 1){
+        ChoseTableViewCell *c = (ChoseTableViewCell *)cell;
+        c.choseLabel.text = @"Category";
+    } else if (indexPath.row == 2){
+        InputTableViewCell *c = (InputTableViewCell *)cell;
+        c.inputTitle.text = @"Price";
+    }
+    return cell;
 }
 
 @end

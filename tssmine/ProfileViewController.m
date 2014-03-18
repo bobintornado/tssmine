@@ -86,7 +86,7 @@
 }
 - (IBAction)didTapOnLogOut:(id)sender {
     [PFUser logOut];
-    [self.tabBarController viewDidAppear:YES];
+    [self.tabBarController setSelectedIndex:0];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -214,15 +214,6 @@
         }
         [[UIApplication sharedApplication] endBackgroundTask:self.photoPostBackgroundTaskId];
     }];
-}
-
-- (BOOL)tabBarController:(UITabBarController *)tabBarController
-shouldSelectViewController:(UIViewController *)viewController
-{
-    UINavigationController *nvc = (UINavigationController *)viewController;
-    [nvc popToRootViewControllerAnimated:NO];
-    
-    return YES;
 }
 
 

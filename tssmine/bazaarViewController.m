@@ -46,8 +46,17 @@
 }
 
 - (IBAction)addNewItem:(id)sender {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Snap the Item", @"Choose From Library",nil];
-    [actionSheet showInView:self.view];
+    if (![PFUser currentUser]) {
+        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@""
+                                                     message:@"You Need to Login/Sign Up in order to post a new item, tab Profile for more information"
+                                                    delegate:self
+                                           cancelButtonTitle:nil
+                                           otherButtonTitles:@"OK", nil];
+        [av show];
+    } else {
+        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Snap the Item", @"Choose Existing Photos",nil];
+        [actionSheet showInView:self.view];
+    }
 }
 
 //action sheet delegate

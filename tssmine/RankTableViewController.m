@@ -27,6 +27,7 @@
 {
     [super viewDidLoad];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.title = @"Ranking";
 }
 
 - (void)didReceiveMemoryWarning

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddNewSHItemViewController : UIViewController <UITextViewDelegate,UITextFieldDelegate>
+@interface AddNewSHItemViewController : UIViewController <UITextViewDelegate,UITextFieldDelegate,UITableViewDataSource>
 
 @property (strong, nonatomic) UIImage *itemPhoto;
 

@@ -38,8 +38,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(uploadNewBuzz) name:@"publishNew" object:nil];
-    //adding right button for photo taking
-    UIBarButtonItem *rightButtonRank = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(rank)];
+    
+    UIBarButtonItem *rightButtonRank = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"mixer.png"] style:UIBarButtonItemStylePlain target:self action:@selector(rank)];
+    
     NSArray *arr= [[NSArray alloc] initWithObjects:self.cameraButton,rightButtonRank,nil];
     self.navigationItem.rightBarButtonItems=arr;
 }
@@ -190,7 +191,7 @@
                                            otherButtonTitles:@"OK", nil];
         [av show];
     } else {
-        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Maybe Next Time" destructiveButtonTitle:nil otherButtonTitles:@"Snap A Photo", @"Choose From Library",nil];
+        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Maybe Next Time" destructiveButtonTitle:nil otherButtonTitles:@"Snap A Photo", @"Choose Existing Photos",nil];
         [actionSheet showInView:self.view];
     }
 }
