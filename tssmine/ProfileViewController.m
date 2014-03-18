@@ -11,6 +11,9 @@
 #import "ProfileCell.h"
 #import "ProfileEditViewController.h"
 #import <MobileCoreServices/UTCoreTypes.h>
+#import "TssLoginViewController.h"
+#import "MySMUViewController.h"
+#import "RootTabBarViewController.h"
 
 @interface ProfileViewController ()
 
@@ -37,12 +40,38 @@
 {
     NSLog(@"profile");
     [super viewDidLoad];
+    
+    
 	// Do any additional setup after loading the view.
     if ([[PFUser currentUser] objectForKey:@"profileImg"] !=NULL) {
         self.profileImg.file = [[PFUser currentUser] objectForKey:@"profileImg"];
         [self.profileImg loadInBackground];
     }
     self.profileImg.layer.cornerRadius = 100;
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    if (![PFUser currentUser]) {
+        // Create the log in view controller
+        
+        TssLoginViewController *logInViewController = [[TssLoginViewController alloc] init];
+        [logInViewController setDelegate:(RootTabBarViewController *)self.tabBarController];
+        //[logInViewController setFields: PFLogInFieldsUsernameAndPassword | PFLogInFieldsLogInButton | PFLogInFieldsSignUpButton| PFLogInFieldsPasswordForgotten];
+        
+        // Create the sign up view controller
+        MySMUViewController *signUpViewController = [[MySMUViewController alloc] init];
+        [signUpViewController setFields:PFSignUpFieldsDefault | PFSignUpFieldsAdditional];
+        [signUpViewController setDelegate:(RootTabBarViewController *)self.tabBarController];
+        // Assign our sign up controller to be displayed from the login controller
+        [logInViewController setSignUpController:signUpViewController];
+        
+        // Present the log in view controller
+        [self.tabBarController presentViewController:logInViewController animated:YES completion:NULL];
+        
+        //protection code for what is the frist tab bar goes here
+        [self.tabBarController setSelectedIndex:0];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -185,6 +214,15 @@
         }
         [[UIApplication sharedApplication] endBackgroundTask:self.photoPostBackgroundTaskId];
     }];
+}
+
+- (BOOL)tabBarController:(UITabBarController *)tabBarController
+shouldSelectViewController:(UIViewController *)viewController
+{
+    UINavigationController *nvc = (UINavigationController *)viewController;
+    [nvc popToRootViewControllerAnimated:NO];
+    
+    return YES;
 }
 
 

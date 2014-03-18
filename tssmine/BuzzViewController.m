@@ -42,7 +42,6 @@
     UIBarButtonItem *rightButtonRank = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(rank)];
     NSArray *arr= [[NSArray alloc] initWithObjects:self.cameraButton,rightButtonRank,nil];
     self.navigationItem.rightBarButtonItems=arr;
-    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 - (void)rank{
@@ -183,8 +182,17 @@
 }
 
 - (IBAction)takeNewBuzz:(id)sender {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Maybe Next Time" destructiveButtonTitle:nil otherButtonTitles:@"Snap A Photo", @"Choose From Library",nil];
-    [actionSheet showInView:self.view];
+    if (![PFUser currentUser]) {
+        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@""
+                                                     message:@"You Need to Login/Sign Up in order to post a new buzz, tab Profile for more information"
+                                                    delegate:self
+                                           cancelButtonTitle:nil
+                                           otherButtonTitles:@"OK", nil];
+        [av show];
+    } else {
+        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Maybe Next Time" destructiveButtonTitle:nil otherButtonTitles:@"Snap A Photo", @"Choose From Library",nil];
+        [actionSheet showInView:self.view];
+    }
 }
 
 //action sheet delegate

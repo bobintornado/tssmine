@@ -10,6 +10,9 @@
 #import <Parse/Parse.h>
 #import "TssLoginViewController.h"
 #import "PayPalMobile.h"
+#import "TssLoginViewController.h"
+#import "MySMUViewController.h"
+#import "RootTabBarViewController.h"
 
 @implementation AppDelegate
 
@@ -91,11 +94,10 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo {
     [PFPush handlePush:userInfo];
 }
 
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
-    if ([viewController isKindOfClass:[UINavigationController class]]) {
-        [(UINavigationController*)viewController popToRootViewControllerAnimated:YES];
-        NSLog(@"happ");
-    }
+
+-(BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
+     [tabBarController.moreNavigationController popToRootViewControllerAnimated:NO];
+    return YES;
 }
 
 @end

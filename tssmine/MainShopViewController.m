@@ -43,7 +43,7 @@
     [super viewDidLoad];
     self.categories = [[NSMutableArray alloc] init];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(shoppingCart)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"cart.png"] style:UIBarButtonItemStylePlain target:self action:@selector(shoppingCart)];
     
     self.sliderViewControllers = [[NSMutableArray alloc] init];
     self.sliderPageVC = [self.storyboard instantiateViewControllerWithIdentifier:@"pageVC"];

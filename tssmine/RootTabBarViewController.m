@@ -9,6 +9,7 @@
 #import "RootTabBarViewController.h"
 #import "TssLoginViewController.h"
 #import "MySMUViewController.h"
+#import "AppDelegate.h"
 
 @interface RootTabBarViewController ()
 
@@ -29,7 +30,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.delegate = (id<UITabBarControllerDelegate>)[[UIApplication sharedApplication] delegate];
+    self.delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,26 +41,26 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    //log out user object id for debugging purpose
-    if (![PFUser currentUser]) { // No user logged in
-        // Create the log in view controller
-        
-        TssLoginViewController *logInViewController = [[TssLoginViewController alloc] init];
-        [logInViewController setDelegate:self]; // Set ourselves as the delegate
-        
-        //[logInViewController setFields: PFLogInFieldsUsernameAndPassword | PFLogInFieldsLogInButton | PFLogInFieldsSignUpButton| PFLogInFieldsPasswordForgotten];
-        
-        // Create the sign up view controller
-        MySMUViewController *signUpViewController = [[MySMUViewController alloc] init];
-        [signUpViewController setFields:PFSignUpFieldsDefault | PFSignUpFieldsAdditional];
-        [signUpViewController setDelegate:self]; // Set ourselves as the delegate
-        
-        // Assign our sign up controller to be displayed from the login controller
-        [logInViewController setSignUpController:signUpViewController];
-        
-        // Present the log in view controller
-        [self presentViewController:logInViewController animated:YES completion:NULL];
-    }
+    
+//    if (![PFUser currentUser]) {
+//        // Create the log in view controller
+//        
+//        TssLoginViewController *logInViewController = [[TssLoginViewController alloc] init];
+//        [logInViewController setDelegate:self]; // Set ourselves as the delegate
+//        
+//        //[logInViewController setFields: PFLogInFieldsUsernameAndPassword | PFLogInFieldsLogInButton | PFLogInFieldsSignUpButton| PFLogInFieldsPasswordForgotten];
+//        
+//        // Create the sign up view controller
+//        MySMUViewController *signUpViewController = [[MySMUViewController alloc] init];
+//        [signUpViewController setFields:PFSignUpFieldsDefault | PFSignUpFieldsAdditional];
+//        [signUpViewController setDelegate:self]; // Set ourselves as the delegate
+//        
+//        // Assign our sign up controller to be displayed from the login controller
+//        [logInViewController setSignUpController:signUpViewController];
+//        
+//        // Present the log in view controller
+//        [self presentViewController:logInViewController animated:YES completion:NULL];
+//    }
 }
 // Sent to the delegate when a PFUser is logged in.
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
@@ -80,6 +81,7 @@
                       otherButtonTitles:nil] show];
     return NO; // Interrupt login process
 }
+
 // Sent to the delegate to determine whether the sign up request should be submitted to the server.
 - (BOOL)signUpViewController:(PFSignUpViewController *)signUpController shouldBeginSignUp:(NSDictionary *)info {
     BOOL informationComplete = YES;
@@ -101,7 +103,6 @@
                           cancelButtonTitle:@"ok"
                           otherButtonTitles:nil] show];
     }
-    
     return informationComplete;
 }
 

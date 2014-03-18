@@ -75,7 +75,7 @@
     [self.ATCButton setBackgroundImage:bG forState:UIControlStateHighlighted];
     
     //navigation
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(shoppingCart)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"cart.png"] style:UIBarButtonItemStylePlain target:self action:@selector(shoppingCart)];
 }
 
 - (UIImage *)imageWithColor:(UIColor *)color andSize:(CGSize)size

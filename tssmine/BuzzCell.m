@@ -37,10 +37,18 @@
 }
 
 - (IBAction)didTapLikeButton:(id)sender {
-    NSLog(@"touch Detect");
-    if (_delegate && [_delegate respondsToSelector:@selector(buzzViewCell:didTapLikeButton:Buzz:)]){
-        [_delegate buzzViewCell:self didTapLikeButton:sender Buzz:self.buzzObject];
-        NSLog(@"likeTapExecute");
+    
+    if (![PFUser currentUser]) {
+        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@""
+                                                     message:@"You Need to Login/Sign Up in order to thump up a buzz, tab Profile for more information"
+                                                    delegate:self
+                                           cancelButtonTitle:nil
+                                           otherButtonTitles:@"OK", nil];
+        [av show];
+    } else {
+        if (_delegate && [_delegate respondsToSelector:@selector(buzzViewCell:didTapLikeButton:Buzz:)]){
+            [_delegate buzzViewCell:self didTapLikeButton:sender Buzz:self.buzzObject];
+        }
     }
 }
 

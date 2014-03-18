@@ -7,7 +7,7 @@
         <!--Root Tab Bar View Controller-->
         <scene sceneID="Vex-rW-GRa">
             <objects>
-                <tabBarController id="8YX-ce-x5E" customClass="RootTabBarViewController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="rootTabBar" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8YX-ce-x5E" customClass="RootTabBarViewController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="lvS-yd-VFZ"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="JQR-rB-NYL">
@@ -1419,7 +1419,7 @@
         <!--Navigation Controller - Profile-->
         <scene sceneID="Ile-K5-04N">
             <objects>
-                <navigationController definesPresentationContext="YES" id="CeH-zL-Kwb" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="profileNav" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CeH-zL-Kwb" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="Profile" id="tbh-kH-nc5"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MwD-XG-y0c">
                         <autoresizingMask key="autoresizingMask"/>
@@ -1519,7 +1519,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="390" y="2374"/>
+            <point key="canvasLocation" x="345" y="2385"/>
         </scene>
         <!--Profile Edit View Controller - Title-->
         <scene sceneID="Tt6-Qv-ncK">
@@ -1559,7 +1559,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kiY-fm-ixV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="903" y="2374"/>
+            <point key="canvasLocation" x="853" y="2385"/>
         </scene>
         <!--Navigation Controller - Bazaar-->
         <scene sceneID="1rs-Er-oWj">
