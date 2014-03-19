@@ -80,17 +80,11 @@
                     pr.name = [ob valueForKey:@"name"];
                     
                     NSString *urlText = [[ob valueForKey:@"thumb"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-
                     pr.thumbURL = [NSURL URLWithString:urlText];
-
-                    NSLog(@"the thumb url is %@",[ob valueForKey:@"thumb"]);
-                    
-                    NSLog(@"the thumb url is %@",[pr.thumbURL absoluteString]);
-                    
-                    
-                    
-                    pr.image = [NSURL URLWithString: [ob valueForKey:@"image"]];
+                    urlText = [[ob valueForKey:@"image"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                    pr.image = [NSURL URLWithString: urlText];
                     pr.pDescription = [ob valueForKey:@"description"];
+                    pr.price = [NSString stringWithFormat:@"%@",[ob valueForKey:@"pirce"]];
 
                     TSSOption *pop = [[TSSOption alloc] init];
                     
@@ -158,9 +152,6 @@
     
     cell.pTitle.text =pr.name;
     cell.pPrice.text = [NSString stringWithFormat:@"SGD %@", pr.price];
-    
-    NSLog(@"and the name is %@",pr.name);
-    NSLog(@"and the name is %@",pr.price);
     
     return cell;
 }
