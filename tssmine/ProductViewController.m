@@ -44,13 +44,20 @@
 {
     [super viewDidLoad];
     
+    NSLog(@"the link is %@",[self.product.image absoluteString]);
+    
     self.title = self.product.name;
     
     [self.productImageView setImageWithURL:self.product.image];
     self.pTitleLabel.text = self.product.name;
     self.pPriceLabel.text = self.product.price;
-    NSString *t = [NSString stringWithFormat:@"Select %@ >",self.product.option.name];
-    [self.optionButton setTitle:t forState:UIControlStateNormal];
+    if (self.product.option.name != NULL) {
+        NSString *t = [NSString stringWithFormat:@"Select %@ >",self.product.option.name];
+        [self.optionButton setTitle:t forState:UIControlStateNormal];
+    } else {
+        self.optionButton.hidden = YES;
+    }
+    
     self.productScrollView.delaysContentTouches = NO;
     
     UIFont *font = [UIFont fontWithName:@"Helvetica" size:14];

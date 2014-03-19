@@ -78,12 +78,22 @@
                     
                     pr.productID = [ob valueForKey:@"id"];
                     pr.name = [ob valueForKey:@"name"];
-                    pr.thumbURL = [NSURL URLWithString:[ob valueForKey:@"thumb"]];
-                    pr.price = [ob valueForKey:@"pirce"];
+                    
+                    NSString *urlText = [[ob valueForKey:@"thumb"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+
+                    pr.thumbURL = [NSURL URLWithString:urlText];
+
+                    NSLog(@"the thumb url is %@",[ob valueForKey:@"thumb"]);
+                    
+                    NSLog(@"the thumb url is %@",[pr.thumbURL absoluteString]);
+                    
+                    
+                    
                     pr.image = [NSURL URLWithString: [ob valueForKey:@"image"]];
                     pr.pDescription = [ob valueForKey:@"description"];
 
                     TSSOption *pop = [[TSSOption alloc] init];
+                    
                     for (NSObject *op in [ob valueForKey:@"options"]) {
                         NSLog(@"runing1");
                         pop.product_option_id = [op valueForKey:@"product_option_id"];
@@ -144,6 +154,8 @@
     TSSProduct *pr = self.products[indexPath.row];
     
     [cell.pThumb setImageWithURL:pr.thumbURL];
+
+    
     cell.pTitle.text =pr.name;
     cell.pPrice.text = [NSString stringWithFormat:@"SGD %@", pr.price];
     
