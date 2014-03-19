@@ -88,7 +88,9 @@
                         TSSSlider *slider = [[TSSSlider alloc] init];
                         slider.title = [banner valueForKey:@"title"];
                         slider.link = [NSURL URLWithString:[banner valueForKey:@"link"]];
-                        slider.image = [NSURL URLWithString:[banner valueForKey:@"image"]];
+                        
+                        NSString *urlText = [[banner valueForKey:@"image"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                        slider.image = [NSURL URLWithString:urlText];
                         
                         ShopSliderViewController *sliderContentVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SliderContentViewController"];
                         sliderContentVC.slider = slider;
