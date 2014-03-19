@@ -17,6 +17,7 @@
 #import "ProductListViewController.h"
 #import "CartViewController.h"
 #import "TSSSlider.h"
+#import "NSString+HTML.h"
 
 @interface MainShopViewController ()
 
@@ -144,7 +145,10 @@
                 
                 for (NSObject *ob in [results valueForKey:@"categories"]){
                     TSSCategories *category = [[TSSCategories alloc] init];
-                    [category setCategoryName:[ob valueForKey:@"name"] CategoryID:[ob valueForKey:@"category_id"] parentID:[ob valueForKey:@"parent_id"] andImageURLString:[ob valueForKey:@"image"]];
+                    
+                    NSString *p = [[ob valueForKey:@"name"] stringByConvertingHTMLToPlainText];
+                    
+                    [category setCategoryName:p CategoryID:[ob valueForKey:@"category_id"] parentID:[ob valueForKey:@"parent_id"] andImageURLString:[ob valueForKey:@"image"]];
                     //NSLog(@"%@",[ob valueForKey:@"image"]);
                     
                     [self.categories addObject:category];
@@ -246,7 +250,10 @@
                     //code for constructing new categories objects
                     for (NSObject *ob in [results valueForKey:@"categories"]){
                         TSSCategories *category = [[TSSCategories alloc] init];
-                        [category setCategoryName:[ob valueForKey:@"name"] CategoryID:[ob valueForKey:@"category_id"] parentID:[ob valueForKey:@"parent_id"] andImageURLString:[ob valueForKey:@"image"]];
+                        
+                        NSString *p = [[ob valueForKey:@"name"] stringByConvertingHTMLToPlainText];
+                        
+                        [category setCategoryName:p CategoryID:[ob valueForKey:@"category_id"] parentID:[ob valueForKey:@"parent_id"] andImageURLString:[ob valueForKey:@"image"]];
                         [subCategories addObject:category];
                     }
                     [self performSelectorOnMainThread:@selector(pushSubCategoryVC:) withObject:subCategories waitUntilDone:NO];

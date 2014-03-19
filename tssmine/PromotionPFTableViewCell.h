@@ -11,9 +11,7 @@
 @interface PromotionPFTableViewCell : PFTableViewCell
 
 @property (strong, nonatomic) IBOutlet PFImageView *promotionImage;
-@property (strong, nonatomic) IBOutlet UILabel *promotionTitle;
-@property (strong, nonatomic) IBOutlet UILabel *promotionSubtitle;
 @property (strong, nonatomic) IBOutlet UILabel *expiryDate;
-@property (strong, nonatomic) IBOutlet UILabel *discount_slogan;
+@property (strong, nonatomic) IBOutlet UIView *containerView;
 
 @end

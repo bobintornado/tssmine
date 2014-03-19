@@ -68,7 +68,10 @@
                     //configure paramaters
                     pic.key = [ob valueForKey:@"key"];
                     pic.name = [ob valueForKey:@"name"];
-                    pic.thumb = [NSURL URLWithString:[ob valueForKey:@"thumb"]];
+                    
+                    NSString *urlText = [[ob valueForKey:@"thumb"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                    
+                    pic.thumb = [NSURL URLWithString:urlText];
                     for (NSObject *obo in [ob valueForKey:@"option"]) {
                         pic.option_name = [obo valueForKey:@"name"];
                         pic.option_value = [obo valueForKey:@"value"];

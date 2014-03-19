@@ -8,6 +8,7 @@
 
 #import "PromotionViewController.h"
 #import "PromotionPFTableViewCell.h"
+#import "WebViewController.h"
 
 @interface PromotionViewController ()
 
@@ -57,7 +58,14 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+    PFObject *promo = [self.objects objectAtIndex:indexPath.row];
+    NSString *link = [promo objectForKey:@"link"];
+    NSString *urlText = [link stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    WebViewController *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"webView"];
+    vc.urlText = urlText;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object {
@@ -75,16 +83,18 @@
     }
     
     // Configure the cell
-    [cell.promotionTitle setText:[object objectForKey:@"Title"]];
-    [cell.promotionSubtitle setText:[object objectForKey:@"Subtitle"]];
-    [cell.discount_slogan setText:[object objectForKey:@"discount_slogan"]];
     cell.promotionImage.file = [object objectForKey:@"img"];
     [cell.promotionImage loadInBackground];
     NSDate *expiry = [object objectForKey:@"expiry"];
-    cell.expiryDate.text = [expiry description];
-    NSLog(@"%@", [[object objectForKey:@"expiry"] class]);
     
+    NSString *s = [NSString stringWithFormat:@"Valid Until: %@",[[expiry description] substringToIndex:10]];
+    
+    cell.expiryDate.text = s;
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 230;
 }
 
 @end

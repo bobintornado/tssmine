@@ -67,7 +67,7 @@
 
     CGRect rect = [self.product.pDescription boundingRectWithSize:constraint options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading) attributes:attributes context:nil];
     
-    self.desContent.frame = CGRectMake(20, 450, rect.size.width, rect.size.height);
+    self.desContent.frame = CGRectMake(20, 525, rect.size.width, rect.size.height);
     [self.desContent setText:self.product.pDescription];
     [self.desContent setTextAlignment:NSTextAlignmentLeft];
     self.desContent.lineBreakMode = NSLineBreakByWordWrapping;
@@ -75,7 +75,7 @@
     [self.desContent setFont:font];
     
     //reconfig this part later
-    self.productScrollView.contentSize =CGSizeMake(320, rect.size.height + 550);
+    self.productScrollView.contentSize =CGSizeMake(320, rect.size.height + 540);
     
     //button
     UIImage *bG = [self imageWithColor:[UIColor colorWithRed:14.0/255.0 green:114.0/255.0 blue:199.0/255.0 alpha:1] andSize:CGSizeMake(199,32)];
@@ -143,7 +143,9 @@
                         NSLog(@"successfully add in new products. indicator undone");
                     }
                 }
+                [self performSelectorOnMainThread:@selector(shoppingCart) withObject:self waitUntilDone:NO];
             }];
+           
         }
     } else {
         NSString * str = [NSString stringWithFormat:@"%@index.php?route=feed/web_api/addToCart",ShopDomain];
@@ -156,6 +158,7 @@
             if (error) {
                 NSLog(@"adding product into cart failed");
             }
+            [self performSelectorOnMainThread:@selector(shoppingCart) withObject:self waitUntilDone:NO];
         }];
     }
 }

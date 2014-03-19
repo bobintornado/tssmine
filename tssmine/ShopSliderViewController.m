@@ -8,6 +8,7 @@
 
 #import "ShopSliderViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "UIImageView+UIActivityIndicatorForSDWebImage.h"
 
 @interface ShopSliderViewController ()
 
@@ -27,24 +28,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    //[self.sliderImageView setImageWithURL:self.slider.image];
+    [self.sliderImageView setImageWithURL:self.slider.image usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     
-    [SDWebImageDownloader.sharedDownloader downloadImageWithURL:self.slider.image options:0 progress:^(NSUInteger receivedSize, long long expectedSize)
-     {
-         // progression tracking code
-     } completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished)
-     {
-         if (image && finished)
-         {
-             self.image = image;
-             [self.sliderImageView setImage:self.image];
-         }
-     }];
+//    [SDWebImageDownloader.sharedDownloader downloadImageWithURL:self.slider.image options:0 progress:^(NSUInteger receivedSize, long long expectedSize)
+//     {
+//         // progression tracking code
+//     } completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished)
+//     {
+//         if (image && finished)
+//         {
+//             self.image = image;
+//             [self.sliderImageView setImage:self.image];
+//         }
+//     }];
 }
 
 - (void)didReceiveMemoryWarning

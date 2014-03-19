@@ -11,6 +11,7 @@
 #import "MYSMUConstants.h"
 #import "ProductListViewController.h"
 #import "CartViewController.h"
+#import "NSString+HTML.h"
 
 @interface SubCategoryViewController ()
 
@@ -104,7 +105,10 @@
                     //code for constructing new categories objects
                     for (NSObject *ob in [results valueForKey:@"categories"]){
                         TSSCategories *category = [[TSSCategories alloc] init];
-                        [category setCategoryName:[ob valueForKey:@"name"] CategoryID:[ob valueForKey:@"category_id"] parentID:[ob valueForKey:@"parent_id"] andImageURLString:[ob valueForKey:@"image"]];
+                        
+                        NSString *p = [[ob valueForKey:@"name"] stringByEncodingHTMLEntities];
+                        
+                        [category setCategoryName:p CategoryID:[ob valueForKey:@"category_id"] parentID:[ob valueForKey:@"parent_id"] andImageURLString:[ob valueForKey:@"image"]];
                         [subCategories addObject:category];
                     }
                     [self performSelectorOnMainThread:@selector(pushSubCategoryVC:) withObject:subCategories waitUntilDone:NO];

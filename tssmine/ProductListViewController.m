@@ -15,6 +15,7 @@
 #import "CartViewController.h"
 #import "TSSOption.h"
 #import "TSSOptionValue.h"
+#import "NSString+HTML.h"
 
 @interface ProductListViewController ()
 
@@ -77,13 +78,13 @@
                     TSSProduct *pr = [[TSSProduct alloc] init];
                     
                     pr.productID = [ob valueForKey:@"id"];
-                    pr.name = [ob valueForKey:@"name"];
+                    pr.name =  [[ob valueForKey:@"name"] stringByConvertingHTMLToPlainText];
                     
                     NSString *urlText = [[ob valueForKey:@"thumb"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
                     pr.thumbURL = [NSURL URLWithString:urlText];
                     urlText = [[ob valueForKey:@"image"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
                     pr.image = [NSURL URLWithString: urlText];
-                    pr.pDescription = [ob valueForKey:@"description"];
+                    pr.pDescription = [[ob valueForKey:@"description"] stringByConvertingHTMLToPlainText];
                     pr.price = [NSString stringWithFormat:@"%@",[ob valueForKey:@"pirce"]];
 
                     TSSOption *pop = [[TSSOption alloc] init];

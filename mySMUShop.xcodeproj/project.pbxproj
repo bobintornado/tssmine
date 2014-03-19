@@ -59,6 +59,10 @@
 		D98BF17D182550EC00DEE19B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98BF15C182550EC00DEE19B /* UIKit.framework */; };
 		D98BF185182550EC00DEE19B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D98BF183182550EC00DEE19B /* InfoPlist.strings */; };
 		D98BF187182550EC00DEE19B /* tssmineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF186182550EC00DEE19B /* tssmineTests.m */; };
+		D9989AAB18DA1A4900FEDF2A /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9989AAA18DA1A4900FEDF2A /* WebViewController.m */; };
+		D9989AAE18DA1EE100FEDF2A /* UIImageView+UIActivityIndicatorForSDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D9989AAD18DA1EE100FEDF2A /* UIImageView+UIActivityIndicatorForSDWebImage.m */; };
+		D9989AB118DA221400FEDF2A /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = D9989AB018DA221400FEDF2A /* NSString+HTML.m */; };
+		D9989AB418DA230B00FEDF2A /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = D9989AB318DA230B00FEDF2A /* GTMNSString+HTML.m */; };
 		D99D5FB918D1F70900BD0751 /* TSSOptionValue.m in Sources */ = {isa = PBXBuildFile; fileRef = D99D5FB818D1F70900BD0751 /* TSSOptionValue.m */; };
 		D9A08574189714B600B000B9 /* ChoseUpperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A08573189714B600B000B9 /* ChoseUpperViewController.m */; };
 		D9A085771897187100B000B9 /* CustomizeUICollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A085761897187100B000B9 /* CustomizeUICollectionViewCell.m */; };
@@ -204,6 +208,14 @@
 		D98BF182182550EC00DEE19B /* mySMUShopTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mySMUShopTests-Info.plist"; sourceTree = "<group>"; };
 		D98BF184182550EC00DEE19B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D98BF186182550EC00DEE19B /* tssmineTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tssmineTests.m; sourceTree = "<group>"; };
+		D9989AA918DA1A4900FEDF2A /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		D9989AAA18DA1A4900FEDF2A /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		D9989AAC18DA1EE100FEDF2A /* UIImageView+UIActivityIndicatorForSDWebImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+UIActivityIndicatorForSDWebImage.h"; sourceTree = "<group>"; };
+		D9989AAD18DA1EE100FEDF2A /* UIImageView+UIActivityIndicatorForSDWebImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+UIActivityIndicatorForSDWebImage.m"; sourceTree = "<group>"; };
+		D9989AAF18DA221400FEDF2A /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTML.h"; sourceTree = "<group>"; };
+		D9989AB018DA221400FEDF2A /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
+		D9989AB218DA230B00FEDF2A /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
+		D9989AB318DA230B00FEDF2A /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
 		D99D5FB718D1F70900BD0751 /* TSSOptionValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSSOptionValue.h; sourceTree = "<group>"; };
 		D99D5FB818D1F70900BD0751 /* TSSOptionValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSSOptionValue.m; sourceTree = "<group>"; };
 		D9A08572189714B600B000B9 /* ChoseUpperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChoseUpperViewController.h; sourceTree = "<group>"; };
@@ -534,10 +546,9 @@
 		D98BF15E182550EC00DEE19B /* tssmine */ = {
 			isa = PBXGroup;
 			children = (
+				D9989AB518DA231200FEDF2A /* Helper */,
 				D952607F18D68E0300C24EE0 /* Singleton */,
 				D920B27218D60D25001A4F7E /* PayPalMobile */,
-				D905DA3618D213220092AD3A /* FXBlurView.h */,
-				D905DA3718D213220092AD3A /* FXBlurView.m */,
 				D93FB67F18C436450080E3E6 /* MYSMUConstants.h */,
 				D93FB68018C436A70080E3E6 /* MYSMUConstants.m */,
 				D901607A187AB8190003985D /* Main.storyboard */,
@@ -583,6 +594,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D9989AB518DA231200FEDF2A /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				D9989AB218DA230B00FEDF2A /* GTMNSString+HTML.h */,
+				D9989AB318DA230B00FEDF2A /* GTMNSString+HTML.m */,
+				D9989AAF18DA221400FEDF2A /* NSString+HTML.h */,
+				D905DA3618D213220092AD3A /* FXBlurView.h */,
+				D905DA3718D213220092AD3A /* FXBlurView.m */,
+				D9989AB018DA221400FEDF2A /* NSString+HTML.m */,
+				D9989AAC18DA1EE100FEDF2A /* UIImageView+UIActivityIndicatorForSDWebImage.h */,
+				D9989AAD18DA1EE100FEDF2A /* UIImageView+UIActivityIndicatorForSDWebImage.m */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
 		D99E50021826AB74005F4D32 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -603,6 +629,8 @@
 				D9647D4F187A816300B26CE8 /* Buzz */,
 				D9CF91931887A0B70070B10B /* RootTabBarViewController.h */,
 				D9CF91941887A0B70070B10B /* RootTabBarViewController.m */,
+				D9989AA918DA1A4900FEDF2A /* WebViewController.h */,
+				D9989AAA18DA1A4900FEDF2A /* WebViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -839,6 +867,8 @@
 				D98BF169182550EC00DEE19B /* AppDelegate.m in Sources */,
 				D93FB68118C436A70080E3E6 /* MYSMUConstants.m in Sources */,
 				D9A0857A18971AB000B000B9 /* ChoseUnderViewController.m in Sources */,
+				D9989AAB18DA1A4900FEDF2A /* WebViewController.m in Sources */,
+				D9989AAE18DA1EE100FEDF2A /* UIImageView+UIActivityIndicatorForSDWebImage.m in Sources */,
 				D9A08574189714B600B000B9 /* ChoseUpperViewController.m in Sources */,
 				D99D5FB918D1F70900BD0751 /* TSSOptionValue.m in Sources */,
 				D9E002721896324D0053FB0C /* GirlColorViewController.m in Sources */,
@@ -854,6 +884,7 @@
 				D9A2DCD7189728B10069B5E0 /* StyleCenter.m in Sources */,
 				D920B26118D5FB9E001A4F7E /* ChoseTableViewCell.m in Sources */,
 				D9E8CF5018CE9AAE002EA436 /* ProductViewController.m in Sources */,
+				D9989AB418DA230B00FEDF2A /* GTMNSString+HTML.m in Sources */,
 				D91C890718B935CE008E7536 /* Filter.m in Sources */,
 				D9B6F02D187C32990069E088 /* snapFeedTableViewCell.m in Sources */,
 				D9A4948E18CEEFA700975005 /* TSSOption.m in Sources */,
@@ -884,6 +915,7 @@
 				D9E0027E1896428A0053FB0C /* QuizCenter.m in Sources */,
 				D9A2DCDA18972A930069B5E0 /* CustomizeResultViewController.m in Sources */,
 				D9E0026C189618CB0053FB0C /* BoyColorViewController.m in Sources */,
+				D9989AB118DA221400FEDF2A /* NSString+HTML.m in Sources */,
 				D98989AB18C2080F000092F0 /* MainShopViewController.m in Sources */,
 				D9ACAF3218BBCD0900AD7A57 /* MySMUViewController.m in Sources */,
 				D9A71FF418B68C8300B15375 /* AddNewSHItemViewController.m in Sources */,
@@ -1020,7 +1052,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "tssmine/mySMUShop-Prefix.pch";
 				INFOPLIST_FILE = "tssmine/mySMUShop-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/tssmine/PayPalMobile",
@@ -1053,7 +1085,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "tssmine/mySMUShop-Prefix.pch";
 				INFOPLIST_FILE = "tssmine/mySMUShop-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/tssmine/PayPalMobile",
