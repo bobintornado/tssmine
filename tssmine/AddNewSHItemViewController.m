@@ -13,9 +13,9 @@
 @interface AddNewSHItemViewController ()
 
 @property (strong, nonatomic) IBOutlet UITextView *itemDes;
-@property (strong, nonatomic) IBOutlet UIImageView *itemPhotoView;
 @property (strong, nonatomic) IBOutlet UINavigationBar *nav;
 @property PFFile *photoFile;
+@property (strong, nonatomic) IBOutlet UITableView *inforTable;
 
 @property (nonatomic, assign) UIBackgroundTaskIdentifier fileUploadBackgroundTaskId;
 @property (nonatomic, assign) UIBackgroundTaskIdentifier photoPostBackgroundTaskId;
@@ -38,10 +38,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.itemDes.delegate = self;
-    self.itemDes.text = @"placeholder text here...";
+    self.itemDes.text = @"More details goes here...";
     self.itemDes.textColor = [UIColor lightGrayColor];
     
-    [self.itemPhotoView setImage:self.itemPhoto];
     
     UINavigationItem *navItem = [[UINavigationItem alloc] init];
     navItem.title = @"New Item";
@@ -61,6 +60,7 @@
     [self.view addGestureRecognizer:tap];
     
     [self shouldUploadItem:self.itemPhoto];
+    self.inforTable.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 - (BOOL)shouldUploadItem:(UIImage *)anImage{
@@ -154,6 +154,23 @@
     //create a photo object
     PFObject *item = [PFObject objectWithClassName:@"SHItem"];
     [item setObject:self.photoFile forKey:@"img"];
+    
+    for(int i=0;i<5;i++) {
+        UITableViewCell *cell = [[self inforTable] cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+        
+        if (i==0) {
+            InputTableViewCell *s = (InputTableViewCell *)cell;
+            [item setObject:[[s inputField] text] forKey:@"title"];
+        } else if (i==2){
+            InputTableViewCell *s = (InputTableViewCell *)cell;
+            NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+            [f setNumberStyle:NSNumberFormatterDecimalStyle];
+            NSNumber * myNumber = [f numberFromString:[[s inputField] text]];
+            [item setObject:myNumber forKey:@"price"];
+        }
+    }
+    
+
     
     [item setObject:[PFUser currentUser] forKey:@"seller"];
     [item setObject:self.itemDes.text forKey:@"description"];

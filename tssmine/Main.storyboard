@@ -1685,18 +1685,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Alerts" id="CfN-Hb-ZDQ">
-                                <rect key="frame" x="104" y="362" width="120" height="160"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vHM-42-QR0">
-                                <rect key="frame" x="20" y="292" width="88" height="21"/>
+                                <rect key="frame" x="20" y="213" width="88" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Tell us more about your item" id="gdu-Ug-QWf">
-                                <rect key="frame" x="11" y="321" width="299" height="101"/>
+                                <rect key="frame" x="20" y="233" width="279" height="101"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
@@ -1710,7 +1706,7 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9YR-Aq-Yhp">
-                                <rect key="frame" x="0.0" y="65" width="320" height="219"/>
+                                <rect key="frame" x="0.0" y="65" width="320" height="147"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -1728,7 +1724,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" id="fSV-Yx-7fK">
-                                                    <rect key="frame" x="112" y="7" width="203" height="30"/>
+                                                    <rect key="frame" x="143" y="7" width="157" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -1766,6 +1762,14 @@
                                             <outlet property="chosenValue" destination="y4L-QF-pin" id="mhj-vD-u78"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="in" id="Zs6-LT-wmy" customClass="ChoseTableViewCell">
+                                        <rect key="frame" x="0.0" y="110" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zs6-LT-wmy" id="Z6V-dY-gzJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="yMv-NQ-JDY" id="cj8-vS-FQN"/>
@@ -1776,8 +1780,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="inforTable" destination="9YR-Aq-Yhp" id="chK-qC-IyA"/>
                         <outlet property="itemDes" destination="gdu-Ug-QWf" id="m6i-xN-8ov"/>
-                        <outlet property="itemPhotoView" destination="CfN-Hb-ZDQ" id="K8z-0d-g39"/>
                         <outlet property="nav" destination="oMo-Us-lMA" id="QE0-ru-fV2"/>
                     </connections>
                 </viewController>
@@ -1889,7 +1893,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Alerts" width="22" height="28"/>
         <image name="Favorites" width="23" height="24"/>
         <image name="Picasa" width="24" height="18"/>
         <image name="Profile" width="24" height="21"/>

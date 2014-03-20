@@ -24,12 +24,12 @@
     self.containerView.layer.cornerRadius = 5.0f;
     self.containerView.clipsToBounds = YES;
     
-    UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:self.containerView.bounds];
-    self.containerView.layer.masksToBounds = NO;
-    self.containerView.layer.shadowColor = [UIColor blackColor].CGColor;
-    self.containerView.layer.shadowOffset = CGSizeMake(0.0f, 2.0f);
-    self.containerView.layer.shadowOpacity = 0.5f;
-    self.containerView.layer.shadowPath = shadowPath.CGPath;
+//    UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:self.containerView.bounds];
+//    self.containerView.layer.masksToBounds = NO;
+//    self.containerView.layer.shadowColor = [UIColor blackColor].CGColor;
+//    self.containerView.layer.shadowOffset = CGSizeMake(0.0f, -2.0f);
+//    self.containerView.layer.shadowOpacity = 0.5f;
+//    self.containerView.layer.shadowPath = shadowPath.CGPath;
 }
 
 /*
