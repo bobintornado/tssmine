@@ -7,6 +7,7 @@
 //
 
 #import "PromotionPFTableViewCell.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation PromotionPFTableViewCell
 
@@ -21,15 +22,22 @@
 }
 
 - (void)awakeFromNib{
-    self.containerView.layer.cornerRadius = 5.0f;
+//    self.containerView.layer.cornerRadius = 5.0f;
     self.containerView.clipsToBounds = YES;
     
-//    UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:self.containerView.bounds];
-//    self.containerView.layer.masksToBounds = NO;
-//    self.containerView.layer.shadowColor = [UIColor blackColor].CGColor;
-//    self.containerView.layer.shadowOffset = CGSizeMake(0.0f, -2.0f);
-//    self.containerView.layer.shadowOpacity = 0.5f;
-//    self.containerView.layer.shadowPath = shadowPath.CGPath;
+    UIView *v = self.containerView;
+    // border radius
+    [v.layer setCornerRadius:5.0f];
+    
+    // border
+    [v.layer setBorderColor:[UIColor lightGrayColor].CGColor];
+    [v.layer setBorderWidth:1.5f];
+    
+    // drop shadow
+    [v.layer setShadowColor:[UIColor blackColor].CGColor];
+    [v.layer setShadowOpacity:0.8];
+    [v.layer setShadowRadius:3.0];
+    [v.layer setShadowOffset:CGSizeMake(2.0, 2.0)];
 }
 
 /*

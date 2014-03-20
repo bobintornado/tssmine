@@ -49,7 +49,7 @@
             <objects>
                 <tableViewController id="836-06-2mJ" customClass="BuzzViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="330" sectionHeaderHeight="22" sectionFooterHeight="22" id="T7P-UE-HgA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -149,11 +149,11 @@
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="PU8-kU-aPe" customClass="MainShopViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4hb-Na-sfc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" id="g5I-ck-4rJ">
-                                <rect key="frame" x="0.0" y="224" width="320" height="295"/>
+                                <rect key="frame" x="0.0" y="224" width="320" height="207"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -190,7 +190,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="subCategories" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Xdf-US-cSM" customClass="SubCategoryViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Gmr-Cc-nY6">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -219,7 +219,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="pLVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PXa-ce-gL5" customClass="ProductListViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="0Nm-u5-gbR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -277,7 +277,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="optionTVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Aid-P1-S76" customClass="OptionTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8BZ-0k-R7u">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -305,7 +305,7 @@
             <objects>
                 <viewController storyboardIdentifier="productDetailView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Mik-Fl-v0E" customClass="ProductViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bal-dE-PW4">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Ggx-BH-uSe">
@@ -394,7 +394,7 @@
             <objects>
                 <viewController storyboardIdentifier="SliderContentViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="c5N-Hj-Dag" customClass="ShopSliderViewController" sceneMemberID="viewController">
                     <view key="view" userInteractionEnabled="NO" contentMode="scaleToFill" id="4Bt-9w-oYd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="P3i-kN-R6m">
@@ -425,7 +425,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="SalutationVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lrl-XW-pKP" customClass="SalutationTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="SZh-yp-evE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -453,7 +453,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="payment" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KYr-DO-pYP" customClass="PaymentTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Cjo-KZ-fvn">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -481,7 +481,7 @@
             <objects>
                 <viewController storyboardIdentifier="phototaking" useStoryboardIdentifierAsRestorationIdentifier="YES" id="d4z-FM-uOB" customClass="SnapTakePhotoViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nRN-zv-YLt">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poster" id="E7j-CV-pXb">
@@ -532,7 +532,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="rankTVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IvK-Ug-yqA" customClass="RankTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ew9-kk-Sgp">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -576,19 +576,19 @@
             <objects>
                 <viewController id="VvB-2J-9aT" customClass="StlyingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bab-wl-uyH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cover" id="xuP-nR-DEO">
-                                <rect key="frame" x="0.0" y="62" width="320" height="457"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cover" id="xuP-nR-DEO">
+                                <rect key="frame" x="0.0" y="62" width="320" height="369"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ybx-ht-4Zd">
-                                <rect key="frame" x="0.0" y="427" width="155" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="0.0" y="384" width="155" height="27"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Styling Quiz">
-                                    <color key="titleColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -596,10 +596,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="v4D-VJ-lg4">
-                                <rect key="frame" x="163" y="427" width="157" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="163" y="384" width="157" height="39"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <state key="normal" title="Craft Your Own Style!">
-                                    <color key="titleColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -607,7 +607,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HQC-ll-75v">
-                                <rect key="frame" x="20" y="94" width="275" height="310"/>
+                                <rect key="frame" x="20" y="94" width="275" height="197"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                 <state key="normal" title="Button">
@@ -639,11 +639,11 @@
             <objects>
                 <viewController id="0XE-Mu-pS2" customClass="BorGViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8ek-ss-gcu">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZV4-P2-vYm">
-                                <rect key="frame" x="41" y="130" width="259" height="136"/>
+                                <rect key="frame" x="20" y="208" width="134" height="267"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="90"/>
                                 <state key="normal" title="BOY">
@@ -656,7 +656,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="BVB-mS-dwu">
-                                <rect key="frame" x="41" y="329" width="259" height="126"/>
+                                <rect key="frame" x="168" y="208" width="143" height="266"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="90"/>
                                 <state key="normal" title="GIRL">
@@ -668,12 +668,12 @@
                                     <segue destination="Xvm-Zv-gyo" kind="push" identifier="" id="xTu-fc-gMW"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boyOrGirl" id="HBo-OL-Oqc">
-                                <rect key="frame" x="0.0" y="57" width="328" height="464"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bog" id="HBo-OL-Oqc">
+                                <rect key="frame" x="13" y="58" width="296" height="374"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.88235294117647056" green="0.88235294117647056" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Quiz" id="2d6-5G-43B">
                         <barButtonItem key="backBarButtonItem" title="Back" id="fgL-zu-IjN"/>
@@ -688,7 +688,7 @@
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="Utf-jb-mbF" customClass="ChoseUpperViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="Ysu-8x-3If">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lab-sE-7NI">
@@ -738,7 +738,7 @@
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="yJP-bI-jG7" customClass="ChoseUnderViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="iQj-SR-j4q">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iHW-Oy-kjR">
@@ -788,7 +788,7 @@
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="elF-N4-OnA" customClass="ChoseBottomViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="cl6-KC-cx5">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Y7v-Lg-WDL">
@@ -838,11 +838,11 @@
             <objects>
                 <viewController id="265-K6-qdt" customClass="CustomizeResultViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ium-aj-ps3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="159" sectionHeaderHeight="22" sectionFooterHeight="22" id="wMP-bX-vvZ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="517"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="429"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -893,15 +893,15 @@
             <objects>
                 <viewController id="Xvm-Zv-gyo" customClass="GirlColorViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Znl-x3-eyl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="g2" id="gqu-7Z-zI4" customClass="boy">
-                                <rect key="frame" x="0.0" y="65" width="320" height="453"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="g1" id="gqu-7Z-zI4" customClass="boy">
+                                <rect key="frame" x="7" y="59" width="297" height="372"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fd5-vm-Dam">
-                                <rect key="frame" x="27" y="149" width="259" height="122"/>
+                                <rect key="frame" x="20" y="161" width="129" height="258"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="75"/>
                                 <state key="normal" title="BRIGHT">
@@ -913,7 +913,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="otn-zY-cS2">
-                                <rect key="frame" x="26" y="342" width="260" height="122"/>
+                                <rect key="frame" x="163" y="170" width="122" height="249"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="75"/>
                                 <state key="normal" title="DARK">
@@ -925,7 +925,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.88235294117647056" green="0.88235294117647056" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Quiz" id="K7J-PW-WTu">
                         <barButtonItem key="backBarButtonItem" title="Back" id="rlS-fj-efd"/>
@@ -953,15 +953,15 @@
             <objects>
                 <viewController id="ba9-oa-6N4" customClass="GirlStudyViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cum-ix-2ma">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="g3" id="s5J-tS-ENE">
-                                <rect key="frame" x="0.0" y="63" width="320" height="452"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="g2" id="s5J-tS-ENE">
+                                <rect key="frame" x="15" y="60" width="300" height="370"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LGY-eR-KD1">
-                                <rect key="frame" x="29" y="158" width="258" height="107"/>
+                                <rect key="frame" x="27" y="169" width="136" height="261"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                 <state key="normal" title="Button">
@@ -973,7 +973,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Vcx-ZF-jc1">
-                                <rect key="frame" x="31" y="333" width="258" height="107"/>
+                                <rect key="frame" x="171" y="169" width="121" height="251"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                 <state key="normal" title="Button">
@@ -985,7 +985,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.88235294117647056" green="0.88235294117647056" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Quiz" id="Jfq-G1-wDA">
                         <barButtonItem key="backBarButtonItem" title="Back" id="uHP-U2-6WB"/>
@@ -1003,15 +1003,15 @@
             <objects>
                 <viewController id="epd-8l-Tli" customClass="BoyColorViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2eR-G1-K70">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="question2" id="aKh-dS-eyf">
-                                <rect key="frame" x="0.0" y="65" width="320" height="453"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="b1" id="aKh-dS-eyf">
+                                <rect key="frame" x="15" y="64" width="296" height="366"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wgp-lD-wii">
-                                <rect key="frame" x="10" y="169" width="290" height="124"/>
+                                <rect key="frame" x="15" y="212" width="138" height="259"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="75"/>
                                 <state key="normal" title="BRIGHT">
@@ -1023,7 +1023,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="afd-TL-L0x">
-                                <rect key="frame" x="15" y="360" width="290" height="124"/>
+                                <rect key="frame" x="161" y="212" width="144" height="262"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="75"/>
                                 <state key="normal" title="DARK">
@@ -1035,7 +1035,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.88235294117647056" green="0.88235294117647056" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Quiz" id="U7R-08-cQ8">
                         <barButtonItem key="backBarButtonItem" title="Back" id="Ab6-VQ-K4q"/>
@@ -1063,15 +1063,15 @@
             <objects>
                 <viewController id="8Wm-4K-rhc" customClass="BoyStudyViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a6c-66-rYe">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="question3" id="PJw-TU-Dqb">
-                                <rect key="frame" x="0.0" y="65" width="320" height="452"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="b2" id="PJw-TU-Dqb">
+                                <rect key="frame" x="10" y="60" width="290" height="371"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lvN-hc-FjD">
-                                <rect key="frame" x="25" y="154" width="267" height="118"/>
+                                <rect key="frame" x="14" y="188" width="137" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="100"/>
                                 <state key="normal" title="GYM">
@@ -1083,7 +1083,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="YVM-6i-AIs">
-                                <rect key="frame" x="25" y="325" width="267" height="132"/>
+                                <rect key="frame" x="164" y="187" width="136" height="201"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="100"/>
                                 <state key="normal" title="MUG">
@@ -1095,7 +1095,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.88235294117647056" green="0.88235294117647056" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Quiz" id="3kb-7C-aQx">
                         <barButtonItem key="backBarButtonItem" title="Back" id="Voj-OG-p6W"/>
@@ -1113,7 +1113,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="cart" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7nm-1k-QpB" customClass="CartViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="78" sectionHeaderHeight="22" sectionFooterHeight="22" id="Sfe-Lv-3um">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="5RN-rG-QtV">
@@ -1181,7 +1181,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="Delivery" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ouq-C3-yhO" customClass="DeliveryTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="60I-d1-wiN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -1209,7 +1209,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="Billing" useStoryboardIdentifierAsRestorationIdentifier="YES" id="55n-d9-sKJ" customClass="BillingDetailsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="E5h-MC-aJS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -1281,15 +1281,15 @@
             <objects>
                 <viewController id="OqL-3b-7jv" customClass="BoySMUViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9hF-uA-jGg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="question4" id="MgC-X1-VTo">
-                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="b3" id="MgC-X1-VTo">
+                                <rect key="frame" x="10" y="63" width="290" height="367"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QIq-bj-g0J">
-                                <rect key="frame" x="27" y="146" width="263" height="123"/>
+                                <rect key="frame" x="14" y="189" width="132" height="198"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="90"/>
                                 <state key="normal" title="Logo">
@@ -1301,7 +1301,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VBD-df-dFk">
-                                <rect key="frame" x="27" y="333" width="268" height="128"/>
+                                <rect key="frame" x="166" y="189" width="140" height="206"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="90"/>
                                 <state key="normal" title="No">
@@ -1313,7 +1313,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.88235294117647056" green="0.88235294117647056" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Quiz" id="7XE-1l-Ore">
                         <barButtonItem key="backBarButtonItem" title="Back" id="ieh-gu-c7w"/>
@@ -1328,7 +1328,7 @@
             <objects>
                 <viewController id="1BQ-Ar-NL3" customClass="QuizViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BPr-mU-KgA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" id="Jk5-cW-NVI">
@@ -1336,7 +1336,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="159" sectionHeaderHeight="22" sectionFooterHeight="22" id="nw0-Xp-0Ve">
-                                <rect key="frame" x="0.0" y="66" width="320" height="502"/>
+                                <rect key="frame" x="0.0" y="66" width="320" height="414"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -1379,15 +1379,15 @@
             <objects>
                 <viewController id="99E-gN-PsY" customClass="GirlSMUViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PIJ-iN-chU">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="g4" id="iLj-L5-176">
-                                <rect key="frame" x="0.0" y="65" width="320" height="451"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="g3" id="iLj-L5-176">
+                                <rect key="frame" x="13" y="60" width="292" height="376"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iYJ-zj-LGG">
-                                <rect key="frame" x="31" y="159" width="258" height="107"/>
+                                <rect key="frame" x="13" y="171" width="141" height="253"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                 <state key="normal" title="Button">
@@ -1399,7 +1399,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XyI-n7-Oa7">
-                                <rect key="frame" x="31" y="336" width="258" height="107"/>
+                                <rect key="frame" x="162" y="176" width="132" height="254"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                 <state key="normal" title="Button">
@@ -1411,7 +1411,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.88235294117647056" green="0.88235294117647056" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Quiz" id="ub3-DR-r6y">
                         <barButtonItem key="backBarButtonItem" title="Back" id="bGi-S5-R9z"/>
@@ -1442,7 +1442,7 @@
             <objects>
                 <viewController id="a1m-ZF-pSz" customClass="ProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oW9-Wd-Ejg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xyH-T7-kUb">
@@ -1466,7 +1466,7 @@
                                 </connections>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="36" sectionHeaderHeight="22" sectionFooterHeight="22" id="pBv-Gn-lup">
-                                <rect key="frame" x="0.0" y="327" width="320" height="135"/>
+                                <rect key="frame" x="0.0" y="327" width="320" height="47"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -1531,7 +1531,7 @@
             <objects>
                 <viewController storyboardIdentifier="profileEditing" useStoryboardIdentifierAsRestorationIdentifier="YES" id="djE-pf-CrQ" customClass="ProfileEditViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vGM-qP-Acv">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="BU9-Np-X6S">
@@ -1587,7 +1587,7 @@
             <objects>
                 <tableViewController id="spW-ht-mg9" customClass="BazaarViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="170" sectionHeaderHeight="22" sectionFooterHeight="22" id="JWP-sN-uDz">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -1682,7 +1682,7 @@
             <objects>
                 <viewController storyboardIdentifier="newItem" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yMv-NQ-JDY" customClass="AddNewSHItemViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rCm-UV-MEG">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vHM-42-QR0">
@@ -1706,7 +1706,7 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9YR-Aq-Yhp">
-                                <rect key="frame" x="0.0" y="65" width="320" height="147"/>
+                                <rect key="frame" x="0.0" y="65" width="320" height="59"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -1810,7 +1810,7 @@
             <objects>
                 <tableViewController id="S65-xe-6lh" customClass="PromotionViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="226" sectionHeaderHeight="22" sectionFooterHeight="22" id="Cc1-Wa-Aaf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
@@ -1869,11 +1869,11 @@
             <objects>
                 <viewController storyboardIdentifier="webView" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4uM-9Q-1SQ" customClass="WebViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w6i-mk-Y7p">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" id="9sD-se-kHm">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -1897,24 +1897,24 @@
         <image name="Picasa" width="24" height="18"/>
         <image name="Profile" width="24" height="21"/>
         <image name="Shop" width="26" height="19"/>
+        <image name="b1" width="1000" height="1500"/>
+        <image name="b2" width="1000" height="1500"/>
+        <image name="b3" width="1000" height="1500"/>
         <image name="bizcom" width="28" height="23"/>
         <image name="blue" width="1024" height="1024"/>
-        <image name="boyOrGirl" width="1000" height="1500"/>
+        <image name="bog" width="1000" height="1500"/>
         <image name="cover" width="1000" height="1500"/>
+        <image name="g1" width="1000" height="1500"/>
         <image name="g2" width="1000" height="1500"/>
         <image name="g3" width="1000" height="1500"/>
-        <image name="g4" width="1000" height="1500"/>
         <image name="group" width="25" height="17"/>
         <image name="poster" width="468" height="303"/>
-        <image name="question2" width="1000" height="1500"/>
-        <image name="question3" width="1000" height="1500"/>
-        <image name="question4" width="1000" height="1500"/>
         <image name="thumbs-up" width="84" height="71"/>
         <image name="thumbuped" width="84" height="71"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
 </document>
