@@ -11,6 +11,7 @@
 #import "TSSProduct.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "UIImageView+UIActivityIndicatorForSDWebImage.h"
+#import "ProductViewController.h"
 
 @interface QuizResultViewController ()
 
@@ -65,6 +66,18 @@
     NSLog(@"d %@", [pr.image absoluteString]);
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    TSSProduct *product = self.products[indexPath.row];
+    
+    ProductViewController *pVC = [self.storyboard instantiateViewControllerWithIdentifier:@"productDetailView"];
+    
+    pVC.product = product;
+    
+    [self.navigationController pushViewController:pVC animated:YES];
 }
 
 /*

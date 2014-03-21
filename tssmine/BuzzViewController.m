@@ -39,7 +39,7 @@
 	// Do any additional setup after loading the view.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(uploadNewBuzz) name:@"publishNew" object:nil];
     
-    UIBarButtonItem *rightButtonRank = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"mixer.png"] style:UIBarButtonItemStylePlain target:self action:@selector(rank)];
+    UIBarButtonItem *rightButtonRank = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"text-list.png"] style:UIBarButtonItemStylePlain target:self action:@selector(rank)];
     
     NSArray *arr= [[NSArray alloc] initWithObjects:self.cameraButton,rightButtonRank,nil];
     self.navigationItem.rightBarButtonItems=arr;

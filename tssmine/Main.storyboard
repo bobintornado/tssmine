@@ -559,7 +559,7 @@
         <scene sceneID="yhg-6P-QR6">
             <objects>
                 <navigationController definesPresentationContext="YES" id="RbE-da-7RF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Styling" image="Favorites" id="WKZ-Of-xKo"/>
+                    <tabBarItem key="tabBarItem" title="Styling" image="dress-hanger" id="WKZ-Of-xKo"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ADd-z6-Hbe">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -680,7 +680,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zHg-Rb-nlL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2183" y="1579"/>
+            <point key="canvasLocation" x="2165" y="1573"/>
         </scene>
         <!--Chose Upper View Controller - Styling-->
         <scene sceneID="Ae9-Pa-PBe">
@@ -1330,12 +1330,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="159" sectionHeaderHeight="22" sectionFooterHeight="22" id="nw0-Xp-0Ve">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="159" sectionHeaderHeight="22" sectionFooterHeight="22" id="nw0-Xp-0Ve">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="stylingCell" rowHeight="197" id="Gej-Jy-3LA" customClass="QuizTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="stylingCell" rowHeight="197" id="Gej-Jy-3LA" customClass="QuizTableViewCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="197"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gej-Jy-3LA" id="CMg-Cw-EYA">
@@ -1894,7 +1894,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Favorites" width="23" height="24"/>
         <image name="Picasa" width="24" height="18"/>
         <image name="Profile" width="24" height="21"/>
         <image name="Shop" width="26" height="19"/>
@@ -1905,6 +1904,7 @@
         <image name="blue" width="1024" height="1024"/>
         <image name="bog" width="1000" height="1500"/>
         <image name="cover" width="1000" height="1500"/>
+        <image name="dress-hanger" width="30" height="30"/>
         <image name="g1" width="1000" height="1500"/>
         <image name="g2" width="1000" height="1500"/>
         <image name="g3" width="1000" height="1500"/>
