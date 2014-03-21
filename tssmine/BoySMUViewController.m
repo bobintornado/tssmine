@@ -41,7 +41,7 @@
     sharedCenter.result = [sharedCenter.result stringByReplacingCharactersInRange:range withString:@"A"];
     [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"popBack" object:nil]];
     
-    [self.navigationController popToRootViewControllerAnimated:YES];}
+    [self.navigationController popToRootViewControllerAnimated:NO];}
 
 - (IBAction)choseNoSMULogo:(id)sender {
     QuizCenter *sharedCenter = [QuizCenter sharedCenter];
@@ -49,7 +49,7 @@
     sharedCenter.result = [sharedCenter.result stringByReplacingCharactersInRange:range withString:@"B"];
     [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"popBack" object:nil]];
     
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self.navigationController popToRootViewControllerAnimated:NO];
 }
 
 @end

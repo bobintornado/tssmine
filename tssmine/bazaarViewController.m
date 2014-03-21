@@ -10,6 +10,7 @@
 #import "BazaarPFTableViewCell.h"
 #import <MobileCoreServices/UTCoreTypes.h>
 #import "AddNewSHItemViewController.h"
+#import "DesInputTableViewCell.h"
 
 @interface BazaarViewController ()
 

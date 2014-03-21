@@ -49,7 +49,7 @@
             <objects>
                 <tableViewController id="836-06-2mJ" customClass="BuzzViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="330" sectionHeaderHeight="22" sectionFooterHeight="22" id="T7P-UE-HgA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -149,11 +149,11 @@
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="PU8-kU-aPe" customClass="MainShopViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4hb-Na-sfc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" id="g5I-ck-4rJ">
-                                <rect key="frame" x="0.0" y="224" width="320" height="207"/>
+                                <rect key="frame" x="0.0" y="224" width="320" height="295"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -190,7 +190,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="subCategories" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Xdf-US-cSM" customClass="SubCategoryViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Gmr-Cc-nY6">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -219,7 +219,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="pLVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PXa-ce-gL5" customClass="ProductListViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="0Nm-u5-gbR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -277,7 +277,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="optionTVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Aid-P1-S76" customClass="OptionTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8BZ-0k-R7u">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -305,7 +305,7 @@
             <objects>
                 <viewController storyboardIdentifier="productDetailView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Mik-Fl-v0E" customClass="ProductViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bal-dE-PW4">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Ggx-BH-uSe">
@@ -394,7 +394,7 @@
             <objects>
                 <viewController storyboardIdentifier="SliderContentViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="c5N-Hj-Dag" customClass="ShopSliderViewController" sceneMemberID="viewController">
                     <view key="view" userInteractionEnabled="NO" contentMode="scaleToFill" id="4Bt-9w-oYd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="P3i-kN-R6m">
@@ -425,7 +425,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="SalutationVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lrl-XW-pKP" customClass="SalutationTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="SZh-yp-evE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -453,7 +453,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="payment" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KYr-DO-pYP" customClass="PaymentTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Cjo-KZ-fvn">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -481,7 +481,7 @@
             <objects>
                 <viewController storyboardIdentifier="phototaking" useStoryboardIdentifierAsRestorationIdentifier="YES" id="d4z-FM-uOB" customClass="SnapTakePhotoViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nRN-zv-YLt">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poster" id="E7j-CV-pXb">
@@ -532,7 +532,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="rankTVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IvK-Ug-yqA" customClass="RankTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ew9-kk-Sgp">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -576,15 +576,15 @@
             <objects>
                 <viewController id="VvB-2J-9aT" customClass="StlyingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bab-wl-uyH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cover" id="xuP-nR-DEO">
-                                <rect key="frame" x="0.0" y="62" width="320" height="369"/>
+                                <rect key="frame" x="0.0" y="62" width="320" height="457"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ybx-ht-4Zd">
-                                <rect key="frame" x="0.0" y="384" width="155" height="27"/>
+                                <rect key="frame" x="0.0" y="384" width="155" height="115"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Styling Quiz">
@@ -596,7 +596,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="v4D-VJ-lg4">
-                                <rect key="frame" x="163" y="384" width="157" height="39"/>
+                                <rect key="frame" x="163" y="384" width="157" height="127"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <state key="normal" title="Craft Your Own Style!">
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -626,7 +626,6 @@
                     </navigationItem>
                     <connections>
                         <segue destination="0XE-Mu-pS2" kind="push" identifier="stylingQuiz" id="ekl-PY-ef3"/>
-                        <segue destination="1BQ-Ar-NL3" kind="modal" identifier="quizResult" id="5dq-j7-ttZ"/>
                         <segue destination="Utf-jb-mbF" kind="push" identifier="createStyle" id="Evg-UF-eNW"/>
                     </connections>
                 </viewController>
@@ -639,7 +638,7 @@
             <objects>
                 <viewController id="0XE-Mu-pS2" customClass="BorGViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8ek-ss-gcu">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZV4-P2-vYm">
@@ -669,7 +668,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bog" id="HBo-OL-Oqc">
-                                <rect key="frame" x="13" y="58" width="296" height="374"/>
+                                <rect key="frame" x="13" y="58" width="296" height="462"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
@@ -688,7 +687,7 @@
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="Utf-jb-mbF" customClass="ChoseUpperViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="Ysu-8x-3If">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lab-sE-7NI">
@@ -738,7 +737,7 @@
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="yJP-bI-jG7" customClass="ChoseUnderViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="iQj-SR-j4q">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iHW-Oy-kjR">
@@ -788,7 +787,7 @@
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="elF-N4-OnA" customClass="ChoseBottomViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="cl6-KC-cx5">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Y7v-Lg-WDL">
@@ -838,11 +837,11 @@
             <objects>
                 <viewController id="265-K6-qdt" customClass="CustomizeResultViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ium-aj-ps3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="159" sectionHeaderHeight="22" sectionFooterHeight="22" id="wMP-bX-vvZ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="429"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="517"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -893,11 +892,11 @@
             <objects>
                 <viewController id="Xvm-Zv-gyo" customClass="GirlColorViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Znl-x3-eyl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="g1" id="gqu-7Z-zI4" customClass="boy">
-                                <rect key="frame" x="7" y="59" width="297" height="372"/>
+                                <rect key="frame" x="7" y="59" width="297" height="460"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fd5-vm-Dam">
@@ -953,11 +952,11 @@
             <objects>
                 <viewController id="ba9-oa-6N4" customClass="GirlStudyViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cum-ix-2ma">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="g2" id="s5J-tS-ENE">
-                                <rect key="frame" x="15" y="60" width="300" height="370"/>
+                                <rect key="frame" x="15" y="60" width="300" height="458"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LGY-eR-KD1">
@@ -1003,11 +1002,11 @@
             <objects>
                 <viewController id="epd-8l-Tli" customClass="BoyColorViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2eR-G1-K70">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="b1" id="aKh-dS-eyf">
-                                <rect key="frame" x="15" y="64" width="296" height="366"/>
+                                <rect key="frame" x="15" y="64" width="296" height="454"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wgp-lD-wii">
@@ -1063,11 +1062,11 @@
             <objects>
                 <viewController id="8Wm-4K-rhc" customClass="BoyStudyViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a6c-66-rYe">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="b2" id="PJw-TU-Dqb">
-                                <rect key="frame" x="10" y="60" width="290" height="371"/>
+                                <rect key="frame" x="10" y="60" width="290" height="459"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lvN-hc-FjD">
@@ -1113,7 +1112,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="cart" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7nm-1k-QpB" customClass="CartViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="78" sectionHeaderHeight="22" sectionFooterHeight="22" id="Sfe-Lv-3um">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="5RN-rG-QtV">
@@ -1181,7 +1180,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="Delivery" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ouq-C3-yhO" customClass="DeliveryTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="60I-d1-wiN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -1209,7 +1208,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="Billing" useStoryboardIdentifierAsRestorationIdentifier="YES" id="55n-d9-sKJ" customClass="BillingDetailsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="E5h-MC-aJS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -1281,11 +1280,11 @@
             <objects>
                 <viewController id="OqL-3b-7jv" customClass="BoySMUViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9hF-uA-jGg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="b3" id="MgC-X1-VTo">
-                                <rect key="frame" x="10" y="63" width="290" height="367"/>
+                                <rect key="frame" x="10" y="63" width="290" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QIq-bj-g0J">
@@ -1323,38 +1322,34 @@
             </objects>
             <point key="canvasLocation" x="3816" y="783"/>
         </scene>
-        <!--Quiz View Controller-->
+        <!--Quiz Result View Controller-->
         <scene sceneID="s8x-NX-pY3">
             <objects>
-                <viewController id="1BQ-Ar-NL3" customClass="QuizViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="quizResult" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1BQ-Ar-NL3" customClass="QuizResultViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BPr-mU-KgA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" id="Jk5-cW-NVI">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="159" sectionHeaderHeight="22" sectionFooterHeight="22" id="nw0-Xp-0Ve">
-                                <rect key="frame" x="0.0" y="66" width="320" height="414"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomizeCell" rowHeight="159" id="Gej-Jy-3LA" customClass="CustomizeCell">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="159"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="stylingCell" rowHeight="197" id="Gej-Jy-3LA" customClass="QuizTableViewCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="197"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gej-Jy-3LA" id="CMg-Cw-EYA">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="158"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="196"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="fDp-9f-d7Z" customClass="PFImageView">
-                                                    <rect key="frame" x="-7" y="0.0" width="335" height="166"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="fDp-9f-d7Z">
+                                                    <rect key="frame" x="39" y="-1" width="243" height="197"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="productImage" destination="fDp-9f-d7Z" id="coC-ag-Vn4"/>
+                                            <outlet property="previewImageView" destination="fDp-9f-d7Z" id="ixX-Ly-FDG"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1367,23 +1362,23 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="quizResultNavBar" destination="Jk5-cW-NVI" id="usP-X3-V8l"/>
+                        <outlet property="quizTable" destination="nw0-Xp-0Ve" id="7pv-57-mSM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h5x-nq-TjE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2168" y="865"/>
+            <point key="canvasLocation" x="2160" y="909"/>
         </scene>
         <!--GirlSMU View Controller - Quiz-->
         <scene sceneID="1hJ-eC-dSw">
             <objects>
                 <viewController id="99E-gN-PsY" customClass="GirlSMUViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PIJ-iN-chU">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="g3" id="iLj-L5-176">
-                                <rect key="frame" x="13" y="60" width="292" height="376"/>
+                                <rect key="frame" x="13" y="60" width="292" height="464"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iYJ-zj-LGG">
@@ -1442,7 +1437,7 @@
             <objects>
                 <viewController id="a1m-ZF-pSz" customClass="ProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oW9-Wd-Ejg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xyH-T7-kUb">
@@ -1466,7 +1461,7 @@
                                 </connections>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="36" sectionHeaderHeight="22" sectionFooterHeight="22" id="pBv-Gn-lup">
-                                <rect key="frame" x="0.0" y="327" width="320" height="47"/>
+                                <rect key="frame" x="0.0" y="327" width="320" height="135"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -1531,7 +1526,7 @@
             <objects>
                 <viewController storyboardIdentifier="profileEditing" useStoryboardIdentifierAsRestorationIdentifier="YES" id="djE-pf-CrQ" customClass="ProfileEditViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vGM-qP-Acv">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="BU9-Np-X6S">
@@ -1587,7 +1582,7 @@
             <objects>
                 <tableViewController id="spW-ht-mg9" customClass="BazaarViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="170" sectionHeaderHeight="22" sectionFooterHeight="22" id="JWP-sN-uDz">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -1655,10 +1650,7 @@
                             <outlet property="delegate" destination="spW-ht-mg9" id="Cb9-zY-Cif"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Bazaar" image="group" id="QGq-Sg-96J"/>
-                    <toolbarItems>
-                        <barButtonItem title="Item" id="4yM-nI-5ye"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Bazaar" id="2en-LD-SKf">
                         <barButtonItem key="backBarButtonItem" title="Back" id="bRT-nI-Kqe"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="pNH-ch-Mec">
@@ -1682,22 +1674,9 @@
             <objects>
                 <viewController storyboardIdentifier="newItem" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yMv-NQ-JDY" customClass="AddNewSHItemViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rCm-UV-MEG">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vHM-42-QR0">
-                                <rect key="frame" x="20" y="213" width="88" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Tell us more about your item" id="gdu-Ug-QWf">
-                                <rect key="frame" x="20" y="233" width="279" height="101"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <navigationBar contentMode="scaleToFill" id="oMo-Us-lMA">
                                 <rect key="frame" x="0.0" y="21" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -1706,9 +1685,9 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9YR-Aq-Yhp">
-                                <rect key="frame" x="0.0" y="65" width="320" height="59"/>
+                                <rect key="frame" x="0.0" y="65" width="320" height="426"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="inputCell" id="UIn-X7-IZk" customClass="InputTableViewCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
@@ -1731,6 +1710,7 @@
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="inputField" destination="fSV-Yx-7fK" id="CRD-7T-7Cq"/>
                                             <outlet property="inputTitle" destination="bN6-Po-dWz" id="9VX-2y-DKK"/>
@@ -1757,18 +1737,40 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="choseLabel" destination="2ci-yw-zlo" id="j41-sA-SCQ"/>
                                             <outlet property="chosenValue" destination="y4L-QF-pin" id="mhj-vD-u78"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="in" id="Zs6-LT-wmy" customClass="ChoseTableViewCell">
-                                        <rect key="frame" x="0.0" y="110" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zs6-LT-wmy" id="Z6V-dY-gzJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="desCell" rowHeight="177" id="kvs-Uq-BgI" customClass="DesInputTableViewCell">
+                                        <rect key="frame" x="0.0" y="110" width="320" height="177"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kvs-Uq-BgI" id="NH2-44-Mvz">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="176"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="E2J-Ms-kPX">
+                                                    <rect key="frame" x="20" y="6" width="88" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="TZ0-sl-kwz">
+                                                    <rect key="frame" x="20" y="27" width="285" height="124"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="detailText" destination="TZ0-sl-kwz" id="OWy-qC-eZ1"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -1777,11 +1779,10 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="inforTable" destination="9YR-Aq-Yhp" id="chK-qC-IyA"/>
-                        <outlet property="itemDes" destination="gdu-Ug-QWf" id="m6i-xN-8ov"/>
                         <outlet property="nav" destination="oMo-Us-lMA" id="QE0-ru-fV2"/>
                     </connections>
                 </viewController>
@@ -1810,7 +1811,7 @@
             <objects>
                 <tableViewController id="S65-xe-6lh" customClass="PromotionViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="226" sectionHeaderHeight="22" sectionFooterHeight="22" id="Cc1-Wa-Aaf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
@@ -1869,11 +1870,11 @@
             <objects>
                 <viewController storyboardIdentifier="webView" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4uM-9Q-1SQ" customClass="WebViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w6i-mk-Y7p">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" id="9sD-se-kHm">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -1915,6 +1916,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
 </document>

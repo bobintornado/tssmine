@@ -9,10 +9,10 @@
 #import "AddNewSHItemViewController.h"
 #import "InputTableViewCell.h"
 #import "ChoseTableViewCell.h"
+#import "DesInputTableViewCell.h"
 
 @interface AddNewSHItemViewController ()
 
-@property (strong, nonatomic) IBOutlet UITextView *itemDes;
 @property (strong, nonatomic) IBOutlet UINavigationBar *nav;
 @property PFFile *photoFile;
 @property (strong, nonatomic) IBOutlet UITableView *inforTable;
@@ -37,10 +37,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.itemDes.delegate = self;
-    self.itemDes.text = @"More details goes here...";
-    self.itemDes.textColor = [UIColor lightGrayColor];
-    
     
     UINavigationItem *navItem = [[UINavigationItem alloc] init];
     navItem.title = @"New Item";
@@ -169,12 +165,8 @@
             [item setObject:myNumber forKey:@"price"];
         }
     }
-    
 
-    
     [item setObject:[PFUser currentUser] forKey:@"seller"];
-    [item setObject:self.itemDes.text forKey:@"description"];
-    
     // Request a background execution task to allow us to finish uploading the photo even if the app is backgrounded
     self.photoPostBackgroundTaskId = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
         [[UIApplication sharedApplication] endBackgroundTask:self.photoPostBackgroundTaskId];
@@ -223,7 +215,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 3;
+    return 4;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -232,11 +224,20 @@
     return 1;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row == 3) {
+        return 160;
+    }
+    return 44;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *identifier;
     if (indexPath.row == 1) {
         identifier = @"choseCell";
+    } else if(indexPath.row == 3 ) {
+        identifier = @"desCell";
     } else {
         identifier = @"inputCell";
     }
@@ -245,12 +246,21 @@
     if (indexPath.row == 0) {
         InputTableViewCell *c = (InputTableViewCell *)cell;
         c.inputTitle.text = @"Title";
+        return c;
     } else if (indexPath.row == 1){
         ChoseTableViewCell *c = (ChoseTableViewCell *)cell;
         c.choseLabel.text = @"Category";
+        return c;
     } else if (indexPath.row == 2){
         InputTableViewCell *c = (InputTableViewCell *)cell;
         c.inputTitle.text = @"Price";
+        return c;
+    } else if (indexPath.row == 3){
+        DesInputTableViewCell *c = (DesInputTableViewCell *)cell;
+        c.detailText.delegate = self;
+        c.detailText.text = @"More details goes here...";
+        c.detailText.textColor = [UIColor lightGrayColor];
+        return c;
     }
     return cell;
 }

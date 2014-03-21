@@ -39,12 +39,15 @@
 		D952DAEA18B65AB00032D40F /* PromotionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D952DAE818B65AB00032D40F /* PromotionViewController.m */; };
 		D952DAEE18B65CF90032D40F /* PromotionPFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D952DAED18B65CF90032D40F /* PromotionPFTableViewCell.m */; };
 		D952DAEF18B65CF90032D40F /* PromotionPFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D952DAED18B65CF90032D40F /* PromotionPFTableViewCell.m */; };
+		D95EF40018DC21D8002FAB2A /* DesInputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D95EF3FF18DC21D8002FAB2A /* DesInputTableViewCell.m */; };
 		D96006B01884852400BB1C9E /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D96006AF1884852400BB1C9E /* ProfileViewController.m */; };
 		D9647D52187A821C00B26CE8 /* SnapTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9647D51187A821C00B26CE8 /* SnapTimelineViewController.m */; };
 		D9647D58187A823F00B26CE8 /* SnapTakePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9647D57187A823F00B26CE8 /* SnapTakePhotoViewController.m */; };
 		D97A35DC187E80B50006A90F /* TSSUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = D97A35DB187E80B50006A90F /* TSSUtility.m */; };
 		D97BA73F18C38275004CC262 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D97BA73E18C38274004CC262 /* SDWebImage.framework */; };
 		D97BA74118C3829E004CC262 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D97BA74018C3829E004CC262 /* ImageIO.framework */; };
+		D97C185318DC858B00CBA9BD /* QuizResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D97C185218DC858B00CBA9BD /* QuizResultViewController.m */; };
+		D97C185618DC8CA400CBA9BD /* QuizTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D97C185518DC8CA400CBA9BD /* QuizTableViewCell.m */; };
 		D98438441884D1CC008BDCA8 /* StlyingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98438431884D1CC008BDCA8 /* StlyingViewController.m */; };
 		D98989AB18C2080F000092F0 /* MainShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98989AA18C2080F000092F0 /* MainShopViewController.m */; };
 		D98989AE18C20B21000092F0 /* ShopSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98989AD18C20B21000092F0 /* ShopSliderViewController.m */; };
@@ -177,6 +180,8 @@
 		D952DAE818B65AB00032D40F /* PromotionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromotionViewController.m; sourceTree = "<group>"; };
 		D952DAEC18B65CF90032D40F /* PromotionPFTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromotionPFTableViewCell.h; sourceTree = "<group>"; };
 		D952DAED18B65CF90032D40F /* PromotionPFTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromotionPFTableViewCell.m; sourceTree = "<group>"; };
+		D95EF3FE18DC21D8002FAB2A /* DesInputTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesInputTableViewCell.h; sourceTree = "<group>"; };
+		D95EF3FF18DC21D8002FAB2A /* DesInputTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesInputTableViewCell.m; sourceTree = "<group>"; };
 		D96006AE1884852400BB1C9E /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		D96006AF1884852400BB1C9E /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		D9647D50187A821C00B26CE8 /* SnapTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapTimelineViewController.h; sourceTree = "<group>"; };
@@ -187,6 +192,10 @@
 		D97A35DB187E80B50006A90F /* TSSUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSSUtility.m; sourceTree = "<group>"; };
 		D97BA73E18C38274004CC262 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
 		D97BA74018C3829E004CC262 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		D97C185118DC858B00CBA9BD /* QuizResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizResultViewController.h; sourceTree = "<group>"; };
+		D97C185218DC858B00CBA9BD /* QuizResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizResultViewController.m; sourceTree = "<group>"; };
+		D97C185418DC8CA400CBA9BD /* QuizTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizTableViewCell.h; sourceTree = "<group>"; };
+		D97C185518DC8CA400CBA9BD /* QuizTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizTableViewCell.m; sourceTree = "<group>"; };
 		D98438421884D1CC008BDCA8 /* StlyingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StlyingViewController.h; sourceTree = "<group>"; };
 		D98438431884D1CC008BDCA8 /* StlyingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StlyingViewController.m; sourceTree = "<group>"; };
 		D98989A918C2080F000092F0 /* MainShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainShopViewController.h; sourceTree = "<group>"; };
@@ -421,6 +430,8 @@
 				D91CBB091896839B00372F9A /* CustomizeCell.m */,
 				D9A085751897187100B000B9 /* CustomizeUICollectionViewCell.h */,
 				D9A085761897187100B000B9 /* CustomizeUICollectionViewCell.m */,
+				D97C185418DC8CA400CBA9BD /* QuizTableViewCell.h */,
+				D97C185518DC8CA400CBA9BD /* QuizTableViewCell.m */,
 			);
 			name = Styling;
 			sourceTree = "<group>";
@@ -668,6 +679,8 @@
 				D9E00277189632680053FB0C /* GirlSMUViewController.m */,
 				D9E00279189637FE0053FB0C /* GirlStudyViewController.h */,
 				D9E0027A189637FE0053FB0C /* GirlStudyViewController.m */,
+				D97C185118DC858B00CBA9BD /* QuizResultViewController.h */,
+				D97C185218DC858B00CBA9BD /* QuizResultViewController.m */,
 			);
 			name = Quiz;
 			sourceTree = "<group>";
@@ -692,6 +705,8 @@
 			children = (
 				D9A71FE818B675BD00B15375 /* BazaarPFTableViewCell.h */,
 				D9A71FE918B675BD00B15375 /* BazaarPFTableViewCell.m */,
+				D95EF3FE18DC21D8002FAB2A /* DesInputTableViewCell.h */,
+				D95EF3FF18DC21D8002FAB2A /* DesInputTableViewCell.m */,
 			);
 			name = Bazaar;
 			sourceTree = "<group>";
@@ -860,6 +875,7 @@
 				D952DAE518B6484B0032D40F /* BazaarViewController.m in Sources */,
 				D98438441884D1CC008BDCA8 /* StlyingViewController.m in Sources */,
 				D91CBB0A1896839B00372F9A /* CustomizeCell.m in Sources */,
+				D97C185318DC858B00CBA9BD /* QuizResultViewController.m in Sources */,
 				D9259BCC18C52474006A254A /* SubCategoryViewController.m in Sources */,
 				D97A35DC187E80B50006A90F /* TSSUtility.m in Sources */,
 				D9E8CF4918CCAECB002EA436 /* TSSProductCell.m in Sources */,
@@ -877,6 +893,7 @@
 				D9E38B501886F7FF00FC9B6B /* BoyStudyViewController.m in Sources */,
 				D9CF91951887A0B70070B10B /* RootTabBarViewController.m in Sources */,
 				D952608518D6C06300C24EE0 /* RankTableViewController.m in Sources */,
+				D95EF40018DC21D8002FAB2A /* DesInputTableViewCell.m in Sources */,
 				D9CF91981887A9140070B10B /* TssLoginViewController.m in Sources */,
 				D9A085771897187100B000B9 /* CustomizeUICollectionViewCell.m in Sources */,
 				D920B25E18D5FB91001A4F7E /* InputTableViewCell.m in Sources */,
@@ -886,6 +903,7 @@
 				D9E8CF5018CE9AAE002EA436 /* ProductViewController.m in Sources */,
 				D9989AB418DA230B00FEDF2A /* GTMNSString+HTML.m in Sources */,
 				D91C890718B935CE008E7536 /* Filter.m in Sources */,
+				D97C185618DC8CA400CBA9BD /* QuizTableViewCell.m in Sources */,
 				D9B6F02D187C32990069E088 /* snapFeedTableViewCell.m in Sources */,
 				D9A4948E18CEEFA700975005 /* TSSOption.m in Sources */,
 				D9E0026F189631440053FB0C /* BoySMUViewController.m in Sources */,
