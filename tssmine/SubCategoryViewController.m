@@ -77,6 +77,12 @@
     
     NSString *parentID = [self.categories[indexPath.row] categoryID];
     
+    //tracking
+    PFObject *tracking = [PFObject objectWithClassName:@"tracking"];
+    tracking[@"event"] = @"ClickOnCategory";
+    tracking[@"content"] = [self.categories[indexPath.row] name];
+    [tracking saveInBackground];
+    
     NSString *urlString = [NSString stringWithFormat:@"%@index.php?route=feed/web_api/%@&key=%@&id=%@",ShopDomain,@"getCategoriesByParentId",RESTfulKey,parentID];
     
     //NSLog(@"and the calling url is .. %@",urlString);

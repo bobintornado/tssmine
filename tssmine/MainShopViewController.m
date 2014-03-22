@@ -53,6 +53,11 @@
     [self getSliders];
     [self getCategories];
     self.navigationItem.title = @"The SMU Shop";
+    
+    PFObject *tracking = [PFObject objectWithClassName:@"tracking"];
+    tracking[@"event"] = @"ClickOnTab";
+    tracking[@"content"] = @"shop";
+    [tracking saveInBackground];
 }
 
 - (void)shoppingCart{
@@ -271,6 +276,13 @@
     //set sub categories
     subCategoriesVC.categories = [NSArray arrayWithArray:subCategories];
     subCategoriesVC.navigationItem.title = self.chosenCategory;
+    
+    //tracking
+    PFObject *tracking = [PFObject objectWithClassName:@"tracking"];
+    tracking[@"event"] = @"ClickOnCategory";
+    tracking[@"content"] = self.chosenCategory;
+    [tracking saveInBackground];
+    
     //NSLog(@"%lu",subCategoriesVC.categories.count);
     [self.navigationController pushViewController:subCategoriesVC animated:YES];
 }
@@ -280,6 +292,13 @@
     ProductListViewController *productsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"pLVC"];
     //set category
     productsVC.category = selectedCategory;
+    
+    //tracking
+    PFObject *tracking = [PFObject objectWithClassName:@"tracking"];
+    tracking[@"event"] = @"ClickOnCategory";
+    tracking[@"content"] = selectedCategory.name;
+    [tracking saveInBackground];
+    
     //NSLog(selectedCategory);
     [self.navigationController pushViewController:productsVC animated:YES];
 }

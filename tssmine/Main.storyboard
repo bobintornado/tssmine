@@ -31,7 +31,7 @@
         <!--Navigation Controller - Buzz-->
         <scene sceneID="Qme-aI-AA3">
             <objects>
-                <navigationController definesPresentationContext="YES" id="Kh5-2z-6Ys" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="buzzNV" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Kh5-2z-6Ys" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Buzz" image="Picasa" id="QRM-hT-5zR"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jmr-hM-6HV">
                         <autoresizingMask key="autoresizingMask"/>
@@ -47,7 +47,7 @@
         <!--Buzz View Controller - Buzz-->
         <scene sceneID="9Vs-63-HFV">
             <objects>
-                <tableViewController id="836-06-2mJ" customClass="BuzzViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="buzzVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="836-06-2mJ" customClass="BuzzViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="330" sectionHeaderHeight="22" sectionFooterHeight="22" id="T7P-UE-HgA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -131,7 +131,7 @@
         <!--Navigation Controller - Shop-->
         <scene sceneID="795-hM-vjj">
             <objects>
-                <navigationController definesPresentationContext="YES" id="pdR-lx-iBB" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="shopNV" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pdR-lx-iBB" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Shop" image="Shop" id="RhM-Mc-wdb"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="M90-EM-55F">
                         <autoresizingMask key="autoresizingMask"/>
@@ -147,7 +147,7 @@
         <!--Main Shop View Controller-->
         <scene sceneID="faU-Bh-AuE">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="PU8-kU-aPe" customClass="MainShopViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="shopVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PU8-kU-aPe" customClass="MainShopViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4hb-Na-sfc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -558,7 +558,7 @@
         <!--Navigation Controller - Styling-->
         <scene sceneID="yhg-6P-QR6">
             <objects>
-                <navigationController definesPresentationContext="YES" id="RbE-da-7RF" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="stylingNV" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RbE-da-7RF" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Styling" image="dress-hanger" id="WKZ-Of-xKo"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ADd-z6-Hbe">
                         <autoresizingMask key="autoresizingMask"/>
@@ -574,7 +574,7 @@
         <!--Stlying View Controller - Styling-->
         <scene sceneID="bxn-gx-nnV">
             <objects>
-                <viewController id="VvB-2J-9aT" customClass="StlyingViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="stylingVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VvB-2J-9aT" customClass="StlyingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bab-wl-uyH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1564,7 +1564,7 @@
         <!--Navigation Controller - Bazaar-->
         <scene sceneID="1rs-Er-oWj">
             <objects>
-                <navigationController definesPresentationContext="YES" id="30V-QQ-htw" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="bazaarNV" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="30V-QQ-htw" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Bazaar" image="group" id="aNO-9V-7YJ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NAb-AU-uZn">
                         <autoresizingMask key="autoresizingMask"/>
@@ -1580,7 +1580,7 @@
         <!--Bazaar View Controller - Bazaar-->
         <scene sceneID="z4V-Pm-PD8">
             <objects>
-                <tableViewController id="spW-ht-mg9" customClass="BazaarViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="bazaarVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="spW-ht-mg9" customClass="BazaarViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="170" sectionHeaderHeight="22" sectionFooterHeight="22" id="JWP-sN-uDz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1793,7 +1793,7 @@
         <!--Navigation Controller - UNIVANTAGE-->
         <scene sceneID="lUq-OM-3rH">
             <objects>
-                <navigationController definesPresentationContext="YES" id="ZNs-qv-yxY" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="uniNV" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZNs-qv-yxY" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="UNIVANTAGE" image="bizcom" id="cWa-72-ONj"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="E2b-Sr-ID3">
                         <autoresizingMask key="autoresizingMask"/>
@@ -1809,7 +1809,7 @@
         <!--Promotion View Controller - UNIVANTAGE-->
         <scene sceneID="f8D-gi-b0Y">
             <objects>
-                <tableViewController id="S65-xe-6lh" customClass="PromotionViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="uniVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="S65-xe-6lh" customClass="PromotionViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="226" sectionHeaderHeight="22" sectionFooterHeight="22" id="Cc1-Wa-Aaf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

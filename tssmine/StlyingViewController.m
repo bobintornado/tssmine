@@ -38,6 +38,10 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushViews) name:@"popBack" object:nil];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    PFObject *tracking = [PFObject objectWithClassName:@"tracking"];
+    tracking[@"event"] = @"ClickOnTab";
+    tracking[@"content"] = @"styling";
+    [tracking saveInBackground];
 }
 
 - (void)didReceiveMemoryWarning

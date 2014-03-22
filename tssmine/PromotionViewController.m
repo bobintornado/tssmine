@@ -29,6 +29,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    PFObject *tracking = [PFObject objectWithClassName:@"tracking"];
+    tracking[@"event"] = @"ClickOnTab";
+    tracking[@"content"] = @"uni";
+    [tracking saveInBackground];
 }
 
 - (void)didReceiveMemoryWarning

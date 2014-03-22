@@ -166,6 +166,12 @@
     
     TSSProduct *product = self.products[indexPath.row];
     
+    //tracking
+    PFObject *tracking = [PFObject objectWithClassName:@"tracking"];
+    tracking[@"event"] = @"ClickOnProduct";
+    tracking[@"content"] = [self.products[indexPath.row] name];
+    [tracking saveInBackground];
+    
     ProductViewController *pVC = [self.storyboard instantiateViewControllerWithIdentifier:@"productDetailView"];
     
     pVC.product = product;
