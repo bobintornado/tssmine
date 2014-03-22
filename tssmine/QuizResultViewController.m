@@ -34,7 +34,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSLog(@"sdaf");
+    self.title = @"Your SMU Shop Style!";
     [self.quizTable reloadData];
 }
 

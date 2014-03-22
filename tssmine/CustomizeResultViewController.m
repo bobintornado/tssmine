@@ -9,17 +9,19 @@
 #import "CustomizeResultViewController.h"
 #import "StyleCenter.h"
 #import "CustomizeCell.h"
+#import "TSSProduct.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "UIImageView+UIActivityIndicatorForSDWebImage.h"
+#import "ProductViewController.h"
+
 
 @interface CustomizeResultViewController ()
 
-@property (strong,nonatomic) PFFile *upper;
-@property (strong,nonatomic) PFFile *under;
-@property (strong,nonatomic) PFFile *bottom;
 @property (strong, nonatomic) IBOutlet UITableView *productsTableView;
 
 @property UIImage *upperImage;
 @property UIImage *underImage;
-@property UIImage *buttonImage;
+@property UIImage *slipperImage;
 
 @end
 
@@ -37,36 +39,6 @@
 - (id)initWithCoder:(NSCoder *)aCoder {
     self = [super initWithCoder:aCoder];
     if (self) {
-        //Query
-        PFQuery *query = [PFQuery queryWithClassName:@"TSSProduct"];
-        StyleCenter *shareCenter = [StyleCenter sharedCenter];
-        
-        //uppper
-        [query whereKey:@"objectId" equalTo:shareCenter.upper.objectId];
-        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-            PFObject *upperProduct =[objects objectAtIndex:0];
-            self.upper = [upperProduct objectForKey:@"PreviewImage"];
-            [self.productsTableView reloadData];
-        }];
-        
-        
-        //under
-        query = [PFQuery queryWithClassName:@"TSSProduct"];
-        [query whereKey:@"objectId" equalTo:shareCenter.under.objectId];
-        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-            PFObject *upperProduct =[objects objectAtIndex:0];
-            self.under = [upperProduct objectForKey:@"PreviewImage"];
-            [self.productsTableView reloadData];
-        }];
-        
-        //bottom
-        query = [PFQuery queryWithClassName:@"TSSProduct"];
-        [query whereKey:@"objectId" equalTo:shareCenter.bottom.objectId];
-        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-            PFObject *bottomProduct =[objects objectAtIndex:0];
-            self.bottom = [bottomProduct objectForKey:@"PreviewImage"];
-            [self.productsTableView reloadData];
-        }];
     }
     return self;
 }
@@ -75,6 +47,20 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    StyleCenter *sc = [StyleCenter sharedCenter];
+
+    [SDWebImageDownloader.sharedDownloader downloadImageWithURL:sc.upper.image options:0 progress:nil completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished)
+     {
+         if (image && finished){self.upperImage = image;}
+     }];
+    [SDWebImageDownloader.sharedDownloader downloadImageWithURL:sc.bottom.image options:0 progress:nil completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished)
+     {
+         if (image && finished){self.underImage = image;}
+     }];
+    [SDWebImageDownloader.sharedDownloader downloadImageWithURL:sc.slipper.image options:0 progress:nil completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished)
+     {
+         if (image && finished){self.slipperImage = image;}
+     }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -96,16 +82,15 @@
     //Assign indentifer
     CustomizeCell *cell = (CustomizeCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
+    StyleCenter *sc = [StyleCenter sharedCenter];
+    
     //Configure the cell
     if (indexPath.row == 0 ){
-        cell.productImage.file = self.upper;
-        [cell.productImage loadInBackground];
+        [cell.productImage setImageWithURL:sc.upper.image];
     } else if (indexPath.row == 1){
-        cell.productImage.file = self.under;
-        [cell.productImage loadInBackground];
+         [cell.productImage setImageWithURL:sc.bottom.image];
     } else {
-        cell.productImage.file = self.bottom;
-        [cell.productImage loadInBackground];
+        [cell.productImage setImageWithURL:sc.slipper.image];
     }
     
     //return the cell
@@ -114,18 +99,13 @@
 - (IBAction)shareCustomizedOutFit:(id)sender {
     //futher customization is needed
     NSString *shareString = @"Check out my newly crafted outfit at mySMU app! Browse more at products at http://shop.smu.edu.sg/store/";
-    
-    
-    self.upperImage = [UIImage imageWithData:[self.upper getData]];
-    self.underImage = [UIImage imageWithData:[self.under getData]];
-    self.buttonImage = [UIImage imageWithData:[self.bottom getData]];
-    
-    CGSize size = CGSizeMake(self.upperImage.size.width, self.upperImage.size.height + self.underImage.size.height + self.buttonImage.size.height);
+
+    CGSize size = CGSizeMake(self.upperImage.size.width, self.upperImage.size.height + self.underImage.size.height + self.slipperImage.size.height);
     UIGraphicsBeginImageContext(size);
     
     [self.upperImage drawInRect:CGRectMake(0,0,size.width, self.upperImage.size.height)];
     [self.underImage drawInRect:CGRectMake(0,self.upperImage.size.height,size.width, self.underImage.size.height)];
-    [self.buttonImage drawInRect:CGRectMake(0,self.upperImage.size.height + self.underImage.size.height ,size.width, self.underImage.size.height)];
+    [self.slipperImage drawInRect:CGRectMake(0,self.upperImage.size.height + self.underImage.size.height ,size.width, self.underImage.size.height)];
     
     UIImage *finalImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
@@ -144,6 +124,24 @@
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
     activityViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     [self presentViewController:activityViewController animated:YES completion:nil];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+    ProductViewController *pVC = [self.storyboard instantiateViewControllerWithIdentifier:@"productDetailView"];
+    
+    StyleCenter *sc = [StyleCenter sharedCenter];
+    
+    if (indexPath.row == 0 ){
+        pVC.product = sc.upper;
+    } else if (indexPath.row == 1){
+        pVC.product = sc.bottom;
+    } else {
+        pVC.product = sc.slipper;
+    }
+    
+    [self.navigationController pushViewController:pVC animated:YES];
 }
 
 @end

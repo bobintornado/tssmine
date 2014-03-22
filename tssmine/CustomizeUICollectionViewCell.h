@@ -10,6 +10,6 @@
 
 @interface CustomizeUICollectionViewCell : UICollectionViewCell
 
-@property (strong, nonatomic) IBOutlet PFImageView *productImage;
+@property (strong, nonatomic) IBOutlet UIImageView *productImageView;
 
 @end

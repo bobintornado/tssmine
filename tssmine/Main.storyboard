@@ -704,7 +704,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="o2r-de-rZc" customClass="PFImageView">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="o2r-de-rZc">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </imageView>
@@ -712,7 +712,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <outlet property="productImage" destination="o2r-de-rZc" id="u7N-o1-m5i"/>
+                                    <outlet property="productImageView" destination="o2r-de-rZc" id="deX-to-aTw"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -725,6 +725,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="kFL-4b-5gc"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="upperCollection" destination="Ysu-8x-3If" id="b2E-Vl-Vpk"/>
                         <segue destination="yJP-bI-jG7" kind="push" identifier="choseUnder" id="XiF-Oy-49Z"/>
                     </connections>
                 </collectionViewController>
@@ -747,14 +748,14 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="customizeCollectionCell" id="Jza-8r-fi8" customClass="CustomizeUICollectionViewCell">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="customizeCollectionCell" id="PvV-PV-eSl" customClass="CustomizeUICollectionViewCell">
                                 <rect key="frame" x="0.0" y="64" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Do7-5P-0m8" customClass="PFImageView">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Tfs-Ny-qv0">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </imageView>
@@ -762,7 +763,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <outlet property="productImage" destination="Do7-5P-0m8" id="Rie-tz-6Ly"/>
+                                    <outlet property="productImageView" destination="Tfs-Ny-qv0" id="I7p-MP-RYs"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -775,6 +776,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="lGq-HE-6FN"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="underCV" destination="iQj-SR-j4q" id="Dxy-F0-KUf"/>
                         <segue destination="elF-N4-OnA" kind="push" identifier="choseBottom" id="qpq-xT-0A8"/>
                     </connections>
                 </collectionViewController>
@@ -797,14 +799,14 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="customizeCollectionCell" id="WLj-Uk-52x" customClass="CustomizeUICollectionViewCell">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="customizeCollectionCell" id="EPd-KQ-obi" customClass="CustomizeUICollectionViewCell">
                                 <rect key="frame" x="0.0" y="64" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="VJr-mF-ixw" customClass="PFImageView">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Rqa-3p-Eje">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </imageView>
@@ -812,7 +814,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <outlet property="productImage" destination="VJr-mF-ixw" id="rGf-V6-4lg"/>
+                                    <outlet property="productImageView" destination="Rqa-3p-Eje" id="siT-O8-C96"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -825,6 +827,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="htx-Xg-Ncg"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="slipperCV" destination="cl6-KC-cx5" id="7up-nJ-d1D"/>
                         <segue destination="265-K6-qdt" kind="push" identifier="customizeResult" id="OO4-EJ-piS"/>
                     </connections>
                 </collectionViewController>
@@ -1889,6 +1892,24 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="axJ-xo-ULP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="customizeCollectionCell" id="b63-R0-BgU" customClass="CustomizeUICollectionViewCell">
+                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="rBf-ka-Wv8">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="productImageView" destination="rBf-ka-Wv8" id="Odw-dT-nKp"/>
+                    </connections>
+                </collectionViewCell>
             </objects>
             <point key="canvasLocation" x="816" y="3833"/>
         </scene>

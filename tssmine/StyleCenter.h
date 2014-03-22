@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TSSProduct.h"
 
 @interface StyleCenter : NSObject
 
-@property (nonatomic, retain) PFObject *upper;
-@property (nonatomic, retain) PFObject *under;
-@property (nonatomic, retain) PFObject *bottom;
+@property (nonatomic, retain) TSSProduct *upper;
+@property (nonatomic, retain) TSSProduct *bottom;
+@property (nonatomic, retain) TSSProduct *slipper;
 
 + (StyleCenter *)sharedCenter;
 

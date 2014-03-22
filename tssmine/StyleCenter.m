@@ -24,9 +24,6 @@ static StyleCenter *sharedCenter = nil;
 
 - (id)init {
     if (self = [super init]) {
-        self.upper = [PFObject objectWithClassName:@"TSSProduct"];
-        self.under = [PFObject objectWithClassName:@"TSSProduct"];
-        self.bottom = [PFObject objectWithClassName:@"TSSProduct"];
     }
     return self;
 }
