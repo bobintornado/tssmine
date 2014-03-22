@@ -54,6 +54,13 @@
     QuizCenter *sharedCenter = [QuizCenter sharedCenter];
     NSRange range = NSMakeRange(3,1);
     sharedCenter.result = [sharedCenter.result stringByReplacingCharactersInRange:range withString:@"B"];
+    
+    //tracking
+    PFObject *tracking = [PFObject objectWithClassName:@"tracking"];
+    tracking[@"event"] = @"FinishQuiz";
+    tracking[@"content"] = sharedCenter.result;
+    [tracking saveInBackground];
+    
     [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"popBack" object:nil]];
     
     [self.navigationController popToRootViewControllerAnimated:NO];
