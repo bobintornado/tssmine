@@ -249,6 +249,7 @@
         return c;
     } else if (indexPath.row == 1){
         ChoseTableViewCell *c = (ChoseTableViewCell *)cell;
+        c.chosenValue.text = @"Eletronics";
         c.choseLabel.text = @"Category";
         return c;
     } else if (indexPath.row == 2){

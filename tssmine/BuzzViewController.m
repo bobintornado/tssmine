@@ -13,12 +13,14 @@
 #import "AppDelegate.h"
 #import <MobileCoreServices/UTCoreTypes.h>
 #import "TSSUtility.h"
+#import "FilterCenter.h"
 
 @interface BuzzViewController ()
 
 @property UIImage *photoChosen;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *cameraButton;
-@property int rankingIndex;
+@property (strong, nonatomic) FilterCenter *sharedCenter;
+@property (strong, nonatomic) IBOutlet UITableView *buzzTable;
 
 @end
 
@@ -36,8 +38,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.sharedCenter = [FilterCenter sharedCenter];
 	// Do any additional setup after loading the view.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(uploadNewBuzz) name:@"publishNew" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadObjects) name:@"changeRanking" object:nil];
     
     UIBarButtonItem *rightButtonRank = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"text-list.png"] style:UIBarButtonItemStylePlain target:self action:@selector(rank)];
     
@@ -52,8 +56,6 @@
 
 - (void)rank{
     RankTableViewController *rTVC = [self.storyboard instantiateViewControllerWithIdentifier:@"rankTVC"];
-    rTVC.checkMarkIndex = self.rankingIndex;
-    //rTVC.delegate = self;
     [self.navigationController pushViewController:rTVC animated:YES];
 }
 
@@ -80,35 +82,33 @@
         self.pullToRefreshEnabled = YES;
         self.paginationEnabled = YES;
         self.objectsPerPage = 25;
-        self.rankingIndex = 0;
     }
     return self;
 }
 
 - (PFQuery *)queryForTable {
+    
     PFQuery *query = [PFQuery queryWithClassName:@"snap"];
     NSArray *objects = [query findObjects];
-    for (PFObject *object in objects){
-        PFQuery *thumbupCount = [PFQuery queryWithClassName:@"ThumbUp"];
-        [thumbupCount whereKey:@"target" equalTo:object];
-        NSDate *creationTime = [object createdAt];
-        NSDate *now = [NSDate date];
-        NSTimeInterval distanceBetweenDates = [now timeIntervalSinceDate:creationTime];
-        double secondsInAnHour = 3600;
-        NSInteger age = distanceBetweenDates / secondsInAnHour;
-        [thumbupCount countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
-             object[@"score"] = @(number*50/pow((age + 2), 1.8));
-             [object saveInBackground];
-        }];
-    }
-    [query orderByDescending:@"score"];
-    [query addDescendingOrder:@"createdAt"];
     
-//    NSArray *obs = [query findObjects];
-//    for(PFObject *ob in obs){
-//        NSString *s1 = [ob objectForKey:@"score"];
-//        NSLog(@"the score is %@,", s1);
-//    }
+    if (self.sharedCenter.buzzFilter == 0) {
+        for (PFObject *object in objects){
+            PFQuery *thumbupCount = [PFQuery queryWithClassName:@"ThumbUp"];
+            [thumbupCount whereKey:@"target" equalTo:object];
+            NSDate *creationTime = [object createdAt];
+            NSDate *now = [NSDate date];
+            NSTimeInterval distanceBetweenDates = [now timeIntervalSinceDate:creationTime];
+            double secondsInAnHour = 3600;
+            NSInteger age = distanceBetweenDates / secondsInAnHour;
+            [thumbupCount countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
+                object[@"score"] = @(number*50/pow((age + 2), 1.8));
+                [object saveInBackground];
+            }];
+        }
+        [query orderByDescending:@"score"];
+    } else {
+        [query addDescendingOrder:@"createdAt"];
+    }
     return query;
 }
 

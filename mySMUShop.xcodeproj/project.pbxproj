@@ -27,6 +27,8 @@
 		D920B27918D60D25001A4F7E /* libPayPalMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D920B27318D60D25001A4F7E /* libPayPalMobile.a */; };
 		D920B27B18D60DBC001A4F7E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D920B27A18D60DBC001A4F7E /* AVFoundation.framework */; };
 		D920B27D18D60DCC001A4F7E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D920B27C18D60DCC001A4F7E /* MessageUI.framework */; };
+		D922A99418E07B700060A4E6 /* PaymentCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D922A99318E07B700060A4E6 /* PaymentCenter.m */; };
+		D922A99718E111D50060A4E6 /* FilterCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D922A99618E111D50060A4E6 /* FilterCenter.m */; };
 		D9259BCC18C52474006A254A /* SubCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9259BCB18C52474006A254A /* SubCategoryViewController.m */; };
 		D93FB68118C436A70080E3E6 /* MYSMUConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = D93FB68018C436A70080E3E6 /* MYSMUConstants.m */; };
 		D952608218D68E8E00C24EE0 /* CheckoutCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D952608118D68E8E00C24EE0 /* CheckoutCenter.m */; };
@@ -165,6 +167,10 @@
 		D920B27818D60D25001A4F7E /* PayPalPaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalPaymentViewController.h; sourceTree = "<group>"; };
 		D920B27A18D60DBC001A4F7E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D920B27C18D60DCC001A4F7E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		D922A99218E07B700060A4E6 /* PaymentCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentCenter.h; sourceTree = "<group>"; };
+		D922A99318E07B700060A4E6 /* PaymentCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentCenter.m; sourceTree = "<group>"; };
+		D922A99518E111D50060A4E6 /* FilterCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterCenter.h; sourceTree = "<group>"; };
+		D922A99618E111D50060A4E6 /* FilterCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterCenter.m; sourceTree = "<group>"; };
 		D9259BCA18C52474006A254A /* SubCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubCategoryViewController.h; sourceTree = "<group>"; };
 		D9259BCB18C52474006A254A /* SubCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubCategoryViewController.m; sourceTree = "<group>"; };
 		D93FB67F18C436450080E3E6 /* MYSMUConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYSMUConstants.h; sourceTree = "<group>"; };
@@ -379,6 +385,10 @@
 				D9E0027D1896428A0053FB0C /* QuizCenter.m */,
 				D952608018D68E8E00C24EE0 /* CheckoutCenter.h */,
 				D952608118D68E8E00C24EE0 /* CheckoutCenter.m */,
+				D922A99218E07B700060A4E6 /* PaymentCenter.h */,
+				D922A99318E07B700060A4E6 /* PaymentCenter.m */,
+				D922A99518E111D50060A4E6 /* FilterCenter.h */,
+				D922A99618E111D50060A4E6 /* FilterCenter.m */,
 			);
 			name = Singleton;
 			sourceTree = "<group>";
@@ -871,6 +881,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D922A99718E111D50060A4E6 /* FilterCenter.m in Sources */,
 				D920B26818D5FC9C001A4F7E /* BillingDetailsTableViewController.m in Sources */,
 				D952DAE518B6484B0032D40F /* BazaarViewController.m in Sources */,
 				D98438441884D1CC008BDCA8 /* StlyingViewController.m in Sources */,
@@ -941,6 +952,7 @@
 				D96006B01884852400BB1C9E /* ProfileViewController.m in Sources */,
 				D920B24F18D5A831001A4F7E /* ProductInCart.m in Sources */,
 				D9E38B3E1886F5F000FC9B6B /* BorGViewController.m in Sources */,
+				D922A99418E07B700060A4E6 /* PaymentCenter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

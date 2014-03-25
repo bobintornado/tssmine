@@ -11,7 +11,4 @@
 
 @interface RankTableViewController : UITableViewController
 
-@property int checkMarkIndex;
-//@property id<rankingIndexSourceDelegate> delegate;
-
 @end

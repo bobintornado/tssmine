@@ -7,8 +7,11 @@
 //
 
 #import "RankTableViewController.h"
+#import "FilterCenter.h"
 
 @interface RankTableViewController ()
+
+@property (strong, nonatomic) FilterCenter *sharedCenter;
 
 @end
 
@@ -26,6 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.sharedCenter = [FilterCenter sharedCenter];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.title = @"Ranking";
 }
@@ -45,7 +49,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return 2;
 }
 
 
@@ -57,15 +61,13 @@
     switch (indexPath.row)
     {
         case 0:
-            [cell.textLabel setText:@"Trendy Now"];
+            [cell.textLabel setText:@"Trending Now"];
             break;
         case 1:
-            [cell.textLabel setText:@"Most Popular"];
-            break;
-        case 2:
             [cell.textLabel setText:@"Most Recent"];
+            break;
     }
-    if (indexPath.row == self.checkMarkIndex) {
+    if (indexPath.row == self.sharedCenter.buzzFilter) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }
     return cell;
@@ -76,9 +78,11 @@
     UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
     if (selectedCell.accessoryType == UITableViewCellAccessoryNone){
         selectedCell.accessoryType = UITableViewCellAccessoryCheckmark;
-        self.checkMarkIndex = indexPath.row;
+        self.sharedCenter.buzzFilter = indexPath.row;
+        [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"changeRanking" object:nil]];
     }
     //Do something
+   
     [self.navigationController popViewControllerAnimated:YES];
 }
 

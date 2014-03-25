@@ -121,6 +121,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="buzzTable" destination="T7P-UE-HgA" id="uzn-v4-SwS"/>
                         <outlet property="cameraButton" destination="mvS-QT-EUr" id="h9G-V6-RX3"/>
                     </connections>
                 </tableViewController>
@@ -1229,7 +1230,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" id="RIc-PM-7gk">
-                                            <rect key="frame" x="112" y="7" width="203" height="30"/>
+                                            <rect key="frame" x="120" y="7" width="180" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
@@ -1597,7 +1598,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="159"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="1Bp-jM-FOt" customClass="PFImageView">
+                                        <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="1Bp-jM-FOt" customClass="PFImageView">
                                             <rect key="frame" x="0.0" y="0.0" width="120" height="160"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </imageView>

@@ -7,8 +7,11 @@
 //
 
 #import "SalutationTableViewController.h"
+#import "PaymentCenter.h"
 
 @interface SalutationTableViewController ()
+
+@property (strong, nonatomic) PaymentCenter *sharedCenter;
 
 @end
 
@@ -26,7 +29,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.sharedCenter = [PaymentCenter sharedCenter];
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,6 +73,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self.navigationController popViewControllerAnimated:YES];
+    if (indexPath.row == 0) {
+        self.sharedCenter.salutation = @"Current Student";
+    } else if (indexPath.row == 1){
+       self.sharedCenter.salutation = @"Alumni";
+    } else if (indexPath.row == 2){
+        self.sharedCenter.salutation = @"Faculty";
+    } else if (indexPath.row == 3){
+        self.sharedCenter.salutation = @"Staff";
+    }
 }
 
 /*

@@ -11,12 +11,14 @@
 #import <MobileCoreServices/UTCoreTypes.h>
 #import "AddNewSHItemViewController.h"
 #import "DesInputTableViewCell.h"
+#import <objc/runtime.h>
 
 @interface BazaarViewController ()
 
 @property UIImage *itemPhoto;
-
 @property (strong, nonatomic) IBOutlet UINavigationItem *bazaarUINav;
+@property BOOL isFullScreen;
+@property CGRect prevFrame;
 
 @end
 
@@ -161,6 +163,7 @@
         }
         cell.contact.text = [NSString stringWithFormat:@"%@:%@",displayName,phoneNumber];
     }];
+    
     return cell;
 }
 
@@ -185,6 +188,8 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    //BazaarPFTableViewCell* cell = (BazaarPFTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -192,4 +197,24 @@
     return 160;
 }
 
+-(void)imgToFullScreen:(UIImageView *)view{
+    if (!self.isFullScreen) {
+        [UIView animateWithDuration:0.5 delay:0 options:0 animations:^{
+            //save previous frame
+            self.prevFrame = view.frame;
+            [view setFrame:[[UIScreen mainScreen] bounds]];
+        }completion:^(BOOL finished){
+            self.isFullScreen = true;
+        }];
+        return;
+    }
+    else{
+        [UIView animateWithDuration:0.5 delay:0 options:0 animations:^{
+            [view setFrame:self.prevFrame];
+        }completion:^(BOOL finished){
+            self.isFullScreen = false;;
+        }];
+        return;
+    }
+}
 @end

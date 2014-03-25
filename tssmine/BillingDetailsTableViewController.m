@@ -11,8 +11,11 @@
 #import "ChoseTableViewCell.h"
 #import "SalutationTableViewController.h"
 #import "PaymentTableViewController.h"
+#import "PaymentCenter.h"
 
 @interface BillingDetailsTableViewController ()
+
+@property (strong, nonatomic) PaymentCenter *sharedCenter;
 
 @end
 
@@ -33,6 +36,12 @@
     self.title = @"Billing Details";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Payment" style:UIBarButtonItemStylePlain target:self action:@selector(paymentMethods)];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.sharedCenter = [PaymentCenter sharedCenter];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self.tableView reloadData];
 }
 
 - (void)paymentMethods{
@@ -75,18 +84,23 @@
     if (indexPath.row == 0) {
         InputTableViewCell *c = (InputTableViewCell *)cell;
         c.inputTitle.text = @"First Name";
+        c.inputField.placeholder = self.sharedCenter.firstName;
     } else if (indexPath.row == 1){
         InputTableViewCell *c = (InputTableViewCell *)cell;
         c.inputTitle.text = @"Last Name";
+        c.inputField.placeholder = self.sharedCenter.lastName;
     } else if (indexPath.row == 2){
         InputTableViewCell *c = (InputTableViewCell *)cell;
         c.inputTitle.text = @"Email";
+        c.inputField.placeholder = self.sharedCenter.email;
     } else if (indexPath.row == 3){
         InputTableViewCell *c = (InputTableViewCell *)cell;
         c.inputTitle.text = @"Telephone";
+        c.inputField.placeholder = self.sharedCenter.telephone;
     } else {
         ChoseTableViewCell *c = (ChoseTableViewCell *)cell;
         c.choseLabel.text = @"I am a/an...";
+        c.chosenValue.text = self.sharedCenter.salutation;
     }
     return cell;
 }
