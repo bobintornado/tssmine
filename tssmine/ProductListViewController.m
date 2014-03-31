@@ -170,6 +170,7 @@
     PFObject *tracking = [PFObject objectWithClassName:@"tracking"];
     tracking[@"event"] = @"ClickOnProduct";
     tracking[@"content"] = [self.products[indexPath.row] name];
+    tracking[@"device"] = [PFInstallation currentInstallation];
     [tracking saveInBackground];
     
     ProductViewController *pVC = [self.storyboard instantiateViewControllerWithIdentifier:@"productDetailView"];

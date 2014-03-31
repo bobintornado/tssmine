@@ -10,7 +10,6 @@
 		D901607B187AB8190003985D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D901607A187AB8190003985D /* Main.storyboard */; };
 		D905DA3818D213220092AD3A /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = D905DA3718D213220092AD3A /* FXBlurView.m */; };
 		D905DA3B18D21E6A0092AD3A /* OptionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D905DA3A18D21E6A0092AD3A /* OptionTableViewController.m */; };
-		D91081211896A83100E46B51 /* QuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D91081201896A83100E46B51 /* QuizViewController.m */; };
 		D916C2EE18B89AEB00486DFD /* AnnouncementCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D916C2ED18B89AEB00486DFD /* AnnouncementCell.m */; };
 		D916C2F118B8DD6500486DFD /* BuzzViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D916C2F018B8DD6500486DFD /* BuzzViewController.m */; };
 		D916C2F418B8E53E00486DFD /* BuzzCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D916C2F318B8E53E00486DFD /* BuzzCell.m */; };
@@ -131,8 +130,6 @@
 		D905DA3718D213220092AD3A /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
 		D905DA3918D21E6A0092AD3A /* OptionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionTableViewController.h; sourceTree = "<group>"; };
 		D905DA3A18D21E6A0092AD3A /* OptionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionTableViewController.m; sourceTree = "<group>"; };
-		D910811F1896A83100E46B51 /* QuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizViewController.h; sourceTree = "<group>"; };
-		D91081201896A83100E46B51 /* QuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizViewController.m; sourceTree = "<group>"; };
 		D916C2EC18B89AEB00486DFD /* AnnouncementCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnouncementCell.h; sourceTree = "<group>"; };
 		D916C2ED18B89AEB00486DFD /* AnnouncementCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnouncementCell.m; sourceTree = "<group>"; };
 		D916C2EF18B8DD6500486DFD /* BuzzViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuzzViewController.h; sourceTree = "<group>"; };
@@ -673,8 +670,6 @@
 		D9A085701897146200B000B9 /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
-				D910811F1896A83100E46B51 /* QuizViewController.h */,
-				D91081201896A83100E46B51 /* QuizViewController.m */,
 				D9E38B3C1886F5F000FC9B6B /* BorGViewController.h */,
 				D9E38B3D1886F5F000FC9B6B /* BorGViewController.m */,
 				D9E38B4E1886F7FF00FC9B6B /* BoyStudyViewController.h */,
@@ -930,7 +925,6 @@
 				D9A71FEA18B675BD00B15375 /* BazaarPFTableViewCell.m in Sources */,
 				D916C2EE18B89AEB00486DFD /* AnnouncementCell.m in Sources */,
 				D9647D58187A823F00B26CE8 /* SnapTakePhotoViewController.m in Sources */,
-				D91081211896A83100E46B51 /* QuizViewController.m in Sources */,
 				D9F8910F18C46BDB003793BA /* TSSCategories.m in Sources */,
 				D916C2F418B8E53E00486DFD /* BuzzCell.m in Sources */,
 				D952DAE918B65AB00032D40F /* PromotionViewController.m in Sources */,

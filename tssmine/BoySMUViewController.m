@@ -44,6 +44,7 @@
     PFObject *tracking = [PFObject objectWithClassName:@"tracking"];
     tracking[@"event"] = @"FinishQuiz";
     tracking[@"content"] = sharedCenter.result;
+    tracking[@"device"] = [PFInstallation currentInstallation];
     [tracking saveInBackground];
     
     [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"popBack" object:nil]];
@@ -59,6 +60,7 @@
     PFObject *tracking = [PFObject objectWithClassName:@"tracking"];
     tracking[@"event"] = @"FinishQuiz";
     tracking[@"content"] = sharedCenter.result;
+    tracking[@"device"] = [PFInstallation currentInstallation];
     [tracking saveInBackground];
     
     [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"popBack" object:nil]];

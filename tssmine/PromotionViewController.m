@@ -32,6 +32,7 @@
     PFObject *tracking = [PFObject objectWithClassName:@"tracking"];
     tracking[@"event"] = @"ClickOnTab";
     tracking[@"content"] = @"uni";
+    tracking[@"device"] = [PFInstallation currentInstallation];
     [tracking saveInBackground];
 }
 

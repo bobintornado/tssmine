@@ -45,12 +45,11 @@
     
     UIBarButtonItem *rightButtonRank = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"text-list.png"] style:UIBarButtonItemStylePlain target:self action:@selector(rank)];
     
-    NSArray *arr= [[NSArray alloc] initWithObjects:self.cameraButton,rightButtonRank,nil];
-    self.navigationItem.rightBarButtonItems=arr;
     
     PFObject *tracking = [PFObject objectWithClassName:@"tracking"];
     tracking[@"event"] = @"ClickOnTab";
     tracking[@"content"] = @"buzz";
+    tracking[@"device"] = [PFInstallation currentInstallation];
     [tracking saveInBackground];
 }
 

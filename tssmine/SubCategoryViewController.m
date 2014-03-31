@@ -81,6 +81,7 @@
     PFObject *tracking = [PFObject objectWithClassName:@"tracking"];
     tracking[@"event"] = @"ClickOnCategory";
     tracking[@"content"] = [self.categories[indexPath.row] name];
+    tracking[@"device"] = [PFInstallation currentInstallation];
     [tracking saveInBackground];
     
     NSString *urlString = [NSString stringWithFormat:@"%@index.php?route=feed/web_api/%@&key=%@&id=%@",ShopDomain,@"getCategoriesByParentId",RESTfulKey,parentID];

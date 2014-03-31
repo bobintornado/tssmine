@@ -42,6 +42,7 @@
     PFObject *tracking = [PFObject objectWithClassName:@"tracking"];
     tracking[@"event"] = @"ClickOnTab";
     tracking[@"content"] = @"bazaar";
+    tracking[@"device"] = [PFInstallation currentInstallation];
     [tracking saveInBackground];
 }
 
@@ -56,7 +57,7 @@
 - (IBAction)addNewItem:(id)sender {
     if (![PFUser currentUser]) {
         UIAlertView *av = [[UIAlertView alloc] initWithTitle:@""
-                                                     message:@"You Need to Login/Sign Up in order to post a new item, tab Profile for more information"
+                                                     message:@"Please Login First To Post An Item"
                                                     delegate:self
                                            cancelButtonTitle:nil
                                            otherButtonTitles:@"OK", nil];
@@ -146,11 +147,14 @@
     cell.itemImg.file = [object objectForKey:@"img"];
     [cell.itemImg loadInBackground];
     cell.itemDes.text = [object objectForKey:@"description"];
-    cell.category.text = [object objectForKey:@"category"];
+    
+    //cell.category.text = [object objectForKey:@"category"];
+    
     cell.price.text = [NSString stringWithFormat:@"SGD $%@",                                                [[object objectForKey:@"price"] stringValue]];
     
     PFQuery *query = [PFQuery queryWithClassName:@"SHItem"];
     [query includeKey:@"seller"];
+
     [query getObjectInBackgroundWithId:object.objectId block:^(PFObject *item, NSError *error) {
         NSString *displayName = item[@"seller"][@"displayName"];
         NSString *phoneNumber = item[@"seller"][@"phoneNumber"];

@@ -37,10 +37,12 @@
     NSLog(@"styling");
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushViews) name:@"popBack" object:nil];
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	
+    //Tracking based on "impression"
     PFObject *tracking = [PFObject objectWithClassName:@"tracking"];
     tracking[@"event"] = @"ClickOnTab";
     tracking[@"content"] = @"styling";
+    tracking[@"device"] = [PFInstallation currentInstallation];
     [tracking saveInBackground];
 }
 

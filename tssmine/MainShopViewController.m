@@ -57,6 +57,7 @@
     PFObject *tracking = [PFObject objectWithClassName:@"tracking"];
     tracking[@"event"] = @"ClickOnTab";
     tracking[@"content"] = @"shop";
+    tracking[@"device"] = [PFInstallation currentInstallation];
     [tracking saveInBackground];
 }
 
@@ -66,8 +67,6 @@
 }
 
 - (void)getSliders {
-    NSLog(@"get sldiers");
-    
     NSString *urlString = [NSString stringWithFormat:@"%@index.php?route=%@&key=%@",ShopDomain,@"feed/web_api/banner",RESTfulKey,Nil];
     
     NSURL *bannerURL = [NSURL URLWithString:urlString];
@@ -78,18 +77,11 @@
             } else {
                 NSError *localError = nil;
                 id parsedObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&localError];
-            
                 NSLog(@"fetching banners data success");
-                
                 if([parsedObject isKindOfClass:[NSDictionary class]])
                 {
-                    NSLog(@"banners data is dict");
-                    
                     NSDictionary *results = parsedObject;
                     //construct objects and pass to array
-                    
-                    //NSLog([results objectForKey:@"banners"]);
-                    
                     for (NSObject *banner in [results valueForKey:@"banners"]){
                         TSSSlider *slider = [[TSSSlider alloc] init];
                         slider.title = [banner valueForKey:@"title"];
@@ -102,14 +94,9 @@
                         sliderContentVC.slider = slider;
                         [self.sliderViewControllers addObject:sliderContentVC];
                     }
-                    
-                    //NSLog(@"%lu",(unsigned long)self.sliderViewControllers.count);
                     NSArray *array = @[[self.sliderViewControllers objectAtIndex:0]];
-                    
                     [self.sliderPageVC setViewControllers:array direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
-                    
                     self.sliderPageVC.view.frame = CGRectMake(0, 64, 320, 160);
-                    
                     [self performSelectorOnMainThread:@selector(addChildViewController:) withObject:self.sliderPageVC waitUntilDone:NO];
                     [self.mainView performSelectorOnMainThread:@selector(addSubview:) withObject:self.sliderPageVC.view waitUntilDone:NO];
                     [self.sliderPageVC performSelectorOnMainThread:@selector(didMoveToParentViewController:) withObject:self waitUntilDone:NO];
@@ -125,9 +112,6 @@
 }
 
 - (void)getCategories{
-    //must get all 
-    NSLog(@"get all categories");
-    
     //implement this if the json is huge
     //[NSThread detachNewThreadSelector:@selector(loadData) toTarget:self withObject:nil];
     
@@ -136,7 +120,6 @@
     NSURL *categoryURL = [NSURL URLWithString:urlString];
     
     [NSURLConnection sendAsynchronousRequest:[[NSURLRequest alloc] initWithURL:categoryURL] queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-        
         if (error) {
             NSLog(@"fetching categories data failed");
         } else {
@@ -147,22 +130,20 @@
             {
                 NSDictionary *results = parsedObject;
                 //construct objects and pass to array
-                
                 for (NSObject *ob in [results valueForKey:@"categories"]){
                     TSSCategories *category = [[TSSCategories alloc] init];
-                    
                     NSString *p = [[ob valueForKey:@"name"] stringByConvertingHTMLToPlainText];
-                    
+                    //Hard Code Remove ABOUT US
+                    if ([p isEqualToString:@"ABOUT US"]) {
+                        continue;
+                    }
                     [category setCategoryName:p CategoryID:[ob valueForKey:@"category_id"] parentID:[ob valueForKey:@"parent_id"] andImageURLString:[ob valueForKey:@"image"]];
-                    //NSLog(@"%@",[ob valueForKey:@"image"]);
-                    
                     [self.categories addObject:category];
                 }
             } else {
                 NSLog(@"what we get is not a kind of clss nsdictionary class");
             }
         }
-        //NSLog(@"reload data");
         [self.categoryTableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
     }];
 }
@@ -297,6 +278,7 @@
     PFObject *tracking = [PFObject objectWithClassName:@"tracking"];
     tracking[@"event"] = @"ClickOnCategory";
     tracking[@"content"] = selectedCategory.name;
+    tracking[@"device"] = [PFInstallation currentInstallation];
     [tracking saveInBackground];
     
     //NSLog(selectedCategory);
