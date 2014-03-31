@@ -12,6 +12,7 @@
 #import "AddNewSHItemViewController.h"
 #import "DesInputTableViewCell.h"
 #import <objc/runtime.h>
+#import <MessageUI/MessageUI.h>
 
 @interface BazaarViewController ()
 
@@ -19,6 +20,7 @@
 @property (strong, nonatomic) IBOutlet UINavigationItem *bazaarUINav;
 @property BOOL isFullScreen;
 @property CGRect prevFrame;
+@property (strong,nonatomic) NSMutableArray *recipients;
 
 @end
 
@@ -70,24 +72,53 @@
 
 //action sheet delegate
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-    if (buttonIndex == 0) {
+    
+    if (actionSheet.tag == 2) {
+        if (buttonIndex == 0) {
+            if ([MFMessageComposeViewController canSendText])
+                // The device can send email.
+            {
+                [self displaySMSComposerSheet];
+            }
+            else
+                // The device can not send email.
+            {
+                NSLog(@"Device not configured to send SMS.");
+            }
+        }
+        if (buttonIndex == 1) {
+            NSLog(@"call ownder");
+        }
         
-        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-        imagePicker.mediaTypes = [NSArray arrayWithObject:(NSString *) kUTTypeImage];
-        imagePicker.delegate = self;
-        imagePicker.allowsEditing = YES;
-        imagePicker.showsCameraControls = YES;
+    } else {
+        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+        if (buttonIndex == 0) {
         
-        [self.navigationController presentViewController:imagePicker animated:YES completion:nil];
+            imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+            imagePicker.mediaTypes = [NSArray arrayWithObject:(NSString *) kUTTypeImage];
+            imagePicker.delegate = self;
+            imagePicker.allowsEditing = YES;
+            imagePicker.showsCameraControls = YES;
         
-    } else if (buttonIndex == 1) {
-        [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-        imagePicker.delegate = self;
-        imagePicker.allowsEditing = YES;
-        [self.navigationController presentViewController:imagePicker animated:YES completion:nil];
+            [self.navigationController presentViewController:imagePicker animated:YES completion:nil];
+        
+        } else if (buttonIndex == 1) {
+            [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+            imagePicker.delegate = self;
+            imagePicker.allowsEditing = YES;
+            [self.navigationController presentViewController:imagePicker animated:YES completion:nil];
+        }
+        [imagePicker setDelegate:self];
     }
-    [imagePicker setDelegate:self];
+}
+
+- (void)displaySMSComposerSheet
+{
+	MFMessageComposeViewController *picker = [[MFMessageComposeViewController alloc] init];
+	picker.messageComposeDelegate = self;
+    picker.recipients = self.recipients;
+    picker.body = @"I am interested in your xx posted at mySMUShop bazaar, and I would like to ";
+	[self presentViewController:picker animated:YES completion:NULL];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
@@ -192,8 +223,19 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    //BazaarPFTableViewCell* cell = (BazaarPFTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Text Owner", @"Voice Call Owner",nil];
+    actionSheet.tag = 2;
+    [actionSheet showInView:self.view];
+    
+    //Adding phoen number
+    PFObject *p = [self objectAtIndexPath:indexPath];
+    [p fetchIfNeeded];
+    PFUser * u = [p objectForKey:@"seller"];
+    [u fetchIfNeeded];
+    NSString *phone = [u objectForKey:@"phoneNumber"];
+    self.recipients = [[NSMutableArray alloc] init];
+    [self.recipients addObject:phone];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

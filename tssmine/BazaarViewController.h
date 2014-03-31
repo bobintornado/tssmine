@@ -7,7 +7,8 @@
 //
 
 #import <Parse/Parse.h>
+#import <MessageUI/MessageUI.h>
 
-@interface BazaarViewController : PFQueryTableViewController <UIImagePickerControllerDelegate,UIActionSheetDelegate,UINavigationControllerDelegate>
+@interface BazaarViewController : PFQueryTableViewController <UIImagePickerControllerDelegate,UIActionSheetDelegate,UINavigationControllerDelegate, MFMessageComposeViewControllerDelegate>
 
 @end
