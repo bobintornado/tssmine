@@ -18,6 +18,7 @@
 @interface StlyingViewController ()
 
 @property (strong,nonatomic) NSMutableArray *products;
+@property (strong,nonatomic) NSDictionary *results;
 
 @end
 
@@ -37,6 +38,8 @@
     NSLog(@"styling");
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushViews) name:@"popBack" object:nil];
     [super viewDidLoad];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"inbox.png"] style:UIBarButtonItemStylePlain target:self action:@selector(savedStyles)];
 	
     //Tracking based on "impression"
     PFObject *tracking = [PFObject objectWithClassName:@"tracking"];
@@ -44,6 +47,20 @@
     tracking[@"content"] = @"styling";
     tracking[@"device"] = [PFInstallation currentInstallation];
     [tracking saveInBackground];
+}
+
+- (void)savedStyles{
+    if (![PFUser currentUser]) {
+        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@""
+                                                     message:@"Please Login To View Your Saved Styles"
+                                                    delegate:self
+                                           cancelButtonTitle:nil
+                                           otherButtonTitles:@"OK", nil];
+        [av show];
+    } else {
+        UITableViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"stylesViewer"];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,10 +87,12 @@
             id parsedObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&localError];
             
             if([parsedObject isKindOfClass:[NSDictionary class]])
-            { NSDictionary *results = parsedObject;
+            {
+                //saving information to dictionaries
+                self.results = parsedObject;
                 //construct objects and pass to array
                 NSLog(@"products is dict");
-                for (NSObject *ob in [results valueForKey:@"products"]){
+                for (NSObject *ob in [self.results valueForKey:@"products"]){
                     TSSProduct *pr = [[TSSProduct alloc] init];
                     
                     pr.productID = [ob valueForKey:@"id"];
@@ -123,6 +142,7 @@
 - (void)showResult{
     QuizResultViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"quizResult"];
     vc.products = self.products;
+    vc.results = self.results;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

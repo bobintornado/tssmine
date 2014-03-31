@@ -29,6 +29,7 @@
 		D922A99418E07B700060A4E6 /* PaymentCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D922A99318E07B700060A4E6 /* PaymentCenter.m */; };
 		D922A99718E111D50060A4E6 /* FilterCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D922A99618E111D50060A4E6 /* FilterCenter.m */; };
 		D9259BCC18C52474006A254A /* SubCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9259BCB18C52474006A254A /* SubCategoryViewController.m */; };
+		D939590B18E934E700342337 /* StylesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D939590A18E934E700342337 /* StylesViewController.m */; };
 		D93FB68118C436A70080E3E6 /* MYSMUConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = D93FB68018C436A70080E3E6 /* MYSMUConstants.m */; };
 		D952608218D68E8E00C24EE0 /* CheckoutCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D952608118D68E8E00C24EE0 /* CheckoutCenter.m */; };
 		D952608518D6C06300C24EE0 /* RankTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D952608418D6C06300C24EE0 /* RankTableViewController.m */; };
@@ -170,6 +171,8 @@
 		D922A99618E111D50060A4E6 /* FilterCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterCenter.m; sourceTree = "<group>"; };
 		D9259BCA18C52474006A254A /* SubCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubCategoryViewController.h; sourceTree = "<group>"; };
 		D9259BCB18C52474006A254A /* SubCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubCategoryViewController.m; sourceTree = "<group>"; };
+		D939590918E934E700342337 /* StylesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StylesViewController.h; sourceTree = "<group>"; };
+		D939590A18E934E700342337 /* StylesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StylesViewController.m; sourceTree = "<group>"; };
 		D93FB67F18C436450080E3E6 /* MYSMUConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYSMUConstants.h; sourceTree = "<group>"; };
 		D93FB68018C436A70080E3E6 /* MYSMUConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYSMUConstants.m; sourceTree = "<group>"; };
 		D952608018D68E8E00C24EE0 /* CheckoutCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckoutCenter.h; sourceTree = "<group>"; };
@@ -461,6 +464,8 @@
 				D9A085701897146200B000B9 /* Quiz */,
 				D98438421884D1CC008BDCA8 /* StlyingViewController.h */,
 				D98438431884D1CC008BDCA8 /* StlyingViewController.m */,
+				D939590918E934E700342337 /* StylesViewController.h */,
+				D939590A18E934E700342337 /* StylesViewController.m */,
 			);
 			name = Styling;
 			sourceTree = "<group>";
@@ -888,6 +893,7 @@
 				D9A4949118CEFC2900975005 /* CartViewController.m in Sources */,
 				D98BF169182550EC00DEE19B /* AppDelegate.m in Sources */,
 				D93FB68118C436A70080E3E6 /* MYSMUConstants.m in Sources */,
+				D939590B18E934E700342337 /* StylesViewController.m in Sources */,
 				D9A0857A18971AB000B000B9 /* ChoseUnderViewController.m in Sources */,
 				D9989AAB18DA1A4900FEDF2A /* WebViewController.m in Sources */,
 				D9989AAE18DA1EE100FEDF2A /* UIImageView+UIActivityIndicatorForSDWebImage.m in Sources */,

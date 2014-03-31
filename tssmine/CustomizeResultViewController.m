@@ -48,6 +48,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     StyleCenter *sc = [StyleCenter sharedCenter];
+    
+    self.title = @"Your Own SMU Style!";
 
     [SDWebImageDownloader.sharedDownloader downloadImageWithURL:sc.upper.image options:0 progress:nil completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished)
      {

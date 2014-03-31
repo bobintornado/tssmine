@@ -11,5 +11,6 @@
 @interface QuizResultViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 
 @property (strong, nonatomic) NSMutableArray* products;
+@property (strong,nonatomic) NSDictionary *results;
 
 @end

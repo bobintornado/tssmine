@@ -39,9 +39,8 @@
 {
     [super viewDidLoad];
     
-    NSLog(@"loggg");
 	// Do any additional setup after loading the view.
-    self.title = @"Chose Upper";
+    self.title = @"Chose Top";
     self.products = [[NSMutableArray alloc] init];
     //implement this if the json is huge
     //[NSThread detachNewThreadSelector:@selector(loadData) toTarget:self withObject:nil];

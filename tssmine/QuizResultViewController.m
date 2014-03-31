@@ -53,6 +53,52 @@
     [self downloadImages];
 }
 
+- (void)saveStyle{
+    if (![PFUser currentUser]) {
+        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@""
+                                                     message:@"Please Login To Save the Style"
+                                                    delegate:self
+                                           cancelButtonTitle:nil
+                                           otherButtonTitles:@"OK", nil];
+        [av show];
+    } else {
+        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Styles"
+                                                     message:@"Name Your Style!"
+                                                    delegate:self
+                                           cancelButtonTitle:@"Cancel"
+                                           otherButtonTitles:@"Save", nil];
+        
+        av.alertViewStyle = UIAlertViewStylePlainTextInput;
+        UITextField * alertTextField = [av textFieldAtIndex:0];
+        alertTextField.placeholder = @"Enter Your Style Name";
+        av.tag = 1;
+        [av show];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (alertView.tag == 1) {
+        if (buttonIndex == [alertView cancelButtonIndex] ) {
+            //do nothing
+        } else {
+            PFObject *style = [PFObject objectWithClassName:@"Style"];
+            style[@"user"] = [PFUser currentUser];
+            style[@"style"] = self.results;
+            style[@"name"] = [[alertView textFieldAtIndex:0] text];
+            [style saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (succeeded) {
+                    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@""
+                                                                 message:@"The Style Has Been Saved!"
+                                                                delegate:self
+                                                       cancelButtonTitle:nil
+                                                       otherButtonTitles:@"OK", nil];
+                    [av show];
+                }
+            }];
+        }
+    }
+}
+
 - (void)downloadImages{
     self.pictures = [NSMutableArray arrayWithObjects: @"Upper", @"Bottom", @"Slipper", nil];
     for (TSSProduct *p in self.products){
