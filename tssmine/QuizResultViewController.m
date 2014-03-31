@@ -37,8 +37,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"Your SMU Style!";
     
+    if (self.title == NULL) {
+        self.title = @"Your SMU Style!";
+    }    
     //Adding save and share button
     UIBarButtonItem *saveStyleButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"save.png"] style:UIBarButtonItemStylePlain target:self action:@selector(saveStyle)];
     
