@@ -8,8 +8,16 @@
 
 #import "DeliveryTableViewController.h"
 #import "BillingDetailsTableViewController.h"
+#import "PaymentTableViewController.h"
+#import "MYSMUConstants.h"
+#import "TSSShiping.h"
+#import "PaymentCenter.h"
 
 @interface DeliveryTableViewController ()
+
+@property (strong, nonatomic) NSMutableArray *methods;
+@property (strong, nonatomic) IBOutlet UITableView *methodTV;
+@property (strong ,nonatomic) PaymentCenter *sharedCenter;
 
 @end
 
@@ -27,22 +35,112 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.sharedCenter = [PaymentCenter sharedCenter];
     self.title = @"Delivery Method";
     [self getShippingMethods];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 - (void)getShippingMethods{
+    self.methods = [[NSMutableArray alloc] init];
+    NSString *urlString = [NSString stringWithFormat:@"%@index.php?route=%@&key=%@",ShopDomain,@"feed/web_api/shippingMethods",RESTfulKey,nil];
     
+    //NSLog(@"and the calling url is .. %@",urlString);
+    NSURL *productsURL = [NSURL URLWithString:urlString];
+    
+    [NSURLConnection sendAsynchronousRequest:[[NSURLRequest alloc] initWithURL:productsURL] queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        
+        if (error) {
+            NSLog(@"fetching shipping_methods data failed");
+        } else {
+            NSLog(@"start fetching shipping_methods data");
+            NSError *localError = nil;
+            id parsedObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&localError];
+            
+            if([parsedObject isKindOfClass:[NSDictionary class]])
+            {
+                NSDictionary *results = parsedObject;
+                //construct objects and pass to array
+                NSLog(@"shipping_methods are dict");
+                
+                NSDictionary *methods = [results valueForKey:@"shipping_methods"];
+                for (NSString *key in [methods allKeys]) {
+                    NSDictionary *category = [methods valueForKey:key];
+                    NSDictionary *quote = [category valueForKey:@"quote"];
+                    for (NSString *key2 in [quote allKeys]) {
+                        NSDictionary *method = [quote valueForKey:key2];
+                        
+                        TSSShiping *shiping = [[TSSShiping alloc] init];
+                            
+                        shiping.shippingcode = [method valueForKey:@"code"];
+                        shiping.title = [method valueForKey:@"title"];
+                        shiping.text = [method valueForKey:@"text"];
+                            
+                        [self.methods addObject:shiping];
+                    }
+                }
+                
+               NSLog(@"My dictionary is %@", results);
+            } else {
+                NSLog(@"what we get is not a kind of clss nsdictionary class");
+            }
+        }
+        //reload data method
+        [self.methodTV performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
+    }];
+  
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 0) {
-        BillingDetailsTableViewController *bVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Billing"];
-        [self.navigationController pushViewController:bVC animated:YES];
-    } else {
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    }
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    self.sharedCenter.shippingcode = [[self.methods objectAtIndex:indexPath.row] shippingcode];
+    
+    //construct the post
+    NSString * str = [NSString stringWithFormat:@"%@index.php?route=checkout/shipping_method/validate",ShopDomain];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:str]];
+    [request setHTTPMethod:@"POST"];
+    //Post string regarding billing information
+    NSString *postString = [NSString stringWithFormat:@"shipping_method=%@&comment=", self.sharedCenter.shippingcode];
+    
+    NSLog(postString);
+    
+    [request setValue:[NSString stringWithFormat:@"%d", [postString length]] forHTTPHeaderField:@"Content-length"];
+    
+    [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        if (error) {
+            NSLog(@"Billing infor validation failed");
+        } else {
+            NSError *localError = nil;
+            id parsedObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&localError];
+            if ([parsedObject isKindOfClass:[NSDictionary class]]) {
+                NSLog(@"yes dict");
+                //Need to pop validation errors
+                if ([parsedObject valueForKey:@"error"] != nil) {
+                    NSString *strData = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+                    //more beautification works needs here
+                    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"ERROR"
+                                                                 message:strData
+                                                                delegate:self
+                                                       cancelButtonTitle:nil
+                                                       otherButtonTitles:@"OK", nil];
+                    [av performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:NO];
+                }
+            } else {
+                NSString *strData = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+                NSLog(@"pass");
+                [self performSelectorOnMainThread:@selector(payment) withObject:nil waitUntilDone:NO];
+            }
+        }
+    }];
+    
+}
+
+- (void)payment{    
+    PaymentTableViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"payment"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,7 +160,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 3;
+    return [self.methods count];
 }
 
 
@@ -70,15 +168,13 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"shippingMethods" forIndexPath:indexPath];
     // Configure the cell...
-    if (indexPath.row == 0 ) {
-        [cell.textLabel setText:@"Pick Up From Store"];
-    } else if (indexPath.row == 0){
-        [cell.textLabel setText:@"Singpost Stanardar (Coming Soon)"];
-        cell.textLabel.textColor = [UIColor darkGrayColor];
-    } else {
-        [cell.textLabel setText:@"Singpost Register (Coming Soon)"];
-        cell.textLabel.textColor = [UIColor darkGrayColor];
-    }
+    
+    TSSShiping *shiping = [self.methods objectAtIndex:indexPath.row];
+    [cell.textLabel setText:[shiping title]];
+    [cell.textLabel sizeToFit];
+    NSString *cost = [NSString stringWithFormat:@"Delivery Cost: %@", [shiping text]];
+    [cell.detailTextLabel setText:cost];
+    
     return cell;
 }
 

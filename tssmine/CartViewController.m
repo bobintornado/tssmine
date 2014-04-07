@@ -12,8 +12,9 @@
 #import "ProductInCart.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "DeliveryTableViewController.h"
-#import "CheckoutCenter.h"
-
+#import "PaymentCenter.h"
+#import "BillingDetailsTableViewController.h"
+#import "NSString+HTML.h"
 
 @interface CartViewController ()
 
@@ -63,11 +64,11 @@
                 NSDictionary *result = parsedObject;
                 //construct objects and pass to array
                 
-                for (NSObject *ob in [result valueForKey:@"products_in_cart"]){
+                for (NSObject *ob in [result valueForKey:@"products"]){
                     ProductInCart *pic = [[ProductInCart alloc] init];
                     //configure paramaters
                     pic.key = [ob valueForKey:@"key"];
-                    pic.name = [ob valueForKey:@"name"];
+                    pic.name = [[ob valueForKey:@"name"] stringByConvertingHTMLToPlainText];
                     
                     NSString *urlText = [[ob valueForKey:@"thumb"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
                     
@@ -83,9 +84,9 @@
                 }
                 
                 ProductInCart* p = [[ProductInCart alloc] init];
-                p.name = [result valueForKey:@"total"];
+                p.name = [result valueForKey:@"text"];
                 [self.productsInCart addObject:p];
-                CheckoutCenter *sharedCenter = [CheckoutCenter sharedCenter];
+                PaymentCenter *sharedCenter = [PaymentCenter sharedCenter];
                 sharedCenter.total = [[result valueForKey:@"amount"] substringFromIndex:1];
             } else {
                 NSLog(@"what we get is not a kind of clss nsdictionary class");
@@ -153,8 +154,11 @@
                                            otherButtonTitles:@"OK", nil];
         [av show];
     } else {
-        DeliveryTableViewController *dVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Delivery"];
-        [self.navigationController pushViewController:dVC animated:YES];
+        //DeliveryTableViewController *dVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Delivery"];
+        //[self.navigationController pushViewController:dVC animated:YES];
+
+        BillingDetailsTableViewController *bVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Billing"];
+        [self.navigationController pushViewController:bVC animated:YES];
     }
 }
 

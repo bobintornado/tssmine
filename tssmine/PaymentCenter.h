@@ -15,6 +15,18 @@
 @property (nonatomic, retain) NSString *email;
 @property (nonatomic, retain) NSString *telephone;
 @property (nonatomic, retain) NSString *salutation;
+@property (nonatomic, retain) NSString *customer_group_id;
+@property (nonatomic, retain) NSString *address;
+@property (nonatomic, retain) NSString *postcode;
+@property (nonatomic, retain) NSString *total;
+
+@property (nonatomic, retain) NSString *shippingcode;
+@property (nonatomic, retain) NSString *payment_method;
+
+@property (nonatomic, retain) NSString *fax;
+@property (nonatomic, retain) NSString *company;
+
+@property (nonatomic, retain) NSString *custom;
 
 + (PaymentCenter *)sharedCenter;
 

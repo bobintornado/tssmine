@@ -75,12 +75,16 @@
     [self.navigationController popViewControllerAnimated:YES];
     if (indexPath.row == 0) {
         self.sharedCenter.salutation = @"Current Student";
+        self.sharedCenter.customer_group_id = @"1";
     } else if (indexPath.row == 1){
-       self.sharedCenter.salutation = @"Alumni";
+        self.sharedCenter.salutation = @"Alumni";
+        self.sharedCenter.customer_group_id = @"3";
     } else if (indexPath.row == 2){
         self.sharedCenter.salutation = @"Faculty";
+        self.sharedCenter.customer_group_id = @"4";
     } else if (indexPath.row == 3){
         self.sharedCenter.salutation = @"Staff";
+        self.sharedCenter.customer_group_id = @"5";
     }
 }
 

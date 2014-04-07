@@ -10,12 +10,7 @@
 
 @interface CheckoutCenter : NSObject
 
-@property (nonatomic, retain) NSString *firstName;
-@property (nonatomic, retain) NSString *lastName;
-@property (nonatomic, retain) NSString *itemCount;
 @property (nonatomic, retain) NSString *total;
-@property (nonatomic, retain) NSString *salutation;
-@property (nonatomic, retain) NSString *deliveryMethod;
 
 + (CheckoutCenter *)sharedCenter;
 

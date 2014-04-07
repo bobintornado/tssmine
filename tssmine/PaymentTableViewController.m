@@ -7,11 +7,16 @@
 //
 
 #import "PaymentTableViewController.h"
-#import "CheckoutCenter.h"
+#import "PaymentCenter.h"
+#import "MYSMUConstants.h"
+#import "TSSPaymentMethod.h"
 
 @interface PaymentTableViewController ()
 
 @property (nonatomic, strong, readwrite) PayPalConfiguration *payPalConfiguration;
+@property (nonatomic, strong) PaymentCenter *sharedCenter;
+@property (strong, nonatomic) NSMutableArray *methods;
+@property (strong, nonatomic) IBOutlet UITableView *paymentTV;
 
 @end
 
@@ -42,11 +47,35 @@
 }
 
 - (void)pay{
+    //confirm order
+    //construct the request to get order id
+    NSString *urlString = [NSString stringWithFormat:@"%@index.php?route=%@&key=%@",ShopDomain,@"feed/web_api/confirm",RESTfulKey,nil];
+    
+    NSURL *confirm = [NSURL URLWithString:urlString];
+    
+    [NSURLConnection sendAsynchronousRequest:[[NSURLRequest alloc] initWithURL:confirm] queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        if (error) {
+            NSLog(@"confirmatin failed");
+        } else {
+            NSLog(@"start confirming");
+            NSError *localError = nil;
+            id parsedObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&localError];
+            if([parsedObject isKindOfClass:[NSDictionary class]])
+            {
+                NSDictionary *results = parsedObject;
+                self.sharedCenter.custom = [results valueForKey:@"custom"];
+                NSLog(@"id is %@",self.sharedCenter.custom);
+            } else {
+                NSLog(@"what we get is not a kind of clss nsdictionary class");
+            }
+        }
+    }];
+    
     PayPalPayment *payment = [[PayPalPayment alloc] init];
     // Amount, currency, and description
-    CheckoutCenter *shareCenter = [CheckoutCenter sharedCenter];
+    PaymentCenter *shareCenter = [PaymentCenter sharedCenter];
     payment.amount = [[NSDecimalNumber alloc] initWithString:shareCenter.total];
-    payment.currencyCode = @"SGD";
+    payment.currencyCode = @"USD";
     payment.shortDescription = @"The SMU Shop Products";
     payment.intent = PayPalPaymentIntentSale;
     if (!payment.processable) {
@@ -78,12 +107,66 @@
 }
 
 - (void)verifyCompletedPayment:(PayPalPayment *)completedPayment {
-    // Send the entire confirmation dictionary
-    //NSData *confirmation = [NSJSONSerialization dataWithJSONObject:completedPayment.confirmation options:0 error:nil];
     
     // Send confirmation to your server; your server should verify the proof of payment
     // and give the user their goods or services. If the server is not reachable, save
     // the confirmation and try again later.
+    //checkout success
+    NSString *urlString = [NSString stringWithFormat:@"%@index.php?route=%@&key=%@",ShopDomain,@"feed/web_api/checkoutSuccess",RESTfulKey,nil];
+
+    NSURL *confirm = [NSURL URLWithString:urlString];
+    
+    [NSURLConnection sendAsynchronousRequest:[[NSURLRequest alloc] initWithURL:confirm] queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        if (error) {
+            NSLog(@"checkout success failed");
+        } else {
+            NSLog(@"start clearing up stuff");
+            NSError *localError = nil;
+            id parsedObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&localError];
+            if([parsedObject isKindOfClass:[NSDictionary class]])
+            {
+                //do nothing
+            } else {
+                NSLog(@"what we get is not a kind of clss nsdictionary class");
+            }
+        }
+    }];
+    
+    //call back to server for paypal verification
+    NSData *confirmation = [NSJSONSerialization dataWithJSONObject:completedPayment.confirmation options:0 error:nil];
+    NSError* error;
+    NSDictionary* dict = [NSJSONSerialization JSONObjectWithData:confirmation options:kNilOptions error:&error];
+    NSString *paymentId= [[dict valueForKey:@"response"] valueForKey:@"id"];
+    NSLog(paymentId);
+    
+    //construct the post
+    NSString * str = [NSString stringWithFormat:@"%@index.php?route=feed/web_api/paypalCallback",ShopDomain];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:str]];
+    [request setHTTPMethod:@"POST"];
+    
+    //Post string regarding verfication information
+    NSString *postString = [NSString stringWithFormat:@"confirmation=%@&custom=%@",paymentId,self.sharedCenter.custom];
+    NSLog(postString);
+    
+    [request setValue:[NSString stringWithFormat:@"%d", [postString length]] forHTTPHeaderField:@"Content-length"];
+    
+    [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        if (error) {
+            NSLog(@"Payment infor validation failed");
+        } else {
+            NSError *localError = nil;
+            id parsedObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&localError];
+            if ([parsedObject isKindOfClass:[NSDictionary class]]) {
+                NSLog(@"yes dict");
+                NSString *strData = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+                NSLog(strData);
+            } else {
+                NSLog(@"not dict");
+            }
+        }
+    }];
 }
 
 - (void)payPalPaymentDidCancel:(PayPalPaymentViewController *)paymentViewController {
@@ -96,6 +179,47 @@
     [super viewDidLoad];
     self.title = @"Payment Methods";
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.sharedCenter = [PaymentCenter sharedCenter];
+    [self paymentMethods];
+}
+
+- (void)paymentMethods{
+    
+    self.methods = [[NSMutableArray alloc] init];
+    NSString *urlString = [NSString stringWithFormat:@"%@index.php?route=%@&key=%@",ShopDomain,@"feed/web_api/getPaymentMethods",RESTfulKey,nil];
+    NSURL *cartURL = [NSURL URLWithString:urlString];
+    [NSURLConnection sendAsynchronousRequest:[[NSURLRequest alloc] initWithURL:cartURL] queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        
+        if (error) {
+            NSLog(@"fetching payment_methods data failed");
+        } else {
+            NSLog(@"start fetching payment_methods data");
+            NSError *localError = nil;
+            id parsedObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&localError];
+            
+            if([parsedObject isKindOfClass:[NSDictionary class]])
+            {
+                NSDictionary *results = parsedObject;
+                //construct objects and pass to array
+                NSLog(@"payment_methods are dict");
+                
+                NSDictionary *methods = [results valueForKey:@"payment_methods"];
+                for (NSString *key in [methods allKeys]) {
+                    NSDictionary *method = [methods valueForKey:key];
+                    TSSPaymentMethod *m = [[TSSPaymentMethod alloc] init];
+                    m.methodCode = [method valueForKey:@"code"];
+                    m.title = [method valueForKey:@"title"];
+                    [self.methods addObject:m];
+                }
+                
+                NSLog(@"payment dict is %@", results);
+            } else {
+                NSLog(@"what we get is not a kind of clss nsdictionary class");
+            }
+        }
+        [self.paymentTV performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
+    }];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -115,7 +239,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 1;
+    return [self.methods count];
 }
 
 
@@ -124,14 +248,72 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"paymentCell" forIndexPath:indexPath];
     
     // Configure the cell...
-    [cell.textLabel setText:@"PayPal"];
+    TSSPaymentMethod *m = [self.methods objectAtIndex:indexPath.row];
+    [cell.textLabel setText:[m title]];
+    [cell.textLabel sizeToFit];
     return cell;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 0) {
-        [self pay];
+- (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    // the user clicked one of the OK/Cancel buttons
+    if (buttonIndex == 0)
+    {
+        NSLog(@"Cancel");
+    } else {
+        NSLog(@"Agree");
+        
+        //construct post for saving payment method to session
+        //construct the post
+        NSString * str = [NSString stringWithFormat:@"%@index.php?route=checkout/payment_method/validate",ShopDomain];
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:str]];
+        [request setHTTPMethod:@"POST"];
+        //Post string regarding billing information
+        NSString *postString = [NSString stringWithFormat:@"payment_method=%@&comment=&agree=1",self.sharedCenter.payment_method];
+        NSLog(postString);
+        
+        [request setValue:[NSString stringWithFormat:@"%d", [postString length]] forHTTPHeaderField:@"Content-length"];
+        
+        [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
+        
+        [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+            if (error) {
+                NSLog(@"Payment infor validation failed");
+            } else {
+                NSError *localError = nil;
+                id parsedObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&localError];
+                if ([parsedObject isKindOfClass:[NSDictionary class]]) {
+                    
+                    NSLog(@"yes dict");
+                    //Need to pop validation errors
+                    if ([parsedObject valueForKey:@"error"] != nil) {
+                        NSString *strData = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+                        NSLog(strData);
+                        //more beautification works needs here
+                        
+                        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"ERROR" message:strData delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+                        
+                        [av performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:NO];
+                    }
+                } else {
+                    NSString *strData = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+                    NSLog(@"pass");
+                    [self performSelectorOnMainThread:@selector(pay) withObject:nil waitUntilDone:NO];
+                }
+            }
+        }];
     }
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+    self.sharedCenter.payment_method = [[self.methods objectAtIndex:indexPath.row] methodCode];
+    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Delivery Information"
+                                                     message:@"some tc information"
+                                                    delegate:self
+                                           cancelButtonTitle:@"Cancel"
+                                           otherButtonTitles:@"Agree", nil];
+    [av show];
 }
 
 /*

@@ -23,11 +23,14 @@
 
 - (id)init {
     if (self = [super init]) {
-        self.firstName = @"Your First Name";
-        self.lastName = @"Your Last Name";
-        self.email = @"For Sending Invoice";
-        self.telephone = @"88888888";
+        self.firstName = @"";
+        self.lastName = @"";
+        self.telephone = @"";
+        self.company = @"";
+        self.address = @"";
         self.salutation = @"Current Student";
+        self.customer_group_id = @"1";
+        self.postcode = @"";
     }
     return self;
 }

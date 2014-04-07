@@ -31,7 +31,6 @@
 		D9259BCC18C52474006A254A /* SubCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9259BCB18C52474006A254A /* SubCategoryViewController.m */; };
 		D939590B18E934E700342337 /* StylesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D939590A18E934E700342337 /* StylesViewController.m */; };
 		D93FB68118C436A70080E3E6 /* MYSMUConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = D93FB68018C436A70080E3E6 /* MYSMUConstants.m */; };
-		D952608218D68E8E00C24EE0 /* CheckoutCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D952608118D68E8E00C24EE0 /* CheckoutCenter.m */; };
 		D952608518D6C06300C24EE0 /* RankTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D952608418D6C06300C24EE0 /* RankTableViewController.m */; };
 		D952DADC18B5E5250032D40F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D952DADB18B5E5250032D40F /* Images.xcassets */; };
 		D952DADD18B5E5250032D40F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D952DADB18B5E5250032D40F /* Images.xcassets */; };
@@ -41,6 +40,7 @@
 		D952DAEA18B65AB00032D40F /* PromotionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D952DAE818B65AB00032D40F /* PromotionViewController.m */; };
 		D952DAEE18B65CF90032D40F /* PromotionPFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D952DAED18B65CF90032D40F /* PromotionPFTableViewCell.m */; };
 		D952DAEF18B65CF90032D40F /* PromotionPFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D952DAED18B65CF90032D40F /* PromotionPFTableViewCell.m */; };
+		D954E36C18F22FD7002A91A3 /* TSSPaymentMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = D954E36B18F22FD7002A91A3 /* TSSPaymentMethod.m */; };
 		D95EF40018DC21D8002FAB2A /* DesInputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D95EF3FF18DC21D8002FAB2A /* DesInputTableViewCell.m */; };
 		D96006B01884852400BB1C9E /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D96006AF1884852400BB1C9E /* ProfileViewController.m */; };
 		D9647D52187A821C00B26CE8 /* SnapTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9647D51187A821C00B26CE8 /* SnapTimelineViewController.m */; };
@@ -77,6 +77,7 @@
 		D9A2DCDA18972A930069B5E0 /* CustomizeResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A2DCD918972A920069B5E0 /* CustomizeResultViewController.m */; };
 		D9A4948E18CEEFA700975005 /* TSSOption.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A4948D18CEEFA700975005 /* TSSOption.m */; };
 		D9A4949118CEFC2900975005 /* CartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A4949018CEFC2900975005 /* CartViewController.m */; };
+		D9A5C3BE18EE50E600AAE67A /* TSSShiping.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A5C3BD18EE50E600AAE67A /* TSSShiping.m */; };
 		D9A71FEA18B675BD00B15375 /* BazaarPFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A71FE918B675BD00B15375 /* BazaarPFTableViewCell.m */; };
 		D9A71FF418B68C8300B15375 /* AddNewSHItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A71FF318B68C8300B15375 /* AddNewSHItemViewController.m */; };
 		D9ACAF3218BBCD0900AD7A57 /* MySMUViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9ACAF3118BBCD0900AD7A57 /* MySMUViewController.m */; };
@@ -175,8 +176,6 @@
 		D939590A18E934E700342337 /* StylesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StylesViewController.m; sourceTree = "<group>"; };
 		D93FB67F18C436450080E3E6 /* MYSMUConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYSMUConstants.h; sourceTree = "<group>"; };
 		D93FB68018C436A70080E3E6 /* MYSMUConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYSMUConstants.m; sourceTree = "<group>"; };
-		D952608018D68E8E00C24EE0 /* CheckoutCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckoutCenter.h; sourceTree = "<group>"; };
-		D952608118D68E8E00C24EE0 /* CheckoutCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckoutCenter.m; sourceTree = "<group>"; };
 		D952608318D6C06300C24EE0 /* RankTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankTableViewController.h; sourceTree = "<group>"; };
 		D952608418D6C06300C24EE0 /* RankTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankTableViewController.m; sourceTree = "<group>"; };
 		D952DADB18B5E5250032D40F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -186,6 +185,8 @@
 		D952DAE818B65AB00032D40F /* PromotionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromotionViewController.m; sourceTree = "<group>"; };
 		D952DAEC18B65CF90032D40F /* PromotionPFTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromotionPFTableViewCell.h; sourceTree = "<group>"; };
 		D952DAED18B65CF90032D40F /* PromotionPFTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromotionPFTableViewCell.m; sourceTree = "<group>"; };
+		D954E36A18F22FD7002A91A3 /* TSSPaymentMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSSPaymentMethod.h; sourceTree = "<group>"; };
+		D954E36B18F22FD7002A91A3 /* TSSPaymentMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSSPaymentMethod.m; sourceTree = "<group>"; };
 		D95EF3FE18DC21D8002FAB2A /* DesInputTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesInputTableViewCell.h; sourceTree = "<group>"; };
 		D95EF3FF18DC21D8002FAB2A /* DesInputTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesInputTableViewCell.m; sourceTree = "<group>"; };
 		D96006AE1884852400BB1C9E /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
@@ -249,6 +250,8 @@
 		D9A4948D18CEEFA700975005 /* TSSOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSSOption.m; sourceTree = "<group>"; };
 		D9A4948F18CEFC2900975005 /* CartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartViewController.h; sourceTree = "<group>"; };
 		D9A4949018CEFC2900975005 /* CartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartViewController.m; sourceTree = "<group>"; };
+		D9A5C3BC18EE50E600AAE67A /* TSSShiping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSSShiping.h; sourceTree = "<group>"; };
+		D9A5C3BD18EE50E600AAE67A /* TSSShiping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSSShiping.m; sourceTree = "<group>"; };
 		D9A71FE818B675BD00B15375 /* BazaarPFTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BazaarPFTableViewCell.h; sourceTree = "<group>"; };
 		D9A71FE918B675BD00B15375 /* BazaarPFTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BazaarPFTableViewCell.m; sourceTree = "<group>"; };
 		D9A71FF218B68C8300B15375 /* AddNewSHItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNewSHItemViewController.h; sourceTree = "<group>"; };
@@ -383,8 +386,6 @@
 				D9A2DCD6189728B10069B5E0 /* StyleCenter.m */,
 				D9E0027C1896428A0053FB0C /* QuizCenter.h */,
 				D9E0027D1896428A0053FB0C /* QuizCenter.m */,
-				D952608018D68E8E00C24EE0 /* CheckoutCenter.h */,
-				D952608118D68E8E00C24EE0 /* CheckoutCenter.m */,
 				D922A99218E07B700060A4E6 /* PaymentCenter.h */,
 				D922A99318E07B700060A4E6 /* PaymentCenter.m */,
 				D922A99518E111D50060A4E6 /* FilterCenter.h */,
@@ -771,6 +772,10 @@
 				D99D5FB818D1F70900BD0751 /* TSSOptionValue.m */,
 				D920B24D18D5A831001A4F7E /* ProductInCart.h */,
 				D920B24E18D5A831001A4F7E /* ProductInCart.m */,
+				D9A5C3BC18EE50E600AAE67A /* TSSShiping.h */,
+				D9A5C3BD18EE50E600AAE67A /* TSSShiping.m */,
+				D954E36A18F22FD7002A91A3 /* TSSPaymentMethod.h */,
+				D954E36B18F22FD7002A91A3 /* TSSPaymentMethod.m */,
 			);
 			name = Shop;
 			sourceTree = "<group>";
@@ -939,7 +944,6 @@
 				D9ACAF3A18BBEB5500AD7A57 /* ProfileEditViewController.m in Sources */,
 				D920B25818D5AB39001A4F7E /* TSSCartTableViewCell.m in Sources */,
 				D920B27118D60A17001A4F7E /* PaymentTableViewController.m in Sources */,
-				D952608218D68E8E00C24EE0 /* CheckoutCenter.m in Sources */,
 				D9E0027B189637FE0053FB0C /* GirlStudyViewController.m in Sources */,
 				D9E0027E1896428A0053FB0C /* QuizCenter.m in Sources */,
 				D9A2DCDA18972A930069B5E0 /* CustomizeResultViewController.m in Sources */,
@@ -947,8 +951,10 @@
 				D9989AB118DA221400FEDF2A /* NSString+HTML.m in Sources */,
 				D98989AB18C2080F000092F0 /* MainShopViewController.m in Sources */,
 				D9ACAF3218BBCD0900AD7A57 /* MySMUViewController.m in Sources */,
+				D954E36C18F22FD7002A91A3 /* TSSPaymentMethod.m in Sources */,
 				D9A71FF418B68C8300B15375 /* AddNewSHItemViewController.m in Sources */,
 				D9ACAF3718BBDF2500AD7A57 /* ProfileCell.m in Sources */,
+				D9A5C3BE18EE50E600AAE67A /* TSSShiping.m in Sources */,
 				D96006B01884852400BB1C9E /* ProfileViewController.m in Sources */,
 				D920B24F18D5A831001A4F7E /* ProductInCart.m in Sources */,
 				D9E38B3E1886F5F000FC9B6B /* BorGViewController.m in Sources */,

@@ -127,7 +127,7 @@
                                                otherButtonTitles:@"OK", nil];
             [av show];
         } else {
-            NSString * str = [NSString stringWithFormat:@"%@index.php?route=feed/web_api/addToCart",ShopDomain];
+            NSString * str = [NSString stringWithFormat:@"%@index.php?route=feed/web_api/add",ShopDomain];
             NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:str]];
             [request setHTTPMethod:@"POST"];
             NSString *postString = [NSString stringWithFormat:@"product_id=%@&option[%@]=%@", self.product.productID, self.product.option.product_option_id, self.chosenOptionValue.product_option_value_id];
@@ -148,7 +148,7 @@
            
         }
     } else {
-        NSString * str = [NSString stringWithFormat:@"%@index.php?route=feed/web_api/addToCart",ShopDomain];
+        NSString * str = [NSString stringWithFormat:@"%@index.php?route=feed/web_api/add",ShopDomain];
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:str]];
         [request setHTTPMethod:@"POST"];
         NSString *postString = [NSString stringWithFormat:@"product_id=%@", self.product.productID];

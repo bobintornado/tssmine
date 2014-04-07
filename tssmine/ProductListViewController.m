@@ -84,7 +84,14 @@
                     pr.thumbURL = [NSURL URLWithString:urlText];
                     urlText = [[ob valueForKey:@"image"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
                     pr.image = [NSURL URLWithString: urlText];
-                    pr.pDescription = [[ob valueForKey:@"description"] stringByConvertingHTMLToPlainText];
+                    //for now coverting to plain text
+                    NSString *des = [[ob valueForKey:@"description"] stringByConvertingHTMLToPlainText];
+                    if ([des isEqualToString:@""]) {
+                        pr.pDescription = des;
+                    } else{
+                        pr.pDescription = @"No Description Available.";
+                    }
+                    
                     pr.price = [NSString stringWithFormat:@"%@",[ob valueForKey:@"pirce"]];
 
                     TSSOption *pop = [[TSSOption alloc] init];
@@ -93,7 +100,7 @@
                         NSLog(@"runing1");
                         pop.product_option_id = [op valueForKey:@"product_option_id"];
                         pop.optionId = [op valueForKey:@"option_id"];
-                        pop.name = [op valueForKey:@"name"];
+                        pop.name = [[op valueForKey:@"name"] stringByConvertingHTMLToPlainText];
                         
                         pop.optionValues = [[NSMutableArray alloc] init];
                         
@@ -102,7 +109,7 @@
                                 TSSOptionValue *v = [[TSSOptionValue alloc] init];
                                 v.product_option_value_id = [opv valueForKey:@"product_option_value_id"];
                                 v.option_value_id = [opv valueForKey:@"option_value_id"];
-                                v.name = [opv valueForKey:@"name"];
+                                v.name = [[opv valueForKey:@"name"] stringByConvertingHTMLToPlainText];
                                 [pop.optionValues addObject:v];
                             }
                         } else {
@@ -152,8 +159,7 @@
 
     
     cell.pTitle.text =pr.name;
-    cell.pPrice.text = [NSString stringWithFormat:@"SGD %@", pr.price];
-    
+    cell.pPrice.text = pr.price;
     return cell;
 }
 

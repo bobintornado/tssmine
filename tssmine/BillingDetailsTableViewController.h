@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BillingDetailsTableViewController : UITableViewController
+@interface BillingDetailsTableViewController : UITableViewController <UITextFieldDelegate>
 
 @end

@@ -85,9 +85,32 @@
 didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)newDeviceToken {
     // Store the deviceToken in the current installation and save it to Parse.
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    
     [currentInstallation addUniqueObject:@"TSS" forKey:@"channels"];
     [currentInstallation setDeviceTokenFromData:newDeviceToken];
     [currentInstallation saveInBackground];
+    
+    
+    
+    PFQuery *queryExistingThumbUps = [PFQuery queryWithClassName:@"Token"];
+    [queryExistingThumbUps whereKey:@"deviceToken" equalTo:[currentInstallation objectForKey:@"deviceToken"]];
+    [queryExistingThumbUps findObjectsInBackgroundWithBlock:^(NSArray *tokens, NSError *error) {
+        if ([tokens count] == 0) {
+            PFObject *w = [PFObject objectWithClassName:@"Token"];
+            w[@"deviceToken"] = [currentInstallation objectForKey:@"deviceToken"];
+            w[@"deviceType"] = [currentInstallation objectForKey:@"deviceType"];
+            [w saveInBackground];
+        } else if ([tokens count] == 1){
+            for (PFObject *token in tokens) {
+                [token delete];
+            }
+            PFObject *w = [PFObject objectWithClassName:@"Token"];
+            w[@"deviceToken"] = [currentInstallation objectForKey:@"deviceToken"];
+            w[@"deviceType"] = [currentInstallation objectForKey:@"deviceType"];
+            [w saveInBackground];
+        }
+    }];
+    
 }
 
 - (void)application:(UIApplication *)application
