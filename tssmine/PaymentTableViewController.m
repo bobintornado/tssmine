@@ -47,6 +47,7 @@
 }
 
 - (void)pay{
+    self.sharedCenter = [PaymentCenter sharedCenter];
     //confirm order
     //construct the request to get order id
     NSString *urlString = [NSString stringWithFormat:@"%@index.php?route=%@&key=%@",ShopDomain,@"feed/web_api/confirm",RESTfulKey,nil];
@@ -65,17 +66,22 @@
                 NSDictionary *results = parsedObject;
                 self.sharedCenter.custom = [results valueForKey:@"custom"];
                 NSLog(@"id is %@",self.sharedCenter.custom);
+                NSArray *a = [results valueForKey:@"totals"];
+                NSLog(@"total is %@",[[a objectAtIndex:[a count]-1] valueForKey:@"text"]);
+                self.sharedCenter.total = [[[a objectAtIndex:[a count]-1] valueForKey:@"text"] substringFromIndex:1];
             } else {
                 NSLog(@"what we get is not a kind of clss nsdictionary class");
             }
         }
+        [self performSelectorOnMainThread:@selector(pushPayView) withObject:nil waitUntilDone:NO];
     }];
-    
+}
+
+- (void)pushPayView{
     PayPalPayment *payment = [[PayPalPayment alloc] init];
     // Amount, currency, and description
-    PaymentCenter *shareCenter = [PaymentCenter sharedCenter];
-    payment.amount = [[NSDecimalNumber alloc] initWithString:shareCenter.total];
-    payment.currencyCode = @"USD";
+    payment.amount = [[NSDecimalNumber alloc] initWithString:self.sharedCenter.total];
+    payment.currencyCode = @"SGD";
     payment.shortDescription = @"The SMU Shop Products";
     payment.intent = PayPalPaymentIntentSale;
     if (!payment.processable) {
@@ -93,7 +99,6 @@
         [self presentViewController:paymentViewController animated:YES completion:nil];
     }
 }
-
 #pragma mark - PayPalPaymentDelegate methods
 
 - (void)payPalPaymentViewController:(PayPalPaymentViewController *)paymentViewController

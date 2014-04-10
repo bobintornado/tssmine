@@ -57,7 +57,8 @@
     
     vc.itemPhoto = self.itemPhoto;
     
-    [self presentViewController:vc animated:YES completion:nil];
+    [self.navigationController pushViewController:vc animated:YES];
+    //[self presentViewController:vc animated:YES completion:nil];
 }
 
 - (IBAction)addNewItem:(id)sender {
@@ -92,6 +93,8 @@
         }
         if (buttonIndex == 1) {
             NSLog(@"call ownder");
+            NSString *phoneNumber = [@"telprompt://" stringByAppendingString:self.recipients[0]];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
         }
         
     } else {
@@ -183,12 +186,11 @@
     [cell.itemImg loadInBackground];
     cell.itemDes.text = [object objectForKey:@"description"];
     
-    //cell.category.text = [object objectForKey:@"category"];
-    
     cell.price.text = [NSString stringWithFormat:@"SGD $%@",                                                [[object objectForKey:@"price"] stringValue]];
     
     PFQuery *query = [PFQuery queryWithClassName:@"SHItem"];
     [query includeKey:@"seller"];
+    [query includeKey:@"category"];
 
     [query getObjectInBackgroundWithId:object.objectId block:^(PFObject *item, NSError *error) {
         NSString *displayName = item[@"seller"][@"displayName"];
@@ -199,8 +201,13 @@
         }
         if (phoneNumber==NULL) {
             phoneNumber = @"N/A";
+            cell.userInteractionEnabled = NO;
+        } else{
+            cell.userInteractionEnabled = YES;
         }
         cell.contact.text = [NSString stringWithFormat:@"%@:%@",displayName,phoneNumber];
+        
+        cell.category.text = item[@"category"][@"name"];
     }];
     
     return cell;

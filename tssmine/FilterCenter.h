@@ -12,6 +12,8 @@
 
 @property (nonatomic) int buzzFilter;
 @property (nonatomic) int bazaarFilter;
+@property (nonatomic, strong) PFObject *postCategory;
+@property (nonatomic, strong) PFObject *filterCategory;
 
 + (FilterCenter *)sharedCenter;
 

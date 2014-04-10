@@ -24,6 +24,8 @@
     if (self = [super init]) {
         self.buzzFilter = 0;
         self.bazaarFilter = 0;
+        PFQuery *query = [PFQuery queryWithClassName:@"Category"];
+        self.postCategory = [query getFirstObject];
     }
     return self;
 }

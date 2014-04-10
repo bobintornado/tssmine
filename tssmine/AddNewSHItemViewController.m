@@ -10,15 +10,18 @@
 #import "InputTableViewCell.h"
 #import "ChoseTableViewCell.h"
 #import "DesInputTableViewCell.h"
+#import "CategoriesViewController.h"
+#import "FilterCenter.h"
 
 @interface AddNewSHItemViewController ()
 
-@property (strong, nonatomic) IBOutlet UINavigationBar *nav;
 @property PFFile *photoFile;
-@property (strong, nonatomic) IBOutlet UITableView *inforTable;
 
+@property (strong, nonatomic) IBOutlet UINavigationItem *nav;
 @property (nonatomic, assign) UIBackgroundTaskIdentifier fileUploadBackgroundTaskId;
 @property (nonatomic, assign) UIBackgroundTaskIdentifier photoPostBackgroundTaskId;
+@property (strong, nonatomic) IBOutlet UITableView *inforTable;
+@property (strong, nonatomic) FilterCenter *sharedCenter;
 
 @end
 
@@ -37,26 +40,32 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.sharedCenter = [FilterCenter sharedCenter];
     
-    UINavigationItem *navItem = [[UINavigationItem alloc] init];
-    navItem.title = @"New Item";
-
-    UIBarButtonItem *leftCancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(cancelPost)];
-    
+    self.title = @"Post New Item";
+        
     UIBarButtonItem *rightPublishButton = [[UIBarButtonItem alloc] initWithTitle:@"Publish" style:UIBarButtonItemStyleDone target:self action:@selector(publishNewItem)];
     
-    navItem.leftBarButtonItem = leftCancelButton;
-    navItem.rightBarButtonItem = rightPublishButton;
-    self.nav.items = @[navItem];
     
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
-                                   initWithTarget:self
-                                   action:@selector(dismissKeyboard)];
+    self.nav.rightBarButtonItem = rightPublishButton;
     
-    [self.view addGestureRecognizer:tap];
+    //remove trouble maker: could be re-implemented in future
+    //UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+      //                             initWithTarget:self
+        //                           action:@selector(dismissKeyboard)];
+    
+    //[self.view addGestureRecognizer:tap];
     
     [self shouldUploadItem:self.itemPhoto];
-    self.inforTable.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    //self.inforTable.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.inforTable.delegate = self;
+    self.inforTable.dataSource = self;
+    [self.inforTable reloadData];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.inforTable reloadData];
 }
 
 - (BOOL)shouldUploadItem:(UIImage *)anImage{
@@ -239,8 +248,9 @@
     } else if(indexPath.row == 3 ) {
         identifier = @"desCell";
     } else {
-        identifier = @"inputCell";
+        identifier = @"inputCell2";
     }
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
     
     if (indexPath.row == 0) {
@@ -249,8 +259,9 @@
         return c;
     } else if (indexPath.row == 1){
         ChoseTableViewCell *c = (ChoseTableViewCell *)cell;
-        c.chosenValue.text = @"Eletronics";
         c.choseLabel.text = @"Category";
+        c.chosenValue.text = [self.sharedCenter postCategory][@"name"];
+        NSLog([self.sharedCenter postCategory][@"name"]);
         return c;
     } else if (indexPath.row == 2){
         InputTableViewCell *c = (InputTableViewCell *)cell;
@@ -258,12 +269,21 @@
         return c;
     } else if (indexPath.row == 3){
         DesInputTableViewCell *c = (DesInputTableViewCell *)cell;
-        c.detailText.delegate = self;
-        c.detailText.text = @"More details goes here...";
-        c.detailText.textColor = [UIColor lightGrayColor];
+        c.detailTextLabel.text = @"Descriptions";
         return c;
     }
+    
     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.row == 1) {
+        NSLog(@"push category list");
+        CategoriesViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"bazaarCategory"];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+}
+
 
 @end
