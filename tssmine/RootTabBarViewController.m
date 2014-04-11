@@ -31,6 +31,17 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    if ([PFUser currentUser]) {
+        NSMutableArray* newArray = [NSMutableArray arrayWithArray:self.viewControllers];
+        for (UIViewController *vc in newArray) {
+            if ([[vc restorationIdentifier] isEqualToString:@"loginnv"]) {
+                [newArray removeObject:vc];
+                UINavigationController *p = [self.storyboard instantiateViewControllerWithIdentifier:@"profileNav"];
+                [newArray addObject:p];
+            }
+        }
+        [self setViewControllers:newArray animated:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -65,6 +76,24 @@
 // Sent to the delegate when a PFUser is logged in.
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
     [self dismissViewControllerAnimated:YES completion:NULL];
+    NSMutableArray* newArray = [NSMutableArray arrayWithArray:self.viewControllers];
+    NSLog(@"%d", [newArray count]);
+    
+    for (UIViewController *vc in newArray) {
+        if ([[vc restorationIdentifier] isEqualToString:@"loginnv"]) {
+            [newArray removeObject:vc];
+            UINavigationController *p = [self.storyboard instantiateViewControllerWithIdentifier:@"profileNav"];
+            [newArray addObject:p];
+        }
+    }
+    
+    [self setViewControllers:newArray animated:YES];
+    
+    for (UIViewController *vc in newArray) {
+        if ([[vc restorationIdentifier] isEqualToString:@"profileNav"]) {
+            [self setSelectedViewController:vc];
+        }
+    }
 }
 
 // Sent to the delegate to determine whether the log in request should be submitted to the server.

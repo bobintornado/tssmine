@@ -43,11 +43,36 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(uploadNewBuzz) name:@"publishNew" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadObjects) name:@"changeRanking" object:nil];
     
+    UIBarButtonItem *rank = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"text-list.png"] style:UIBarButtonItemStylePlain target:self action:@selector(rank)];
+    
+    UIBarButtonItem *take = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(takeSnap)];
+                             
+    //Adjust button spacing
+    rank.imageInsets = UIEdgeInsetsMake(0.0, 0.0, 0, -30);
+    
+    NSArray *arr= [[NSArray alloc] initWithObjects:take,rank,nil];
+    self.navigationItem.rightBarButtonItems=arr;
+    
+    
     PFObject *tracking = [PFObject objectWithClassName:@"tracking"];
     tracking[@"event"] = @"ClickOnTab";
     tracking[@"content"] = @"buzz";
     tracking[@"device"] = [PFInstallation currentInstallation];
     [tracking saveInBackground];
+}
+                             
+-(void)takeSnap{
+    if (![PFUser currentUser]) {
+        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@""
+                                                     message:@"You Need to Login/Sign Up in order to post a new buzz, tab Profile for more information"
+                                                    delegate:self
+                                           cancelButtonTitle:nil
+                                           otherButtonTitles:@"OK", nil];
+        [av show];
+    } else {
+        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Maybe Next Time" destructiveButtonTitle:nil otherButtonTitles:@"Snap A Photo", @"Choose Existing Photos",nil];
+        [actionSheet showInView:self.view];
+    }
 }
 
 - (void)rank{

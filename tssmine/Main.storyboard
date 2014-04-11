@@ -21,7 +21,7 @@
                         <segue destination="Kh5-2z-6Ys" kind="relationship" relationship="viewControllers" id="rpP-Kf-GoX"/>
                         <segue destination="30V-QQ-htw" kind="relationship" relationship="viewControllers" id="N9X-TC-Xwu"/>
                         <segue destination="ZNs-qv-yxY" kind="relationship" relationship="viewControllers" id="yEN-ca-Ylb"/>
-                        <segue destination="CeH-zL-Kwb" kind="relationship" relationship="viewControllers" id="7cF-Bn-Rph"/>
+                        <segue destination="Lzx-T7-0LO" kind="relationship" relationship="viewControllers" id="jGP-Z2-DU6"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNP-y4-bzi" sceneMemberID="firstResponder"/>
@@ -2035,6 +2035,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cV6-gS-hrI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="396" y="3833"/>
+        </scene>
+        <!--Navigation Controller - Login-->
+        <scene sceneID="Lrm-dw-4uv">
+            <objects>
+                <navigationController storyboardIdentifier="loginnv" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Lzx-T7-0LO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Login" image="Profile" id="ssl-yt-aTu"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ixO-vX-zQb">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="HeM-gX-qYN" kind="relationship" relationship="rootViewController" id="VJh-7Q-hxp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MvT-1X-GhJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-232" y="4554"/>
+        </scene>
+        <!--Tss Login View Controller-->
+        <scene sceneID="u6h-em-uAB">
+            <objects>
+                <viewController id="HeM-gX-qYN" customClass="TssLoginViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sdW-LJ-Zb4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="oE2-Rs-8Ap"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fcF-hf-7Qg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="331" y="4546"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="KLB-rc-aj1">

@@ -53,7 +53,7 @@
         case 2:
             self.title = @"Email";
             if ([[PFUser currentUser] objectForKey:@"email"]!= NULL){
-                self.editField.text = [[PFUser currentUser] objectForKey:@"email"];
+                self.editField.text = [[PFUser currentUser] objectForKey:@"email    "];
                 self.editField.textColor = [UIColor blackColor];
             } else {
                 self.editField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Email" attributes:@{NSForegroundColorAttributeName: color}];

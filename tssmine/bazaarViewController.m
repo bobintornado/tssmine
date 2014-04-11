@@ -201,9 +201,6 @@
         }
         if (phoneNumber==NULL) {
             phoneNumber = @"N/A";
-            cell.userInteractionEnabled = NO;
-        } else{
-            cell.userInteractionEnabled = YES;
         }
         cell.contact.text = [NSString stringWithFormat:@"%@:%@",displayName,phoneNumber];
         
@@ -235,18 +232,23 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Text Owner", @"Voice Call Owner",nil];
-    actionSheet.tag = 2;
-    [actionSheet showInView:self.view];
-    
     //Adding phoen number
     PFObject *p = [self objectAtIndexPath:indexPath];
     [p fetchIfNeeded];
     PFUser * u = [p objectForKey:@"seller"];
     [u fetchIfNeeded];
     NSString *phone = [u objectForKey:@"phoneNumber"];
-    self.recipients = [[NSMutableArray alloc] init];
-    [self.recipients addObject:phone];
+    
+    if (phone == NULL) {
+        //do nothing
+    } else{
+        self.recipients = [[NSMutableArray alloc] init];
+        [self.recipients addObject:phone];
+        
+        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Text Owner", @"Voice Call Owner",nil];
+        actionSheet.tag = 2;
+        [actionSheet showInView:self.view];
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

@@ -124,4 +124,7 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo {
     return YES;
 }
 
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
+}
+
 @end

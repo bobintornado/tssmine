@@ -50,29 +50,33 @@
     self.profileImg.layer.cornerRadius = 100;
 }
 
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    if (![PFUser currentUser]) {
-        // Create the log in view controller
-        
-        TssLoginViewController *logInViewController = [[TssLoginViewController alloc] init];
-        [logInViewController setDelegate:(RootTabBarViewController *)self.tabBarController];
-        //[logInViewController setFields: PFLogInFieldsUsernameAndPassword | PFLogInFieldsLogInButton | PFLogInFieldsSignUpButton| PFLogInFieldsPasswordForgotten];
-        
-        // Create the sign up view controller
-        MySMUViewController *signUpViewController = [[MySMUViewController alloc] init];
-        [signUpViewController setFields:PFSignUpFieldsDefault | PFSignUpFieldsAdditional];
-        [signUpViewController setDelegate:(RootTabBarViewController *)self.tabBarController];
-        // Assign our sign up controller to be displayed from the login controller
-        [logInViewController setSignUpController:signUpViewController];
-        
-        // Present the log in view controller
-        [self.tabBarController presentViewController:logInViewController animated:YES completion:NULL];
-        
-        //protection code for what is the frist tab bar goes here
-        [self.tabBarController setSelectedIndex:0];
-    }
-}
+//- (void)viewWillAppear:(BOOL)animated{
+//    [super viewWillAppear:animated];
+//    if (![PFUser currentUser]) {
+//        // Create the log in view controller
+//        
+//        TssLoginViewController *logInViewController = [[TssLoginViewController alloc] init];
+//        [logInViewController setDelegate:(RootTabBarViewController *)self.tabBarController];
+//        //[logInViewController setFields: PFLogInFieldsUsernameAndPassword | PFLogInFieldsLogInButton | PFLogInFieldsSignUpButton| PFLogInFieldsPasswordForgotten];
+//        
+//        // Create the sign up view controller
+//        MySMUViewController *signUpViewController = [[MySMUViewController alloc] init];
+//        [signUpViewController setFields:PFSignUpFieldsDefault | PFSignUpFieldsAdditional];
+//        [signUpViewController setDelegate:(RootTabBarViewController *)self.tabBarController];
+//        // Assign our sign up controller to be displayed from the login controller
+//        [logInViewController setSignUpController:signUpViewController];
+//        
+//        // Present the log in view controller
+//        self.navigationController.viewControllers = [NSArray arrayWithObject: logInViewController];
+//        //[self.navigationController popViewControllerAnimated:NO];
+//        //[self presentViewController:logInViewController animated:YES completion:nil];
+//        //[self.navigationController pushViewController:logInViewController animated:YES];
+//        //[self.tabBarController presentViewController:logInViewController animated:YES completion:NULL];
+//        //[self.tabBarController.moreNavigationController popToRootViewControllerAnimated:NO];
+//        //protection code for what is the frist tab bar goes here
+//        //[self.tabBarController setSelectedIndex:0];
+//    }
+//}
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
@@ -86,7 +90,16 @@
 }
 - (IBAction)didTapOnLogOut:(id)sender {
     [PFUser logOut];
-    [self.tabBarController setSelectedIndex:0];
+    NSMutableArray* newArray = [NSMutableArray arrayWithArray:self.tabBarController.viewControllers];
+    for (UIViewController *vc in newArray) {
+        if ([[vc restorationIdentifier] isEqualToString:@"profileNav"]) {
+            [newArray removeObject:vc];
+            UINavigationController *p = [self.storyboard instantiateViewControllerWithIdentifier:@"loginnv"];
+            [newArray addObject:p];
+        }
+    }
+    [self.tabBarController setViewControllers:newArray animated:YES];
+    //[self.tabBarController setSelectedIndex:0];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

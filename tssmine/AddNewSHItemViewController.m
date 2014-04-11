@@ -172,9 +172,11 @@
             [f setNumberStyle:NSNumberFormatterDecimalStyle];
             NSNumber * myNumber = [f numberFromString:[[s inputField] text]];
             [item setObject:myNumber forKey:@"price"];
+        } else if (i == 3){
+            NSLog(@"desriptin goes there ss");
         }
     }
-
+    [item setObject:self.sharedCenter.postCategory forKey:@"category"];
     [item setObject:[PFUser currentUser] forKey:@"seller"];
     // Request a background execution task to allow us to finish uploading the photo even if the app is backgrounded
     self.photoPostBackgroundTaskId = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
@@ -220,7 +222,7 @@
         }
         [[UIApplication sharedApplication] endBackgroundTask:self.photoPostBackgroundTaskId];
     }];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -256,6 +258,7 @@
     if (indexPath.row == 0) {
         InputTableViewCell *c = (InputTableViewCell *)cell;
         c.inputTitle.text = @"Title";
+        c.inputField.tag = 0;
         return c;
     } else if (indexPath.row == 1){
         ChoseTableViewCell *c = (ChoseTableViewCell *)cell;
