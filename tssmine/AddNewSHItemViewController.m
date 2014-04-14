@@ -13,6 +13,7 @@
 #import "CategoriesViewController.h"
 #import "FilterCenter.h"
 
+
 @interface AddNewSHItemViewController ()
 
 @property PFFile *photoFile;
@@ -173,7 +174,9 @@
             NSNumber * myNumber = [f numberFromString:[[s inputField] text]];
             [item setObject:myNumber forKey:@"price"];
         } else if (i == 3){
-            NSLog(@"desriptin goes there ss");
+            DesInputTableViewCell *c = (DesInputTableViewCell *)cell;
+            NSString *des = c.detailText.text;
+            [item setObject:des forKey:@"description"];
         }
     }
     [item setObject:self.sharedCenter.postCategory forKey:@"category"];
@@ -264,19 +267,38 @@
         ChoseTableViewCell *c = (ChoseTableViewCell *)cell;
         c.choseLabel.text = @"Category";
         c.chosenValue.text = [self.sharedCenter postCategory][@"name"];
-        NSLog([self.sharedCenter postCategory][@"name"]);
         return c;
     } else if (indexPath.row == 2){
         InputTableViewCell *c = (InputTableViewCell *)cell;
         c.inputTitle.text = @"Price";
+        c.inputField.keyboardType = UIKeyboardTypeNumberPad;
         return c;
     } else if (indexPath.row == 3){
         DesInputTableViewCell *c = (DesInputTableViewCell *)cell;
         c.detailTextLabel.text = @"Descriptions";
+        c.detailText.delegate = self;
         return c;
     }
     
     return cell;
+}
+
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView
+{
+    if ([[textView text] isEqualToString:@"More Detail Description Goes There....."]) {
+        textView.text = @"";
+        textView.textColor = [UIColor blackColor];
+    }
+    return YES;
+}
+
+-(BOOL)textViewShouldEndEditing:(UITextView *)textView
+{
+    if ([[textView text] length] == 0) {
+        textView.text = @"More Detail Description Goes There.....";
+        textView.textColor = [UIColor lightGrayColor];
+    }
+    return YES;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

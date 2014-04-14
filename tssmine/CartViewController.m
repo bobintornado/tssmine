@@ -88,7 +88,6 @@
                 [self.productsInCart addObject:p];
                 PaymentCenter *sharedCenter = [PaymentCenter sharedCenter];
                 sharedCenter.total = [[result valueForKey:@"amount"] substringFromIndex:1];
-                NSLog(sharedCenter.total);
             } else {
                 NSLog(@"what we get is not a kind of clss nsdictionary class");
             }

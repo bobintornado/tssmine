@@ -48,19 +48,12 @@
 - (void)paymentMethods{
     //Retrieve text field values from row
     
-    
-    //if pass all verificatons, then create order and proceed to payment
-    //PaymentTableViewController *pVC = [self.storyboard instantiateViewControllerWithIdentifier:@"payment"];
-    //[self.navigationController pushViewController:pVC animated:YES];
-    
     //Using existing validation methods
     NSString * str = [NSString stringWithFormat:@"%@index.php?route=checkout/guest/validate",ShopDomain];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:str]];
     [request setHTTPMethod:@"POST"];
     //Post string regarding billing information
     NSString *postString = [NSString stringWithFormat:@"firstname=%@&lastname=%@&email=%@&telephone=%@&fax=&company=%@&company_id=&tax_id=&address_1=%@&address_2=&city=%@&postcode=%@&country_id=188&zone_id=0&shipping_address=1&customer_group_id=%@", self.sharedCenter.firstName, self.sharedCenter.lastName, self.sharedCenter.email, self.sharedCenter.telephone,self.sharedCenter.company, self.sharedCenter.address, @"Singapore", self.sharedCenter.postcode,self.sharedCenter.customer_group_id];
-    
-    NSLog(postString);
     
     [request setValue:[NSString stringWithFormat:@"%d", [postString length]] forHTTPHeaderField:@"Content-length"];
     
@@ -76,18 +69,22 @@
                 NSLog(@"yes dict");
                 //Need to pop validation errors
                 if ([parsedObject valueForKey:@"error"] != nil) {
-                    NSString *strData = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+                    NSDictionary *results = parsedObject;
+                    NSDictionary *errors = [results valueForKey:@"error"];
+                    NSMutableString *msg = [[NSMutableString alloc]init];
+                    for (NSString *key in [errors allKeys]) {
+                        [msg appendString:[errors valueForKey:key]];
+                        [msg appendString:[NSString stringWithFormat: @"\n"]];
+                    }
                     //more beautification works needs here
                     UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"ERROR"
-                                                                 message:strData
+                                                                 message:msg
                                                                 delegate:self
                                                        cancelButtonTitle:nil
                                                        otherButtonTitles:@"OK", nil];
                     [av performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:NO];
                 }
             } else {
-                NSString *strData = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-                NSLog(@"pass");
                 [self performSelectorOnMainThread:@selector(Delivery) withObject:self waitUntilDone:NO];
             }
         }
@@ -133,25 +130,42 @@
     if (indexPath.row == 0) {
         InputTableViewCell *c = (InputTableViewCell *)cell;
         c.inputTitle.text = @"First Name";
-        c.inputField.placeholder = @"Your First Name";
+        if ([self.sharedCenter.firstName isEqualToString:@""]) {
+            c.inputField.placeholder = @"Your First Name";
+        } else {
+            c.inputField.placeholder = self.sharedCenter.firstName;
+        }
         c.inputField.tag = 0;
         c.inputField.delegate = self;
     } else if (indexPath.row == 1){
         InputTableViewCell *c = (InputTableViewCell *)cell;
         c.inputTitle.text = @"Last Name";
-        c.inputField.placeholder = @"Your Last Name";
+        if ([self.sharedCenter.lastName isEqualToString:@""]) {
+            c.inputField.placeholder = @"Your Last Name";
+        } else {
+            c.inputField.placeholder = self.sharedCenter.lastName;
+        }
         c.inputField.tag = 1;
         c.inputField.delegate = self;
     } else if (indexPath.row == 2){
         InputTableViewCell *c = (InputTableViewCell *)cell;
         c.inputTitle.text = @"Email";
-        c.inputField.placeholder = @"For Sending Invoice";
+        if ([self.sharedCenter.email isEqualToString:@""]) {
+            c.inputField.placeholder = @"Your Email Address";
+        } else {
+            c.inputField.placeholder = self.sharedCenter.email;
+        }
         c.inputField.tag = 2;
         c.inputField.delegate = self;
     } else if (indexPath.row == 3){
         InputTableViewCell *c = (InputTableViewCell *)cell;
         c.inputTitle.text = @"Telephone";
-        c.inputField.placeholder = @"88888888";
+        if ([self.sharedCenter.telephone isEqualToString:@""]) {
+            c.inputField.placeholder = @"Your Telephone Number";
+        } else {
+            c.inputField.placeholder = self.sharedCenter.telephone;
+        }
+        c.inputField.keyboardType = UIKeyboardTypeNumberPad;
         c.inputField.tag = 3;
         c.inputField.delegate = self;
     } else if (indexPath.row == 4) {
@@ -161,15 +175,24 @@
     } else if (indexPath.row == 5){
         InputTableViewCell *c = (InputTableViewCell *)cell;
         c.inputTitle.text = @"Address";
-        c.inputField.placeholder = @"Your Address";
+        if ([self.sharedCenter.address isEqualToString:@""]) {
+            c.inputField.placeholder = @"Your Telephone Number";
+        } else {
+            c.inputField.placeholder = self.sharedCenter.address;
+        }
         c.inputField.tag = 4;
         c.inputField.delegate = self;
     } else if (indexPath.row == 6){
         InputTableViewCell *c = (InputTableViewCell *)cell;
         c.inputTitle.text = @"Post Code";
-        c.inputField.placeholder = @"Post Code";
+        if ([self.sharedCenter.postcode isEqualToString:@""]) {
+            c.inputField.placeholder = @"Your Post Code";
+        } else {
+            c.inputField.placeholder = self.sharedCenter.postcode;
+        }
         c.inputField.tag = 5;
         c.inputField.delegate = self;
+        c.inputField.keyboardType = UIKeyboardTypeNumberPad;
     }
     return cell;
 }

@@ -142,7 +142,6 @@
     NSError* error;
     NSDictionary* dict = [NSJSONSerialization JSONObjectWithData:confirmation options:kNilOptions error:&error];
     NSString *paymentId= [[dict valueForKey:@"response"] valueForKey:@"id"];
-    NSLog(paymentId);
     
     //construct the post
     NSString * str = [NSString stringWithFormat:@"%@index.php?route=feed/web_api/paypalCallback",ShopDomain];
@@ -151,7 +150,6 @@
     
     //Post string regarding verfication information
     NSString *postString = [NSString stringWithFormat:@"confirmation=%@&custom=%@",paymentId,self.sharedCenter.custom];
-    NSLog(postString);
     
     [request setValue:[NSString stringWithFormat:@"%d", [postString length]] forHTTPHeaderField:@"Content-length"];
     
@@ -165,8 +163,6 @@
             id parsedObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&localError];
             if ([parsedObject isKindOfClass:[NSDictionary class]]) {
                 NSLog(@"yes dict");
-                NSString *strData = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-                NSLog(strData);
             } else {
                 NSLog(@"not dict");
             }
@@ -274,7 +270,6 @@
         [request setHTTPMethod:@"POST"];
         //Post string regarding billing information
         NSString *postString = [NSString stringWithFormat:@"payment_method=%@&comment=&agree=1",self.sharedCenter.payment_method];
-        NSLog(postString);
         
         [request setValue:[NSString stringWithFormat:@"%d", [postString length]] forHTTPHeaderField:@"Content-length"];
         
@@ -291,17 +286,12 @@
                     NSLog(@"yes dict");
                     //Need to pop validation errors
                     if ([parsedObject valueForKey:@"error"] != nil) {
-                        NSString *strData = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-                        NSLog(strData);
-                        //more beautification works needs here
                         
-                        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"ERROR" message:strData delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+                        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"ERROR" message:@"Oops, Some Error Occured" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
                         
                         [av performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:NO];
                     }
                 } else {
-                    NSString *strData = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-                    NSLog(@"pass");
                     [self performSelectorOnMainThread:@selector(pay) withObject:nil waitUntilDone:NO];
                 }
             }
@@ -314,7 +304,7 @@
 
     self.sharedCenter.payment_method = [[self.methods objectAtIndex:indexPath.row] methodCode];
     UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Delivery Information"
-                                                     message:@"some tc information"
+                                                     message:@"By Clicking On Agree, You agree with with all of our terms and conditions applied. For more information please visit our webiste."
                                                     delegate:self
                                            cancelButtonTitle:@"Cancel"
                                            otherButtonTitles:@"Agree", nil];

@@ -35,8 +35,6 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    NSLog(self.imageURLStr);
-    NSLog(@"method loaded");
     [super viewWillAppear:animated];
     //[self.pIV setImageWithURL:[NSURL URLWithString:self.imageURLStr] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     [self.pIV setBackgroundColor:[UIColor blueColor]];

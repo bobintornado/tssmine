@@ -7,6 +7,7 @@
 //
 
 #import "TssLoginViewController.h"
+#import "RootTabBarViewController.h"
 
 @interface TssLoginViewController ()
 
@@ -37,7 +38,7 @@
     [self.logInView.usernameField setTextColor:[UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:1.0]];
     [self.logInView.passwordField setTextColor:[UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:1.0]];
     
-    self.delegate = self.tabBarController;
+    self.delegate = (RootTabBarViewController *)self.tabBarController;
 }
 
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
@@ -46,7 +47,6 @@
     NSLog(@"%d", [newArray count]);
     
     for (UIViewController *vc in newArray) {
-        NSLog([vc restorationIdentifier]);
         if ([[vc restorationIdentifier] isEqualToString:@"loginnv"]) {
             [newArray removeObject:vc];
         }

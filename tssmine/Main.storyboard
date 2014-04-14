@@ -213,7 +213,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Bs-7X-a0c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1034" y="-163"/>
+            <point key="canvasLocation" x="1050" y="-163"/>
         </scene>
         <!--Product List View Controller-->
         <scene sceneID="roa-Qg-Vcm">
@@ -638,7 +638,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HQC-ll-75v">
-                                <rect key="frame" x="20" y="94" width="275" height="197"/>
+                                <rect key="frame" x="20" y="94" width="275" height="307"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                 <state key="normal" title="Button">
@@ -647,7 +647,6 @@
                                 </state>
                                 <connections>
                                     <action selector="takeQuiz:" destination="VvB-2J-9aT" eventType="touchUpInside" id="gsD-Z4-fM9"/>
-                                    <segue destination="X1f-ka-EQc" kind="push" id="Tdn-nx-hLX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1386,7 +1385,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" restorationIdentifier="stylesViewCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="stylesViewCell" id="296-ZK-RrQ">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="296-ZK-RrQ" id="acT-Ht-csK">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -1400,9 +1399,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="P5c-va-gNA"/>
-                    <connections>
-                        <segue destination="1BQ-Ar-NL3" kind="push" id="VvW-eV-DVE"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JO0-iQ-Lxm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1422,7 +1418,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="stylingCell" rowHeight="197" id="Gej-Jy-3LA" customClass="QuizTableViewCell">
-                                        <rect key="frame" x="0.0" y="86" width="320" height="197"/>
+                                        <rect key="frame" x="0.0" y="22" width="320" height="197"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gej-Jy-3LA" id="CMg-Cw-EYA">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="196"/>
@@ -1606,7 +1602,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="345" y="2385"/>
+            <point key="canvasLocation" x="396" y="2385"/>
         </scene>
         <!--Profile Edit View Controller - Title-->
         <scene sceneID="Tt6-Qv-ncK">
@@ -1662,7 +1658,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZTs-bk-qb3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-202" y="3109"/>
+            <point key="canvasLocation" x="-162" y="3109"/>
         </scene>
         <!--Bazaar View Controller - Bazaar-->
         <scene sceneID="z4V-Pm-PD8">
@@ -1908,8 +1904,7 @@
                                             <rect key="frame" x="20" y="39" width="280" height="106"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                     </subviews>
@@ -1958,35 +1953,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vKb-bJ-l76" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="891" y="3087"/>
-        </scene>
-        <!--Categories View Controller-->
-        <scene sceneID="hes-y9-VfI">
-            <objects>
-                <tableViewController storyboardIdentifier="bazaarCategory" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TWW-bO-EVo" customClass="CategoriesViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="VLi-w2-lsk">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="NAM-t8-xlx">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NAM-t8-xlx" id="Qbl-7b-XId">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="TWW-bO-EVo" id="tT1-vW-F1f"/>
-                            <outlet property="delegate" destination="TWW-bO-EVo" id="ysl-E3-LwW"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ngu-56-V6l" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1294" y="3082"/>
+            <point key="canvasLocation" x="853" y="3101"/>
         </scene>
         <!--Navigation Controller - UNIVANTAGE-->
         <scene sceneID="lUq-OM-3rH">
@@ -2061,7 +2028,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cV6-gS-hrI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="396" y="3833"/>
+            <point key="canvasLocation" x="331" y="3833"/>
         </scene>
         <!--Navigation Controller - Login-->
         <scene sceneID="Lrm-dw-4uv">
@@ -2077,7 +2044,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MvT-1X-GhJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-232" y="4554"/>
+            <point key="canvasLocation" x="-202" y="4546"/>
         </scene>
         <!--Tss Login View Controller-->
         <scene sceneID="u6h-em-uAB">
@@ -2137,7 +2104,7 @@
                     </connections>
                 </collectionViewCell>
             </objects>
-            <point key="canvasLocation" x="816" y="3833"/>
+            <point key="canvasLocation" x="853" y="3833"/>
         </scene>
     </scenes>
     <resources>

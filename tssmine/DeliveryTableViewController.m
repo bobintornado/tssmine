@@ -79,8 +79,6 @@
                         [self.methods addObject:shiping];
                     }
                 }
-                
-               NSLog(@"My dictionary is %@", results);
             } else {
                 NSLog(@"what we get is not a kind of clss nsdictionary class");
             }
@@ -102,8 +100,6 @@
     [request setHTTPMethod:@"POST"];
     //Post string regarding billing information
     NSString *postString = [NSString stringWithFormat:@"shipping_method=%@&comment=", self.sharedCenter.shippingcode];
-    
-    NSLog(postString);
     
     [request setValue:[NSString stringWithFormat:@"%d", [postString length]] forHTTPHeaderField:@"Content-length"];
     
@@ -129,8 +125,6 @@
                     [av performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:NO];
                 }
             } else {
-                NSString *strData = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-                NSLog(@"pass");
                 [self performSelectorOnMainThread:@selector(payment) withObject:nil waitUntilDone:NO];
             }
         }

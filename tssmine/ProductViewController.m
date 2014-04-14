@@ -108,19 +108,20 @@
         ImageContentViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"imageContentVC"];
         vc.imageURLStr = [self.product.image absoluteString];
         [self.imageCVCs insertObject:vc atIndex:0];
-        NSArray *array = @[[self.imageCVCs objectAtIndex:0]];
-        [self.imagePVC setViewControllers:array direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-        //adjust later
-        self.imagePVC.view.frame = CGRectMake(0, 0, 320, 320);
-        
-        [self addChildViewController:self.imagePVC];
-        [self.productScrollView addSubview:self.imagePVC.view];
-        [self.imagePVC didMoveToParentViewController:self];
 
-        //[self.viewInsideScrollView bringSubviewToFront:self.imagePVC.view];
     } else {
-        //do nothing
+        ImageContentViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"imageContentVC"];
+        vc.imageURLStr = [self.product.image absoluteString];
+        [self.imageCVCs insertObject:vc atIndex:0];
+        self.imagePVC.view.userInteractionEnabled = NO;
     }
+    NSArray *array = @[[self.imageCVCs objectAtIndex:0]];
+    [self.imagePVC setViewControllers:array direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+        //adjust later
+    self.imagePVC.view.frame = CGRectMake(0, 0, 320, 320);
+    [self addChildViewController:self.imagePVC];
+    [self.productScrollView addSubview:self.imagePVC.view];
+    [self.imagePVC didMoveToParentViewController:self];
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController{

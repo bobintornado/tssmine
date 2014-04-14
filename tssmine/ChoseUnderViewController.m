@@ -39,7 +39,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.title = @"Chose Bottom";
+    self.title = @"Choose Bottom";
     self.products = [[NSMutableArray alloc] init];
     //implement this if the json is huge
     //[NSThread detachNewThreadSelector:@selector(loadData) toTarget:self withObject:nil];

@@ -25,6 +25,7 @@
     if (self = [super init]) {
         self.firstName = @"";
         self.lastName = @"";
+        self.email = @"";
         self.telephone = @"";
         self.company = @"";
         self.address = @"";

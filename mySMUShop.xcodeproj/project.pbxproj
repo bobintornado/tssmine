@@ -64,7 +64,6 @@
 		D98BF17D182550EC00DEE19B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98BF15C182550EC00DEE19B /* UIKit.framework */; };
 		D98BF185182550EC00DEE19B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D98BF183182550EC00DEE19B /* InfoPlist.strings */; };
 		D98BF187182550EC00DEE19B /* tssmineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D98BF186182550EC00DEE19B /* tssmineTests.m */; };
-		D98FF52C18F677D500796E35 /* PostItemTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98FF52B18F677D500796E35 /* PostItemTableViewController.m */; };
 		D98FF52F18F67ED300796E35 /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98FF52E18F67ED300796E35 /* CategoriesViewController.m */; };
 		D9989AAB18DA1A4900FEDF2A /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9989AAA18DA1A4900FEDF2A /* WebViewController.m */; };
 		D9989AAE18DA1EE100FEDF2A /* UIImageView+UIActivityIndicatorForSDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D9989AAD18DA1EE100FEDF2A /* UIImageView+UIActivityIndicatorForSDWebImage.m */; };
@@ -227,8 +226,6 @@
 		D98BF182182550EC00DEE19B /* mySMUShopTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mySMUShopTests-Info.plist"; sourceTree = "<group>"; };
 		D98BF184182550EC00DEE19B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D98BF186182550EC00DEE19B /* tssmineTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tssmineTests.m; sourceTree = "<group>"; };
-		D98FF52A18F677D500796E35 /* PostItemTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostItemTableViewController.h; sourceTree = "<group>"; };
-		D98FF52B18F677D500796E35 /* PostItemTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostItemTableViewController.m; sourceTree = "<group>"; };
 		D98FF52D18F67ED300796E35 /* CategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
 		D98FF52E18F67ED300796E35 /* CategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
 		D9989AA918DA1A4900FEDF2A /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
@@ -410,8 +407,6 @@
 				D952DAE418B6484B0032D40F /* BazaarViewController.m */,
 				D9A71FF218B68C8300B15375 /* AddNewSHItemViewController.h */,
 				D9A71FF318B68C8300B15375 /* AddNewSHItemViewController.m */,
-				D98FF52A18F677D500796E35 /* PostItemTableViewController.h */,
-				D98FF52B18F677D500796E35 /* PostItemTableViewController.m */,
 				D98FF52D18F67ED300796E35 /* CategoriesViewController.h */,
 				D98FF52E18F67ED300796E35 /* CategoriesViewController.m */,
 			);
@@ -913,7 +908,6 @@
 				D9A4949118CEFC2900975005 /* CartViewController.m in Sources */,
 				D98BF169182550EC00DEE19B /* AppDelegate.m in Sources */,
 				D93FB68118C436A70080E3E6 /* MYSMUConstants.m in Sources */,
-				D98FF52C18F677D500796E35 /* PostItemTableViewController.m in Sources */,
 				D939590B18E934E700342337 /* StylesViewController.m in Sources */,
 				D9A0857A18971AB000B000B9 /* ChoseUnderViewController.m in Sources */,
 				D9989AAB18DA1A4900FEDF2A /* WebViewController.m in Sources */,
