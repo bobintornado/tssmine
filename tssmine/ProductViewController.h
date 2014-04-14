@@ -10,7 +10,7 @@
 #import "TSSProduct.h"
 #import "OptionTableViewController.h"
 
-@interface ProductViewController : UIViewController <OptionDelegate>
+@interface ProductViewController : UIViewController <OptionDelegate,UIPageViewControllerDataSource>
 
 @property (strong, nonatomic) TSSProduct *product;
 

@@ -13,11 +13,11 @@
 #import "TSSOption.h"
 #import "TSSOptionValue.h"
 #import "OptionTableViewController.h"
-
+#import "ImageContentViewController.h"
 
 @interface ProductViewController ()
 
-@property (strong, nonatomic) IBOutlet UIImageView *productImageView;
+//@property (strong, nonatomic) IBOutlet UIImageView *productImageView;
 @property (strong, nonatomic) IBOutlet UILabel *pTitleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *pPriceLabel;
 @property (strong, nonatomic) IBOutlet UIButton *optionButton;
@@ -27,9 +27,14 @@
 @property (strong) TSSOptionValue *chosenOptionValue;
 @property (strong, nonatomic) IBOutlet UILabel *desContent;
 
+@property (strong, nonatomic) UIPageViewController *imagePVC;
+@property (strong, nonatomic) NSMutableArray *imageCVCs;
+@property (strong, nonatomic) IBOutlet UIView *viewInsideScrollView;
+
 @end
 
 @implementation ProductViewController
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -44,13 +49,20 @@
 {
     [super viewDidLoad];
     
-    NSLog(@"the link is %@",[self.product.image absoluteString]);
-    
     self.title = self.product.name;
     
-    [self.productImageView setImageWithURL:self.product.image];
+    //set images
+    self.imageCVCs = [[NSMutableArray alloc] init];
+    self.imagePVC = [self.storyboard instantiateViewControllerWithIdentifier:@"imagePVC"];
+    //self.imagePVC = [[UIPageViewController alloc] init];
+    self.imagePVC.dataSource = self;
+    //set up content view controllers
+    [self getImages];
+    
+    //set name and price
     self.pTitleLabel.text = self.product.name;
     self.pPriceLabel.text = self.product.price;
+    //set option if have
     if (self.product.option.name != NULL) {
         NSString *t = [NSString stringWithFormat:@"Select %@ >",self.product.option.name];
         [self.optionButton setTitle:t forState:UIControlStateNormal];
@@ -60,6 +72,7 @@
     
     self.productScrollView.delaysContentTouches = NO;
     
+    //description
     UIFont *font = [UIFont fontWithName:@"Helvetica" size:14];
     CGSize constraint = CGSizeMake(280,NSUIntegerMax);
     
@@ -83,6 +96,57 @@
     
     //navigation
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"cart.png"] style:UIBarButtonItemStylePlain target:self action:@selector(shoppingCart)];
+}
+
+-(void)getImages{
+    if ([self.product.images count] > 0) {
+        for (NSString *imageURLStr in self.product.images) {
+            ImageContentViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"imageContentVC"];
+            vc.imageURLStr = imageURLStr;
+            [self.imageCVCs addObject:vc];
+        }
+        ImageContentViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"imageContentVC"];
+        vc.imageURLStr = [self.product.image absoluteString];
+        [self.imageCVCs insertObject:vc atIndex:0];
+        NSArray *array = @[[self.imageCVCs objectAtIndex:0]];
+        [self.imagePVC setViewControllers:array direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+        //adjust later
+        self.imagePVC.view.frame = CGRectMake(0, 0, 320, 320);
+        
+        [self addChildViewController:self.imagePVC];
+        [self.productScrollView addSubview:self.imagePVC.view];
+        [self.imagePVC didMoveToParentViewController:self];
+
+        //[self.viewInsideScrollView bringSubviewToFront:self.imagePVC.view];
+    } else {
+        //do nothing
+    }
+}
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController{
+    
+    int vcIndex = [self.imageCVCs indexOfObject:viewController];
+    
+    if (vcIndex == 0) {
+        vcIndex = self.imageCVCs.count - 1;
+    } else {
+        vcIndex--;
+    }
+    
+    return self.imageCVCs[vcIndex];
+}
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController{
+    
+    int vcIndex = [self.imageCVCs indexOfObject:viewController];
+    
+    if (vcIndex == (self.imageCVCs.count - 1)) {
+        vcIndex = 0;
+    } else {
+        vcIndex++;
+    }
+    
+    return self.imageCVCs[vcIndex];
 }
 
 - (UIImage *)imageWithColor:(UIColor *)color andSize:(CGSize)size

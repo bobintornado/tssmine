@@ -84,6 +84,13 @@
                     pr.thumbURL = [NSURL URLWithString:urlText];
                     urlText = [[ob valueForKey:@"image"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
                     pr.image = [NSURL URLWithString: urlText];
+                    
+                    pr.images = [[NSMutableArray alloc] init];
+                    for (NSString *imageULRStr in [ob valueForKeyPath:@"images"]) {
+                        NSString *urlText = [imageULRStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                        [pr.images addObject:urlText];
+                    }
+                    
                     //for now coverting to plain text
                     NSString *des = [[ob valueForKey:@"description"] stringByConvertingHTMLToPlainText];
                     if ([des isEqualToString:@""]) {

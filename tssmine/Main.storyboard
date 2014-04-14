@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="8YX-ce-x5E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="8YX-ce-x5E">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -273,6 +273,37 @@
             </objects>
             <point key="canvasLocation" x="1558" y="-163"/>
         </scene>
+        <!--Image Content View Controller-->
+        <scene sceneID="Ekc-9B-naw">
+            <objects>
+                <viewController storyboardIdentifier="imageContentVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="x5b-k2-HqH" customClass="ImageContentViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0o8-0R-e1g">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="bHS-Bu-2Kh">
+                                <rect key="frame" x="0.0" y="1" width="320" height="320"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="pIV" destination="bHS-Bu-2Kh" id="hPY-Ug-HRT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JIa-wn-o2u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1862" y="-849"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="zcL-vE-f8L">
+            <objects>
+                <pageViewController storyboardIdentifier="imagePVC" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="cIo-DF-eTE" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vye-yh-Co8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2260" y="-849"/>
+        </scene>
         <!--Option Table View Controller-->
         <scene sceneID="Zha-2e-K5X">
             <objects>
@@ -317,10 +348,6 @@
                                         <rect key="frame" x="0.0" y="-21" width="320" height="589"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="gZ2-LR-vLV">
-                                                <rect key="frame" x="0.0" y="20" width="320" height="320"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            </imageView>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="two lines title two lines titletwo lines titletwo lines titlet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hJ0-CS-mur">
                                                 <rect key="frame" x="20" y="342" width="287" height="42"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -382,8 +409,8 @@
                         <outlet property="optionButton" destination="pOh-XP-le5" id="db8-k7-0ya"/>
                         <outlet property="pPriceLabel" destination="do6-6b-7LV" id="fqm-8O-8Ba"/>
                         <outlet property="pTitleLabel" destination="hJ0-CS-mur" id="NcK-Hi-rdd"/>
-                        <outlet property="productImageView" destination="gZ2-LR-vLV" id="UMe-fF-KYt"/>
-                        <outlet property="productScrollView" destination="Ggx-BH-uSe" id="nP6-jp-txd"/>
+                        <outlet property="productScrollView" destination="Ggx-BH-uSe" id="A3k-dX-tj1"/>
+                        <outlet property="viewInsideScrollView" destination="HK2-rK-E7S" id="fzQ-Rb-zxH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DAR-gI-RDb" userLabel="First Responder" sceneMemberID="firstResponder"/>

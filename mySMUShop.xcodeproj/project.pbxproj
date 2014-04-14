@@ -82,6 +82,7 @@
 		D9A5C3BE18EE50E600AAE67A /* TSSShiping.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A5C3BD18EE50E600AAE67A /* TSSShiping.m */; };
 		D9A71FEA18B675BD00B15375 /* BazaarPFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A71FE918B675BD00B15375 /* BazaarPFTableViewCell.m */; };
 		D9A71FF418B68C8300B15375 /* AddNewSHItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A71FF318B68C8300B15375 /* AddNewSHItemViewController.m */; };
+		D9A7277A18FC0E6500BE2610 /* ImageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A7277918FC0E6500BE2610 /* ImageContentViewController.m */; };
 		D9ACAF3218BBCD0900AD7A57 /* MySMUViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9ACAF3118BBCD0900AD7A57 /* MySMUViewController.m */; };
 		D9ACAF3718BBDF2500AD7A57 /* ProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9ACAF3618BBDF2500AD7A57 /* ProfileCell.m */; };
 		D9ACAF3A18BBEB5500AD7A57 /* ProfileEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9ACAF3918BBEB5500AD7A57 /* ProfileEditViewController.m */; };
@@ -262,6 +263,8 @@
 		D9A71FE918B675BD00B15375 /* BazaarPFTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BazaarPFTableViewCell.m; sourceTree = "<group>"; };
 		D9A71FF218B68C8300B15375 /* AddNewSHItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNewSHItemViewController.h; sourceTree = "<group>"; };
 		D9A71FF318B68C8300B15375 /* AddNewSHItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNewSHItemViewController.m; sourceTree = "<group>"; };
+		D9A7277818FC0E6500BE2610 /* ImageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageContentViewController.h; sourceTree = "<group>"; };
+		D9A7277918FC0E6500BE2610 /* ImageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageContentViewController.m; sourceTree = "<group>"; };
 		D9ACAF3018BBCD0900AD7A57 /* MySMUViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySMUViewController.h; sourceTree = "<group>"; };
 		D9ACAF3118BBCD0900AD7A57 /* MySMUViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySMUViewController.m; sourceTree = "<group>"; };
 		D9ACAF3518BBDF2500AD7A57 /* ProfileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileCell.h; sourceTree = "<group>"; };
@@ -523,6 +526,8 @@
 				D920B26D18D605A8001A4F7E /* SalutationTableViewController.m */,
 				D920B26F18D60A17001A4F7E /* PaymentTableViewController.h */,
 				D920B27018D60A17001A4F7E /* PaymentTableViewController.m */,
+				D9A7277818FC0E6500BE2610 /* ImageContentViewController.h */,
+				D9A7277918FC0E6500BE2610 /* ImageContentViewController.m */,
 			);
 			name = TheSMUShop;
 			sourceTree = "<group>";
@@ -912,6 +917,7 @@
 				D939590B18E934E700342337 /* StylesViewController.m in Sources */,
 				D9A0857A18971AB000B000B9 /* ChoseUnderViewController.m in Sources */,
 				D9989AAB18DA1A4900FEDF2A /* WebViewController.m in Sources */,
+				D9A7277A18FC0E6500BE2610 /* ImageContentViewController.m in Sources */,
 				D9989AAE18DA1EE100FEDF2A /* UIImageView+UIActivityIndicatorForSDWebImage.m in Sources */,
 				D9A08574189714B600B000B9 /* ChoseUpperViewController.m in Sources */,
 				D99D5FB918D1F70900BD0751 /* TSSOptionValue.m in Sources */,
