@@ -21,7 +21,7 @@
                         <segue destination="Kh5-2z-6Ys" kind="relationship" relationship="viewControllers" id="rpP-Kf-GoX"/>
                         <segue destination="30V-QQ-htw" kind="relationship" relationship="viewControllers" id="N9X-TC-Xwu"/>
                         <segue destination="ZNs-qv-yxY" kind="relationship" relationship="viewControllers" id="yEN-ca-Ylb"/>
-                        <segue destination="Lzx-T7-0LO" kind="relationship" relationship="viewControllers" id="jGP-Z2-DU6"/>
+                        <segue destination="HeM-gX-qYN" kind="relationship" relationship="viewControllers" id="OuP-Fm-2eZ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNP-y4-bzi" sceneMemberID="firstResponder"/>
@@ -1984,6 +1984,34 @@
             </objects>
             <point key="canvasLocation" x="853" y="3101"/>
         </scene>
+        <!--Categories View Controller-->
+        <scene sceneID="Lh1-eE-rFb">
+            <objects>
+                <tableViewController storyboardIdentifier="bazaarCategory" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Mkk-Gh-6EL" customClass="CategoriesViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="aHh-1G-3uw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="G8d-Cg-oSG">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G8d-Cg-oSG" id="doD-NN-FRd">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Mkk-Gh-6EL" id="p72-qI-rXy"/>
+                            <outlet property="delegate" destination="Mkk-Gh-6EL" id="287-To-qhi"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tao-oE-got" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1342" y="3098"/>
+        </scene>
         <!--Navigation Controller - UNIVANTAGE-->
         <scene sceneID="lUq-OM-3rH">
             <objects>
@@ -2059,36 +2087,21 @@
             </objects>
             <point key="canvasLocation" x="331" y="3833"/>
         </scene>
-        <!--Navigation Controller - Login-->
-        <scene sceneID="Lrm-dw-4uv">
-            <objects>
-                <navigationController storyboardIdentifier="loginnv" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Lzx-T7-0LO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Login" image="Profile" id="ssl-yt-aTu"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ixO-vX-zQb">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="HeM-gX-qYN" kind="relationship" relationship="rootViewController" id="VJh-7Q-hxp"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MvT-1X-GhJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-202" y="4546"/>
-        </scene>
-        <!--Tss Login View Controller-->
+        <!--Tss Login View Controller - Login-->
         <scene sceneID="u6h-em-uAB">
             <objects>
-                <viewController id="HeM-gX-qYN" customClass="TssLoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HeM-gX-qYN" customClass="TssLoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sdW-LJ-Zb4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Login" image="Profile" id="Ovq-R4-NfD"/>
                     <navigationItem key="navigationItem" id="oE2-Rs-8Ap"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcF-hf-7Qg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="331" y="4546"/>
+            <point key="canvasLocation" x="-221" y="4586"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="KLB-rc-aj1">

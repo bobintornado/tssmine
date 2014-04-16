@@ -94,12 +94,12 @@
     for (UIViewController *vc in newArray) {
         if ([[vc restorationIdentifier] isEqualToString:@"profileNav"]) {
             [newArray removeObject:vc];
-            UINavigationController *p = [self.storyboard instantiateViewControllerWithIdentifier:@"loginnv"];
+            UINavigationController *p = [self.storyboard instantiateViewControllerWithIdentifier:@"loginVC"];
             [newArray addObject:p];
         }
     }
     [self.tabBarController setViewControllers:newArray animated:YES];
-    //[self.tabBarController setSelectedIndex:0];
+    [self.tabBarController setSelectedIndex:0];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

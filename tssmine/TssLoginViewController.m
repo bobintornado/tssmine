@@ -8,6 +8,7 @@
 
 #import "TssLoginViewController.h"
 #import "RootTabBarViewController.h"
+#import "MySMUViewController.h"
 
 @interface TssLoginViewController ()
 
@@ -24,12 +25,13 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
 	// Do any additional setup after loading the view.
     //[self.logInView setBackgroundColor:[UIColor whiteColor]];
     [self.logInView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo.png"]]];
+    
+    [self.logInView.dismissButton setImage:[UIImage imageNamed:@"exit.png"] forState:UIControlStateNormal];
     
     [self.logInView.signUpButton setTitle:@"Sign Up" forState:UIControlStateNormal];
     [self.logInView.signUpButton setTitle:@"Sign Up" forState:UIControlStateHighlighted];
@@ -39,6 +41,10 @@
     [self.logInView.passwordField setTextColor:[UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:1.0]];
     
     self.delegate = (RootTabBarViewController *)self.tabBarController;
+    
+    MySMUViewController *signUpViewController = [[MySMUViewController alloc] init];
+    [signUpViewController setDelegate:(RootTabBarViewController *)self.tabBarController];
+    [self setSignUpController:signUpViewController];
 }
 
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {

@@ -52,35 +52,15 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
-//    if (![PFUser currentUser]) {
-//        // Create the log in view controller
-//        
-//        TssLoginViewController *logInViewController = [[TssLoginViewController alloc] init];
-//        [logInViewController setDelegate:self]; // Set ourselves as the delegate
-//        
-//        //[logInViewController setFields: PFLogInFieldsUsernameAndPassword | PFLogInFieldsLogInButton | PFLogInFieldsSignUpButton| PFLogInFieldsPasswordForgotten];
-//        
-//        // Create the sign up view controller
-//        MySMUViewController *signUpViewController = [[MySMUViewController alloc] init];
-//        [signUpViewController setFields:PFSignUpFieldsDefault | PFSignUpFieldsAdditional];
-//        [signUpViewController setDelegate:self]; // Set ourselves as the delegate
-//        
-//        // Assign our sign up controller to be displayed from the login controller
-//        [logInViewController setSignUpController:signUpViewController];
-//        
-//        // Present the log in view controller
-//        [self presentViewController:logInViewController animated:YES completion:NULL];
-//    }
 }
+
 // Sent to the delegate when a PFUser is logged in.
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
     [self dismissViewControllerAnimated:YES completion:NULL];
     NSMutableArray* newArray = [NSMutableArray arrayWithArray:self.viewControllers];
-    NSLog(@"%d", [newArray count]);
     
     for (UIViewController *vc in newArray) {
-        if ([[vc restorationIdentifier] isEqualToString:@"loginnv"]) {
+        if ([[vc restorationIdentifier] isEqualToString:@"loginVC"]) {
             [newArray removeObject:vc];
             UINavigationController *p = [self.storyboard instantiateViewControllerWithIdentifier:@"profileNav"];
             [newArray addObject:p];
@@ -138,6 +118,23 @@
 // Sent to the delegate when a PFUser is signed up.
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
     [self dismissViewControllerAnimated:YES completion:nil]; // Dismiss the PFSignUpViewController
+    NSMutableArray* newArray = [NSMutableArray arrayWithArray:self.viewControllers];
+    
+    for (UIViewController *vc in newArray) {
+        if ([[vc restorationIdentifier] isEqualToString:@"loginVC"]) {
+            [newArray removeObject:vc];
+            UINavigationController *p = [self.storyboard instantiateViewControllerWithIdentifier:@"profileNav"];
+            [newArray addObject:p];
+        }
+    }
+    
+    [self setViewControllers:newArray animated:YES];
+    
+    for (UIViewController *vc in newArray) {
+        if ([[vc restorationIdentifier] isEqualToString:@"profileNav"]) {
+            [self setSelectedViewController:vc];
+        }
+    }
 }
 
 // Sent to the delegate when the sign up attempt fails.
