@@ -127,7 +127,6 @@
             [newArray addObject:p];
         }
     }
-    
     [self setViewControllers:newArray animated:YES];
     
     for (UIViewController *vc in newArray) {
