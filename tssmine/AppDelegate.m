@@ -22,6 +22,7 @@
     // Register Parse Application.
     [Parse setApplicationId:@"SI015RmgPxSwOEqLiUaA73U5WON9J2AmPImHZuHs"
                clientKey:@"SXfRLuswEy1Bb96sI12bftJcpzDqXUeWSDwmwdDq"];
+    
     [PFFacebookUtils initializeFacebook];
     
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
