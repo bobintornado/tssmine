@@ -23,13 +23,13 @@
     [Parse setApplicationId:@"SI015RmgPxSwOEqLiUaA73U5WON9J2AmPImHZuHs"
                clientKey:@"SXfRLuswEy1Bb96sI12bftJcpzDqXUeWSDwmwdDq"];
     [PFFacebookUtils initializeFacebook];
+    
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
     // Register for push notifications
     [application registerForRemoteNotificationTypes: UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound];
     
     [PayPalMobile initializeWithClientIdsForEnvironments:@{ PayPalEnvironmentSandbox : @"AQLv9RCZSfPuSSlSsxDohHBDiFnX8N-bOLx8oR7HLGSTk2HouT46jwsY0UHU"}];
-    
     
     //UIControl config
     UIPageControl *pageControl = [UIPageControl appearance];
