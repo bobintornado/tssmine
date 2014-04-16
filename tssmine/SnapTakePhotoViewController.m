@@ -143,6 +143,13 @@
     [photo setObject:self.snapTitle.text forKey:@"snapTitle"];
     [photo setObject:@0 forKey:@"score"];
     
+    PFACL *snapACL = [PFACL ACLWithUser:[PFUser currentUser]];
+    [snapACL setPublicReadAccess:YES];
+    [snapACL setReadAccess:YES forUserId:@"qBlYEYWs71"];
+    [snapACL setWriteAccess:YES forUserId:@"qBlYEYWs71"];
+    photo.ACL = snapACL;
+    
+    
     // Request a background execution task to allow us to finish uploading the photo even if the app is backgrounded
     self.photoPostBackgroundTaskId = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
         [[UIApplication sharedApplication] endBackgroundTask:self.photoPostBackgroundTaskId];

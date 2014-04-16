@@ -20,8 +20,8 @@
 {
     
     // Register Parse Application.
-    [Parse setApplicationId:@"dwus9w9uMQdXlXxXMgvZawLzmKEhmKbGBGdLkInZ"
-               clientKey:@"fXJDUlzqfqpcXJZDQAd62uDF5KmwA0mWz1qOHthT"];
+    [Parse setApplicationId:@"SI015RmgPxSwOEqLiUaA73U5WON9J2AmPImHZuHs"
+               clientKey:@"SXfRLuswEy1Bb96sI12bftJcpzDqXUeWSDwmwdDq"];
     [PFFacebookUtils initializeFacebook];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     

@@ -181,6 +181,14 @@
     }
     [item setObject:self.sharedCenter.postCategory forKey:@"category"];
     [item setObject:[PFUser currentUser] forKey:@"seller"];
+    
+    PFACL *snapACL = [PFACL ACLWithUser:[PFUser currentUser]];
+    [snapACL setPublicReadAccess:YES];
+    [snapACL setReadAccess:YES forUserId:@"qBlYEYWs71"];
+    [snapACL setWriteAccess:YES forUserId:@"qBlYEYWs71"];
+    item.ACL = snapACL;
+    
+    
     // Request a background execution task to allow us to finish uploading the photo even if the app is backgrounded
     self.photoPostBackgroundTaskId = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
         [[UIApplication sharedApplication] endBackgroundTask:self.photoPostBackgroundTaskId];
