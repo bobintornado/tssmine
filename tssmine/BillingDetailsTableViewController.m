@@ -16,6 +16,8 @@
 
 @interface BillingDetailsTableViewController ()
 
+@property (strong, nonatomic) NSMutableArray *fields;
+
 @property (strong, nonatomic) PaymentCenter *sharedCenter;
 
 @end
@@ -38,6 +40,7 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Delivery" style:UIBarButtonItemStylePlain target:self action:@selector(paymentMethods)];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.sharedCenter = [PaymentCenter sharedCenter];
+    self.fields = [[NSMutableArray alloc] init];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -47,6 +50,11 @@
 
 - (void)paymentMethods{
     //Retrieve text field values from row
+    if ([self.sharedCenter.firstName isEqualToString:@""] && [self.sharedCenter.lastName isEqualToString:@""] && [self.sharedCenter.email isEqualToString:@""] &&  [self.sharedCenter.telephone isEqualToString:@""] && [self.sharedCenter.address isEqualToString:@""] &&  [self.sharedCenter.postcode isEqualToString:@""]) {
+        for (UITextField *f in self.fields) {
+            [self textFieldShouldEndEditing:f];
+        }
+    }
     
     //Using existing validation methods
     NSString * str = [NSString stringWithFormat:@"%@index.php?route=checkout/guest/validate",ShopDomain];
@@ -136,6 +144,7 @@
             c.inputField.placeholder = self.sharedCenter.firstName;
         }
         c.inputField.tag = 0;
+        [self.fields addObject:c.inputField];
         c.inputField.delegate = self;
     } else if (indexPath.row == 1){
         InputTableViewCell *c = (InputTableViewCell *)cell;
@@ -146,6 +155,7 @@
             c.inputField.placeholder = self.sharedCenter.lastName;
         }
         c.inputField.tag = 1;
+        [self.fields addObject:c.inputField];
         c.inputField.delegate = self;
     } else if (indexPath.row == 2){
         InputTableViewCell *c = (InputTableViewCell *)cell;
@@ -156,6 +166,7 @@
             c.inputField.placeholder = self.sharedCenter.email;
         }
         c.inputField.tag = 2;
+        [self.fields addObject:c.inputField];
         c.inputField.delegate = self;
     } else if (indexPath.row == 3){
         InputTableViewCell *c = (InputTableViewCell *)cell;
@@ -167,6 +178,7 @@
         }
         c.inputField.keyboardType = UIKeyboardTypeNumberPad;
         c.inputField.tag = 3;
+        [self.fields addObject:c.inputField];
         c.inputField.delegate = self;
     } else if (indexPath.row == 4) {
         ChoseTableViewCell *c = (ChoseTableViewCell *)cell;
@@ -176,11 +188,12 @@
         InputTableViewCell *c = (InputTableViewCell *)cell;
         c.inputTitle.text = @"Address";
         if ([self.sharedCenter.address isEqualToString:@""]) {
-            c.inputField.placeholder = @"Your Telephone Number";
+            c.inputField.placeholder = @"Your Delivery Address";
         } else {
             c.inputField.placeholder = self.sharedCenter.address;
         }
         c.inputField.tag = 4;
+        [self.fields addObject:c.inputField];
         c.inputField.delegate = self;
     } else if (indexPath.row == 6){
         InputTableViewCell *c = (InputTableViewCell *)cell;
@@ -191,6 +204,7 @@
             c.inputField.placeholder = self.sharedCenter.postcode;
         }
         c.inputField.tag = 5;
+        [self.fields addObject:c.inputField];
         c.inputField.delegate = self;
         c.inputField.keyboardType = UIKeyboardTypeNumberPad;
     }

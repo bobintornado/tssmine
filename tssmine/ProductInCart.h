@@ -15,6 +15,8 @@
 @property NSURL *thumb;
 @property NSString *option_name;
 @property NSString *option_value;
+@property NSString *option_name2;
+@property NSString *option_value2;
 @property NSString *quantity;
 @property NSURL *remove;
 

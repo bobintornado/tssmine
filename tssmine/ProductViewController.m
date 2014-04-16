@@ -20,11 +20,14 @@
 //@property (strong, nonatomic) IBOutlet UIImageView *productImageView;
 @property (strong, nonatomic) IBOutlet UILabel *pTitleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *pPriceLabel;
-@property (strong, nonatomic) IBOutlet UIButton *optionButton;
+@property (strong, nonatomic) IBOutlet UIButton *optionButton1;
+@property (strong, nonatomic) IBOutlet UIButton *optionButton2;
+
 @property (strong, nonatomic) IBOutlet UIButton *ATCButton;
 @property (strong, nonatomic) NSArray *options;
 @property (strong, nonatomic) IBOutlet UIScrollView *productScrollView;
-@property (strong) TSSOptionValue *chosenOptionValue;
+@property (strong, nonatomic) TSSOptionValue *chosenOptionValue1;
+@property (strong, nonatomic) TSSOptionValue *chosenOptionValue2;
 @property (strong, nonatomic) IBOutlet UILabel *desContent;
 
 @property (strong, nonatomic) UIPageViewController *imagePVC;
@@ -63,11 +66,21 @@
     self.pTitleLabel.text = self.product.name;
     self.pPriceLabel.text = self.product.price;
     //set option if have
-    if (self.product.option.name != NULL) {
-        NSString *t = [NSString stringWithFormat:@"Select %@ >",self.product.option.name];
-        [self.optionButton setTitle:t forState:UIControlStateNormal];
-    } else {
-        self.optionButton.hidden = YES;
+    NSLog(@"options count is %d", [self.product.options count]);
+    if ((long)[self.product.options count] == 0) {
+        NSLog(@"go 0");
+        self.optionButton1.hidden = YES;
+        self.optionButton2.hidden = YES;
+    } else if ((long)[self.product.options count] == 1){
+        NSLog(@"go 1");
+        NSString *t = [NSString stringWithFormat:@"Select %@ >",[self.product.options[0] name]];
+        [self.optionButton1 setTitle:t forState:UIControlStateNormal];
+        self.optionButton2.hidden = YES;
+    } else if ((long)[self.product.options count] == 2){
+        NSString *t = [NSString stringWithFormat:@"Select %@ >",[self.product.options[0] name]];
+        [self.optionButton1 setTitle:t forState:UIControlStateNormal];
+        NSString *t2 = [NSString stringWithFormat:@"Select %@ >",[self.product.options[1] name]];
+        [self.optionButton2 setTitle:t2 forState:UIControlStateNormal];
     }
     
     self.productScrollView.delaysContentTouches = NO;
@@ -173,44 +186,92 @@
     [self.navigationController pushViewController:cVC animated:YES];
 }
 
-- (IBAction)choseOption:(id)sender {
-    //[self.optionPicker setHidden:NO];
+- (IBAction)choseOption1:(id)sender {
     OptionTableViewController *otvc = [self.storyboard instantiateViewControllerWithIdentifier:@"optionTVC"];
-    otvc.option = self.product.option;
+    otvc.option = self.product.options[0];
+    otvc.target = @0;
+    otvc.delegate = self;
+    [self.navigationController pushViewController:otvc animated:YES];
+}
+
+- (IBAction)choseOption2:(id)sender {
+    OptionTableViewController *otvc = [self.storyboard instantiateViewControllerWithIdentifier:@"optionTVC"];
+    otvc.option = self.product.options[1];
+    otvc.target = @1;
     otvc.delegate = self;
     [self.navigationController pushViewController:otvc animated:YES];
 }
 
 - (IBAction)tapATCButton:(id)sender {
-    if (self.product.option.name != NULL) {
-        if (self.chosenOptionValue == NULL) {
-            NSString *message = [NSString stringWithFormat:@"You Must Select a %@ ", self.product.option.name];
-            UIAlertView *av = [[UIAlertView alloc] initWithTitle:self.product.option.name
-                                                         message:message
-                                                        delegate:self
-                                               cancelButtonTitle:nil
-                                               otherButtonTitles:@"OK", nil];
-            [av show];
-        } else {
-            NSString * str = [NSString stringWithFormat:@"%@index.php?route=feed/web_api/add",ShopDomain];
-            NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:str]];
-            [request setHTTPMethod:@"POST"];
-            NSString *postString = [NSString stringWithFormat:@"product_id=%@&option[%@]=%@", self.product.productID, self.product.option.product_option_id, self.chosenOptionValue.product_option_value_id];
-            [request setValue:[NSString stringWithFormat:@"%d", [postString length]] forHTTPHeaderField:@"Content-length"];
-            [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
-            [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-                if (error) {
-                    NSLog(@"adding product into cart failed");
-                } else {
-                    NSError *localError = nil;
-                    id parsedObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&localError];
-                    if ([parsedObject isKindOfClass:[NSDictionary class]]) {
-                        NSLog(@"successfully add in new products. indicator undone");
+    if ([self.product.options count] != 0) {
+        if ([self.product.options count] == 1){
+            if (self.chosenOptionValue1 == NULL) {
+                NSString *message = [NSString stringWithFormat:@"You Must Select a %@ ", [self.product.options[0] name]];
+                UIAlertView *av = [[UIAlertView alloc] initWithTitle:[self.product.options[0] name]
+                                                             message:message
+                                                            delegate:self
+                                                   cancelButtonTitle:nil
+                                                   otherButtonTitles:@"OK", nil];
+                [av show];
+            } else {
+                NSString * str = [NSString stringWithFormat:@"%@index.php?route=feed/web_api/add",ShopDomain];
+                NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:str]];
+                [request setHTTPMethod:@"POST"];
+                NSString *postString = [NSString stringWithFormat:@"product_id=%@&option[%@]=%@", self.product.productID, [self.product.options[0] product_option_id], self.chosenOptionValue1.product_option_value_id];
+                [request setValue:[NSString stringWithFormat:@"%d", [postString length]] forHTTPHeaderField:@"Content-length"];
+                [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
+                [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+                    if (error) {
+                        NSLog(@"adding product into cart failed");
+                    } else {
+                        NSError *localError = nil;
+                        id parsedObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&localError];
+                        if ([parsedObject isKindOfClass:[NSDictionary class]]) {
+                            NSLog(@"successfully add in new products. indicator undone");
+                        }
                     }
-                }
-                [self performSelectorOnMainThread:@selector(shoppingCart) withObject:self waitUntilDone:NO];
-            }];
-           
+                    [self performSelectorOnMainThread:@selector(shoppingCart) withObject:self waitUntilDone:NO];
+                }];
+               
+            }
+        } else if ([self.product.options count] == 2){
+            if (self.chosenOptionValue1 == NULL) {
+                NSString *message = [NSString stringWithFormat:@"You Must Select a %@ ", [self.product.options[0] name]];
+                UIAlertView *av = [[UIAlertView alloc] initWithTitle:[self.product.options[0] name]
+                                                             message:message
+                                                            delegate:self
+                                                   cancelButtonTitle:nil
+                                                   otherButtonTitles:@"OK", nil];
+                [av show];
+            } else if (self.chosenOptionValue2 == NULL){
+                NSString *message = [NSString stringWithFormat:@"You Must Select a %@ ", [self.product.options[1] name]];
+                UIAlertView *av = [[UIAlertView alloc] initWithTitle:[self.product.options[1] name]
+                                                             message:message
+                                                            delegate:self
+                                                   cancelButtonTitle:nil
+                                                   otherButtonTitles:@"OK", nil];
+                [av show];
+            } else {
+                //adding product into cart
+                NSString * str = [NSString stringWithFormat:@"%@index.php?route=feed/web_api/add",ShopDomain];
+                NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:str]];
+                [request setHTTPMethod:@"POST"];
+                NSString *postString = [NSString stringWithFormat:@"product_id=%@&option[%@]=%@&option[%@]=%@", self.product.productID, [self.product.options[0] product_option_id], self.chosenOptionValue1.product_option_value_id, [self.product.options[1] product_option_id], self.chosenOptionValue2.product_option_value_id ];
+                [request setValue:[NSString stringWithFormat:@"%d", [postString length]] forHTTPHeaderField:@"Content-length"];
+                [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
+                [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+                    if (error) {
+                        NSLog(@"adding product into cart failed");
+                    } else {
+                        NSError *localError = nil;
+                        id parsedObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&localError];
+                        if ([parsedObject isKindOfClass:[NSDictionary class]]) {
+                            NSLog(@"successfully add in new products. indicator undone");
+                        }
+                    }
+                    [self performSelectorOnMainThread:@selector(shoppingCart) withObject:self waitUntilDone:NO];
+                }];
+            }
         }
     } else {
         NSString * str = [NSString stringWithFormat:@"%@index.php?route=feed/web_api/add",ShopDomain];
@@ -229,9 +290,15 @@
 }
 
 - (void)setChosenOption:(OptionTableViewController *)OptionTableViewController{
-    self.chosenOptionValue = OptionTableViewController.chosenOptionValue;
-    NSString *t = [NSString stringWithFormat:@"%@ : %@",self.product.option.name ,self.chosenOptionValue.name];
-    [self.optionButton setTitle:t forState:UIControlStateNormal];
+    if ([OptionTableViewController.target intValue] == 0) {
+        self.chosenOptionValue1 = OptionTableViewController.chosenOptionValue;
+        NSString *t = [NSString stringWithFormat:@"%@ : %@",[self.product.options[0] name] ,self.chosenOptionValue1.name];
+        [self.optionButton1 setTitle:t forState:UIControlStateNormal];
+    } else if ([OptionTableViewController.target intValue] == 1){
+        self.chosenOptionValue2 = OptionTableViewController.chosenOptionValue;
+        NSString *t = [NSString stringWithFormat:@"%@ : %@",[self.product.options[1] name] ,self.chosenOptionValue2.name];
+        [self.optionButton2 setTitle:t forState:UIControlStateNormal];
+    }
 }
 
 @end

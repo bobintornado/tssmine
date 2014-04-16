@@ -19,8 +19,7 @@
 @property (strong,nonatomic) NSURL *image;
 @property (strong,nonatomic) NSMutableArray *images;
 
-//for now there is only one option
-@property (strong, nonatomic)TSSOption *option;
+@property (strong, nonatomic) NSMutableArray *options;
 
 @property (strong, nonatomic) NSString *pDescription;
 

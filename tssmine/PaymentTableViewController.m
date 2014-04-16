@@ -260,7 +260,10 @@
     if (buttonIndex == 0)
     {
         NSLog(@"Cancel");
-    } else {
+    } else if (buttonIndex == 2){
+        //click for information
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://shop.smu.edu.sg/store/index.php?route=information/information&information_id=6"]];
+    } else if (buttonIndex == 1) {
         NSLog(@"Agree");
         
         //construct post for saving payment method to session
@@ -304,10 +307,10 @@
 
     self.sharedCenter.payment_method = [[self.methods objectAtIndex:indexPath.row] methodCode];
     UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Delivery Information"
-                                                     message:@"By Clicking On Agree, You agree with with all of our terms and conditions applied. For more information please visit our webiste."
+                                                     message:@"By Clicking On Agree, You agree with with all of our terms and conditions applied. For more information please click on Terms & Conditions button below."
                                                     delegate:self
                                            cancelButtonTitle:@"Cancel"
-                                           otherButtonTitles:@"Agree", nil];
+                                           otherButtonTitles:@"Agree", @"Terms & Conditions",nil];
     [av show];
 }
 

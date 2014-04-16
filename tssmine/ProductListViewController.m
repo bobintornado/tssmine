@@ -73,9 +73,9 @@
             {
                 NSDictionary *results = parsedObject;
                 //construct objects and pass to array
-                NSLog(@"products is dict");
                 for (NSObject *ob in [results valueForKey:@"products"]){
                     TSSProduct *pr = [[TSSProduct alloc] init];
+                    pr.options = [[NSMutableArray alloc] init];
                     
                     pr.productID = [ob valueForKey:@"id"];
                     pr.name =  [[ob valueForKey:@"name"] stringByConvertingHTMLToPlainText];
@@ -100,11 +100,9 @@
                     }
                     
                     pr.price = [NSString stringWithFormat:@"%@",[ob valueForKey:@"pirce"]];
-
-                    TSSOption *pop = [[TSSOption alloc] init];
                     
                     for (NSObject *op in [ob valueForKey:@"options"]) {
-                        NSLog(@"runing1");
+                        TSSOption *pop = [[TSSOption alloc] init];
                         pop.product_option_id = [op valueForKey:@"product_option_id"];
                         pop.optionId = [op valueForKey:@"option_id"];
                         pop.name = [[op valueForKey:@"name"] stringByConvertingHTMLToPlainText];
@@ -122,8 +120,8 @@
                         } else {
                             NSLog(@"non array option");
                         }
+                        [pr.options addObject:pop];
                     }
-                    pr.option = pop;
                     
                     [self.products addObject:pr];
                 }

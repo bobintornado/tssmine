@@ -13,11 +13,15 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "UIImageView+UIActivityIndicatorForSDWebImage.h"
 #import "ProductViewController.h"
+#import "MYSMUConstants.h"
 
 
 @interface CustomizeResultViewController ()
 
 @property (strong, nonatomic) IBOutlet UITableView *productsTableView;
+@property (strong, nonatomic) NSMutableArray *results;
+
+@property (strong, nonatomic) NSDictionary *styleDic;
 
 @property UIImage *upperImage;
 @property UIImage *underImage;
@@ -50,7 +54,18 @@
     StyleCenter *sc = [StyleCenter sharedCenter];
     
     self.title = @"Your Own SMU Style!";
-
+    
+    //Adding save and share button
+    UIBarButtonItem *saveStyleButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"save.png"] style:UIBarButtonItemStylePlain target:self action:@selector(saveStyle)];
+    
+    UIBarButtonItem *shareStyleButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"UIBarButtonAction_2x.png"] style:UIBarButtonItemStylePlain target:self action:@selector(shareStyle)];
+    
+    //Adjust button spacing
+    saveStyleButton.imageInsets = UIEdgeInsetsMake(0.0, 0.0, 0, -30);
+    
+    NSArray *arr= [[NSArray alloc] initWithObjects:shareStyleButton,saveStyleButton,nil];
+    self.navigationItem.rightBarButtonItems=arr;
+    
     [SDWebImageDownloader.sharedDownloader downloadImageWithURL:sc.upper.image options:0 progress:nil completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished)
      {
          if (image && finished){self.upperImage = image;}
@@ -63,6 +78,94 @@
      {
          if (image && finished){self.slipperImage = image;}
      }];
+    
+    [self createStyleDict];
+}
+
+- (void)createStyleDict{
+    StyleCenter *sc = [StyleCenter sharedCenter];
+    self.results = [[NSMutableArray alloc] init];
+    [self getproduct:sc.upper.productID];
+    [self getproduct:sc.bottom.productID];
+    [self getproduct:sc.slipper.productID];
+    
+    NSArray *keys = [NSArray arrayWithObjects:@"products", nil];
+    NSArray *objects = [NSArray arrayWithObjects:self.results, nil];
+    NSDictionary *dictionary = [NSDictionary dictionaryWithObjects:objects
+                                                           forKeys:keys];
+    self.styleDic = dictionary;
+}
+
+- (void)getproduct:(NSString *)productId{
+    
+    NSString *urlString = [NSString stringWithFormat:@"%@index.php?route=%@&key=%@&id=%@",ShopDomain,@"feed/web_api/product",RESTfulKey,productId, nil];
+
+    NSURL *productURL = [NSURL URLWithString:urlString];
+    
+    [NSURLConnection sendAsynchronousRequest:[[NSURLRequest alloc] initWithURL:productURL] queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        
+        if (error) {
+            NSLog(@"fetching products data failed");
+        } else {
+            NSLog(@"start fetching products data");
+            NSError *localError = nil;
+            id parsedObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&localError];
+            
+            if([parsedObject isKindOfClass:[NSDictionary class]])
+            {
+                NSDictionary *d = (NSDictionary *)parsedObject;
+                [self.results addObject:[d valueForKey:@"product"]];
+            } else {
+                NSLog(@"what we get is not a kind of clss nsdictionary class");
+            }
+        }
+    }];
+}
+
+- (void)saveStyle{
+    if (![PFUser currentUser]) {
+        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@""
+                                                     message:@"Please Login To Save the Style"
+                                                    delegate:self
+                                           cancelButtonTitle:nil
+                                           otherButtonTitles:@"OK", nil];
+        [av show];
+    } else {
+        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Styles"
+                                                     message:@"Name Your Style!"
+                                                    delegate:self
+                                           cancelButtonTitle:@"Cancel"
+                                           otherButtonTitles:@"Save", nil];
+        
+        av.alertViewStyle = UIAlertViewStylePlainTextInput;
+        UITextField * alertTextField = [av textFieldAtIndex:0];
+        alertTextField.placeholder = @"Enter Your Style Name";
+        av.tag = 1;
+        [av show];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (alertView.tag == 1) {
+        if (buttonIndex == [alertView cancelButtonIndex] ) {
+            //do nothing
+        } else {
+            PFObject *style = [PFObject objectWithClassName:@"Style"];
+            style[@"user"] = [PFUser currentUser];
+            style[@"style"] = self.styleDic;
+            style[@"name"] = [[alertView textFieldAtIndex:0] text];
+            [style saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (succeeded) {
+                    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@""
+                                                                 message:@"The Style Has Been Saved!"
+                                                                delegate:self
+                                                       cancelButtonTitle:nil
+                                                       otherButtonTitles:@"OK", nil];
+                    [av show];
+                }
+            }];
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -98,7 +201,8 @@
     //return the cell
     return cell;
 }
-- (IBAction)shareCustomizedOutFit:(id)sender {
+
+- (void)shareStyle {
     //futher customization is needed
     NSString *shareString = @"Check out my newly crafted outfit at mySMU app! Browse more at products at http://shop.smu.edu.sg/store/";
 

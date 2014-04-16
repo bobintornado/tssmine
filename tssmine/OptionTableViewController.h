@@ -17,6 +17,7 @@
 @property (strong, nonatomic) TSSOption *option;
 @property (strong) TSSOptionValue *chosenOptionValue;
 @property (nonatomic, assign) id<OptionDelegate> delegate;
+@property (strong, nonatomic) NSNumber *target;
 
 @end
 

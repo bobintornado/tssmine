@@ -63,7 +63,6 @@
                 NSLog(@"it is dict");
                 NSDictionary *result = parsedObject;
                 //construct objects and pass to array
-                
                 for (NSObject *ob in [result valueForKey:@"products"]){
                     ProductInCart *pic = [[ProductInCart alloc] init];
                     //configure paramaters
@@ -73,9 +72,15 @@
                     NSString *urlText = [[ob valueForKey:@"thumb"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
                     
                     pic.thumb = [NSURL URLWithString:urlText];
-                    for (NSObject *obo in [ob valueForKey:@"option"]) {
-                        pic.option_name = [obo valueForKey:@"name"];
-                        pic.option_value = [obo valueForKey:@"value"];
+                    
+                    if ([[ob valueForKey:@"option"] count] == 1) {
+                        pic.option_name = [[[ob valueForKey:@"option"] objectAtIndex:0] valueForKey:@"name"];
+                        pic.option_value = [[[ob valueForKey:@"option"] objectAtIndex:0] valueForKey:@"value"];
+                    } else if ([[ob valueForKey:@"option"] count] == 2){
+                        pic.option_name = [[[ob valueForKey:@"option"] objectAtIndex:0] valueForKey:@"name"];
+                        pic.option_value = [[[ob valueForKey:@"option"] objectAtIndex:0] valueForKey:@"value"];
+                        pic.option_name2 = [[[ob valueForKey:@"option"] objectAtIndex:1] valueForKey:@"name"];
+                        pic.option_value2 = [[[ob valueForKey:@"option"] objectAtIndex:1] valueForKey:@"value"];
                     }
                     pic.quantity = [ob valueForKey:@"quantity"];
                     pic.remove = [NSURL URLWithString:[ob valueForKey:@"remove"]];
@@ -137,12 +142,21 @@
         NSString *s = [NSString stringWithFormat:@"- %@ : %@",p.option_name, p.option_value];
         [cell.optionValue setText:s];
     }
+    
+    if (p.option_name2 != NULL) {
+        NSString *s = [NSString stringWithFormat:@"- %@ : %@",p.option_name2, p.option_value2];
+        [cell.optionValue2 setText:s];
+    }
     return cell;
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    return 90;
 }
 
 - (void)checkOut{

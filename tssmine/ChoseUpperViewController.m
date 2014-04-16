@@ -65,6 +65,7 @@
                 NSLog(@"products is dict");
                 for (NSObject *ob in [results valueForKey:@"products"]){
                     TSSProduct *pr = [[TSSProduct alloc] init];
+                    pr.options = [[NSMutableArray alloc] init];
                     
                     pr.productID = [ob valueForKey:@"id"];
                     pr.name =  [[ob valueForKey:@"name"] stringByConvertingHTMLToPlainText];
@@ -73,13 +74,20 @@
                     pr.thumbURL = [NSURL URLWithString:urlText];
                     urlText = [[ob valueForKey:@"image"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
                     pr.image = [NSURL URLWithString: urlText];
+                    
+                    pr.images = [[NSMutableArray alloc] init];
+                    for (NSString *imageULRStr in [ob valueForKeyPath:@"images"]) {
+                        NSString *urlText = [imageULRStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                        [pr.images addObject:urlText];
+                    }
+                    
                     pr.pDescription = [[ob valueForKey:@"description"] stringByConvertingHTMLToPlainText];
                     pr.price = [NSString stringWithFormat:@"%@",[ob valueForKey:@"pirce"]];
                     
-                    TSSOption *pop = [[TSSOption alloc] init];
+                   
                     
                     for (NSObject *op in [ob valueForKey:@"options"]) {
-                        NSLog(@"runing1");
+                        TSSOption *pop = [[TSSOption alloc] init];
                         pop.product_option_id = [op valueForKey:@"product_option_id"];
                         pop.optionId = [op valueForKey:@"option_id"];
                         pop.name = [op valueForKey:@"name"];
@@ -97,8 +105,8 @@
                         } else {
                             NSLog(@"non array option");
                         }
+                        [pr.options addObject:pop];
                     }
-                    pr.option = pop;
                     
                     [self.products addObject:pr];
                 }
