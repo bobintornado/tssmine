@@ -10,7 +10,6 @@
 		D901607B187AB8190003985D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D901607A187AB8190003985D /* Main.storyboard */; };
 		D905DA3818D213220092AD3A /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = D905DA3718D213220092AD3A /* FXBlurView.m */; };
 		D905DA3B18D21E6A0092AD3A /* OptionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D905DA3A18D21E6A0092AD3A /* OptionTableViewController.m */; };
-		D916C2EE18B89AEB00486DFD /* AnnouncementCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D916C2ED18B89AEB00486DFD /* AnnouncementCell.m */; };
 		D916C2F118B8DD6500486DFD /* BuzzViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D916C2F018B8DD6500486DFD /* BuzzViewController.m */; };
 		D916C2F418B8E53E00486DFD /* BuzzCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D916C2F318B8E53E00486DFD /* BuzzCell.m */; };
 		D91C890718B935CE008E7536 /* Filter.m in Sources */ = {isa = PBXBuildFile; fileRef = D91C890618B935CE008E7536 /* Filter.m */; };
@@ -134,8 +133,6 @@
 		D905DA3718D213220092AD3A /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
 		D905DA3918D21E6A0092AD3A /* OptionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionTableViewController.h; sourceTree = "<group>"; };
 		D905DA3A18D21E6A0092AD3A /* OptionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionTableViewController.m; sourceTree = "<group>"; };
-		D916C2EC18B89AEB00486DFD /* AnnouncementCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnouncementCell.h; sourceTree = "<group>"; };
-		D916C2ED18B89AEB00486DFD /* AnnouncementCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnouncementCell.m; sourceTree = "<group>"; };
 		D916C2EF18B8DD6500486DFD /* BuzzViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuzzViewController.h; sourceTree = "<group>"; };
 		D916C2F018B8DD6500486DFD /* BuzzViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuzzViewController.m; sourceTree = "<group>"; };
 		D916C2F218B8E53E00486DFD /* BuzzCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuzzCell.h; sourceTree = "<group>"; };
@@ -363,15 +360,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D916C2EB18B89AC400486DFD /* Announcement */ = {
-			isa = PBXGroup;
-			children = (
-				D916C2EC18B89AEB00486DFD /* AnnouncementCell.h */,
-				D916C2ED18B89AEB00486DFD /* AnnouncementCell.m */,
-			);
-			name = Announcement;
-			sourceTree = "<group>";
-		};
 		D920B27218D60D25001A4F7E /* PayPalMobile */ = {
 			isa = PBXGroup;
 			children = (
@@ -674,7 +662,6 @@
 			children = (
 				D9E8CF4618CCAEB1002EA436 /* TheSMUShop */,
 				D9ACAF3318BBDF0300AD7A57 /* Profile */,
-				D916C2EB18B89AC400486DFD /* Announcement */,
 				D9A71FE718B675A400B15375 /* Bazaar */,
 				D952DAF318B65D370032D40F /* Styling */,
 				D952DAF218B65D260032D40F /* Buzz */,
@@ -945,7 +932,6 @@
 				D9E8CF4218CC69DE002EA436 /* ProductListViewController.m in Sources */,
 				D98BF165182550EC00DEE19B /* main.m in Sources */,
 				D9A71FEA18B675BD00B15375 /* BazaarPFTableViewCell.m in Sources */,
-				D916C2EE18B89AEB00486DFD /* AnnouncementCell.m in Sources */,
 				D9647D58187A823F00B26CE8 /* SnapTakePhotoViewController.m in Sources */,
 				D9F8910F18C46BDB003793BA /* TSSCategories.m in Sources */,
 				D916C2F418B8E53E00486DFD /* BuzzCell.m in Sources */,
