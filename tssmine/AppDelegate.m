@@ -91,8 +91,6 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)newDeviceToken {
     [currentInstallation setDeviceTokenFromData:newDeviceToken];
     [currentInstallation saveInBackground];
     
-    
-    
     PFQuery *queryExistingThumbUps = [PFQuery queryWithClassName:@"Token"];
     [queryExistingThumbUps whereKey:@"deviceToken" equalTo:[currentInstallation objectForKey:@"deviceToken"]];
     [queryExistingThumbUps findObjectsInBackgroundWithBlock:^(NSArray *tokens, NSError *error) {

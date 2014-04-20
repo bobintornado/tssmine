@@ -2157,7 +2157,7 @@
         <image name="b2" width="1000" height="1500"/>
         <image name="b3" width="1000" height="1500"/>
         <image name="bizcom" width="28" height="23"/>
-        <image name="blue" width="1024" height="1024"/>
+        <image name="blue" width="150" height="150"/>
         <image name="bog" width="1000" height="1500"/>
         <image name="cover" width="1000" height="1500"/>
         <image name="dress-hanger" width="30" height="30"/>

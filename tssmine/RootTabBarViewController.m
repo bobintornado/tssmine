@@ -34,7 +34,7 @@
     if ([PFUser currentUser]) {
         NSMutableArray* newArray = [NSMutableArray arrayWithArray:self.viewControllers];
         for (UIViewController *vc in newArray) {
-            if ([[vc restorationIdentifier] isEqualToString:@"loginnv"]) {
+            if ([[vc restorationIdentifier] isEqualToString:@"loginVC"]) {
                 [newArray removeObject:vc];
                 UINavigationController *p = [self.storyboard instantiateViewControllerWithIdentifier:@"profileNav"];
                 [newArray addObject:p];
