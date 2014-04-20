@@ -113,26 +113,6 @@
     //NSArray *objects = [query findObjects];
     
     if (self.sharedCenter.buzzFilter == 0) {
-//        for (PFObject *object in objects){
-//            PFQuery *thumbupCount = [PFQuery queryWithClassName:@"ThumbUp"];
-//            [thumbupCount whereKey:@"target" equalTo:object];
-//            NSDate *creationTime = [object createdAt];
-//            NSDate *now = [NSDate date];
-//            NSTimeInterval distanceBetweenDates = [now timeIntervalSinceDate:creationTime];
-//            double secondsInAnHour = 3600;
-//            NSInteger age = distanceBetweenDates / secondsInAnHour;
-//            [thumbupCount countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
-//                object[@"score"] = @(number*50/pow((age + 2), 1.8));
-//                [object saveInBackground];
-//            }];
-//        }
-        [PFCloud callFunctionInBackground:@"rank" withParameters:@{} block:^(NSString *result, NSError *error) {
-                if (!error) {
-                    NSLog(@"ha it works!");
-                } else{
-                    NSLog(@"cloud code error");
-                }
-        }];
         [query orderByDescending:@"score"];
     } else {
         [query addDescendingOrder:@"createdAt"];
